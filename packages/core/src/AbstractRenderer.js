@@ -8,8 +8,8 @@ import { RenderTexture } from './renderTexture/RenderTexture';
 const tempMatrix = new Matrix();
 
 /**
- * The AbstractRenderer is the base for a PixiJS Renderer. It is extended by the {@link PIXI.CanvasRenderer}
- * and {@link PIXI.Renderer} which can be used for rendering a PixiJS scene.
+ * AbstractRenderer是PixiJS渲染器的基类。它由{@link PIXI.CanvasRenderer}
+ * 和{@link PIXI.Renderer}扩展而来，可用于渲染PixiJS场景。
  *
  * @abstract
  * @class
@@ -19,23 +19,18 @@ const tempMatrix = new Matrix();
 export class AbstractRenderer extends EventEmitter
 {
     /**
-     * @param {string} system - The name of the system this renderer is for.
-     * @param {object} [options] - The optional renderer parameters.
-     * @param {number} [options.width=800] - The width of the screen.
-     * @param {number} [options.height=600] - The height of the screen.
-     * @param {HTMLCanvasElement} [options.view] - The canvas to use as a view, optional.
-     * @param {boolean} [options.transparent=false] - If the render view is transparent.
-     * @param {boolean} [options.autoDensity=false] - Resizes renderer view in CSS pixels to allow for
-     *   resolutions other than 1.
-     * @param {boolean} [options.antialias=false] - Sets antialias
-     * @param {number} [options.resolution=1] - The resolution / device pixel ratio of the renderer. The
-     *  resolution of the renderer retina would be 2.
-     * @param {boolean} [options.preserveDrawingBuffer=false] - Enables drawing buffer preservation,
-     *  enable this if you need to call toDataUrl on the WebGL context.
-     * @param {boolean} [options.clearBeforeRender=true] - This sets if the renderer will clear the canvas or
-     *      not before the new render pass.
-     * @param {number} [options.backgroundColor=0x000000] - The background color of the rendered area
-     *  (shown if not transparent).
+     * @param {string} system - 该渲染器用于的系统的名称。
+     * @param {object} [options] - 可选的渲染器参数。
+     * @param {number} [options.width=800] - 屏幕的宽度。
+     * @param {number} [options.height=600] - 屏幕的高度。
+     * @param {HTMLCanvasElement} [options.view] - 用作视图的canvas，可选。
+     * @param {boolean} [options.transparent=false] - 渲染器视图是否为透明。
+     * @param {boolean} [options.autoDensity=false] - 调整渲染器视图的CSS像素大小，以允许使用非1的分辨率。
+     * @param {boolean} [options.antialias=false] - 设置抗锯齿
+     * @param {number} [options.resolution=1] - 渲染器的分辨率/设备像素比率。 渲染器视网膜的分辨率为2。
+     * @param {boolean} [options.preserveDrawingBuffer=false] - 启用绘图缓冲区保留，如果需要在WebGL上下文上调用toDataUrl，请启用此功能。
+     * @param {boolean} [options.clearBeforeRender=true] - 这将设置渲染器是否在新的渲染过程之前清除canvas。
+     * @param {number} [options.backgroundColor=0x000000] - 渲染区域的背景色
      */
     constructor(system, options)
     {
@@ -52,7 +47,7 @@ export class AbstractRenderer extends EventEmitter
         }
 
         /**
-         * The supplied constructor options.
+         * 构造函数选项
          *
          * @member {Object}
          * @readOnly
@@ -60,7 +55,7 @@ export class AbstractRenderer extends EventEmitter
         this.options = options;
 
         /**
-         * The type of the renderer.
+         * 渲染器类型
          *
          * @member {number}
          * @default PIXI.RENDERER_TYPE.UNKNOWN
@@ -69,7 +64,7 @@ export class AbstractRenderer extends EventEmitter
         this.type = RENDERER_TYPE.UNKNOWN;
 
         /**
-         * Measurements of the screen. (0, 0, screenWidth, screenHeight).
+         * 屏幕尺寸 (0, 0, screenWidth, screenHeight).
          *
          * Its safe to use as filterArea or hitArea for the whole stage.
          *
@@ -78,14 +73,14 @@ export class AbstractRenderer extends EventEmitter
         this.screen = new Rectangle(0, 0, options.width, options.height);
 
         /**
-         * The canvas element that everything is drawn to.
+         * 绘制所有内容的canvas元素。
          *
          * @member {HTMLCanvasElement}
          */
         this.view = options.view || document.createElement('canvas');
 
         /**
-         * The resolution / device pixel ratio of the renderer.
+         * 渲染器的分辨率/设备像素比率。
          *
          * @member {number}
          * @default 1
@@ -93,14 +88,14 @@ export class AbstractRenderer extends EventEmitter
         this.resolution = options.resolution || settings.RESOLUTION;
 
         /**
-         * Whether the render view is transparent.
+         * 渲染视图是否透明。
          *
          * @member {boolean}
          */
         this.transparent = options.transparent;
 
         /**
-         * Whether CSS dimensions of canvas view should be resized to screen dimensions automatically.
+         * canvas视图的CSS尺寸是否应自动调整为屏幕尺寸。
          *
          * @member {boolean}
          */
@@ -108,19 +103,17 @@ export class AbstractRenderer extends EventEmitter
         // autoResize is deprecated, provides fallback support
 
         /**
-         * The value of the preserveDrawingBuffer flag affects whether or not the contents of
-         * the stencil buffer is retained after rendering.
+         * reserveDrawingBuffer标志的值影响渲染后是否保留模板缓冲区的内容。
          *
          * @member {boolean}
          */
         this.preserveDrawingBuffer = options.preserveDrawingBuffer;
 
         /**
-         * This sets if the CanvasRenderer will clear the canvas or not before the new render pass.
-         * If the scene is NOT transparent PixiJS will use a canvas sized fillRect operation every
-         * frame to set the canvas background color. If the scene is transparent PixiJS will use clearRect
-         * to clear the canvas every frame. Disable this by setting this to false. For example, if
-         * your game has a canvas filling background image you often don't need this set.
+         * 设置CanvasRenderer是否在新的渲染过程之前清除canvas。
+         * 如果场景不是透明的，PixiJS将在每一帧使用画布大小的fillRect操作来设置画布背景颜色。
+         * 如果场景是透明的，PixiJS将使用clearRect在每一帧清除画布。
+         * 将此设置为false可禁用此功能。 例如，如果您的游戏具有画布填充背景图像，则通常不需要此设置。
          *
          * @member {boolean}
          * @default
@@ -128,7 +121,7 @@ export class AbstractRenderer extends EventEmitter
         this.clearBeforeRender = options.clearBeforeRender;
 
         /**
-         * The background color as a number.
+         * 背景颜色数值
          *
          * @member {number}
          * @protected
@@ -136,7 +129,7 @@ export class AbstractRenderer extends EventEmitter
         this._backgroundColor = 0x000000;
 
         /**
-         * The background color as an [R, G, B] array.
+         * 背景颜色[R, G, B]数组
          *
          * @member {number[]}
          * @protected
@@ -144,7 +137,7 @@ export class AbstractRenderer extends EventEmitter
         this._backgroundColorRgba = [0, 0, 0, 0];
 
         /**
-         * The background color as a string.
+         * 背景颜色字符串
          *
          * @member {string}
          * @protected
@@ -154,7 +147,7 @@ export class AbstractRenderer extends EventEmitter
         this.backgroundColor = options.backgroundColor || this._backgroundColor; // run bg color setter
 
         /**
-         * This temporary display object used as the parent of the currently being rendered item.
+         * 此临时显示对象用于当前呈现项的父对象。
          *
          * @member {PIXI.DisplayObject}
          * @protected
@@ -162,7 +155,7 @@ export class AbstractRenderer extends EventEmitter
         this._tempDisplayObjectParent = new Container();
 
         /**
-         * The last root object that the renderer tried to render.
+         * 渲染器尝试渲染的最后一个根对象。
          *
          * @member {PIXI.DisplayObject}
          * @protected
@@ -170,7 +163,7 @@ export class AbstractRenderer extends EventEmitter
         this._lastObjectRendered = this._tempDisplayObjectParent;
 
         /**
-         * Collection of plugins.
+         * 插件集合
          * @readonly
          * @member {object}
          */
@@ -178,10 +171,10 @@ export class AbstractRenderer extends EventEmitter
     }
 
     /**
-     * Initialize the plugins.
+     * 初始化插件
      *
      * @protected
-     * @param {object} staticMap - The dictionary of statically saved plugins.
+     * @param {object} staticMap - 静态保存的插件字典。
      */
     initPlugins(staticMap)
     {
@@ -192,7 +185,7 @@ export class AbstractRenderer extends EventEmitter
     }
 
     /**
-     * Same as view.width, actual number of pixels in the canvas by horizontal.
+     * 与view.width相同，水平方向上canvas的实际像素数。
      *
      * @member {number}
      * @readonly
@@ -204,7 +197,7 @@ export class AbstractRenderer extends EventEmitter
     }
 
     /**
-     * Same as view.height, actual number of pixels in the canvas by vertical.
+     * 与view.height，垂直方向上canvas的实际像素数。
      *
      * @member {number}
      * @readonly
@@ -216,11 +209,11 @@ export class AbstractRenderer extends EventEmitter
     }
 
     /**
-     * Resizes the screen and canvas to the specified width and height.
-     * Canvas dimensions are multiplied by resolution.
+     * 将屏幕和canvas调整为指定的宽度和高度。
+     * Canvas尺寸乘以分辨率。
      *
-     * @param {number} screenWidth - The new width of the screen.
-     * @param {number} screenHeight - The new height of the screen.
+     * @param {number} screenWidth - 屏幕的新宽度。
+     * @param {number} screenHeight - 屏幕的新高度。
      */
     resize(screenWidth, screenHeight)
     {
@@ -238,15 +231,15 @@ export class AbstractRenderer extends EventEmitter
     }
 
     /**
-     * Useful function that returns a texture of the display object that can then be used to create sprites
-     * This can be quite useful if your displayObject is complicated and needs to be reused multiple times.
+     * 返回可用于创建精灵的显示对象纹理的有用函数
+     * 如果您的displayObject很复杂，需要多次重用，那么这非常实用。
      *
-     * @param {PIXI.DisplayObject} displayObject - The displayObject the object will be generated from.
-     * @param {number} scaleMode - Should be one of the scaleMode consts.
-     * @param {number} resolution - The resolution / device pixel ratio of the texture being generated.
-     * @param {PIXI.Rectangle} [region] - The region of the displayObject, that shall be rendered,
-     *        if no region is specified, defaults to the local bounds of the displayObject.
-     * @return {PIXI.RenderTexture} A texture of the graphics object.
+     * @param {PIXI.DisplayObject} displayObject - 将从中生成对象的displayObject。
+     * @param {number} scaleMode - 应该是scaleMode常量之一。
+     * @param {number} resolution - 生成的纹理的分辨率/设备像素比率。
+     * @param {PIXI.Rectangle} [region] - displayObject的应该呈现的区域，
+     *        如果未指定区域，则默认为displayObject的本身范围。
+     * @return {PIXI.RenderTexture} 图形对象的纹理。
      */
     generateTexture(displayObject, scaleMode, resolution, region)
     {
@@ -267,9 +260,9 @@ export class AbstractRenderer extends EventEmitter
     }
 
     /**
-     * Removes everything from the renderer and optionally removes the Canvas DOM element.
+     * 从渲染器清除所有内容，并可以选择从DOM中删除Canvas元素。
      *
-     * @param {boolean} [removeView=false] - Removes the Canvas element from the DOM.
+     * @param {boolean} [removeView=false] - 从DOM中删除Canvas元素。
      */
     destroy(removeView)
     {
@@ -314,7 +307,7 @@ export class AbstractRenderer extends EventEmitter
     }
 
     /**
-     * The background color to fill if not transparent
+     * 如果不透明则填充的背景色
      *
      * @member {number}
      */

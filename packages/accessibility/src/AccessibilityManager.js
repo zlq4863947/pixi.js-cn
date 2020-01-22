@@ -3,7 +3,7 @@ import { isMobile, removeItems } from '@pixi/utils';
 import { DisplayObject } from '@pixi/display';
 import { accessibleTarget } from './accessibleTarget';
 
-// add some extra variables to the container..
+// 向容器添加一些额外的变量。
 DisplayObject.mixin(accessibleTarget);
 
 const KEY_CODE_TAB = 9;
@@ -19,13 +19,13 @@ const DIV_HOOK_POS_Y = -1000;
 const DIV_HOOK_ZINDEX = 2;
 
 /**
- * The Accessibility manager recreates the ability to tab and have content read by screen readers.
- * This is very important as it can possibly help people with disabilities access PixiJS content.
+ * 辅助功能管理器重新创建了选项卡功能，并允许屏幕阅读器读取内容。
+ * 这非常重要，因为它可以帮助残障人士访问PixiJS内容。
  *
- * A DisplayObject can be made accessible just like it can be made interactive. This manager will map the
- * events as if the mouse was being used, minimizing the effort required to implement.
+ * 可以使DisplayObject变得可访问，就像可以使其具有交互性一样。该管理器将映射事件，
+ * 就像正在使用鼠标一样，从而最大程度地减少了实现所需的工作量。
  *
- * An instance of this class is automatically created by default, and can be found at `renderer.plugins.accessibility`
+ * 此类的实例默认情况下会自动创建，可以在`renderer.plugins.accessibility`中找到
  *
  * @class
  * @memberof PIXI.accessibility
@@ -33,7 +33,7 @@ const DIV_HOOK_ZINDEX = 2;
 export class AccessibilityManager
 {
     /**
-     * @param {PIXI.CanvasRenderer|PIXI.Renderer} renderer - A reference to the current renderer
+     * @param {PIXI.CanvasRenderer|PIXI.Renderer} renderer - 对当前渲染器的引用
      */
     constructor(renderer)
     {
@@ -47,7 +47,7 @@ export class AccessibilityManager
             this.createTouchHook();
         }
 
-        // first we create a div that will sit over the PixiJS element. This is where the div overlays will go.
+        // 首先，我们创建一个将位于PixiJS元素上方的div。这是div叠加层所在的位置。
         const div = document.createElement('div');
 
         div.style.width = `${DIV_TOUCH_SIZE}px`;
@@ -58,7 +58,7 @@ export class AccessibilityManager
         div.style.zIndex = DIV_TOUCH_ZINDEX;
 
         /**
-         * This is the dom element that will sit over the PixiJS element. This is where the div overlays will go.
+         * 位于PixiJS元素之上的dom元素。这是div叠加层所在的位置。
          *
          * @type {HTMLElement}
          * @private
@@ -66,7 +66,7 @@ export class AccessibilityManager
         this.div = div;
 
         /**
-         * A simple pool for storing divs.
+         * 一个用于存储div的简单池。
          *
          * @type {*}
          * @private
@@ -74,7 +74,7 @@ export class AccessibilityManager
         this.pool = [];
 
         /**
-         * This is a tick used to check if an object is no longer being rendered.
+         * 这是一个记号，用于检查对象是否不再被渲染。
          *
          * @type {Number}
          * @private
@@ -82,21 +82,21 @@ export class AccessibilityManager
         this.renderId = 0;
 
         /**
-         * Setting this to true will visually show the divs.
+         * 将此设置为true将直观地显示div。
          *
          * @type {boolean}
          */
         this.debug = false;
 
         /**
-         * The renderer this accessibility manager works for.
+         * 此辅助功能管理器适用的渲染器。
          *
          * @member {PIXI.AbstractRenderer}
          */
         this.renderer = renderer;
 
         /**
-         * The array of currently active accessible items.
+         * 当前活动的辅助项的数组。
          *
          * @member {Array<*>}
          * @private
@@ -120,38 +120,39 @@ export class AccessibilityManager
         this._onMouseMove = this._onMouseMove.bind(this);
 
         /**
-         * A flag
+         * 一个标记
          * @type {boolean}
          * @readonly
          */
         this.isActive = false;
 
         /**
-         * A flag
+         * 一个标记
          * @type {boolean}
          * @readonly
          */
         this.isMobileAccessibility = false;
 
         /**
-         * count to throttle div updates on android devices
+         * 计数以限制android设备上的div更新
          * @type number
          * @private
          */
         this.androidUpdateCount = 0;
 
         /**
-         * the frequency to update the div elements ()
+         * 更新div元素的频率 ()
          * @private
          */
         this.androidUpdateFrequency = 500; // 2fps
 
         // let listen for tab.. once pressed we can fire up and show the accessibility layer
+        // 让我们可以监听标签。一旦点击，我们就可以启动并显示辅助层
         window.addEventListener('keydown', this._onKeyDown, false);
     }
 
     /**
-     * Creates the touch hooks.
+     * 创建触摸钩子
      *
      * @private
      */
@@ -180,7 +181,7 @@ export class AccessibilityManager
     }
 
     /**
-     * Destroys the touch hooks.
+     * 销毁触摸钩子
      *
      * @private
      */
@@ -195,8 +196,8 @@ export class AccessibilityManager
     }
 
     /**
-     * Activating will cause the Accessibility layer to be shown.
-     * This is called when a user presses the tab key.
+     * 激活将导致显示“辅助功能”层。
+     * 用户按下Tab键时将调用此方法。
      *
      * @private
      */
@@ -221,8 +222,8 @@ export class AccessibilityManager
     }
 
     /**
-     * Deactivating will cause the Accessibility layer to be hidden.
-     * This is called when a user moves the mouse.
+     * 停用将导致可访问性层被隐藏。
+     * 用户移动鼠标时将调用此方法。
      *
      * @private
      */
@@ -247,10 +248,10 @@ export class AccessibilityManager
     }
 
     /**
-     * This recursive function will run through the scene graph and add any new accessible objects to the DOM layer.
+     * 该递归函数将遍历场景图，并将所有新的辅助对象添加到DOM层。
      *
      * @private
-     * @param {PIXI.Container} displayObject - The DisplayObject to check.
+     * @param {PIXI.Container} displayObject - 要检查的DisplayObject。
      */
     updateAccessibleObjects(displayObject)
     {
@@ -278,15 +279,15 @@ export class AccessibilityManager
     }
 
     /**
-     * Before each render this function will ensure that all divs are mapped correctly to their DisplayObjects.
+     * 在每个渲染之前，此函数将确保所有div正确映射到其DisplayObject。
      *
      * @private
      */
     update()
     {
-        /* On Android default web browser, tab order seems to be calculated by position rather than tabIndex,
-        *  moving buttons can cause focus to flicker between two buttons making it hard/impossible to navigate,
-        *  so I am just running update every half a second, seems to fix it.
+        /* 在Android默认的网页浏览器上，标签顺序似乎是根据位置而不是tabIndex计算的，
+        *  移动按钮可能会导致焦点在两个按钮之间闪烁，从而使其难以导航，
+        *  所以每半秒运行一次更新，似乎可以解决它。
         */
         const now = performance.now();
 
@@ -388,8 +389,7 @@ export class AccessibilityManager
     }
 
     /**
-     * private function that will visually add the information to the
-     * accessability div
+     * 私有函数，将在视觉上显示的信息添加到辅助div上
      *
      * @param {HTMLDivElement} div
      */
@@ -399,9 +399,9 @@ export class AccessibilityManager
     }
 
     /**
-     * Adjust the hit area based on the bounds of a display object
+     * 根据显示对象的边界调整点击区域
      *
-     * @param {PIXI.Rectangle} hitArea - Bounds of the child
+     * @param {PIXI.Rectangle} hitArea - 子节点的边界
      */
     capHitArea(hitArea)
     {
@@ -592,7 +592,7 @@ export class AccessibilityManager
     }
 
     /**
-     * Destroys the accessibility manager
+     * 销毁辅助功能管理器
      *
      */
     destroy()

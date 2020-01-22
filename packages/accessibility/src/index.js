@@ -1,8 +1,8 @@
 /**
- * This namespace contains an accessibility plugin for allowing interaction via the keyboard.
+ * 该命名空间包含一个辅助功能插件，用于允许通过键盘进行交互。
  *
- * Do not instantiate this plugin directly. It is available from the `renderer.plugins` property.
- * See {@link PIXI.CanvasRenderer#plugins} or {@link PIXI.Renderer#plugins}.
+ * 不要直接实例化此插件。可从`renderer.plugins`属性获得。
+ * 请参阅 {@link PIXI.CanvasRenderer#plugins} 或 {@link PIXI.Renderer#plugins}.
  * @namespace PIXI.accessibility
  */
 export * from './accessibleTarget';

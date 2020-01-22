@@ -16,13 +16,17 @@
         "cleverLinks"   : false,
         "monospaceLinks": false,
         "default"       : {
-            "outputSourceFiles" : true
+            "outputSourceFiles" : true,
+            "staticFiles": {
+                "include": ["./images/"]
+            }
         },
         "applicationName": "PixiJS",
         "footer"        : "Made with ♥ by Goodboy Digital (goodboydigital.com)",
         "copyright"     : "PixiJS Copyright © 2013-2017 Mat Groves.",
+        "favicon": "images/favicon.png",
         "disqus": "",
-        "googleAnalytics": "UA-103772589-5",
+        "googleAnalytics": "",
         "openGraph": {
             "title": "",
             "type": "website",
@@ -31,8 +35,8 @@
             "url": ""
         },
         "meta": {
-            "title": "PixiJS API Documentation",
-            "description": "Documentation for PixiJS library",
+            "title": "PixiJS中文文档",
+            "description": "PixiJS库的中文文档",
             "keyword": "docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"
         },
         "linenums"      : true

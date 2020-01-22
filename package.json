@@ -14,7 +14,7 @@
     "coverage": "npm run pretest && nyc floss --path=test && nyc report --reporter=html",
     "coverage:ci": "npm run pretest && nyc floss --path=test && nyc report --reporter=text-lcov > coverage.lcov",
     "predocs": "npm run compile:docs && eslint --ext .js dist/compiled --fix",
-    "docs": "mkdirp dist && jsdoc -c jsdoc.conf.json -R README.md",
+    "docs": "mkdirp docs && jsdoc -c jsdoc.conf.json -R README.md",
     "postdocs": "rimraf dist/compiled",
     "pretypes": "npm run compile:docs",
     "types": "npm run types:legacy && npm run types:default",
@@ -38,9 +38,6 @@
     "release": "lerna publish --exact",
     "compile:docs": "tsc -p tsconfig.docs.json --skipLibCheck"
   },
-  "pre-commit": [
-    "lintfix"
-  ],
   "devDependencies": {
     "@lerna/batch-packages": "^3.16.0",
     "@lerna/filter-packages": "^3.18.0",

@@ -1,12 +1,12 @@
 # @pixi/accessibility
 
-## Installation
+## 安装
 
 ```bash
 npm install @pixi/accessibility
 ```
 
-## Usage
+## 使用
 
 ```js
 import { AccessibilityManager } from '@pixi/accessibility';
