@@ -1,0 +1,31 @@
+{
+  "name": "@pixi/sprite-animated",
+  "version": "5.2.0",
+  "main": "lib/sprite-animated.js",
+  "module": "lib/sprite-animated.es.js",
+  "bundle": "dist/sprite-animated.js",
+  "description": "Sprite Animations as depicted by playing a series of Textures",
+  "author": "Mat Groves",
+  "contributors": [
+    "Matt Karl <matt@mattkarl.com>"
+  ],
+  "homepage": "http://pixijs.com/",
+  "bugs": "https://github.com/pixijs/pixi.js/issues",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixijs/pixi.js.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "dependencies": {
+    "@pixi/core": "^5.2.0",
+    "@pixi/sprite": "^5.2.0",
+    "@pixi/ticker": "^5.2.0"
+  }
+}

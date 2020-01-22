@@ -1,0 +1,30 @@
+{
+  "name": "@pixi/mixin-get-child-by-name",
+  "version": "5.2.0",
+  "main": "lib/mixin-get-child-by-name.js",
+  "module": "lib/mixin-get-child-by-name.es.js",
+  "bundle": "dist/mixin-get-child-by-name.js",
+  "bundleNoExports": true,
+  "description": "Mixin function to find a child DisplayObject by name",
+  "author": "Mat Groves",
+  "contributors": [
+    "Matt Karl <matt@mattkarl.com>"
+  ],
+  "homepage": "http://pixijs.com/",
+  "bugs": "https://github.com/pixijs/pixi.js/issues",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixijs/pixi.js.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "dependencies": {
+    "@pixi/display": "^5.2.0"
+  }
+}

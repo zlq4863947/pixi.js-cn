@@ -1,0 +1,2 @@
+require('./BitmapText');
+require('./BitmapFontLoader');

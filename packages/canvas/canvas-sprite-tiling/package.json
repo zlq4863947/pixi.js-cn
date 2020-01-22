@@ -1,0 +1,33 @@
+{
+  "name": "@pixi/canvas-sprite-tiling",
+  "version": "5.2.0",
+  "main": "lib/canvas-sprite-tiling.js",
+  "module": "lib/canvas-sprite-tiling.es.js",
+  "bundle": "dist/canvas-sprite-tiling.js",
+  "bundleNoExports": true,
+  "description": "Canvas mixin for the sprite-tiling package",
+  "author": "Mat Groves",
+  "contributors": [
+    "Matt Karl <matt@mattkarl.com>"
+  ],
+  "homepage": "http://pixijs.com/",
+  "bugs": "https://github.com/pixijs/pixi.js/issues",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixijs/pixi.js.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "dependencies": {
+    "@pixi/canvas-renderer": "^5.2.0",
+    "@pixi/canvas-sprite": "^5.2.0",
+    "@pixi/sprite-tiling": "^5.2.0",
+    "@pixi/utils": "^5.2.0"
+  }
+}

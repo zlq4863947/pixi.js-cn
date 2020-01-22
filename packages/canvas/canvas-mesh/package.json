@@ -1,0 +1,37 @@
+{
+  "name": "@pixi/canvas-mesh",
+  "version": "5.2.0",
+  "main": "lib/canvas-mesh.js",
+  "module": "lib/canvas-mesh.es.js",
+  "bundle": "dist/canvas-mesh.js",
+  "description": "Canvas mixin for the mesh package",
+  "author": "Mat Groves",
+  "contributors": [
+    "Matt Karl <matt@mattkarl.com>"
+  ],
+  "homepage": "http://pixijs.com/",
+  "bugs": "https://github.com/pixijs/pixi.js/issues",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixijs/pixi.js.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "dependencies": {
+    "@pixi/canvas-renderer": "^5.2.0",
+    "@pixi/constants": "^5.2.0",
+    "@pixi/mesh": "^5.2.0",
+    "@pixi/mesh-extras": "^5.2.0",
+    "@pixi/settings": "^5.2.0"
+  },
+  "devDependencies": {
+    "@pixi/core": "^5.2.0",
+    "@pixi/sprite": "^5.2.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@pixi/filter-noise",
+  "version": "5.2.0",
+  "main": "lib/filter-noise.js",
+  "module": "lib/filter-noise.es.js",
+  "bundle": "dist/filter-noise.js",
+  "namespace": "PIXI.filters",
+  "description": "Filter that applies noise to a display object",
+  "author": "Mat Groves",
+  "contributors": [
+    "Matt Karl <matt@mattkarl.com>"
+  ],
+  "homepage": "http://pixijs.com/",
+  "bugs": "https://github.com/pixijs/pixi.js/issues",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixijs/pixi.js.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "dependencies": {
+    "@pixi/core": "^5.2.0"
+  }
+}

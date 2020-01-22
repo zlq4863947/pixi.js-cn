@@ -1,0 +1,31 @@
+{
+  "name": "@pixi/extract",
+  "version": "5.2.0",
+  "main": "lib/extract.js",
+  "module": "lib/extract.es.js",
+  "bundle": "dist/extract.js",
+  "description": "Extract raw graphics data from renderer",
+  "author": "Mat Groves",
+  "contributors": [
+    "Matt Karl <matt@mattkarl.com>"
+  ],
+  "homepage": "http://pixijs.com/",
+  "bugs": "https://github.com/pixijs/pixi.js/issues",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixijs/pixi.js.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "dependencies": {
+    "@pixi/core": "^5.2.0",
+    "@pixi/math": "^5.2.0",
+    "@pixi/utils": "^5.2.0"
+  }
+}

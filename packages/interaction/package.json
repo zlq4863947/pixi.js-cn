@@ -1,0 +1,42 @@
+{
+  "name": "@pixi/interaction",
+  "version": "5.2.0",
+  "main": "lib/interaction.js",
+  "module": "lib/interaction.es.js",
+  "bundle": "dist/interaction.js",
+  "namespace": "PIXI.interaction",
+  "description": "Plugin for handling mouse, touch and pointer events",
+  "author": "Mat Groves",
+  "contributors": [
+    "Matt Karl <matt@mattkarl.com>"
+  ],
+  "homepage": "http://pixijs.com/",
+  "bugs": "https://github.com/pixijs/pixi.js/issues",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixijs/pixi.js.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "dependencies": {
+    "@pixi/core": "^5.2.0",
+    "@pixi/display": "^5.2.0",
+    "@pixi/math": "^5.2.0",
+    "@pixi/ticker": "^5.2.0",
+    "@pixi/utils": "^5.2.0"
+  },
+  "devDependencies": {
+    "@pixi/canvas-display": "^5.2.0",
+    "@pixi/canvas-graphics": "^5.2.0",
+    "@pixi/canvas-renderer": "^5.2.0",
+    "@pixi/canvas-sprite": "^5.2.0",
+    "@pixi/graphics": "^5.2.0",
+    "@pixi/sprite": "^5.2.0"
+  }
+}

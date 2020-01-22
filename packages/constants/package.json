@@ -1,0 +1,26 @@
+{
+  "name": "@pixi/constants",
+  "version": "5.2.0",
+  "main": "lib/constants.js",
+  "module": "lib/constants.es.js",
+  "bundle": "dist/constants.js",
+  "description": "Constants used across PixiJS",
+  "author": "Mat Groves",
+  "contributors": [
+    "Matt Karl <matt@mattkarl.com>"
+  ],
+  "homepage": "http://pixijs.com/",
+  "bugs": "https://github.com/pixijs/pixi.js/issues",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixijs/pixi.js.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ]
+}

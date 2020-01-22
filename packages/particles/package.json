@@ -1,0 +1,33 @@
+{
+  "name": "@pixi/particles",
+  "version": "5.2.0",
+  "main": "lib/particles.js",
+  "module": "lib/particles.es.js",
+  "bundle": "dist/particles.js",
+  "description": "Render many sprite particles as efficiently as possible",
+  "author": "Mat Groves",
+  "contributors": [
+    "Matt Karl <matt@mattkarl.com>"
+  ],
+  "homepage": "http://pixijs.com/",
+  "bugs": "https://github.com/pixijs/pixi.js/issues",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixijs/pixi.js.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "dependencies": {
+    "@pixi/constants": "^5.2.0",
+    "@pixi/core": "^5.2.0",
+    "@pixi/display": "^5.2.0",
+    "@pixi/math": "^5.2.0",
+    "@pixi/utils": "^5.2.0"
+  }
+}

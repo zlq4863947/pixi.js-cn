@@ -1,0 +1,31 @@
+{
+  "name": "@pixi/mixin-get-global-position",
+  "version": "5.2.0",
+  "main": "lib/mixin-get-global-position.js",
+  "module": "lib/mixin-get-global-position.es.js",
+  "bundle": "dist/mixin-get-global-position.js",
+  "bundleNoExports": true,
+  "description": "Mixin to find the global position of a DisplayObject",
+  "author": "Mat Groves",
+  "contributors": [
+    "Matt Karl <matt@mattkarl.com>"
+  ],
+  "homepage": "http://pixijs.com/",
+  "bugs": "https://github.com/pixijs/pixi.js/issues",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixijs/pixi.js.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "dependencies": {
+    "@pixi/display": "^5.2.0",
+    "@pixi/math": "^5.2.0"
+  }
+}
