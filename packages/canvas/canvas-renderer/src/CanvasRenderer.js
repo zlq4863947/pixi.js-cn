@@ -159,7 +159,7 @@ export class CanvasRenderer extends AbstractRenderer
                 renderTexture._canvasRenderTarget = new CanvasRenderTarget(
                     renderTexture.width,
                     renderTexture.height,
-                    renderTexture.resolution
+                    renderTexture.resolution,
                 );
                 renderTexture.resource = new resources.CanvasResource(renderTexture._canvasRenderTarget.canvas);
                 renderTexture.valid = true;

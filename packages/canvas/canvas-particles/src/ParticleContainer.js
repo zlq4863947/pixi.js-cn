@@ -54,7 +54,7 @@ ParticleContainer.prototype.renderCanvas = function renderCanvas(renderer)
                     transform.c,
                     transform.d,
                     transform.tx * renderer.resolution,
-                    transform.ty * renderer.resolution
+                    transform.ty * renderer.resolution,
                 );
 
                 isRotated = false;
@@ -85,7 +85,7 @@ ParticleContainer.prototype.renderCanvas = function renderCanvas(renderer)
                     childTransform.c,
                     childTransform.d,
                     (childTransform.tx * renderer.resolution) | 0,
-                    (childTransform.ty * renderer.resolution) | 0
+                    (childTransform.ty * renderer.resolution) | 0,
                 );
             }
             else
@@ -96,7 +96,7 @@ ParticleContainer.prototype.renderCanvas = function renderCanvas(renderer)
                     childTransform.c,
                     childTransform.d,
                     childTransform.tx * renderer.resolution,
-                    childTransform.ty * renderer.resolution
+                    childTransform.ty * renderer.resolution,
                 );
             }
 
@@ -118,7 +118,7 @@ ParticleContainer.prototype.renderCanvas = function renderCanvas(renderer)
             positionX * renderer.resolution,
             positionY * renderer.resolution,
             finalWidth * renderer.resolution,
-            finalHeight * renderer.resolution
+            finalHeight * renderer.resolution,
         );
     }
 };

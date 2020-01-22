@@ -615,7 +615,7 @@ export class BitmapText extends Container
                 (parseInt(letter.getAttribute('x'), 10) / res) + (pagesTextures[page].frame.x / res),
                 (parseInt(letter.getAttribute('y'), 10) / res) + (pagesTextures[page].frame.y / res),
                 parseInt(letter.getAttribute('width'), 10) / res,
-                parseInt(letter.getAttribute('height'), 10) / res
+                parseInt(letter.getAttribute('height'), 10) / res,
             );
 
             data.chars[charCode] = {

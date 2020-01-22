@@ -115,7 +115,7 @@ describe('PIXI.AnimatedSprite', function ()
         {
             this.timeout((
                 this.sprite.textures.length * 1000 / 60 / this.sprite.animationSpeed)
-                + (1000 / 60 / this.sprite.animationSpeed * 0.9)
+                + (1000 / 60 / this.sprite.animationSpeed * 0.9),
             );
             this.sprite.onComplete = () =>
             {

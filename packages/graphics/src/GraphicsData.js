@@ -69,7 +69,7 @@ export class GraphicsData
             this.shape,
             this.fillStyle,
             this.lineStyle,
-            this.matrix
+            this.matrix,
         );
     }
 

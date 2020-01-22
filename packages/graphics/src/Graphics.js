@@ -813,7 +813,7 @@ export class Graphics extends Container
                 shape,
                 this._fillStyle.clone(),
                 this._lineStyle.clone(),
-                this._matrix
+                this._matrix,
             );
         }
         else

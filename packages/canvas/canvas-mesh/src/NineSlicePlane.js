@@ -93,7 +93,7 @@ NineSlicePlane.prototype._renderCanvas = function _renderCanvas(renderer)
             transform.c * res,
             transform.d * res,
             (transform.tx * res) | 0,
-            (transform.ty * res) | 0
+            (transform.ty * res) | 0,
         );
     }
     else
@@ -104,7 +104,7 @@ NineSlicePlane.prototype._renderCanvas = function _renderCanvas(renderer)
             transform.c * res,
             transform.d * res,
             transform.tx * res,
-            transform.ty * res
+            transform.ty * res,
         );
     }
 

@@ -166,7 +166,7 @@ export class BitmapFontLoader
                     loadType: LoaderResource.LOAD_TYPE.IMAGE,
                     metadata: Object.assign(
                         { pageFile },
-                        resource.metadata.imageMetadata
+                        resource.metadata.imageMetadata,
                     ),
                     parentResource: resource,
                 };

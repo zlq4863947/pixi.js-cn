@@ -57,7 +57,7 @@ export class SpritesheetLoader
             const spritesheet = new Spritesheet(
                 res.texture.baseTexture,
                 resource.data,
-                resource.url
+                resource.url,
             );
 
             spritesheet.parse(() =>

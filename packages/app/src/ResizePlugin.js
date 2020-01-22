@@ -51,7 +51,7 @@ export class ResizePlugin
                 {
                     this.renderer.resize(
                         window.innerWidth,
-                        window.innerHeight
+                        window.innerHeight,
                     );
                 }
                 // Resize to other HTML entities
@@ -59,7 +59,7 @@ export class ResizePlugin
                 {
                     this.renderer.resize(
                         this._resizeTo.clientWidth,
-                        this._resizeTo.clientHeight
+                        this._resizeTo.clientHeight,
                     );
                 }
             }

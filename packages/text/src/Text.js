@@ -238,7 +238,7 @@ export class Text extends Sprite
                         lines[i],
                         linePositionX + style.padding,
                         linePositionY + style.padding - dsOffsetText,
-                        true
+                        true,
                     );
                 }
 
@@ -247,7 +247,7 @@ export class Text extends Sprite
                     this.drawLetterSpacing(
                         lines[i],
                         linePositionX + style.padding,
-                        linePositionY + style.padding - dsOffsetText
+                        linePositionY + style.padding - dsOffsetText,
                     );
                 }
             }

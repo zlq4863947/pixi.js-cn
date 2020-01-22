@@ -21,7 +21,7 @@
     "types:default": "mkdirp dist/types && jsdoc -c types/jsdoc.conf.json && node types/assemble pixi.js",
     "types:legacy": "mkdirp dist/types && jsdoc -c types/jsdoc-legacy.conf.json && node types/assemble pixi.js-legacy",
     "posttypes": "rimraf dist/compiled",
-    "lint": "eslint --ext .js --ext .ts test bundles packages tools --ignore-path .gitignore --max-warnings 0",
+    "lint": "eslint --ext .js --ext .ts test packages tools --ignore-path .gitignore --max-warnings 0",
     "lintfix": "npm run lint -- --fix",
     "prebuild": "npm run clean:build",
     "build": "npm run build:dev",

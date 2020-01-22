@@ -30,7 +30,7 @@ export class BlurFilterPass extends Filter
             // vertex shader
             vertSrc,
             // fragment shader
-            fragSrc
+            fragSrc,
         );
 
         this.horizontal = horizontal;

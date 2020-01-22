@@ -178,7 +178,7 @@ export class ArrayResource extends Resource
                 this.resize(width, height);
 
                 return Promise.resolve(this);
-            }
+            },
             );
 
         return this._load;
@@ -208,7 +208,7 @@ export class ArrayResource extends Resource
                 0,
                 texture.format,
                 texture.type,
-                null
+                null,
             );
         }
 
@@ -232,7 +232,7 @@ export class ArrayResource extends Resource
                         1,
                         texture.format,
                         texture.type,
-                        item.resource.source
+                        item.resource.source,
                     );
                 }
             }

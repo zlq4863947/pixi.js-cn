@@ -55,7 +55,7 @@ export class CanvasMaskManager
                     transform.c * resolution,
                     transform.d * resolution,
                     transform.tx * resolution,
-                    transform.ty * resolution
+                    transform.ty * resolution,
                 );
 
                 this.renderGraphicsShape(shape);

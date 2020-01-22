@@ -86,7 +86,7 @@ export class Spritesheet
          */
         this.resolution = this._updateResolution(
             resolutionFilename
-            || (this.baseTexture.resource ? this.baseTexture.resource.url : null)
+            || (this.baseTexture.resource ? this.baseTexture.resource.url : null),
         );
 
         /**
@@ -202,7 +202,7 @@ export class Spritesheet
                     0,
                     0,
                     Math.floor(sourceSize.w) / this.resolution,
-                    Math.floor(sourceSize.h) / this.resolution
+                    Math.floor(sourceSize.h) / this.resolution,
                 );
 
                 if (data.rotated)
@@ -211,7 +211,7 @@ export class Spritesheet
                         Math.floor(rect.x) / this.resolution,
                         Math.floor(rect.y) / this.resolution,
                         Math.floor(rect.h) / this.resolution,
-                        Math.floor(rect.w) / this.resolution
+                        Math.floor(rect.w) / this.resolution,
                     );
                 }
                 else
@@ -220,7 +220,7 @@ export class Spritesheet
                         Math.floor(rect.x) / this.resolution,
                         Math.floor(rect.y) / this.resolution,
                         Math.floor(rect.w) / this.resolution,
-                        Math.floor(rect.h) / this.resolution
+                        Math.floor(rect.h) / this.resolution,
                     );
                 }
 
@@ -231,7 +231,7 @@ export class Spritesheet
                         Math.floor(data.spriteSourceSize.x) / this.resolution,
                         Math.floor(data.spriteSourceSize.y) / this.resolution,
                         Math.floor(rect.w) / this.resolution,
-                        Math.floor(rect.h) / this.resolution
+                        Math.floor(rect.h) / this.resolution,
                     );
                 }
 
@@ -241,7 +241,7 @@ export class Spritesheet
                     orig,
                     trim,
                     data.rotated ? 2 : 0,
-                    data.anchor
+                    data.anchor,
                 );
 
                 // lets also add the frame to pixi's global cache for 'from' and 'fromLoader' functions

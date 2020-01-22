@@ -152,7 +152,7 @@ export class TextMetrics
             lineWidths,
             lineHeight + style.leading,
             maxLineWidth,
-            fontProperties
+            fontProperties,
         );
     }
 

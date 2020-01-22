@@ -110,7 +110,7 @@ export const canvasUtils = {
             0,
             0,
             crop.width,
-            crop.height
+            crop.height,
         );
 
         context.globalCompositeOperation = 'destination-atop';
@@ -124,7 +124,7 @@ export const canvasUtils = {
             0,
             0,
             crop.width,
-            crop.height
+            crop.height,
         );
         context.restore();
     },
@@ -166,7 +166,7 @@ export const canvasUtils = {
             0,
             0,
             crop.width,
-            crop.height
+            crop.height,
         );
 
         // context.globalCompositeOperation = 'copy';
@@ -206,7 +206,7 @@ export const canvasUtils = {
             0,
             0,
             crop.width,
-            crop.height
+            crop.height,
         );
         context.restore();
 

@@ -53,13 +53,13 @@ export const buildCircle = {
         {
             points.push(
                 x + (Math.sin(-seg * i) * width),
-                y + (Math.cos(-seg * i) * height)
+                y + (Math.cos(-seg * i) * height),
             );
         }
 
         points.push(
             points[0],
-            points[1]
+            points[1],
         );
     },
 

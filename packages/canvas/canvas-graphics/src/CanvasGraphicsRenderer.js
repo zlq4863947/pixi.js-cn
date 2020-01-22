@@ -48,7 +48,7 @@ export class CanvasGraphicsRenderer
             transform.c * resolution,
             transform.d * resolution,
             transform.tx * resolution,
-            transform.ty * resolution
+            transform.ty * resolution,
         );
 
         // update tint if graphics was dirty

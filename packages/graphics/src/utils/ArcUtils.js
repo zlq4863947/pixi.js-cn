@@ -91,7 +91,7 @@ export class ArcUtils
         const sweep = endAngle - startAngle;
         const n = GRAPHICS_CURVES._segmentsCount(
             Math.abs(sweep) * radius,
-            Math.ceil(Math.abs(sweep) / PI_2) * 40
+            Math.ceil(Math.abs(sweep) / PI_2) * 40,
         );
 
         const theta = (sweep) / (n * 2);
@@ -110,7 +110,7 @@ export class ArcUtils
 
             points.push(
                 (((cTheta * c) + (sTheta * s)) * radius) + cx,
-                (((cTheta * -s) + (sTheta * c)) * radius) + cy
+                (((cTheta * -s) + (sTheta * c)) * radius) + cy,
             );
         }
     }

@@ -166,7 +166,7 @@ export class ParticleBuffer
                 property.type === TYPES.UNSIGNED_BYTE,
                 property.type,
                 this.dynamicStride * 4,
-                property.offset * 4
+                property.offset * 4,
             );
         }
 
@@ -181,7 +181,7 @@ export class ParticleBuffer
                 property.type === TYPES.UNSIGNED_BYTE,
                 property.type,
                 this.staticStride * 4,
-                property.offset * 4
+                property.offset * 4,
             );
         }
     }

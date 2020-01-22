@@ -38,7 +38,7 @@ export class CanvasMeshRenderer
                 transform.c * res,
                 transform.d * res,
                 (transform.tx * res) | 0,
-                (transform.ty * res) | 0
+                (transform.ty * res) | 0,
             );
         }
         else
@@ -49,7 +49,7 @@ export class CanvasMeshRenderer
                 transform.c * res,
                 transform.d * res,
                 transform.tx * res,
-                transform.ty * res
+                transform.ty * res,
             );
         }
 
@@ -208,7 +208,7 @@ export class CanvasMeshRenderer
             deltaB / delta,
             deltaE / delta,
             deltaC / delta,
-            deltaF / delta
+            deltaF / delta,
         );
 
         context.drawImage(
@@ -220,7 +220,7 @@ export class CanvasMeshRenderer
             0,
             0,
             textureWidth,
-            textureHeight
+            textureHeight,
         );
 
         context.restore();

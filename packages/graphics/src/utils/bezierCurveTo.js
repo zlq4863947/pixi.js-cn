@@ -39,7 +39,7 @@ export function bezierCurveTo(fromX, fromY, cpX, cpY, cpX2, cpY2, toX, toY, n, p
 
         path.push(
             (dt3 * fromX) + (3 * dt2 * j * cpX) + (3 * dt * t2 * cpX2) + (t3 * toX),
-            (dt3 * fromY) + (3 * dt2 * j * cpY) + (3 * dt * t2 * cpY2) + (t3 * toY)
+            (dt3 * fromY) + (3 * dt2 * j * cpY) + (3 * dt * t2 * cpY2) + (t3 * toY),
         );
     }
 

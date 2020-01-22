@@ -114,7 +114,7 @@ export class CanvasSpriteRenderer
                 wt.c,
                 wt.d,
                 (wt.tx * renderer.resolution) | 0,
-                (wt.ty * renderer.resolution) | 0
+                (wt.ty * renderer.resolution) | 0,
             );
 
             dx = dx | 0;
@@ -128,7 +128,7 @@ export class CanvasSpriteRenderer
                 wt.c,
                 wt.d,
                 wt.tx * renderer.resolution,
-                wt.ty * renderer.resolution
+                wt.ty * renderer.resolution,
             );
         }
 
@@ -143,7 +143,7 @@ export class CanvasSpriteRenderer
                 dx * renderer.resolution,
                 dy * renderer.resolution,
                 width * renderer.resolution,
-                height * renderer.resolution
+                height * renderer.resolution,
             );
             context.clip();
         }
@@ -167,7 +167,7 @@ export class CanvasSpriteRenderer
                 Math.floor(dx * renderer.resolution),
                 Math.floor(dy * renderer.resolution),
                 Math.floor(width * renderer.resolution),
-                Math.floor(height * renderer.resolution)
+                Math.floor(height * renderer.resolution),
             );
         }
         else
@@ -181,7 +181,7 @@ export class CanvasSpriteRenderer
                 Math.floor(dx * renderer.resolution),
                 Math.floor(dy * renderer.resolution),
                 Math.floor(width * renderer.resolution),
-                Math.floor(height * renderer.resolution)
+                Math.floor(height * renderer.resolution),
             );
         }
 

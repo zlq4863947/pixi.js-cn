@@ -143,7 +143,7 @@ export class Extract
             height,
             gl.RGBA,
             gl.UNSIGNED_BYTE,
-            webglPixels
+            webglPixels,
         );
 
         // add the pixels to the canvas
@@ -232,7 +232,7 @@ export class Extract
             height,
             gl.RGBA,
             gl.UNSIGNED_BYTE,
-            webglPixels
+            webglPixels,
         );
 
         if (generated)

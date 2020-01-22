@@ -33,7 +33,7 @@ export class DepthResource extends BufferResource
                 baseTexture.height,
                 baseTexture.format,
                 baseTexture.type,
-                this.data
+                this.data,
             );
         }
         else
@@ -50,7 +50,7 @@ export class DepthResource extends BufferResource
                 0,
                 baseTexture.format,
                 baseTexture.type,
-                this.data
+                this.data,
             );
         }
 
