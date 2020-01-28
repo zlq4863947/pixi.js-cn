@@ -7,11 +7,12 @@ PixiJS中文开发文档
 [![Build Status](https://travis-ci.org/pixijs/pixi.js.svg?branch=dev)](https://travis-ci.org/pixijs/pixi.js)
 
 ## 中文文档简介
-本文档翻译自: https://github.com/pixijs/pixi.js, 英文好的同学可以直接看官方项目。
+本文档翻译自: [https://github.com/pixijs/pixi.js](https://github.com/pixijs/pixi.js), 英文好的同学可以直接看官方项目。
 
 ### 在线地址
 
-Github Pages: https://zlq4863947.github.io/pixi.js-cn/
+Github Pages: [https://zlq4863947.github.io/pixi.js-cn](https://zlq4863947.github.io/pixi.js-cn)
+
 国内地址: 待发布
 
 ### 开发交流QQ群
@@ -57,72 +58,7 @@ PixiJS具有完整的[WebGL](https://en.wikipedia.org/wiki/WebGL)支持，并在
 
 ### 安装 ###
 
-PixiJS入门很容易！只需下载一个[预先构建](https://github.com/pixijs/pixi.js/wiki/FAQs#where-can-i-get-a-build)的版本！
-
-或者，可以使用[npm](https://docs.npmjs.com/getting-started/what-is-npm)安装PixiJS，或仅使用内容分发网络(CDN)URL将PixiJS直接嵌入HTML页面中。
-
-_注意: 在v4.5.0之后，不再提供对[Bower](https://bower.io)软件包管理器的支持。 请参阅[发行说明(https://github.com/pixijs/pixi.js/releases/tag/v4.5.0)以获取更多信息。_
-
-#### NPM安装
-
-```sh
-npm install pixi.js
-```
-没有默认导出。导入PixiJS的正确方法是:
-
-```js
-import * as PIXI from 'pixi.js'
-```
-
-#### CDN安装 (通过cdnjs)
-
-```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
-```
-
-_注: `5.1.3` 可以替换为任意[发行版本](https://github.com/pixijs/pixi.js/releases)。_
-
-### 示例 ###
-
-- [Filters Demo](http://pixijs.io/pixi-filters/tools/demo/)
-- [Run Pixie Run](http://work.goodboydigital.com/runpixierun/)
-- [Flash vs HTML](http://flashvhtml.com)
-- [Bunny Demo](http://www.goodboydigital.com/pixijs/bunnymark)
-- [Storm Brewing](http://www.goodboydigital.com/pixijs/storm)
-- [Render Texture Demo](http://www.goodboydigital.com/pixijs/examples/11)
-- [Primitives Demo](http://www.goodboydigital.com/pixijs/examples/13)
-- [Masking Demo](http://www.goodboydigital.com/pixijs/examples/14)
-- [Interaction Demo](http://www.goodboydigital.com/pixijs/examples/6)
-- [photonstorm's Balls Demo](http://gametest.mobi/pixi/balls)
-- [photonstorm's Morph Demo](http://gametest.mobi/pixi/morph)
-
-感谢[@photonstorm](https://twitter.com/photonstorm) 最后两个示例，并允许我们共享源代码 :)
-
-### Curr
-
-### 为什么使用PixiJS以及何时使用
-
-PixiJS是一个渲染库，可让您创建丰富的交互式图形，跨平台应用程序和游戏，而无需深入研究WebGL API或处理浏览器和设备兼容性。
-
-PixiJS具有完整的[WebGL](https://en.wikipedia.org/wiki/WebGL)支持，并在需要时无缝地退回到HTML5的[canvas](https://en.wikipedia.org/wiki/Canvas_element)。作为一个框架，PixiJS是创作交互内容的绝佳工具, *尤其是近年来随着Adobe Flash的退出*。将其用于图形丰富的交互式网站，应用程序和HTML5游戏。开箱即用的跨平台兼容性和优雅降级意味着您要做的工作更少，并且做起来会更有趣！如果您想相对快速地创建优美而精致的体验，而又不必钻研密集的低级代码，同时又避免了浏览器不一致的麻烦，那么请在下一个项目中撒些PixiJS魔术吧！
-
-**帮助您的开发，尽情发挥您的想象力！**
-入门：查看@kittykattack的详细教程。
-### 学习 ###
-- 网站: 在[官方网站](http://www.pixijs.com/)上了解更多关于PixiJS的信息。
-- 入门: 查看@kittykatattack的[详细教程](https://github.com/kittykatattack/learningPixi)。
-- 例子: 深入并玩转PixiJS代码及功能特性的[示例](http://pixijs.github.io/examples/)!
-- 文档: 通过查看[文档](https://pixijs.github.io/docs/)了解PixiJS API。
-- Wiki: [Wiki](https://github.com/pixijs/pixi.js/wiki)上还有其他教程和资源。
-
-### 社区 ###
-- 论坛: 查看[论坛](http://www.html5gamedevs.com/forum/15-pixijs/) 和 [Stackoverflow](http://stackoverflow.com/search?q=pixi.js), 这两个地方都可以问您的PixiJS问题。
-- 灵感: 参观[画廊](http://www.pixijs.com/gallery) 看看其他人创造的令人惊讶的东西！
-- 交流: 您可以加入我们的[Gitter](https://gitter.im/pixijs/pixi.js) 交流PixiJS。我们现在也有Slack频道。如果您想加入，请发邮件给我(mat@goodboydigital.com) ，我会邀请您加入。
-
-### 安装 ###
-
-PixiJS入门很容易！只需下载一个[预先构建](https://github.com/pixijs/pixi.js/wiki/FAQs#where-can-i-get-a-build)的版本！
+PixiJS非常容易入门! 只需下载一个[预先构建](https://github.com/pixijs/pixi.js/wiki/FAQs#where-can-i-get-a-build)的版本!
 
 或者，可以使用[npm](https://docs.npmjs.com/getting-started/what-is-npm)安装PixiJS，或仅使用内容分发网络(CDN)URL将PixiJS直接嵌入HTML页面中。
 

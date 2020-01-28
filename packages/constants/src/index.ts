@@ -283,21 +283,19 @@ export enum MIPMAP_MODES {
 }
 
 /**
- * How to treat textures with premultiplied alpha
+ * 如何使用预乘透明度处理纹理
  *
  * @name ALPHA_MODES
  * @memberof PIXI
  * @static
  * @enum {number}
- * @property {number} NO_PREMULTIPLIED_ALPHA - Source is not premultiplied, leave it like that.
- *  Option for compressed and data textures that are created from typed arrays.
- * @property {number} PREMULTIPLY_ON_UPLOAD - Source is not premultiplied, premultiply on upload.
- *  Default option, used for all loaded images.
- * @property {number} PREMULTIPLIED_ALPHA - Source is already premultiplied
- *  Example: spine atlases with `_pma` suffix.
- * @property {number} NPM - Alias for NO_PREMULTIPLIED_ALPHA.
- * @property {number} UNPACK - Default option, alias for PREMULTIPLY_ON_UPLOAD.
- * @property {number} PMA - Alias for PREMULTIPLIED_ALPHA.
+ * @property {number} NO_PREMULTIPLIED_ALPHA - 来源未预乘。
+ *  从类型化数组创建的压缩和数据纹理的选项。
+ * @property {number} PREMULTIPLY_ON_UPLOAD - 来源未预乘，上传时未预乘。 默认选项，用于所有加载的图像。
+ * @property {number} PREMULTIPLIED_ALPHA - 来源已被预乘示例：带有`_pma`后缀的骨骼图集。
+ * @property {number} NPM - NO_PREMULTIPLIED_ALPHA的别名
+ * @property {number} UNPACK - 默认选项，PREMULTIPLY_ON_UPLOAD的别名。
+ * @property {number} PMA - PREMULTIPLIED_ALPHA的别名。
  */
 export enum ALPHA_MODES {
     NPM = 0,
@@ -309,13 +307,13 @@ export enum ALPHA_MODES {
 }
 
 /**
- * How to clear renderTextures in filter
+ * 如何清除滤镜中的renderTextures
  *
  * @name CLEAR_MODES
  * @memberof PIXI
  * @static
  * @enum {number}
- * @property {number} BLEND - Preserve the information in the texture, blend above
+ * @property {number} BLEND - 保留纹理中的信息，在上面混合
  * @property {number} CLEAR - Must use `gl.clear` operation
  * @property {number} BLIT - Clear or blit it, depends on device and level of paranoia
  * @property {number} NO - Alias for BLEND, same as `false` in earlier versions

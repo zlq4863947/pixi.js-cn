@@ -35,8 +35,8 @@
             "url": ""
         },
         "meta": {
-            "title": "PixiJS中文文档",
-            "description": "PixiJS库的中文文档",
+            "title": "PixiJS中文开发文档",
+            "description": "PixiJS库的中文开发文档",
             "keyword": "docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"
         },
         "linenums"      : true
