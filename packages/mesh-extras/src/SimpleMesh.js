@@ -2,8 +2,8 @@ import { Mesh, MeshGeometry, MeshMaterial } from '@pixi/mesh';
 import { Texture } from '@pixi/core';
 
 /**
- * The Simple Mesh class mimics Mesh in PixiJS v4, providing easy-to-use constructor arguments.
- * For more robust customization, use {@link PIXI.Mesh}.
+ * Simple Mesh类模仿PixiJS v4中的Mesh，提供了易于使用的构造函数参数。
+ * 要进行更强大的自定义，请使用 {@link PIXI.Mesh}.
  *
  * @class
  * @extends PIXI.Mesh
@@ -12,11 +12,11 @@ import { Texture } from '@pixi/core';
 export class SimpleMesh extends Mesh
 {
     /**
-     * @param {PIXI.Texture} [texture=Texture.EMPTY] - The texture to use
-     * @param {Float32Array} [vertices] - if you want to specify the vertices
-     * @param {Float32Array} [uvs] - if you want to specify the uvs
-     * @param {Uint16Array} [indices] - if you want to specify the indices
-     * @param {number} [drawMode] - the drawMode, can be any of the Mesh.DRAW_MODES consts
+     * @param {PIXI.Texture} [texture=Texture.EMPTY] - 使用的纹理
+     * @param {Float32Array} [vertices] - 如果要指定顶点
+     * @param {Float32Array} [uvs] - 如果要指定uvs
+     * @param {Uint16Array} [indices] - 如果要指定索引
+     * @param {number} [drawMode] - drawMode可以是任何Mesh.DRAW_MODES consts
      */
     constructor(texture = Texture.EMPTY, vertices, uvs, indices, drawMode)
     {
@@ -29,14 +29,14 @@ export class SimpleMesh extends Mesh
         super(geometry, meshMaterial, null, drawMode);
 
         /**
-         * upload vertices buffer each frame
+         * 每帧上载顶点缓冲
          * @member {boolean}
          */
         this.autoUpdate = true;
     }
 
     /**
-     * Collection of vertices data.
+     * 顶点数据的收集。
      * @member {Float32Array}
      */
     get vertices()

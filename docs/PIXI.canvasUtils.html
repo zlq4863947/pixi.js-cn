@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>PixiJS中文文档</title>
+    <title>PixiJS中文开发文档</title>
     
-    <meta name="description" content="PixiJS库的中文文档" />
+    <meta name="description" content="PixiJS库的中文开发文档" />
     
         <meta name="keywords" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
         <meta name="keyword" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
@@ -34,7 +34,7 @@
     
     
     <script>
-    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文文档","description":"PixiJS库的中文文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
+    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS中文","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文开发文档","description":"PixiJS库的中文开发文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
     </script>
     
 
@@ -44,7 +44,7 @@
 <div id="wrap" class="clearfix">
     
 <div class="navigation">
-    <h3 class="applicationName"><a href="index.html">PixiJS</a></h3>
+    <h3 class="applicationName"><a href="index.html">PixiJS中文</a></h3>
     <button id="menuToggle" class="btn btn-link btn-lg menu-toggle">
         <span class="glyphicon glyphicon-menu-hamburger"></span>
     </button>
@@ -13202,9 +13202,8 @@
 
         
             
-                <div class="description"><p>Utility methods for Sprite/Texture tinting.</p>
-<p>Tinting with the CanvasRenderer involves creating a new canvas to use as a texture,
-so be aware of the performance implications.</p></div>
+                <div class="description"><p>精灵/纹理着色的实用方法。</p>
+<p>使用CanvasRenderer进行着色涉及创建一个新的画布以用作纹理，因此请注意性能影响。</p></div>
             
 
             
@@ -13271,7 +13270,7 @@ so be aware of the performance implications.</p></div>
 <dd>
     
     <div class="description">
-        <p>Number of steps which will be used as a cap when rounding colors.</p>
+        <p>四舍五入时将用作上限的步骤数。</p>
     </div>
     
     
@@ -13322,7 +13321,7 @@ so be aware of the performance implications.</p></div>
 <dd>
     
     <div class="description">
-        <p>Whether or not the Canvas BlendModes are supported, consequently the ability to tint using the multiply method.</p>
+        <p>无论是否支持Canvas 混合模式(BlendModes)，都可以使用multiply方法进行着色。</p>
     </div>
     
     
@@ -13373,7 +13372,7 @@ so be aware of the performance implications.</p></div>
 <dd>
     
     <div class="description">
-        <p>Tint cache boolean flag.</p>
+        <p>着色缓存布尔标志</p>
     </div>
     
     
@@ -13428,7 +13427,7 @@ so be aware of the performance implications.</p></div>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-renderer_src_canvasUtils.js.html#line21">canvasUtils.js:21</a>
+            <a href="packages_canvas_canvas-renderer_src_canvasUtils.js.html#line20">canvasUtils.js:20</a>
         </div>
         
     </div>
@@ -13439,7 +13438,7 @@ so be aware of the performance implications.</p></div>
     
     
     <div class="description">
-        <p>Basically this method just needs a sprite and a color and tints the sprite with the given color.</p>
+        <p>基本上，此方法只需要一个精灵和一种颜色，并使用指定的颜色对该精灵进行着色。</p>
     </div>
     
 
@@ -13486,7 +13485,7 @@ so be aware of the performance implications.</p></div>
             
             <td class="description last">
                 
-                <p>the sprite to tint</p></td>
+                <p>要着色的精灵</p></td>
         </tr>
 	
 	
@@ -13509,7 +13508,7 @@ so be aware of the performance implications.</p></div>
             
             <td class="description last">
                 
-                <p>the color to use to tint the sprite with</p></td>
+                <p>用于将精灵着色的颜色</p></td>
         </tr>
 	
 	
@@ -13572,7 +13571,7 @@ so be aware of the performance implications.</p></div>
                         
                     
             </td>
-            <td class="description last">The tinted canvas</td>
+            <td class="description last">着色后的canvas</td>
         </tr>
     
     </tbody>
@@ -13601,7 +13600,7 @@ so be aware of the performance implications.</p></div>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-renderer_src_canvasUtils.js.html#line169">canvasUtils.js:169</a>
+            <a href="packages_canvas_canvas-renderer_src_canvasUtils.js.html#line167">canvasUtils.js:167</a>
         </div>
         
     </div>
@@ -13612,7 +13611,7 @@ so be aware of the performance implications.</p></div>
     
     
     <div class="description">
-        <p>Rounds the specified color according to the canvasUtils.cacheStepsPerColorChannel.</p>
+        <p>根据canvasUtils.cacheStepsPerColorChannel舍入指定的颜色</p>
     </div>
     
 
@@ -13659,7 +13658,7 @@ so be aware of the performance implications.</p></div>
             
             <td class="description last">
                 
-                <p>the color to round, should be a hex color</p></td>
+                <p>要舍入的颜色，应该是十六进制的颜色</p></td>
         </tr>
 	
 	
@@ -13722,7 +13721,7 @@ so be aware of the performance implications.</p></div>
                         
                     
             </td>
-            <td class="description last">The rounded color.</td>
+            <td class="description last">舍入的颜色</td>
         </tr>
     
     </tbody>
@@ -13751,7 +13750,7 @@ so be aware of the performance implications.</p></div>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-renderer_src_canvasUtils.js.html#line207">canvasUtils.js:207</a>
+            <a href="packages_canvas_canvas-renderer_src_canvasUtils.js.html#line205">canvasUtils.js:205</a>
         </div>
         
     </div>
@@ -13762,7 +13761,7 @@ so be aware of the performance implications.</p></div>
     
     
     <div class="description">
-        <p>The tinting method that will be used.</p>
+        <p>将要使用的着色方法。</p>
     </div>
     
 
@@ -13827,7 +13826,7 @@ so be aware of the performance implications.</p></div>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-renderer_src_canvasUtils.js.html#line71">canvasUtils.js:71</a>
+            <a href="packages_canvas_canvas-renderer_src_canvasUtils.js.html#line69">canvasUtils.js:69</a>
         </div>
         
     </div>
@@ -13838,7 +13837,7 @@ so be aware of the performance implications.</p></div>
     
     
     <div class="description">
-        <p>Tint a texture using the 'multiply' operation.</p>
+        <p>使用'multiply'操作着色纹理。</p>
     </div>
     
 
@@ -13885,7 +13884,7 @@ so be aware of the performance implications.</p></div>
             
             <td class="description last">
                 
-                <p>the texture to tint</p></td>
+                <p>要着色的纹理</p></td>
         </tr>
 	
 	
@@ -13908,7 +13907,7 @@ so be aware of the performance implications.</p></div>
             
             <td class="description last">
                 
-                <p>the color to use to tint the sprite with</p></td>
+                <p>用于将精灵着色的颜色</p></td>
         </tr>
 	
 	
@@ -13931,7 +13930,7 @@ so be aware of the performance implications.</p></div>
             
             <td class="description last">
                 
-                <p>the current canvas</p></td>
+                <p>当前canvas</p></td>
         </tr>
 	
 	
@@ -13994,7 +13993,7 @@ so be aware of the performance implications.</p></div>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-renderer_src_canvasUtils.js.html#line102">canvasUtils.js:102</a>
+            <a href="packages_canvas_canvas-renderer_src_canvasUtils.js.html#line100">canvasUtils.js:100</a>
         </div>
         
     </div>
@@ -14005,7 +14004,7 @@ so be aware of the performance implications.</p></div>
     
     
     <div class="description">
-        <p>Tint a texture using the 'overlay' operation.</p>
+        <p>使用'overlay'操作着色纹理。</p>
     </div>
     
 
@@ -14052,7 +14051,7 @@ so be aware of the performance implications.</p></div>
             
             <td class="description last">
                 
-                <p>the texture to tint</p></td>
+                <p>要着色的纹理</p></td>
         </tr>
 	
 	
@@ -14075,7 +14074,7 @@ so be aware of the performance implications.</p></div>
             
             <td class="description last">
                 
-                <p>the color to use to tint the sprite with</p></td>
+                <p>用于将精灵着色的颜色</p></td>
         </tr>
 	
 	
@@ -14098,7 +14097,7 @@ so be aware of the performance implications.</p></div>
             
             <td class="description last">
                 
-                <p>the current canvas</p></td>
+                <p>当前canvas</p></td>
         </tr>
 	
 	
@@ -14161,7 +14160,7 @@ so be aware of the performance implications.</p></div>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-renderer_src_canvasUtils.js.html#line131">canvasUtils.js:131</a>
+            <a href="packages_canvas_canvas-renderer_src_canvasUtils.js.html#line129">canvasUtils.js:129</a>
         </div>
         
     </div>
@@ -14172,7 +14171,7 @@ so be aware of the performance implications.</p></div>
     
     
     <div class="description">
-        <p>Tint a texture pixel per pixel.</p>
+        <p>为每个像素着色纹理像素。</p>
     </div>
     
 
@@ -14219,7 +14218,7 @@ so be aware of the performance implications.</p></div>
             
             <td class="description last">
                 
-                <p>the texture to tint</p></td>
+                <p>要着色的纹理</p></td>
         </tr>
 	
 	
@@ -14242,7 +14241,7 @@ so be aware of the performance implications.</p></div>
             
             <td class="description last">
                 
-                <p>the color to use to tint the sprite with</p></td>
+                <p>用于将精灵着色的颜色</p></td>
         </tr>
 	
 	
@@ -14265,7 +14264,7 @@ so be aware of the performance implications.</p></div>
             
             <td class="description last">
                 
-                <p>the current canvas</p></td>
+                <p>当前canvas</p></td>
         </tr>
 	
 	
@@ -14330,7 +14329,7 @@ so be aware of the performance implications.</p></div>
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Jan 22 2020 18:58:54 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sun Feb 02 2020 01:55:01 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

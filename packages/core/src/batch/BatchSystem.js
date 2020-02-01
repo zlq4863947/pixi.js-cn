@@ -2,7 +2,7 @@ import { System } from '../System';
 import { ObjectRenderer } from './ObjectRenderer';
 
 /**
- * System plugin to the renderer to manage batching.
+ * 渲染器的系统插件，用于管理批处理。
  *
  * @class
  * @extends PIXI.System
@@ -11,21 +11,21 @@ import { ObjectRenderer } from './ObjectRenderer';
 export class BatchSystem extends System
 {
     /**
-     * @param {PIXI.Renderer} renderer - The renderer this System works for.
+     * @param {PIXI.Renderer} renderer - 此系统适用的渲染器。
      */
     constructor(renderer)
     {
         super(renderer);
 
         /**
-         * An empty renderer.
+         * 一个空的渲染器。
          *
          * @member {PIXI.ObjectRenderer}
          */
         this.emptyRenderer = new ObjectRenderer(renderer);
 
         /**
-         * The currently active ObjectRenderer.
+         * 当前活动的ObjectRenderer。
          *
          * @member {PIXI.ObjectRenderer}
          */
@@ -33,9 +33,9 @@ export class BatchSystem extends System
     }
 
     /**
-     * Changes the current renderer to the one given in parameter
+     * 将当前渲染器更改为参数中指定的渲染器
      *
-     * @param {PIXI.ObjectRenderer} objectRenderer - The object renderer to use.
+     * @param {PIXI.ObjectRenderer} objectRenderer - 要使用的对象渲染器。
      */
     setObjectRenderer(objectRenderer)
     {
@@ -51,8 +51,8 @@ export class BatchSystem extends System
     }
 
     /**
-     * This should be called if you wish to do some custom rendering
-     * It will basically render anything that may be batched up such as sprites
+     * 如果您希望进行一些自定义渲染，则应调用此方法
+     * 它基本上可以渲染任何可以成批渲染的对象，比如精灵
      */
     flush()
     {
@@ -60,7 +60,7 @@ export class BatchSystem extends System
     }
 
     /**
-     * Reset the system to an empty renderer
+     * 将系统重置为空渲染器
      */
     reset()
     {
@@ -68,8 +68,8 @@ export class BatchSystem extends System
     }
 
     /**
-     * Handy function for batch renderers: copies bound textures in first maxTextures locations to array
-     * sets actual _batchLocation for them
+     * 批处理渲染器的便捷功能：将第一个maxTextures位置中的绑定纹理复制到数组中
+     * 为他们设置实际的_batchLocation
      *
      * @param arr
      * @param maxTextures
@@ -89,14 +89,14 @@ export class BatchSystem extends System
     }
 
     /**
-     * Assigns batch locations to textures in array based on boundTextures state.
-     * All textures in texArray should have `_batchEnabled = _batchId`,
-     * and their count should be less than `maxTextures`.
+     * 根据boundTextures状态将批处理位置分配给数组中的纹理。
+     * texArray中的所有纹理都应具有`_batchEnabled = _batchId`，
+     * 并且其数量应小于“ maxTextures”。
      *
-     * @param {PIXI.BatchTextureArray} texArray textures to bound
-     * @param {PIXI.BaseTexture[]} boundTextures current state of bound textures
-     * @param {number} batchId marker for _batchEnabled param of textures in texArray
-     * @param {number} maxTextures number of texture locations to manipulate
+     * @param {PIXI.BatchTextureArray} texArray 要绑定的纹理
+     * @param {PIXI.BaseTexture[]} boundTextures 绑定纹理的当前状态
+     * @param {number} batchId texArray中纹理的_batchEnabled参数的标记
+     * @param {number} maxTextures 要操纵的纹理位置数
      */
     boundArray(texArray, boundTextures, batchId, maxTextures)
     {

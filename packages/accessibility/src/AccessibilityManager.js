@@ -146,7 +146,6 @@ export class AccessibilityManager
          */
         this.androidUpdateFrequency = 500; // 2fps
 
-        // let listen for tab.. once pressed we can fire up and show the accessibility layer
         // 让我们可以监听标签。一旦点击，我们就可以启动并显示辅助层
         window.addEventListener('keydown', this._onKeyDown, false);
     }
@@ -429,7 +428,7 @@ export class AccessibilityManager
     }
 
     /**
-     * Adds a DisplayObject to the accessibility manager
+     * 将DisplayObject添加到辅助功能管理器
      *
      * @private
      * @param {PIXI.DisplayObject} displayObject - The child to make accessible.
@@ -511,10 +510,10 @@ export class AccessibilityManager
     }
 
     /**
-     * Maps the div button press to pixi's InteractionManager (click)
+     * 将按下div按钮映射到pixi的InteractionManager（单击）
      *
      * @private
-     * @param {MouseEvent} e - The click event.
+     * @param {MouseEvent} e - 点击事件
      */
     _onClick(e)
     {
@@ -526,10 +525,10 @@ export class AccessibilityManager
     }
 
     /**
-     * Maps the div focus events to pixi's InteractionManager (mouseover)
+     * 将div焦点事件映射到pixi的InteractionManager（鼠标悬停）
      *
      * @private
-     * @param {FocusEvent} e - The focus event.
+     * @param {FocusEvent} e - 触发事件
      */
     _onFocus(e)
     {
@@ -543,10 +542,10 @@ export class AccessibilityManager
     }
 
     /**
-     * Maps the div focus events to pixi's InteractionManager (mouseout)
+     * 将div焦点事件映射到pixi的InteractionManager（鼠标移出）
      *
      * @private
-     * @param {FocusEvent} e - The focusout event.
+     * @param {FocusEvent} e - 触发事件
      */
     _onFocusOut(e)
     {
@@ -560,10 +559,10 @@ export class AccessibilityManager
     }
 
     /**
-     * Is called when a key is pressed
+     * 按键时调用
      *
      * @private
-     * @param {KeyboardEvent} e - The keydown event.
+     * @param {KeyboardEvent} e - 按键事件
      */
     _onKeyDown(e)
     {
@@ -576,10 +575,10 @@ export class AccessibilityManager
     }
 
     /**
-     * Is called when the mouse moves across the renderer element
+     * 当鼠标在renderer元素上移动时调用
      *
      * @private
-     * @param {MouseEvent} e - The mouse event.
+     * @param {MouseEvent} e - 鼠标事件
      */
     _onMouseMove(e)
     {
@@ -593,7 +592,6 @@ export class AccessibilityManager
 
     /**
      * 销毁辅助功能管理器
-     *
      */
     destroy()
     {

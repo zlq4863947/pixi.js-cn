@@ -1,7 +1,7 @@
 import { settings } from '@pixi/settings';
 
 /**
- * Default `canvasPadding` for canvas-based Mesh rendering.
+ * 基于画布的网格渲染的默认`canvasPadding`。
  *
  * @see PIXI.Mesh2d#canvasPadding
  * @static

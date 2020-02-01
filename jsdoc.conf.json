@@ -21,7 +21,7 @@
                 "include": ["./images/"]
             }
         },
-        "applicationName": "PixiJS",
+        "applicationName": "PixiJS中文",
         "footer"        : "Made with ♥ by Goodboy Digital (goodboydigital.com)",
         "copyright"     : "PixiJS Copyright © 2013-2017 Mat Groves.",
         "favicon": "images/favicon.png",

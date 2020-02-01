@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>PixiJS中文文档</title>
+    <title>PixiJS中文开发文档</title>
     
-    <meta name="description" content="PixiJS库的中文文档" />
+    <meta name="description" content="PixiJS库的中文开发文档" />
     
         <meta name="keywords" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
         <meta name="keyword" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
@@ -34,7 +34,7 @@
     
     
     <script>
-    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文文档","description":"PixiJS库的中文文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
+    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS中文","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文开发文档","description":"PixiJS库的中文开发文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
     </script>
     
 
@@ -44,7 +44,7 @@
 <div id="wrap" class="clearfix">
     
 <div class="navigation">
-    <h3 class="applicationName"><a href="index.html">PixiJS</a></h3>
+    <h3 class="applicationName"><a href="index.html">PixiJS中文</a></h3>
     <button id="menuToggle" class="btn btn-link btn-lg menu-toggle">
         <span class="glyphicon glyphicon-menu-hamburger"></span>
     </button>
@@ -13245,56 +13245,7 @@
 <li>交流: 您可以加入我们的<a target="_blank" href="https://gitter.im/pixijs/pixi.js">Gitter</a> 交流PixiJS。我们现在也有Slack频道。如果您想加入，请发邮件给我(mat@goodboydigital.com) ，我会邀请您加入。</li>
 </ul>
 <h3>安装</h3>
-<p>PixiJS入门很容易！只需下载一个<a target="_blank" href="https://github.com/pixijs/pixi.js/wiki/FAQs#where-can-i-get-a-build">预先构建</a>的版本！</p>
-<p>或者，可以使用<a target="_blank" href="https://docs.npmjs.com/getting-started/what-is-npm">npm</a>安装PixiJS，或仅使用内容分发网络(CDN)URL将PixiJS直接嵌入HTML页面中。</p>
-<p><em>注意: 在v4.5.0之后，不再提供对<a target="_blank" href="https://bower.io">Bower</a>软件包管理器的支持。 请参阅[发行说明(https://github.com/pixijs/pixi.js/releases/tag/v4.5.0)以获取更多信息。</em></p>
-<h4>NPM安装</h4>
-<pre class="prettyprint source lang-sh"><code>npm install pixi.js
-</code></pre>
-<p>没有默认导出。导入PixiJS的正确方法是:</p>
-<pre class="prettyprint source lang-js"><code>import * as PIXI from 'pixi.js'
-</code></pre>
-<h4>CDN安装 (通过cdnjs)</h4>
-<pre class="prettyprint source lang-html"><code>&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js&quot;>&lt;/script>
-</code></pre>
-<p><em>注: <code>5.1.3</code> 可以替换为任意<a target="_blank" href="https://github.com/pixijs/pixi.js/releases">发行版本</a>。</em></p>
-<h3>示例</h3>
-<ul>
-<li><a target="_blank" href="http://pixijs.io/pixi-filters/tools/demo/">Filters Demo</a></li>
-<li><a target="_blank" href="http://work.goodboydigital.com/runpixierun/">Run Pixie Run</a></li>
-<li><a target="_blank" href="http://flashvhtml.com">Flash vs HTML</a></li>
-<li><a target="_blank" href="http://www.goodboydigital.com/pixijs/bunnymark">Bunny Demo</a></li>
-<li><a target="_blank" href="http://www.goodboydigital.com/pixijs/storm">Storm Brewing</a></li>
-<li><a target="_blank" href="http://www.goodboydigital.com/pixijs/examples/11">Render Texture Demo</a></li>
-<li><a target="_blank" href="http://www.goodboydigital.com/pixijs/examples/13">Primitives Demo</a></li>
-<li><a target="_blank" href="http://www.goodboydigital.com/pixijs/examples/14">Masking Demo</a></li>
-<li><a target="_blank" href="http://www.goodboydigital.com/pixijs/examples/6">Interaction Demo</a></li>
-<li><a target="_blank" href="http://gametest.mobi/pixi/balls">photonstorm's Balls Demo</a></li>
-<li><a target="_blank" href="http://gametest.mobi/pixi/morph">photonstorm's Morph Demo</a></li>
-</ul>
-<p>感谢<a target="_blank" href="https://twitter.com/photonstorm">@photonstorm</a> 最后两个示例，并允许我们共享源代码 :)</p>
-<h3>Curr</h3>
-<h3>为什么使用PixiJS以及何时使用</h3>
-<p>PixiJS是一个渲染库，可让您创建丰富的交互式图形，跨平台应用程序和游戏，而无需深入研究WebGL API或处理浏览器和设备兼容性。</p>
-<p>PixiJS具有完整的<a target="_blank" href="https://en.wikipedia.org/wiki/WebGL">WebGL</a>支持，并在需要时无缝地退回到HTML5的<a target="_blank" href="https://en.wikipedia.org/wiki/Canvas_element">canvas</a>。作为一个框架，PixiJS是创作交互内容的绝佳工具, <em>尤其是近年来随着Adobe Flash的退出</em>。将其用于图形丰富的交互式网站，应用程序和HTML5游戏。开箱即用的跨平台兼容性和优雅降级意味着您要做的工作更少，并且做起来会更有趣！如果您想相对快速地创建优美而精致的体验，而又不必钻研密集的低级代码，同时又避免了浏览器不一致的麻烦，那么请在下一个项目中撒些PixiJS魔术吧！</p>
-<p><strong>帮助您的开发，尽情发挥您的想象力！</strong>
-入门：查看@kittykattack的详细教程。</p>
-<h3>学习</h3>
-<ul>
-<li>网站: 在<a target="_blank" href="http://www.pixijs.com/">官方网站</a>上了解更多关于PixiJS的信息。</li>
-<li>入门: 查看@kittykatattack的<a target="_blank" href="https://github.com/kittykatattack/learningPixi">详细教程</a>。</li>
-<li>例子: 深入并玩转PixiJS代码及功能特性的<a target="_blank" href="http://pixijs.github.io/examples/">示例</a>!</li>
-<li>文档: 通过查看<a target="_blank" href="https://pixijs.github.io/docs/">文档</a>了解PixiJS API。</li>
-<li>Wiki: <a target="_blank" href="https://github.com/pixijs/pixi.js/wiki">Wiki</a>上还有其他教程和资源。</li>
-</ul>
-<h3>社区</h3>
-<ul>
-<li>论坛: 查看<a target="_blank" href="http://www.html5gamedevs.com/forum/15-pixijs/">论坛</a> 和 <a target="_blank" href="http://stackoverflow.com/search?q=pixi.js">Stackoverflow</a>, 这两个地方都可以问您的PixiJS问题。</li>
-<li>灵感: 参观<a target="_blank" href="http://www.pixijs.com/gallery">画廊</a> 看看其他人创造的令人惊讶的东西！</li>
-<li>交流: 您可以加入我们的<a target="_blank" href="https://gitter.im/pixijs/pixi.js">Gitter</a> 交流PixiJS。我们现在也有Slack频道。如果您想加入，请发邮件给我(mat@goodboydigital.com) ，我会邀请您加入。</li>
-</ul>
-<h3>安装</h3>
-<p>PixiJS入门很容易！只需下载一个<a target="_blank" href="https://github.com/pixijs/pixi.js/wiki/FAQs#where-can-i-get-a-build">预先构建</a>的版本！</p>
+<p>PixiJS非常容易入门! 只需下载一个<a target="_blank" href="https://github.com/pixijs/pixi.js/wiki/FAQs#where-can-i-get-a-build">预先构建</a>的版本!</p>
 <p>或者，可以使用<a target="_blank" href="https://docs.npmjs.com/getting-started/what-is-npm">npm</a>安装PixiJS，或仅使用内容分发网络(CDN)URL将PixiJS直接嵌入HTML页面中。</p>
 <p><em>注意: 在v4.5.0之后，不再提供对<a target="_blank" href="https://bower.io">Bower</a>软件包管理器的支持。 请参阅[发行说明(https://github.com/pixijs/pixi.js/releases/tag/v4.5.0)以获取更多信息。</em></p>
 <h4>NPM安装</h4>
@@ -13406,7 +13357,7 @@ app.loader.add('bunny', 'bunny.png').load((loader, resources) => {
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Jan 22 2020 18:58:51 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sun Feb 02 2020 01:55:00 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

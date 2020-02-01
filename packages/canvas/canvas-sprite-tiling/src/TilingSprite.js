@@ -3,12 +3,12 @@ import { canvasUtils } from '@pixi/canvas-renderer';
 import { CanvasRenderTarget } from '@pixi/utils';
 
 /**
- * Renders the object using the Canvas renderer
+ * 使用Canvas渲染器渲染对象
  *
  * @protected
  * @function _renderCanvas
  * @memberof PIXI.TilingSprite#
- * @param {PIXI.CanvasRenderer} renderer - a reference to the canvas renderer
+ * @param {PIXI.CanvasRenderer} renderer - 对画布渲染器的引用
  */
 TilingSprite.prototype._renderCanvas = function _renderCanvas(renderer)
 {

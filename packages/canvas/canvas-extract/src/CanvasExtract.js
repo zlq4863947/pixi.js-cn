@@ -5,9 +5,9 @@ import { Rectangle } from '@pixi/math';
 const TEMP_RECT = new Rectangle();
 
 /**
- * The extract manager provides functionality to export content from the renderers.
+ * 提取管理器提供了从渲染器导出内容的功能。
  *
- * An instance of this class is automatically created by default, and can be found at `renderer.plugins.extract`
+ * 此类的实例默认情况下会自动创建，可以在`renderer.plugins.extract`中找到
  *
  * @class
  * @memberof PIXI
@@ -15,13 +15,13 @@ const TEMP_RECT = new Rectangle();
 export class CanvasExtract
 {
     /**
-     * @param {PIXI.CanvasRenderer} renderer - A reference to the current renderer
+     * @param {PIXI.CanvasRenderer} renderer - 对当前渲染器的引用
      */
     constructor(renderer)
     {
         this.renderer = renderer;
         /**
-         * Collection of methods for extracting data (image, pixels, etc.) from a display object or render texture
+         * 从显示对象或渲染纹理中提取数据（图像，像素等）的方法集合
          *
          * @member {PIXI.CanvasExtract} extract
          * @memberof PIXI.CanvasRenderer#
@@ -31,13 +31,12 @@ export class CanvasExtract
     }
 
     /**
-     * Will return a HTML Image of the target
+     * 将返回目标的HTML图像
      *
-     * @param {PIXI.DisplayObject|PIXI.RenderTexture} target - A displayObject or renderTexture
-     *  to convert. If left empty will use the main renderer
-     * @param {string} [format] - Image format, e.g. "image/jpeg" or "image/webp".
-     * @param {number} [quality] - JPEG or Webp compression from 0 to 1. Default is 0.92.
-     * @return {HTMLImageElement} HTML Image of the target
+     * @param {PIXI.DisplayObject|PIXI.RenderTexture} target - 要转换的displayObject或renderTexture。如果留空，将使用主渲染器
+     * @param {string} [format] - 图像格式，例如. "image/jpeg" 或 "image/webp".
+     * @param {number} [quality] - JPEG或Webp压缩从0到1。默认值为0.92。
+     * @return {HTMLImageElement} 目标的HTML图像
      */
     image(target, format, quality)
     {
@@ -49,14 +48,12 @@ export class CanvasExtract
     }
 
     /**
-     * Will return a a base64 encoded string of this target. It works by calling
-     *  `CanvasExtract.getCanvas` and then running toDataURL on that.
+     * 将返回此目标的base64编码字符串。它的工作方式是调用`CanvasExtract.getCanvas`，然后在上面运行toDataURL。
      *
-     * @param {PIXI.DisplayObject|PIXI.RenderTexture} target - A displayObject or renderTexture
-     *  to convert. If left empty will use the main renderer
-     * @param {string} [format] - Image format, e.g. "image/jpeg" or "image/webp".
-     * @param {number} [quality] - JPEG or Webp compression from 0 to 1. Default is 0.92.
-     * @return {string} A base64 encoded string of the texture.
+     * @param {PIXI.DisplayObject|PIXI.RenderTexture} target - 要转换的displayObject或renderTexture。如果留空，将使用主渲染器
+     * @param {string} [format] - 图像格式，例如. "image/jpeg" 或 "image/webp".
+     * @param {number} [quality] - JPEG或Webp压缩从0到1。默认值为0.92。
+     * @return {string} 纹理的base64编码字符串。
      */
     base64(target, format, quality)
     {
@@ -64,11 +61,10 @@ export class CanvasExtract
     }
 
     /**
-     * Creates a Canvas element, renders this target to it and then returns it.
+     * 创建画布元素，将此目标渲染给它，然后返回它。
      *
-     * @param {PIXI.DisplayObject|PIXI.RenderTexture} target - A displayObject or renderTexture
-     *  to convert. If left empty will use the main renderer
-     * @return {HTMLCanvasElement} A Canvas element with the texture rendered on.
+     * @param {PIXI.DisplayObject|PIXI.RenderTexture} target - 要转换的displayObject或renderTexture。如果留空，将使用主渲染器
+     * @return {HTMLCanvasElement} 具有渲染纹理的画布元素。
      */
     canvas(target)
     {
@@ -118,12 +114,10 @@ export class CanvasExtract
     }
 
     /**
-     * Will return a one-dimensional array containing the pixel data of the entire texture in RGBA
-     * order, with integer values between 0 and 255 (included).
+     * 将返回一维数组，该数组以RGBA顺序包含整个纹理的像素数据，且整数值介于0和255之间（包括）。
      *
-     * @param {PIXI.DisplayObject|PIXI.RenderTexture} target - A displayObject or renderTexture
-     *  to convert. If left empty will use the main renderer
-     * @return {Uint8ClampedArray} One-dimensional array containing the pixel data of the entire texture
+     * @param {PIXI.DisplayObject|PIXI.RenderTexture} target - 要转换的displayObject或renderTexture。如果留空，将使用主渲染器
+     * @return {Uint8ClampedArray} 一维数组，包含整个纹理的像素数据
      */
     pixels(target)
     {
@@ -164,7 +158,7 @@ export class CanvasExtract
     }
 
     /**
-     * Destroys the extract
+     * 销毁提取管理器
      *
      */
     destroy()

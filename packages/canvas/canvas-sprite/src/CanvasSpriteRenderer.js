@@ -5,7 +5,7 @@ import { canvasUtils } from '@pixi/canvas-renderer';
 const canvasRenderWorldTransform = new Matrix();
 
 /**
- * Types that can be passed to drawImage
+ * 可传递给drawImage的类型
  * @typedef {HTMLImageElement | HTMLCanvasElement | HTMLVideoElement | ImageBitmap} ICanvasImageSource
  * @memberof PIXI
  */
@@ -23,7 +23,7 @@ const canvasRenderWorldTransform = new Matrix();
  */
 
 /**
- * Renderer dedicated to drawing and batching sprites.
+ * 专门用于绘制和批处理精灵的渲染器。
  *
  * @class
  * @protected
@@ -32,7 +32,7 @@ const canvasRenderWorldTransform = new Matrix();
 export class CanvasSpriteRenderer
 {
     /**
-     * @param {PIXI.Renderer} renderer -The renderer sprite this batch works for.
+     * @param {PIXI.Renderer} renderer -此批处理适用的渲染器精灵。
      */
     constructor(renderer)
     {
@@ -40,9 +40,9 @@ export class CanvasSpriteRenderer
     }
 
     /**
-     * Renders the sprite object.
+     * 渲染精灵对象。
      *
-     * @param {PIXI.Sprite} sprite - the sprite to render when using this spritebatch
+     * @param {PIXI.Sprite} sprite - 使用此精灵批处理时要渲染的精灵
      */
     render(sprite)
     {
@@ -194,7 +194,7 @@ export class CanvasSpriteRenderer
     }
 
     /**
-     * destroy the sprite object.
+     * 销毁精灵对象。
      *
      */
     destroy()

@@ -5,8 +5,8 @@ import { CanvasRenderer } from './CanvasRenderer';
 const parentCreate = Renderer.create;
 
 /**
- * Override the Renderer.create to fallback to use CanvasRenderer.
- * Also supports forceCanvas option with Application or autoDetectRenderer.
+ * 重写Renderer.create以回退使用CanvasRenderer。
+ * 还支持forceCanvas选项和Application或autoDetectRenderer。
  * @private
  */
 Renderer.create = function create(options)

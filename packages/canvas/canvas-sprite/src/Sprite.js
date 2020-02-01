@@ -1,7 +1,7 @@
 import { Sprite } from '@pixi/sprite';
 
 /**
- * Cached tinted texture.
+ * 缓存有色纹理。
  * @memberof PIXI.Sprite#
  * @member {HTMLCanvasElement} _tintedCanvas
  * @protected
@@ -9,12 +9,12 @@ import { Sprite } from '@pixi/sprite';
 Sprite.prototype._tintedCanvas = null;
 
 /**
-* Renders the object using the Canvas renderer
+* 使用Canvas渲染器渲染对象
 *
 * @private
 * @method _renderCanvas
 * @memberof PIXI.Sprite#
-* @param {PIXI.CanvasRenderer} renderer - The renderer
+* @param {PIXI.CanvasRenderer} renderer -渲染器
 */
 Sprite.prototype._renderCanvas = function _renderCanvas(renderer)
 {

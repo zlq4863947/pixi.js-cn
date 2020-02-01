@@ -1,11 +1,11 @@
 import { Container } from '@pixi/display';
 
 /**
- * To be overridden by the subclass
+ * 被子类覆盖
  * @method _renderCanvas
  * @memberof PIXI.Container#
  * @protected
- * @param {PIXI.CanvasRenderer} renderer - The renderer
+ * @param {PIXI.CanvasRenderer} renderer - 渲染器
  */
 Container.prototype._renderCanvas = function _renderCanvas(renderer) // eslint-disable-line no-unused-vars
 {
@@ -13,10 +13,10 @@ Container.prototype._renderCanvas = function _renderCanvas(renderer) // eslint-d
 };
 
 /**
- * Renders the object using the Canvas renderer
+ * 使用Canvas渲染器渲染对象
  * @method renderCanvas
  * @memberof PIXI.Container#
- * @param {PIXI.CanvasRenderer} renderer - The renderer
+ * @param {PIXI.CanvasRenderer} renderer - 渲染器
  */
 Container.prototype.renderCanvas = function renderCanvas(renderer)
 {

@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>PixiJS中文文档</title>
+    <title>PixiJS中文开发文档</title>
     
-    <meta name="description" content="PixiJS库的中文文档" />
+    <meta name="description" content="PixiJS库的中文开发文档" />
     
         <meta name="keywords" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
         <meta name="keyword" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
@@ -34,7 +34,7 @@
     
     
     <script>
-    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文文档","description":"PixiJS库的中文文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
+    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS中文","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文开发文档","description":"PixiJS库的中文开发文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
     </script>
     
 
@@ -44,7 +44,7 @@
 <div id="wrap" class="clearfix">
     
 <div class="navigation">
-    <h3 class="applicationName"><a href="index.html">PixiJS</a></h3>
+    <h3 class="applicationName"><a href="index.html">PixiJS中文</a></h3>
     <button id="menuToggle" class="btn btn-link btn-lg menu-toggle">
         <span class="glyphicon glyphicon-menu-hamburger"></span>
     </button>
@@ -13203,12 +13203,10 @@ import { settings } from '@pixi/settings';
 import { premultiplyBlendMode, premultiplyTint, nextPow2, log2 } from '@pixi/utils';
 import { ENV } from '@pixi/constants';
 /**
- * Renderer dedicated to drawing and batching sprites.
+ * 用于绘制和批处理精灵的渲染器。
  *
- * This is the default batch renderer. It buffers objects
- * with texture-based geometries and renders them in
- * batches. It uploads multiple textures to the GPU to
- * reduce to the number of draw calls.
+ * 这是默认的批处理渲染器。它使用基于纹理的几何体缓冲对象并成批渲染它们。
+ * 它将多个纹理上传到GPU以减少draw调用的次数。
  *
  * @class
  * @protected
@@ -13218,32 +13216,26 @@ import { ENV } from '@pixi/constants';
 export class AbstractBatchRenderer extends ObjectRenderer
 {
     /**
-     * This will hook onto the renderer's `contextChange`
-     * and `prerender` signals.
+     * 这将挂接渲染器的`contextChange`和`prerender`信号。
      *
-     * @param {PIXI.Renderer} renderer - The renderer this works for.
+     * @param {PIXI.Renderer} renderer - 为此工作的渲染器。
      */
     constructor(renderer)
     {
         super(renderer);
         /**
-         * This is used to generate a shader that can
-         * color each vertex based on a `aTextureId`
-         * attribute that points to an texture in `uSampler`.
+         * 用于生成着色器，该着色器可以根据指向`uSampler`中纹理的`aTextureId`属性为每个顶点着色。
          *
-         * This enables the objects with different textures
-         * to be drawn in the same draw call.
+         * 这样可以在同一绘制调用中绘制具有不同纹理的对象。
          *
-         * You can customize your shader by creating your
-         * custom shader generator.
+         * 您可以通过创建自定义着色器生成器来自定义着色器。
          *
          * @member {PIXI.BatchShaderGenerator}
          * @protected
          */
         this.shaderGenerator = null;
         /**
-         * The class that represents the geometry of objects
-         * that are going to be batched with this.
+         * 表示将要与此批处理的对象的几何形状的类。
          *
          * @member {object}
          * @default PIXI.BatchGeometry
@@ -13251,9 +13243,8 @@ export class AbstractBatchRenderer extends ObjectRenderer
          */
         this.geometryClass = null;
         /**
-         * Size of data being buffered per vertex in the
-         * attribute buffers (in floats). By default, the
-         * batch-renderer plugin uses 6:
+         * 每个顶点在属性缓冲区中缓冲的数据大小（以浮点数表示）。
+         * 默认情况下，批处理渲染器插件使用6：
          *
          * | aVertexPosition | 2 |
          * |-----------------|---|
@@ -13266,75 +13257,68 @@ export class AbstractBatchRenderer extends ObjectRenderer
          */
         this.vertexSize = null;
         /**
-         * The WebGL state in which this renderer will work.
+         * 渲染器将在其中工作的WebGL状态。
          *
          * @member {PIXI.State}
          * @readonly
          */
         this.state = State.for2d();
         /**
-         * The number of bufferable objects before a flush
-         * occurs automatically.
+         * 自动进行刷新之前可缓冲对象的数量。
          *
          * @member {number}
          * @default settings.SPRITE_BATCH_SIZE * 4
          */
         this.size = settings.SPRITE_BATCH_SIZE * 4;
         /**
-         * Total count of all vertices used by the currently
-         * buffered objects.
+         * 当前缓冲对象使用的所有顶点的总数。
          *
          * @member {number}
          * @private
          */
         this._vertexCount = 0;
         /**
-         * Total count of all indices used by the currently
-         * buffered objects.
+         * 当前缓冲的对象使用的所有索引的总数。
          *
          * @member {number}
          * @private
          */
         this._indexCount = 0;
         /**
-         * Buffer of objects that are yet to be rendered.
+         * 尚未渲染的对象的缓冲区。
          *
          * @member {PIXI.DisplayObject[]}
          * @private
          */
         this._bufferedElements = [];
         /**
-         * Data for texture batch builder, helps to save a bit of CPU on a pass
+         * 用于纹理批处理构建器的数据，有助于节省一次传递的CPU
          * @type {PIXI.BaseTexture[]}
          * @private
          */
         this._bufferedTextures = [];
         /**
-         * Number of elements that are buffered and are
-         * waiting to be flushed.
+         * 已缓冲并等待刷新的元素数。
          *
          * @member {number}
          * @private
          */
         this._bufferSize = 0;
         /**
-         * This shader is generated by `this.shaderGenerator`.
+         * 该着色器由`this.shaderGenerator`生成。
          *
-         * It is generated specifically to handle the required
-         * number of textures being batched together.
+         * 它是专门为处理所需数量的纹理而生成的。
          *
          * @member {PIXI.Shader}
          * @protected
          */
         this._shader = null;
         /**
-         * Pool of `this.geometryClass` geometry objects
-         * that store buffers. They are used to pass data
-         * to the shader on each draw call.
+         * 存储缓冲区的`this.geometryClass`几何对象池。
+         * 它们用于在每次绘制调用时将数据传递给着色器。
          *
-         * These are never re-allocated again, unless a
-         * context change occurs; however, the pool may
-         * be expanded if required.
+         * 除非发生上下文更改，否则永远不会重新分配；
+         * 但是，如果需要，可以扩展池。
          *
          * @member {PIXI.Geometry[]}
          * @private
@@ -13342,9 +13326,8 @@ export class AbstractBatchRenderer extends ObjectRenderer
          */
         this._packedGeometries = [];
         /**
-         * Size of `this._packedGeometries`. It can be expanded
-         * if more than `this._packedGeometryPoolSize` flushes
-         * occur in a single frame.
+         * `this._packedGeometries`的大小。
+         * 如果在单个帧中发生超过`this._packedGeometries`的刷新，则可以扩展它。
          *
          * @member {number}
          * @private
@@ -13860,7 +13843,7 @@ AbstractBatchRenderer._textureArrayPool = [];
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Jan 22 2020 18:58:43 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sun Feb 02 2020 01:54:55 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

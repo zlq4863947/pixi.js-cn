@@ -2,22 +2,21 @@ import { hex2rgb, rgb2hex } from '@pixi/utils';
 import { canUseNewCanvasBlendModes } from './utils/canUseNewCanvasBlendModes';
 
 /**
- * Utility methods for Sprite/Texture tinting.
+ * 精灵/纹理着色的实用方法。
  *
- * Tinting with the CanvasRenderer involves creating a new canvas to use as a texture,
- * so be aware of the performance implications.
+ * 使用CanvasRenderer进行着色涉及创建一个新的画布以用作纹理，因此请注意性能影响。
  *
  * @namespace PIXI.canvasUtils
  * @memberof PIXI
  */
 export const canvasUtils = {
     /**
-     * Basically this method just needs a sprite and a color and tints the sprite with the given color.
+     * 基本上，此方法只需要一个精灵和一种颜色，并使用指定的颜色对该精灵进行着色。
      *
      * @memberof PIXI.canvasUtils
-     * @param {PIXI.Sprite} sprite - the sprite to tint
-     * @param {number} color - the color to use to tint the sprite with
-     * @return {HTMLCanvasElement} The tinted canvas
+     * @param {PIXI.Sprite} sprite - 要着色的精灵
+     * @param {number} color - 用于将精灵着色的颜色
+     * @return {HTMLCanvasElement} 着色后的canvas
      */
     getTintedCanvas: (sprite, color) =>
     {
@@ -71,12 +70,11 @@ export const canvasUtils = {
     },
 
     /**
-     * Tint a texture using the 'multiply' operation.
-     *
+     * 使用'multiply'操作着色纹理。
      * @memberof PIXI.canvasUtils
-     * @param {PIXI.Texture} texture - the texture to tint
-     * @param {number} color - the color to use to tint the sprite with
-     * @param {HTMLCanvasElement} canvas - the current canvas
+     * @param {PIXI.Texture} texture - 要着色的纹理
+     * @param {number} color - 用于将精灵着色的颜色
+     * @param {HTMLCanvasElement} canvas - 当前canvas
      */
     tintWithMultiply: (texture, color, canvas) =>
     {
@@ -130,12 +128,12 @@ export const canvasUtils = {
     },
 
     /**
-     * Tint a texture using the 'overlay' operation.
+     * 使用'overlay'操作着色纹理。
      *
      * @memberof PIXI.canvasUtils
-     * @param {PIXI.Texture} texture - the texture to tint
-     * @param {number} color - the color to use to tint the sprite with
-     * @param {HTMLCanvasElement} canvas - the current canvas
+     * @param {PIXI.Texture} texture - 要着色的纹理
+     * @param {number} color - 用于将精灵着色的颜色
+     * @param {HTMLCanvasElement} canvas - 当前canvas
      */
     tintWithOverlay(texture, color, canvas)
     {
@@ -174,12 +172,12 @@ export const canvasUtils = {
     },
 
     /**
-     * Tint a texture pixel per pixel.
+     * 为每个像素着色纹理像素。
      *
      * @memberof PIXI.canvasUtils
-     * @param {PIXI.Texture} texture - the texture to tint
-     * @param {number} color - the color to use to tint the sprite with
-     * @param {HTMLCanvasElement} canvas - the current canvas
+     * @param {PIXI.Texture} texture - 要着色的纹理
+     * @param {number} color - 用于将精灵着色的颜色
+     * @param {HTMLCanvasElement} canvas - 当前canvas
      */
     tintWithPerPixel: (texture, color, canvas) =>
     {
@@ -230,11 +228,11 @@ export const canvasUtils = {
     },
 
     /**
-     * Rounds the specified color according to the canvasUtils.cacheStepsPerColorChannel.
+     * 根据canvasUtils.cacheStepsPerColorChannel舍入指定的颜色
      *
      * @memberof PIXI.canvasUtils
-     * @param {number} color - the color to round, should be a hex color
-     * @return {number} The rounded color.
+     * @param {number} color - 要舍入的颜色，应该是十六进制的颜色
+     * @return {number} 舍入的颜色
      */
     roundColor: (color) =>
     {
@@ -250,7 +248,7 @@ export const canvasUtils = {
     },
 
     /**
-     * Number of steps which will be used as a cap when rounding colors.
+     * 四舍五入时将用作上限的步骤数。
      *
      * @memberof PIXI.canvasUtils
      * @type {number}
@@ -258,7 +256,7 @@ export const canvasUtils = {
     cacheStepsPerColorChannel: 8,
 
     /**
-     * Tint cache boolean flag.
+     * 着色缓存布尔标志
      *
      * @memberof PIXI.canvasUtils
      * @type {boolean}
@@ -266,7 +264,7 @@ export const canvasUtils = {
     convertTintToImage: false,
 
     /**
-     * Whether or not the Canvas BlendModes are supported, consequently the ability to tint using the multiply method.
+     * 无论是否支持Canvas 混合模式(BlendModes)，都可以使用multiply方法进行着色。
      *
      * @memberof PIXI.canvasUtils
      * @type {boolean}
@@ -274,7 +272,7 @@ export const canvasUtils = {
     canUseMultiply: canUseNewCanvasBlendModes(),
 
     /**
-     * The tinting method that will be used.
+     * 将要使用的着色方法。
      *
      * @memberof PIXI.canvasUtils
      * @type {Function}

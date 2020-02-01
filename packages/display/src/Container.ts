@@ -14,9 +14,9 @@ function sortChildren(a: DisplayObject, b: DisplayObject): number
 }
 
 /**
- * A Container represents a collection of display objects.
+ * 容器代表显示对象的集合。
  *
- * It is the base class of all display objects that act as a container for other objects (like Sprites).
+ * 它是所有显示对象的基类，这些显示对象充当其他对象（例如Sprites）的容器。
  *
  *```js
  * let container = new PIXI.Container();
@@ -42,7 +42,7 @@ export class Container extends DisplayObject
         super();
 
         /**
-         * The array of children of this container.
+         * 此容器的子级数组。
          *
          * @member {PIXI.DisplayObject[]}
          * @readonly
@@ -50,15 +50,14 @@ export class Container extends DisplayObject
         this.children = [];
 
         /**
-         * If set to true, the container will sort its children by zIndex value
-         * when updateTransform() is called, or manually if sortChildren() is called.
+         * 如果设置为true，则在调用updateTransform()时容器将按zIndex值对其子级进行排序，
+         * 或者在调用sortChildren()时手动排序。
          *
-         * This actually changes the order of elements in the array, so should be treated
-         * as a basic solution that is not performant compared to other solutions,
-         * such as @link https://github.com/pixijs/pixi-display
+         * 这实际上会更改数组中元素的顺序，因此应将其视为与其他解决方案相比性能不佳的基本解决方案，
+         * 例如 @link https://github.com/pixijs/pixi-display
          *
-         * Also be aware of that this may not work nicely with the addChildAt() function,
-         * as the zIndex sorting may cause the child to automatically sorted to another position.
+         * 还要注意，这可能无法很好地与addChildAt()函数一起工作，
+         * 因为zIndex排序可能会导致子项自动排序到另一个位置。
          *
          * @see PIXI.settings.SORTABLE_CHILDREN
          *
@@ -67,8 +66,8 @@ export class Container extends DisplayObject
         this.sortableChildren = settings.SORTABLE_CHILDREN;
 
         /**
-         * Should children be sorted by zIndex at the next updateTransform call.
-         * Will get automatically set to true if a new child is added, or if a child's zIndex changes.
+         * 在下一次updateTransform调用时，是否应按zIndex对子级进行排序。
+         * 如果添加了新子级或子级的zIndex更改，则将自动设置为true。
          *
          * @member {boolean}
          */
@@ -78,26 +77,26 @@ export class Container extends DisplayObject
         this.containerUpdateTransform = this.updateTransform;
 
         /**
-         * Fired when a DisplayObject is added to this Container.
+         * 向此容器中添加DisplayObject时触发。
          *
          * @event PIXI.Container#childAdded
-         * @param {PIXI.DisplayObject} child - The child added to the Container.
-         * @param {PIXI.Container} container - The container that added the child.
-         * @param {number} index - The children's index of the added child.
+         * @param {PIXI.DisplayObject} child - 添加到容器中的子项。
+         * @param {PIXI.Container} container - 添加子项的容器。
+         * @param {number} index - 添加子项的子项索引。
          */
 
         /**
-         * Fired when a DisplayObject is removed from this Container.
+         * 从该容器中删除DisplayObject时触发。
          *
          * @event PIXI.DisplayObject#removedFrom
-         * @param {PIXI.DisplayObject} child - The child removed from the Container.
-         * @param {PIXI.Container} container - The container that removed removed the child.
-         * @param {number} index - The former children's index of the removed child
+         * @param {PIXI.DisplayObject} child - 从容器中取出的子项。
+         * @param {PIXI.Container} container - 移除子项的容器。
+         * @param {number} index - 删除子项的子项索引。
          */
     }
 
     /**
-     * Overridable method that can be used by Container subclasses whenever the children array is modified
+     * 可重写的方法，每当修改子数组时，容器子类都可以使用该方法
      *
      * @protected
      */
@@ -108,12 +107,12 @@ export class Container extends DisplayObject
     }
 
     /**
-     * Adds one or more children to the container.
+     * 将一个或多个子项添加到容器中。
      *
-     * Multiple items can be added like so: `myContainer.addChild(thingOne, thingTwo, thingThree)`
+     * 可以像这样添加多个项: `myContainer.addChild(thingOne, thingTwo, thingThree)`
      *
-     * @param {...PIXI.DisplayObject} children - The DisplayObject(s) to add to the container
-     * @return {PIXI.DisplayObject} The first child that was added.
+     * @param {...PIXI.DisplayObject} children - 要添加到容器的显示对象(可以为复数个)
+     * @return {PIXI.DisplayObject} 添加的第一个子项。
      */
     addChild<T extends DisplayObject[]>(...children: T): T[0]
     {
@@ -158,11 +157,11 @@ export class Container extends DisplayObject
     }
 
     /**
-     * Adds a child to the container at a specified index. If the index is out of bounds an error will be thrown
+     * 在指定索引处向容器添加子项。如果索引超出界限，将抛出一个错误
      *
-     * @param {PIXI.DisplayObject} child - The child to add
-     * @param {number} index - The index to place the child in
-     * @return {PIXI.DisplayObject} The child that was added.
+     * @param {PIXI.DisplayObject} child - 要添加的子项
+     * @param {number} index - 放置子项的索引
+     * @return {PIXI.DisplayObject} 添加的子项。
      */
     addChildAt<T extends DisplayObject>(child: T, index: number): T
     {
@@ -196,10 +195,10 @@ export class Container extends DisplayObject
     }
 
     /**
-     * Swaps the position of 2 Display Objects within this container.
+     * 交换此容器中两个显示对象的位置。
      *
-     * @param {PIXI.DisplayObject} child - First display object to swap
-     * @param {PIXI.DisplayObject} child2 - Second display object to swap
+     * @param {PIXI.DisplayObject} child - 要交换的第一个显示对象
+     * @param {PIXI.DisplayObject} child2 - 要交换的第二个显示对象
      */
     swapChildren(child: DisplayObject, child2: DisplayObject): void
     {
@@ -217,10 +216,10 @@ export class Container extends DisplayObject
     }
 
     /**
-     * Returns the index position of a child DisplayObject instance
+     * 返回子DisplayObject实例的索引位置
      *
-     * @param {PIXI.DisplayObject} child - The DisplayObject instance to identify
-     * @return {number} The index position of the child display object to identify
+     * @param {PIXI.DisplayObject} child - 要标识的DisplayObject实例
+     * @return {number} 要标识的子显示对象的索引位置
      */
     getChildIndex(child: DisplayObject): number
     {
@@ -235,10 +234,10 @@ export class Container extends DisplayObject
     }
 
     /**
-     * Changes the position of an existing child in the display object container
+     * 更改现有子项在显示对象容器中的位置
      *
-     * @param {PIXI.DisplayObject} child - The child DisplayObject instance for which you want to change the index number
-     * @param {number} index - The resulting index number for the child display object
+     * @param {PIXI.DisplayObject} child - 要为其更改索引号的子DisplayObject实例
+     * @param {number} index - 子显示对象的结果索引
      */
     setChildIndex(child: DisplayObject, index: number): void
     {
@@ -256,10 +255,10 @@ export class Container extends DisplayObject
     }
 
     /**
-     * Returns the child at the specified index
+     * 返回指定索引处的子级
      *
-     * @param {number} index - The index to get the child at
-     * @return {PIXI.DisplayObject} The child at the given index, if any.
+     * @param {number} index - 查找的子项索引
+     * @return {PIXI.DisplayObject} 给定索引处的子级（如果有）。
      */
     getChildAt(index: number): DisplayObject
     {
@@ -272,10 +271,10 @@ export class Container extends DisplayObject
     }
 
     /**
-     * Removes one or more children from the container.
+     * 从容器中取出一个或多个子项。
      *
-     * @param {...PIXI.DisplayObject} children - The DisplayObject(s) to remove
-     * @return {PIXI.DisplayObject} The first child that was removed.
+     * @param {...PIXI.DisplayObject} children - 要删除的DisplayObject(可以为复数个)
+     * @return {PIXI.DisplayObject} 被删除的第一个子项目。
      */
     removeChild<T extends DisplayObject[]>(...children: T): T[0]
     {
@@ -313,10 +312,10 @@ export class Container extends DisplayObject
     }
 
     /**
-     * Removes a child from the specified index position.
+     * 从指定的索引位置删除子项。
      *
-     * @param {number} index - The index to get the child from
-     * @return {PIXI.DisplayObject} The child that was removed.
+     * @param {number} index - 要删除的子项索引
+     * @return {PIXI.DisplayObject} 被删除的子项。
      */
     removeChildAt(index: number): DisplayObject
     {
@@ -339,11 +338,11 @@ export class Container extends DisplayObject
     }
 
     /**
-     * Removes all children from this container that are within the begin and end indexes.
+     * 从此容器中删除在开始索引和结束索引内的所有子项。
      *
-     * @param {number} [beginIndex=0] - The beginning position.
-     * @param {number} [endIndex=this.children.length] - The ending position. Default value is size of the container.
-     * @returns {PIXI.DisplayObject[]} List of removed children
+     * @param {number} [beginIndex=0] - 起始位置。
+     * @param {number} [endIndex=this.children.length] - 结束位置。 默认值是容器的大小。
+     * @returns {PIXI.DisplayObject[]} 被删除的子项列表
      */
     removeChildren(beginIndex = 0, endIndex = this.children.length): DisplayObject[]
     {
@@ -386,7 +385,7 @@ export class Container extends DisplayObject
     }
 
     /**
-     * Sorts children by zIndex. Previous order is mantained for 2 children with the same zIndex.
+     * 按zIndex对子项进行排序。对于具有相同zIndex的2个子项，将维持先前的顺序。
      */
     sortChildren(): void
     {
@@ -413,7 +412,7 @@ export class Container extends DisplayObject
     }
 
     /**
-     * Updates the transform on all children of this container for rendering
+     * 更新此容器的所有子项的变换以进行渲染
      */
     updateTransform(): void
     {
@@ -483,8 +482,7 @@ export class Container extends DisplayObject
     }
 
     /**
-     * Recalculates the bounds of the object. Override this to
-     * calculate the bounds of the specific object (not including children).
+     * 重新计算对象的边界。重写此项以计算特定对象（不包括子项）的边界。
      *
      * @protected
      */
@@ -494,9 +492,9 @@ export class Container extends DisplayObject
     }
 
     /**
-     * Renders the object using the WebGL renderer
+     * 使用WebGL渲染器渲染对象
      *
-     * @param {PIXI.Renderer} renderer - The renderer
+     * @param {PIXI.Renderer} renderer - 渲染器
      */
     render(renderer: Renderer): void
     {
@@ -524,10 +522,10 @@ export class Container extends DisplayObject
     }
 
     /**
-     * Render the object using the WebGL renderer and advanced features.
+     * 使用WebGL渲染器和高级功能渲染对象。
      *
      * @protected
-     * @param {PIXI.Renderer} renderer - The renderer
+     * @param {PIXI.Renderer} renderer - 渲染器
      */
     protected renderAdvanced(renderer: Renderer): void
     {
@@ -588,10 +586,10 @@ export class Container extends DisplayObject
     }
 
     /**
-     * To be overridden by the subclasses.
+     * 被子类覆盖。
      *
      * @protected
-     * @param {PIXI.Renderer} renderer - The renderer
+     * @param {PIXI.Renderer} renderer - 渲染器
      */
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     protected _render(_renderer: Renderer): void // eslint-disable-line no-unused-vars
@@ -600,17 +598,16 @@ export class Container extends DisplayObject
     }
 
     /**
-     * Removes all internal references and listeners as well as removes children from the display list.
-     * Do not use a Container after calling `destroy`.
+     * 删除所有内部引用和侦听器，并从显示列表中删除子项。
+     * 调用`destroy`后不要再使用容器。
      *
-     * @param {object|boolean} [options] - Options parameter. A boolean will act as if all options
-     *  have been set to that value
-     * @param {boolean} [options.children=false] - if set to true, all the children will have their destroy
-     *  method called as well. 'options' will be passed on to those calls.
-     * @param {boolean} [options.texture=false] - Only used for child Sprites if options.children is set to true
-     *  Should it destroy the texture of the child sprite
-     * @param {boolean} [options.baseTexture=false] - Only used for child Sprites if options.children is set to true
-     *  Should it destroy the base texture of the child sprite
+     * @param {object|boolean} [options] - 可选参数，布尔值将充当所有选项都已设置为该值的作用
+     * @param {boolean} [options.children=false] - 如果设置为true，则所有子项也将调用其destroy方法。
+     *  'options'将传递给这些调用。
+     * @param {boolean} [options.texture=false] - 仅在options.children设置为true时，应用用于子精灵
+     * 将销毁子精灵的纹理
+     * @param {boolean} [options.baseTexture=false] - 仅在options.children设置为true时，应用用于子精灵
+     *  将销毁子精灵的基础纹理
      */
     destroy(options?: IDestroyOptions|boolean): void
     {
@@ -632,7 +629,7 @@ export class Container extends DisplayObject
     }
 
     /**
-     * The width of the Container, setting this will actually modify the scale to achieve the value set
+     * 容器的宽度，设置此值实际上会修改比例，以达到设置的值
      *
      * @member {number}
      */
@@ -658,7 +655,7 @@ export class Container extends DisplayObject
     }
 
     /**
-     * The height of the Container, setting this will actually modify the scale to achieve the value set
+     * 容器的高度，设置此高度实际上会修改比例，以达到设置的值
      *
      * @member {number}
      */

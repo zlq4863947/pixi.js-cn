@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>PixiJS中文文档</title>
+    <title>PixiJS中文开发文档</title>
     
-    <meta name="description" content="PixiJS库的中文文档" />
+    <meta name="description" content="PixiJS库的中文开发文档" />
     
         <meta name="keywords" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
         <meta name="keyword" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
@@ -34,7 +34,7 @@
     
     
     <script>
-    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文文档","description":"PixiJS库的中文文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
+    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS中文","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文开发文档","description":"PixiJS库的中文开发文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
     </script>
     
 
@@ -44,7 +44,7 @@
 <div id="wrap" class="clearfix">
     
 <div class="navigation">
-    <h3 class="applicationName"><a href="index.html">PixiJS</a></h3>
+    <h3 class="applicationName"><a href="index.html">PixiJS中文</a></h3>
     <button id="menuToggle" class="btn btn-link btn-lg menu-toggle">
         <span class="glyphicon glyphicon-menu-hamburger"></span>
     </button>
@@ -13192,8 +13192,8 @@
         <h2><span class="ancestors"><a href="PIXI.html">PIXI</a>~</span>CanvasExtract
         </h2>
         
-            <div class="class-description"><p>The extract manager provides functionality to export content from the renderers.</p>
-<p>An instance of this class is automatically created by default, and can be found at <code>renderer.plugins.extract</code></p></div>
+            <div class="class-description"><p>提取管理器提供了从渲染器导出内容的功能。</p>
+<p>此类的实例默认情况下会自动创建，可以在<code>renderer.plugins.extract</code>中找到</p></div>
         
     </div>
 </header>  
@@ -13275,7 +13275,7 @@
             
             <td class="description last">
                 
-                <p>A reference to the current renderer</p></td>
+                <p>对当前渲染器的引用</p></td>
         </tr>
 	
 	
@@ -13359,7 +13359,7 @@
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-extract_src_CanvasExtract.js.html#line59">CanvasExtract.js:59</a>
+            <a href="packages_canvas_canvas-extract_src_CanvasExtract.js.html#line56">CanvasExtract.js:56</a>
         </div>
         
     </div>
@@ -13370,8 +13370,7 @@
     
     
     <div class="description">
-        <p>Will return a a base64 encoded string of this target. It works by calling
-<code>CanvasExtract.getCanvas</code> and then running toDataURL on that.</p>
+        <p>将返回此目标的base64编码字符串。它的工作方式是调用<code>CanvasExtract.getCanvas</code>，然后在上面运行toDataURL。</p>
     </div>
     
 
@@ -13426,8 +13425,7 @@
                         
                     
                 
-                <p>A displayObject or renderTexture
-to convert. If left empty will use the main renderer</p></td>
+                <p>要转换的displayObject或renderTexture。如果留空，将使用主渲染器</p></td>
         </tr>
 	
 	
@@ -13457,7 +13455,7 @@ to convert. If left empty will use the main renderer</p></td>
                         
                     
                 
-                <p>Image format, e.g. &quot;image/jpeg&quot; or &quot;image/webp&quot;.</p></td>
+                <p>图像格式，例如. &quot;image/jpeg&quot; 或 &quot;image/webp&quot;.</p></td>
         </tr>
 	
 	
@@ -13487,7 +13485,7 @@ to convert. If left empty will use the main renderer</p></td>
                         
                     
                 
-                <p>JPEG or Webp compression from 0 to 1. Default is 0.92.</p></td>
+                <p>JPEG或Webp压缩从0到1。默认值为0.92。</p></td>
         </tr>
 	
 	
@@ -13550,7 +13548,7 @@ to convert. If left empty will use the main renderer</p></td>
                         
                     
             </td>
-            <td class="description last">A base64 encoded string of the texture.</td>
+            <td class="description last">纹理的base64编码字符串。</td>
         </tr>
     
     </tbody>
@@ -13579,7 +13577,7 @@ to convert. If left empty will use the main renderer</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-extract_src_CanvasExtract.js.html#line70">CanvasExtract.js:70</a>
+            <a href="packages_canvas_canvas-extract_src_CanvasExtract.js.html#line66">CanvasExtract.js:66</a>
         </div>
         
     </div>
@@ -13590,7 +13588,7 @@ to convert. If left empty will use the main renderer</p></td>
     
     
     <div class="description">
-        <p>Creates a Canvas element, renders this target to it and then returns it.</p>
+        <p>创建画布元素，将此目标渲染给它，然后返回它。</p>
     </div>
     
 
@@ -13640,8 +13638,7 @@ to convert. If left empty will use the main renderer</p></td>
             
             <td class="description last">
                 
-                <p>A displayObject or renderTexture
-to convert. If left empty will use the main renderer</p></td>
+                <p>要转换的displayObject或renderTexture。如果留空，将使用主渲染器</p></td>
         </tr>
 	
 	
@@ -13704,7 +13701,7 @@ to convert. If left empty will use the main renderer</p></td>
                         
                     
             </td>
-            <td class="description last">A Canvas element with the texture rendered on.</td>
+            <td class="description last">具有渲染纹理的画布元素。</td>
         </tr>
     
     </tbody>
@@ -13733,7 +13730,7 @@ to convert. If left empty will use the main renderer</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-extract_src_CanvasExtract.js.html#line159">CanvasExtract.js:159</a>
+            <a href="packages_canvas_canvas-extract_src_CanvasExtract.js.html#line153">CanvasExtract.js:153</a>
         </div>
         
     </div>
@@ -13744,7 +13741,7 @@ to convert. If left empty will use the main renderer</p></td>
     
     
     <div class="description">
-        <p>Destroys the extract</p>
+        <p>销毁提取管理器</p>
     </div>
     
 
@@ -13809,7 +13806,7 @@ to convert. If left empty will use the main renderer</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-extract_src_CanvasExtract.js.html#line41">CanvasExtract.js:41</a>
+            <a href="packages_canvas_canvas-extract_src_CanvasExtract.js.html#line40">CanvasExtract.js:40</a>
         </div>
         
     </div>
@@ -13820,7 +13817,7 @@ to convert. If left empty will use the main renderer</p></td>
     
     
     <div class="description">
-        <p>Will return a HTML Image of the target</p>
+        <p>将返回目标的HTML图像</p>
     </div>
     
 
@@ -13875,8 +13872,7 @@ to convert. If left empty will use the main renderer</p></td>
                         
                     
                 
-                <p>A displayObject or renderTexture
-to convert. If left empty will use the main renderer</p></td>
+                <p>要转换的displayObject或renderTexture。如果留空，将使用主渲染器</p></td>
         </tr>
 	
 	
@@ -13906,7 +13902,7 @@ to convert. If left empty will use the main renderer</p></td>
                         
                     
                 
-                <p>Image format, e.g. &quot;image/jpeg&quot; or &quot;image/webp&quot;.</p></td>
+                <p>图像格式，例如. &quot;image/jpeg&quot; 或 &quot;image/webp&quot;.</p></td>
         </tr>
 	
 	
@@ -13936,7 +13932,7 @@ to convert. If left empty will use the main renderer</p></td>
                         
                     
                 
-                <p>JPEG or Webp compression from 0 to 1. Default is 0.92.</p></td>
+                <p>JPEG或Webp压缩从0到1。默认值为0.92。</p></td>
         </tr>
 	
 	
@@ -13999,7 +13995,7 @@ to convert. If left empty will use the main renderer</p></td>
                         
                     
             </td>
-            <td class="description last">HTML Image of the target</td>
+            <td class="description last">目标的HTML图像</td>
         </tr>
     
     </tbody>
@@ -14028,7 +14024,7 @@ to convert. If left empty will use the main renderer</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-extract_src_CanvasExtract.js.html#line120">CanvasExtract.js:120</a>
+            <a href="packages_canvas_canvas-extract_src_CanvasExtract.js.html#line114">CanvasExtract.js:114</a>
         </div>
         
     </div>
@@ -14039,8 +14035,7 @@ to convert. If left empty will use the main renderer</p></td>
     
     
     <div class="description">
-        <p>Will return a one-dimensional array containing the pixel data of the entire texture in RGBA
-order, with integer values between 0 and 255 (included).</p>
+        <p>将返回一维数组，该数组以RGBA顺序包含整个纹理的像素数据，且整数值介于0和255之间（包括）。</p>
     </div>
     
 
@@ -14090,8 +14085,7 @@ order, with integer values between 0 and 255 (included).</p>
             
             <td class="description last">
                 
-                <p>A displayObject or renderTexture
-to convert. If left empty will use the main renderer</p></td>
+                <p>要转换的displayObject或renderTexture。如果留空，将使用主渲染器</p></td>
         </tr>
 	
 	
@@ -14154,7 +14148,7 @@ to convert. If left empty will use the main renderer</p></td>
                         
                     
             </td>
-            <td class="description last">One-dimensional array containing the pixel data of the entire texture</td>
+            <td class="description last">一维数组，包含整个纹理的像素数据</td>
         </tr>
     
     </tbody>
@@ -14185,7 +14179,7 @@ to convert. If left empty will use the main renderer</p></td>
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Jan 22 2020 18:58:54 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sun Feb 02 2020 01:55:01 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

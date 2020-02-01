@@ -2,12 +2,12 @@ import { Mesh } from '@pixi/mesh';
 import { settings } from './settings';
 
 /**
- * Renders the object using the Canvas renderer
+ * 使用Canvas渲染器渲染对象
  *
  * @private
  * @method _renderCanvas
  * @memberof PIXI.Mesh#
- * @param {PIXI.CanvasRenderer} renderer - The canvas renderer.
+ * @param {PIXI.CanvasRenderer} renderer - Canvas渲染器
  */
 Mesh.prototype._renderCanvas = function _renderCanvas(renderer)
 {
@@ -20,9 +20,8 @@ Mesh.prototype._renderCanvas = function _renderCanvas(renderer)
     this.material._renderCanvas(renderer, this);
 };
 
-// IMPORTANT: Please do NOT use this as a precedent to use `settings` after the object is created
-// this was merely created to completely decouple canvas from the base Mesh class and we are
-// unable to add `canvasPadding` in the constructor anymore, as the case was for PixiJS v4.
+// 重要提示：请不要将此作为先例，在创建对象后使用`settings`，这仅仅是为了将画布与基础网格类完全解耦而创建的，
+// 并且我们无法再在构造函数中添加`canvasPadding`，适用于PixiJS v4。
 
 /**
  * Internal variable for `canvasPadding`.

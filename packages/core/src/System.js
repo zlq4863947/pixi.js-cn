@@ -1,5 +1,5 @@
 /**
- * System is a base class used for extending systems used by the {@link PIXI.Renderer}
+ * System是一个基类，用于扩展{@link PIXI.Renderer}使用的系统
  *
  * @see PIXI.Renderer#addSystem
  * @class
@@ -8,12 +8,12 @@
 export class System
 {
     /**
-     * @param {PIXI.Renderer} renderer - The renderer this manager works for.
+     * @param {PIXI.Renderer} renderer - 此管理器作用的渲染器
      */
     constructor(renderer)
     {
         /**
-         * The renderer this manager works for.
+         * 此管理器作用的渲染器。
          *
          * @member {PIXI.Renderer}
          */
@@ -21,7 +21,7 @@ export class System
     }
 
     /**
-     * Generic destroy methods to be overridden by the subclass
+     * 子类将覆盖通用销毁方法
      */
     destroy()
     {

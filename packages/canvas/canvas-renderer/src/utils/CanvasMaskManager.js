@@ -1,9 +1,9 @@
 import { SHAPES } from '@pixi/math';
 
 /**
- * A set of functions used to handle masking.
+ * 一组用于处理遮罩的方法集。
  *
- * Sprite masking is not supported on the CanvasRenderer.
+ * CanvasRenderer不支持Sprite遮罩。
  *
  * @class
  * @memberof PIXI
@@ -11,7 +11,7 @@ import { SHAPES } from '@pixi/math';
 export class CanvasMaskManager
 {
     /**
-     * @param {PIXI.CanvasRenderer} renderer - The canvas renderer.
+     * @param {PIXI.CanvasRenderer} renderer - 画布渲染器。
      */
     constructor(renderer)
     {
@@ -21,9 +21,9 @@ export class CanvasMaskManager
     }
 
     /**
-     * This method adds it to the current stack of masks.
+     * 此方法将其添加到当前的蒙版堆栈中。
      *
-     * @param {PIXI.MaskData | PIXI.Graphics} maskData - the maskData that will be pushed
+     * @param {PIXI.MaskData | PIXI.Graphics} maskData - 将被推送的maskData
      */
     pushMask(maskData)
     {
@@ -67,10 +67,10 @@ export class CanvasMaskManager
     }
 
     /**
-     * Renders all PIXI.Graphics shapes in a subtree.
+     * 在子树中渲染所有PIXI.Graphics形状。
      *
-     * @param {PIXI.Container} container - container to scan.
-     * @param {PIXI.Graphics[]} out - where to put found shapes
+     * @param {PIXI.Container} container - 扫描容器。
+     * @param {PIXI.Graphics[]} out - 在哪里放置找到的形状
      */
     recursiveFindShapes(container, out)
     {
@@ -91,9 +91,9 @@ export class CanvasMaskManager
     }
 
     /**
-     * Renders a PIXI.Graphics shape.
+     * 渲染PIXI.Graphics 形状
      *
-     * @param {PIXI.Graphics} graphics - The object to render.
+     * @param {PIXI.Graphics} graphics - 要渲染的对象。
      */
     renderGraphicsShape(graphics)
     {
@@ -193,9 +193,9 @@ export class CanvasMaskManager
     }
 
     /**
-     * Restores the current drawing context to the state it was before the mask was applied.
+     * 将当前图形上下文还原为应用遮罩之前的状态。
      *
-     * @param {PIXI.CanvasRenderer} renderer - The renderer context to use.
+     * @param {PIXI.CanvasRenderer} renderer - 要使用的渲染器上下文。
      */
     popMask(renderer)
     {
@@ -204,7 +204,7 @@ export class CanvasMaskManager
     }
 
     /**
-     * Destroys this canvas mask manager.
+     * 销毁此画布蒙版管理器。
      *
      */
     destroy()

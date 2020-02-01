@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>PixiJS中文文档</title>
+    <title>PixiJS中文开发文档</title>
     
-    <meta name="description" content="PixiJS库的中文文档" />
+    <meta name="description" content="PixiJS库的中文开发文档" />
     
         <meta name="keywords" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
         <meta name="keyword" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
@@ -34,7 +34,7 @@
     
     
     <script>
-    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文文档","description":"PixiJS库的中文文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
+    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS中文","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文开发文档","description":"PixiJS库的中文开发文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
     </script>
     
 
@@ -44,7 +44,7 @@
 <div id="wrap" class="clearfix">
     
 <div class="navigation">
-    <h3 class="applicationName"><a href="index.html">PixiJS</a></h3>
+    <h3 class="applicationName"><a href="index.html">PixiJS中文</a></h3>
     <button id="menuToggle" class="btn btn-link btn-lg menu-toggle">
         <span class="glyphicon glyphicon-menu-hamburger"></span>
     </button>
@@ -13192,8 +13192,8 @@
         <h2><span class="ancestors"><a href="PIXI.html">PIXI</a>~</span>Application
         </h2>
         
-            <div class="class-description"><p>Convenience class to create a new PIXI application.</p>
-<p>This class automatically creates the renderer, ticker and root container.</p></div>
+            <div class="class-description"><p>创建新的PIXI应用程序的便利类。</p>
+<p>这个类自动创建渲染器、ticker和根容器。</p></div>
         
     </div>
 </header>  
@@ -13221,7 +13221,7 @@
     
         
         <div class="tag-source">
-            <a href="packages_app_src_Application.js.html#line57">Application.js:57</a>
+            <a href="packages_app_src_Application.js.html#line49">Application.js:49</a>
         </div>
         
     </div>
@@ -13282,7 +13282,7 @@
                         
                     
                 
-                <p>The optional renderer parameters.</p>
+                <p>可选的渲染器参数。</p>
                 
 
 <table class="params">
@@ -13336,9 +13336,8 @@
                         
                     
                 
-                <p>Automatically starts the rendering after the construction.
-<strong>Note</strong>: Setting this parameter to false does NOT stop the shared ticker even if you set
-options.sharedTicker to true in case that it is already started. Stop it by your own.</p></td>
+                <p>Automatically 在构造之后开始渲染。
+<strong>提示</strong>: 如果已将options.sharedTicker设置为true，则将此参数设置为false不会停止共享代码。需要手动停止。</p></td>
         </tr>
 	
 	
@@ -13374,7 +13373,7 @@ options.sharedTicker to true in case that it is already started. Stop it by your
                         
                     
                 
-                <p>The width of the renderers view.</p></td>
+                <p>渲染器视图的宽度。</p></td>
         </tr>
 	
 	
@@ -13410,7 +13409,7 @@ options.sharedTicker to true in case that it is already started. Stop it by your
                         
                     
                 
-                <p>The height of the renderers view.</p></td>
+                <p>渲染器视图的高度。</p></td>
         </tr>
 	
 	
@@ -13444,7 +13443,7 @@ options.sharedTicker to true in case that it is already started. Stop it by your
                         
                     
                 
-                <p>The canvas to use as a view, optional.</p></td>
+                <p>用作视图的画布，可选。</p></td>
         </tr>
 	
 	
@@ -13480,7 +13479,7 @@ options.sharedTicker to true in case that it is already started. Stop it by your
                         
                     
                 
-                <p>If the render view is transparent.</p></td>
+                <p>true为设置渲染视图为透明。</p></td>
         </tr>
 	
 	
@@ -13516,8 +13515,7 @@ options.sharedTicker to true in case that it is already started. Stop it by your
                         
                     
                 
-                <p>Resizes renderer view in CSS pixels to allow for
-resolutions other than 1.</p></td>
+                <p>调整渲染器视图的CSS像素大小，以允许使用非1的分辨率。</p></td>
         </tr>
 	
 	
@@ -13553,7 +13551,7 @@ resolutions other than 1.</p></td>
                         
                     
                 
-                <p>Sets antialias</p></td>
+                <p>设置抗锯齿</p></td>
         </tr>
 	
 	
@@ -13589,8 +13587,7 @@ resolutions other than 1.</p></td>
                         
                     
                 
-                <p>Enables drawing buffer preservation, enable this if you
-need to call toDataUrl on the WebGL context.</p></td>
+                <p>启用图形缓冲区保留，如果需要在WebGL上下文上调用toDataUrl，请启用此功能。</p></td>
         </tr>
 	
 	
@@ -13626,7 +13623,7 @@ need to call toDataUrl on the WebGL context.</p></td>
                         
                     
                 
-                <p>The resolution / device pixel ratio of the renderer, retina would be 2.</p></td>
+                <p>渲染器的分辨率/设备像素比率, 视网膜为2。</p></td>
         </tr>
 	
 	
@@ -13662,9 +13659,8 @@ need to call toDataUrl on the WebGL context.</p></td>
                         
                     
                 
-                <p>prevents selection of WebGL renderer, even if such is present, this
-option only is available when using <strong>pixi.js-legacy</strong> or <strong>@pixi/canvas-renderer</strong> modules, otherwise
-it is ignored.</p></td>
+                <p>阻止选择WebGL渲染器，即使存在，也只有在使用 <strong>pixi.js-legacy</strong>
+或 <strong>@pixi/canvas-renderer</strong> 模块时才可用，否则将忽略该选项。</p></td>
         </tr>
 	
 	
@@ -13700,8 +13696,7 @@ it is ignored.</p></td>
                         
                     
                 
-                <p>The background color of the rendered area
-(shown if not transparent).</p></td>
+                <p>渲染区域的背景色（如果不透明则显示）。</p></td>
         </tr>
 	
 	
@@ -13737,8 +13732,7 @@ it is ignored.</p></td>
                         
                     
                 
-                <p>This sets if the renderer will clear the canvas or
-not before the new render pass.</p></td>
+                <p>设置渲染器是否在新的渲染过程之前清除画布。</p></td>
         </tr>
 	
 	
@@ -13774,8 +13768,7 @@ not before the new render pass.</p></td>
                         
                     
                 
-                <p>Forces FXAA antialiasing to be used over native.
-FXAA is faster, but may not always look as great. <strong>(WebGL only)</strong>.</p></td>
+                <p>强制在本机上使用FXAA抗锯齿。 FXAA更快，但可能并不总是那么好。 <strong>（仅适用于WebGL）</strong>。</p></td>
         </tr>
 	
 	
@@ -13809,8 +13802,7 @@ FXAA is faster, but may not always look as great. <strong>(WebGL only)</strong>.
                         
                     
                 
-                <p>Parameter passed to webgl context, set to &quot;high-performance&quot;
-for devices with dual graphics card. <strong>(WebGL only)</strong>.</p></td>
+                <p>传递给webgl上下文的参数，对于具有双显卡的设备，设置为“高性能”。 <strong>（仅适用于WebGL）</strong>。</p></td>
         </tr>
 	
 	
@@ -13846,9 +13838,9 @@ for devices with dual graphics card. <strong>(WebGL only)</strong>.</p></td>
                         
                     
                 
-                <p><code>true</code> to use PIXI.Ticker.shared, <code>false</code> to create new ticker.
-If set to false, you cannot register a handler to occur before anything that runs on the shared ticker.
-The system ticker will always run before both the shared ticker and the app ticker.</p></td>
+                <p><code>true</code> 为使用 PIXI.Ticker.shared, <code>false</code> 为创建新的ticker。
+如果设置为false，则不能将处理程序注册为在共享ticker上运行的任何操作之前发生。
+系统ticker将始终在共享ticker和应用程序ticker之前运行。</p></td>
         </tr>
 	
 	
@@ -13884,7 +13876,7 @@ The system ticker will always run before both the shared ticker and the app tick
                         
                     
                 
-                <p><code>true</code> to use PIXI.Loader.shared, <code>false</code> to create new Loader.</p></td>
+                <p><code>true</code> 为使用 PIXI.Loader.shared, <code>false</code> 创建新的 Loader.</p></td>
         </tr>
 	
 	
@@ -13921,7 +13913,7 @@ The system ticker will always run before both the shared ticker and the app tick
                         
                     
                 
-                <p>Element to automatically resize stage to.</p></td>
+                <p>要自动调整舞台大小的元素。</p></td>
         </tr>
 	
 	
@@ -13974,13 +13966,13 @@ The system ticker will always run before both the shared ticker and the app tick
         
 
     
-    <pre class="prettyprint"><code>// Create the application
+    <pre class="prettyprint"><code>// 创建应用程序
 const app = new PIXI.Application();
 
-// Add the view to the DOM
+// 将视图添加到DOM
 document.body.appendChild(app.view);
 
-// ex, add display objects
+// 例如，添加显示对象
 app.stage.addChild(PIXI.Sprite.from('something.png'));</code></pre>
     
 
@@ -14077,7 +14069,7 @@ app.stage.addChild(PIXI.Sprite.from('something.png'));</code></pre>
 <dd>
     
     <div class="description">
-        <p>WebGL renderer if available, otherwise CanvasRenderer.</p>
+        <p>WebGL渲染器（如果可用），否则为CanvasRenderer。</p>
     </div>
     
     
@@ -14128,7 +14120,7 @@ app.stage.addChild(PIXI.Sprite.from('something.png'));</code></pre>
 <dd>
     
     <div class="description">
-        <p>The element or window to resize the application to.</p>
+        <p>调整应用程序大小的元素或窗口。</p>
     </div>
     
     
@@ -14179,7 +14171,7 @@ app.stage.addChild(PIXI.Sprite.from('something.png'));</code></pre>
 <dd>
     
     <div class="description">
-        <p>Reference to the renderer's screen rectangle. Its safe to use as <code>filterArea</code> or <code>hitArea</code> for the whole screen.</p>
+        <p>引用渲染器的屏幕矩形。 可以安全地在整个屏幕上用作<code>filterArea</code>或<code>hitArea</code>。</p>
     </div>
     
     
@@ -14230,7 +14222,7 @@ app.stage.addChild(PIXI.Sprite.from('something.png'));</code></pre>
 <dd>
     
     <div class="description">
-        <p>The root display container that's rendered.</p>
+        <p>渲染的根显示容器。</p>
     </div>
     
     
@@ -14335,7 +14327,7 @@ app.stage.addChild(PIXI.Sprite.from('something.png'));</code></pre>
 <dd>
     
     <div class="description">
-        <p>Reference to the renderer's canvas element.</p>
+        <p>对渲染器画布元素的引用。</p>
     </div>
     
     
@@ -14390,7 +14382,7 @@ app.stage.addChild(PIXI.Sprite.from('something.png'));</code></pre>
     
         
         <div class="tag-source">
-            <a href="packages_app_src_Application.js.html#line84">Application.js:84</a>
+            <a href="packages_app_src_Application.js.html#line76">Application.js:76</a>
         </div>
         
     </div>
@@ -14401,7 +14393,7 @@ app.stage.addChild(PIXI.Sprite.from('something.png'));</code></pre>
     
     
     <div class="description">
-        <p>Register a middleware plugin for the application</p>
+        <p>注册该应用程序的中间件插件</p>
     </div>
     
 
@@ -14448,7 +14440,7 @@ app.stage.addChild(PIXI.Sprite.from('something.png'));</code></pre>
             
             <td class="description last">
                 
-                <p>Plugin being installed</p></td>
+                <p>正在安装插件</p></td>
         </tr>
 	
 	
@@ -14511,7 +14503,7 @@ app.stage.addChild(PIXI.Sprite.from('something.png'));</code></pre>
     
         
         <div class="tag-source">
-            <a href="packages_app_src_Application.js.html#line125">Application.js:125</a>
+            <a href="packages_app_src_Application.js.html#line113">Application.js:113</a>
         </div>
         
     </div>
@@ -14522,7 +14514,7 @@ app.stage.addChild(PIXI.Sprite.from('something.png'));</code></pre>
     
     
     <div class="description">
-        <p>Destroy and don't use after this.</p>
+        <p>销毁后不要再使用。</p>
     </div>
     
 
@@ -14584,7 +14576,7 @@ app.stage.addChild(PIXI.Sprite.from('something.png'));</code></pre>
                         
                     
                 
-                <p>Automatically remove canvas from DOM.</p></td>
+                <p>自动从DOM中删除画布。</p></td>
         </tr>
 	
 	
@@ -14621,8 +14613,7 @@ app.stage.addChild(PIXI.Sprite.from('something.png'));</code></pre>
                         
                     
                 
-                <p>Options parameter. A boolean will act as if all options
-have been set to that value</p>
+                <p>选项参数。布尔值为true时，所有选项都设置为该值</p>
                 
 
 <table class="params">
@@ -14676,8 +14667,7 @@ have been set to that value</p>
                         
                     
                 
-                <p>if set to true, all the children will have their destroy
-method called as well. 'stageOptions' will be passed on to those calls.</p></td>
+                <p>如果设置为true，所有的子元素也将调用他们的销毁方法'stageOptions'将传递给这些调用。</p></td>
         </tr>
 	
 	
@@ -14713,8 +14703,7 @@ method called as well. 'stageOptions' will be passed on to those calls.</p></td>
                         
                     
                 
-                <p>Only used for child Sprites if stageOptions.children is set
-to true. Should it destroy the texture of the child sprite</p></td>
+                <p>如果stageOptions.children设置为true，则仅用于子精灵。将销毁子精灵纹理</p></td>
         </tr>
 	
 	
@@ -14750,8 +14739,7 @@ to true. Should it destroy the texture of the child sprite</p></td>
                         
                     
                 
-                <p>Only used for child Sprites if stageOptions.children is set
-to true. Should it destroy the base texture of the child sprite</p></td>
+                <p>如果stageOptions.children设置为true，则仅用于子精灵。将销毁子精灵基础纹理</p></td>
         </tr>
 	
 	
@@ -14820,7 +14808,7 @@ to true. Should it destroy the base texture of the child sprite</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_app_src_Application.js.html#line91">Application.js:91</a>
+            <a href="packages_app_src_Application.js.html#line83">Application.js:83</a>
         </div>
         
     </div>
@@ -14831,7 +14819,7 @@ to true. Should it destroy the base texture of the child sprite</p></td>
     
     
     <div class="description">
-        <p>Render the current stage.</p>
+        <p>渲染当前舞台。</p>
     </div>
     
 
@@ -14907,8 +14895,7 @@ to true. Should it destroy the base texture of the child sprite</p></td>
     
     
     <div class="description">
-        <p>If <code>resizeTo</code> is set, calling this function
-will resize to the width and height of that element.</p>
+        <p>如果设置了<code>resizeTo</code>，则调用此函数重置该元素的宽度和高度。</p>
     </div>
     
 
@@ -15179,8 +15166,8 @@ will resize to the width and height of that element.</p>
             
             
             
-            <td class="description last"><p>Called when Application is constructed, scoped to Application instance.
-Passes in <code>options</code> as the only argument, which are Application constructor options.</p></td>
+            <td class="description last"><p>在构造Application时调用，范围为Application实例。
+传递<code>options</code> 作为唯一的参数，它们是Application构造函数选项。</p></td>
         </tr>
 	
 	
@@ -15203,7 +15190,7 @@ Passes in <code>options</code> as the only argument, which are Application const
             
             
             
-            <td class="description last"><p>Called when destroying Application, scoped to Application instance</p></td>
+            <td class="description last"><p>销毁应用程序时调用，范围为应用程序实例</p></td>
         </tr>
 	
 	
@@ -15253,7 +15240,7 @@ Passes in <code>options</code> as the only argument, which are Application const
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Jan 22 2020 18:58:52 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sun Feb 02 2020 01:55:00 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

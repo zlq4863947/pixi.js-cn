@@ -1,10 +1,10 @@
 import { Rectangle, IPoint, Transform, Matrix } from '@pixi/math';
 
 /**
- * 'Builder' pattern for bounds rectangles.
+ * 边界矩形的'Builder'模式。
  *
- * This could be called an Axis-Aligned Bounding Box.
- * It is not an actual shape. It is a mutable thing; no 'EMPTY' or those kind of problems.
+ * 这可以称为“轴对齐边界框”。
+ * 它不是实际形状。 这是可变的。 没有'EMPTY'或此类问题。
  *
  * @class
  * @memberof PIXI
@@ -47,8 +47,8 @@ export class Bounds
         this.rect = null;
 
         /**
-         * It is updated to _boundsID of corresponding object to keep bounds in sync with content.
-         * Updated from outside, thus public modifier.
+         * 它将更新为相应对象的_boundsID，以保持边界与内容同步。
+         * 从外部更新，因此是public修饰符。
          *
          * @member {number}
          * @public
@@ -57,7 +57,7 @@ export class Bounds
     }
 
     /**
-     * Checks if bounds are empty.
+     * 检查边界是否为空。
      *
      * @return {boolean} True if empty.
      */
@@ -67,7 +67,7 @@ export class Bounds
     }
 
     /**
-     * Clears the bounds and resets.
+     * 清除边界并重设
      *
      */
     clear(): void
@@ -79,11 +79,11 @@ export class Bounds
     }
 
     /**
-     * Can return Rectangle.EMPTY constant, either construct new rectangle, either use your rectangle
-     * It is not guaranteed that it will return tempRect
+     * 可以返回Rectangle.EMPTY常量，可以构造新的矩形，也可以使用你的矩形
+     * 不保证它将返回tempRect
      *
-     * @param {PIXI.Rectangle} rect - temporary object will be used if AABB is not empty
-     * @returns {PIXI.Rectangle} A rectangle of the bounds
+     * @param {PIXI.Rectangle} rect - 如果AABB不为空，将使用临时对象
+     * @returns {PIXI.Rectangle} 边界的矩形
      */
     getRectangle(rect: Rectangle): Rectangle
     {
@@ -103,7 +103,7 @@ export class Bounds
     }
 
     /**
-     * This function should be inlined when its possible.
+     * 此方法应尽可能内联。
      *
      * @param {PIXI.IPoint} point - The point to add.
      */
@@ -116,9 +116,9 @@ export class Bounds
     }
 
     /**
-     * Adds a quad, not transformed
+     * 添加四边形，而不是变换
      *
-     * @param {Float32Array} vertices - The verts to add.
+     * @param {Float32Array} vertices - 要添加的顶点。
      */
     addQuad(vertices: Float32Array): void
     {
@@ -163,13 +163,13 @@ export class Bounds
     }
 
     /**
-     * Adds sprite frame, transformed.
+     * 添加精灵帧，变换。
      *
-     * @param {PIXI.Transform} transform - transform to apply
-     * @param {number} x0 - left X of frame
-     * @param {number} y0 - top Y of frame
-     * @param {number} x1 - right X of frame
-     * @param {number} y1 - bottom Y of frame
+     * @param {PIXI.Transform} transform - 要应用的转换
+     * @param {number} x0 - 帧的左X
+     * @param {number} y0 - 帧的上Y
+     * @param {number} x1 - 帧的右X
+     * @param {number} y1 - 帧的下Y
      */
     addFrame(transform: Transform, x0: number, y0: number, x1: number, y1: number): void
     {
@@ -177,13 +177,13 @@ export class Bounds
     }
 
     /**
-     * Adds sprite frame, multiplied by matrix
+     * 添加精灵帧，乘以矩阵
      *
-     * @param {PIXI.Matrix} matrix - matrix to apply
-     * @param {number} x0 - left X of frame
-     * @param {number} y0 - top Y of frame
-     * @param {number} x1 - right X of frame
-     * @param {number} y1 - bottom Y of frame
+     * @param {PIXI.Matrix} matrix - 要应用的矩阵
+     * @param {number} x0 - 帧的左X
+     * @param {number} y0 - 帧的上Y
+     * @param {number} x1 - 帧的右X
+     * @param {number} y1 - 帧的下Y
      */
     addFrameMatrix(matrix: Matrix, x0: number, y0: number, x1: number, y1: number): void
     {
@@ -235,11 +235,11 @@ export class Bounds
     }
 
     /**
-     * Adds screen vertices from array
+     * 从数组中添加屏幕顶点
      *
-     * @param {Float32Array} vertexData - calculated vertices
-     * @param {number} beginOffset - begin offset
-     * @param {number} endOffset - end offset, excluded
+     * @param {Float32Array} vertexData - 计算顶点
+     * @param {number} beginOffset - 开始位置的偏移
+     * @param {number} endOffset - 结束位置的偏移，不包含
      */
     addVertexData(vertexData: Float32Array, beginOffset: number, endOffset: number): void
     {
@@ -266,12 +266,12 @@ export class Bounds
     }
 
     /**
-     * Add an array of mesh vertices
+     * 添加网格顶点数组
      *
-     * @param {PIXI.Transform} transform - mesh transform
-     * @param {Float32Array} vertices - mesh coordinates in array
-     * @param {number} beginOffset - begin offset
-     * @param {number} endOffset - end offset, excluded
+     * @param {PIXI.Transform} transform - 网格变换
+     * @param {Float32Array} vertices - 数组中的网格坐标
+     * @param {number} beginOffset - 开始位置的偏移
+     * @param {number} endOffset - 结束位置的偏移，不包含
      */
     addVertices(transform: Transform, vertices: Float32Array, beginOffset: number, endOffset: number): void
     {
@@ -279,12 +279,12 @@ export class Bounds
     }
 
     /**
-     * Add an array of mesh vertices.
+     * 添加一个网格顶点数组。
      *
-     * @param {PIXI.Matrix} matrix - mesh matrix
-     * @param {Float32Array} vertices - mesh coordinates in array
-     * @param {number} beginOffset - begin offset
-     * @param {number} endOffset - end offset, excluded
+     * @param {PIXI.Matrix} matrix - 网格矩阵
+     * @param {Float32Array} vertices - 数组中的网格坐标
+     * @param {number} beginOffset - 开始位置的偏移
+     * @param {number} endOffset - 结束位置的偏移，不包含
      * @param {number} [padX=0] - x padding
      * @param {number} [padY=0] - y padding
      */
@@ -323,9 +323,9 @@ export class Bounds
     }
 
     /**
-     * Adds other Bounds.
+     * 添加其他边界。
      *
-     * @param {PIXI.Bounds} bounds - The Bounds to be added
+     * @param {PIXI.Bounds} bounds - 要添加的边界
      */
     addBounds(bounds: Bounds): void
     {
@@ -341,9 +341,9 @@ export class Bounds
     }
 
     /**
-     * Adds other Bounds, masked with Bounds.
+     * 添加其他边界，并用边界遮罩。
      *
-     * @param {PIXI.Bounds} bounds - The Bounds to be added.
+     * @param {PIXI.Bounds} bounds - 要添加的边界。
      * @param {PIXI.Bounds} mask - TODO
      */
     addBoundsMask(bounds: Bounds, mask: Bounds): void
@@ -368,10 +368,10 @@ export class Bounds
     }
 
     /**
-     * Adds other Bounds, multiplied by matrix. Bounds shouldn't be empty.
+     * 将其他边界乘以矩阵。 边界不应为空。
      *
-     * @param {PIXI.Bounds} bounds other bounds
-     * @param {PIXI.Matrix} matrix multiplicator
+     * @param {PIXI.Bounds} bounds 其他边界
+     * @param {PIXI.Matrix} matrix 乘数
      */
     addBoundsMatrix(bounds: Bounds, matrix: Matrix): void
     {
@@ -379,7 +379,7 @@ export class Bounds
     }
 
     /**
-     * Adds other Bounds, masked with Rectangle.
+     * 添加其他矩形包围的边界。
      *
      * @param {PIXI.Bounds} bounds - TODO
      * @param {PIXI.Rectangle} area - TODO
@@ -406,11 +406,11 @@ export class Bounds
     }
 
     /**
-     * Pads bounds object, making it grow in all directions.
-     * If paddingY is omitted, both paddingX and paddingY will be set to paddingX.
+     * 填充边界对象，使其向各个方向延伸。
+     * 如果省略paddingY，则paddingX和paddingY都将设置为paddingX。
      *
-     * @param {number} [paddingX=0] - The horizontal padding amount.
-     * @param {number} [paddingY=0] - The vertical padding amount.
+     * @param {number} [paddingX=0] - 水平填充量。
+     * @param {number} [paddingY=0] - 垂直填充量。
      */
     pad(paddingX = 0, paddingY = paddingX): void
     {
@@ -424,12 +424,12 @@ export class Bounds
     }
 
     /**
-     * Adds padded frame. (x0, y0) should be strictly less than (x1, y1)
+     * 添加填充的帧. (x0, y0) 应该严格小于 (x1, y1)
      *
-     * @param {number} x0 - left X of frame
-     * @param {number} y0 - top Y of frame
-     * @param {number} x1 - right X of frame
-     * @param {number} y1 - bottom Y of frame
+     * @param {number} x0 - 帧的左X
+     * @param {number} y0 - 帧的上Y
+     * @param {number} x1 - 帧的右X
+     * @param {number} y1 - 帧的下Y
      * @param {number} padX - padding X
      * @param {number} padY - padding Y
      */

@@ -3,17 +3,16 @@ import { SHAPES } from '@pixi/math';
 /**
  * @author Mat Groves
  *
- * Big thanks to the very clever Matt DesLauriers <mattdesl> https://github.com/mattdesl/
- * for creating the original PixiJS version!
- * Also a thanks to https://github.com/bchevalier for tweaking the tint and alpha so that they
- * now share 4 bytes on the vertex buffer
+ * 非常感谢天才的 Matt DesLauriers <mattdesl> https://github.com/mattdesl/
+ * 创建了原始的PixiJS版本！
+ * 还要感谢 https://github.com/bchevalier 调整了色调和alpha，以便它们现在在顶点缓冲区上共享4个字节
  *
- * Heavily inspired by LibGDX's CanvasGraphicsRenderer:
+ * 受LibGDX的CanvasGraphicsRenderer的启发：
  * https://github.com/libgdx/libgdx/blob/1.0.0/gdx/src/com/badlogic/gdx/graphics/glutils/ShapeRenderer.java
  */
 
 /**
- * Renderer dedicated to drawing and batching graphics objects.
+ * 专门用于绘制和批处理图形对象的渲染器。
  *
  * @class
  * @protected
@@ -22,7 +21,7 @@ import { SHAPES } from '@pixi/math';
 export class CanvasGraphicsRenderer
 {
     /**
-     * @param {PIXI.CanvasRenderer} renderer - The current PIXI renderer.
+     * @param {PIXI.CanvasRenderer} renderer - 当前的PIXI渲染器。
      */
     constructor(renderer)
     {
@@ -30,9 +29,9 @@ export class CanvasGraphicsRenderer
     }
 
     /**
-     * Renders a Graphics object to a canvas.
+     * 将Graphics对象渲染到画布。
      *
-     * @param {PIXI.Graphics} graphics - the actual graphics object to render
+     * @param {PIXI.Graphics} graphics - 要渲染的实际图形对象
      */
     render(graphics)
     {
@@ -285,10 +284,10 @@ export class CanvasGraphicsRenderer
     }
 
     /**
-     * Updates the tint of a graphics object
+     * 更新图形对象的色彩
      *
      * @protected
-     * @param {PIXI.Graphics} graphics - the graphics that will have its tint updated
+     * @param {PIXI.Graphics} graphics - 将更新其色调的图形
      */
     updateGraphicsTint(graphics)
     {
@@ -323,7 +322,7 @@ export class CanvasGraphicsRenderer
     }
 
     /**
-     * destroy graphics object
+     * 销毁图形对象
      *
      */
     destroy()

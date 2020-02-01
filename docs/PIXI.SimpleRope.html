@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>PixiJS中文文档</title>
+    <title>PixiJS中文开发文档</title>
     
-    <meta name="description" content="PixiJS库的中文文档" />
+    <meta name="description" content="PixiJS库的中文开发文档" />
     
         <meta name="keywords" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
         <meta name="keyword" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
@@ -34,7 +34,7 @@
     
     
     <script>
-    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文文档","description":"PixiJS库的中文文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
+    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS中文","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文开发文档","description":"PixiJS库的中文开发文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
     </script>
     
 
@@ -44,7 +44,7 @@
 <div id="wrap" class="clearfix">
     
 <div class="navigation">
-    <h3 class="applicationName"><a href="index.html">PixiJS</a></h3>
+    <h3 class="applicationName"><a href="index.html">PixiJS中文</a></h3>
     <button id="menuToggle" class="btn btn-link btn-lg menu-toggle">
         <span class="glyphicon glyphicon-menu-hamburger"></span>
     </button>
@@ -13570,7 +13570,7 @@ and downsampling here. If set to zero, texture will be streched instead.</p></td
 <dd>
     
     <div class="description">
-        <p>The bounds object, this is used to calculate and store the bounds of the displayObject.</p>
+        <p>bounds对象，用于计算和存储displayObject的边界。</p>
     </div>
     
     
@@ -13735,7 +13735,7 @@ and downsampling here. If set to zero, texture will be streched instead.</p></td
 <dd>
     
     <div class="description">
-        <p>If the object has been destroyed via destroy(). If true, it should not be used.</p>
+        <p>如果对象已通过destroy()销毁, 则为true，此属性不应被使用。</p>
     </div>
     
     
@@ -13790,7 +13790,7 @@ and downsampling here. If set to zero, texture will be streched instead.</p></td
 <dd>
     
     <div class="description">
-        <p>Currently enabled filters</p>
+        <p>当前启用的滤镜</p>
     </div>
     
     
@@ -13845,8 +13845,8 @@ and downsampling here. If set to zero, texture will be streched instead.</p></td
 <dd>
     
     <div class="description">
-        <p>Which index in the children array the display component was before the previous zIndex sort.
-Used by containers to help sort objects with the same zIndex, by using previous array index as the decider.</p>
+        <p>显示组件在子数组中的哪个索引在上一个zIndex排序之前。
+由容器使用，通过使用前一个数组索引作为决策器，帮助对具有相同zIndex的对象进行排序。</p>
     </div>
     
     
@@ -13956,7 +13956,7 @@ Used by containers to help sort objects with the same zIndex, by using previous 
 <dd>
     
     <div class="description">
-        <p>The original, cached mask of the object.</p>
+        <p>对象的原始缓存掩罩。</p>
     </div>
     
     
@@ -14062,8 +14062,8 @@ Used by containers to help sort objects with the same zIndex, by using previous 
 <dd>
     
     <div class="description">
-        <p>The zIndex of the displayObject.
-A higher value will mean it will be rendered on top of other displayObjects within the same container.</p>
+        <p>displayObject的zIndex。
+较高的值意味着它将呈现在同一容器中其他显示对象的顶部。</p>
     </div>
     
     
@@ -14118,8 +14118,7 @@ A higher value will mean it will be rendered on top of other displayObjects with
 <dd>
     
     <div class="description">
-        <p>Flag for if the object is accessible. If true AccessibilityManager will overlay a
-shadow div with attributes set</p>
+        <p>标记对象是否可访问。 如果为true，AccessibilityManager将使用属性集覆盖阴影div</p>
     </div>
     
     
@@ -14174,8 +14173,7 @@ shadow div with attributes set</p>
 <dd>
     
     <div class="description">
-        <p>Setting to false will prevent any children inside this container to
-be accessible. Defaults to true.</p>
+        <p>设置为false将阻止访问此容器中的所有子级。 默认为true。</p>
     </div>
     
     
@@ -14233,7 +14231,7 @@ be accessible. Defaults to true.</p>
 <dd>
     
     <div class="description">
-        <p>Sets the aria-label attribute of the shadow div</p>
+        <p>设置阴影div的aria-label属性</p>
     </div>
     
     
@@ -14288,8 +14286,8 @@ be accessible. Defaults to true.</p>
 <dd>
     
     <div class="description">
-        <p>Specify the pointer-events the accessible div will use
-Defaults to auto.</p>
+        <p>指定可访问的div将使用的指针事件
+默认为'auto'</p>
     </div>
     
     
@@ -14347,8 +14345,7 @@ Defaults to auto.</p>
 <dd>
     
     <div class="description">
-        <p>Sets the title attribute of the shadow div
-If accessibleTitle AND accessibleHint has not been this will default to 'displayObject [tabIndex]'</p>
+        <p>设置阴影div的title属性。如果尚未设置accessibleTitle和accessibleHint，则默认为 'displayObject [tabIndex]'</p>
     </div>
     
     
@@ -14403,8 +14400,8 @@ If accessibleTitle AND accessibleHint has not been this will default to 'display
 <dd>
     
     <div class="description">
-        <p>Specify the type of div the accessible layer is. Screen readers treat the element differently
-depending on this type. Defaults to button.</p>
+        <p>指定可访问层的div的类型。 屏幕阅读器会根据此类型对元素进行不同的处理。
+默认为 button.</p>
     </div>
     
     
@@ -14462,7 +14459,7 @@ depending on this type. Defaults to button.</p>
 <dd>
     
     <div class="description">
-        <p>The opacity of the object.</p>
+        <p>对象的不透明度。</p>
     </div>
     
     
@@ -14517,8 +14514,8 @@ depending on this type. Defaults to button.</p>
 <dd>
     
     <div class="description">
-        <p>The angle of the object in degrees.
-'rotation' and 'angle' have the same effect on a display object; rotation is in radians, angle is in degrees.</p>
+        <p>物体的角度，以度为单位。
+'rotation' 和 'angle' 对显示对象具有相同的效果； 旋转单位为弧度，角度单位为度。</p>
     </div>
     
     
@@ -14756,12 +14753,11 @@ sprite.buttonMode = true;</code></pre>
 <dd>
     
     <div class="description">
-        <p>Set this to true if you want this display object to be cached as a bitmap.
-This basically takes a snap shot of the display object as it is at that moment. It can
-provide a performance benefit for complex static displayObjects.
-To remove simply set this property to <code>false</code></p>
-<p>IMPORTANT GOTCHA - Make sure that all your textures are preloaded BEFORE setting this property to true
-as it will take a snapshot of what is currently there. If the textures have not loaded then they will not appear.</p>
+        <p>如果希望将此显示对象缓存为位图，请将其设置为true。
+这基本上是对显示对象的快照。它可以为复杂的静态displayObjects提供性能优势。
+要删除，只需将此属性设置为<code>false</code>即可。</p>
+<p>重要提示-在将此属性设置为true之前，请确保已预加载所有纹理，因为它将获取当前纹理的快照。
+如果尚未加载纹理，则它们将不会显示。</p>
     </div>
     
     
@@ -14816,7 +14812,7 @@ as it will take a snapshot of what is currently there. If the textures have not 
 <dd>
     
     <div class="description">
-        <p>The array of children of this container.</p>
+        <p>此容器的子级数组。</p>
     </div>
     
     
@@ -15006,9 +15002,8 @@ sprite.cursor = 'wait';</code></pre>
 <dd>
     
     <div class="description">
-        <p>The area the filter is applied to. This is used as more of an optimization
-rather than figuring out the dimensions of the displayObject each frame you can set this rectangle.</p>
-<p>Also works as an interaction mask.</p>
+        <p>设置滤镜的区域。这更多的是用作优化，而不是计算可以设置此矩形的每个帧的displayObject的尺寸。</p>
+<p>也可用作交互掩罩。</p>
     </div>
     
     
@@ -15063,10 +15058,10 @@ rather than figuring out the dimensions of the displayObject each frame you can 
 <dd>
     
     <div class="description">
-        <p>Sets the filters for the displayObject.</p>
+        <p>设置displayObject的滤镜。</p>
 <ul>
-<li>IMPORTANT: This is a WebGL only feature and will be ignored by the canvas renderer.
-To remove filters simply set this property to <code>'null'</code>.</li>
+<li>重要提示：这是一个WebGL独有的功能，将被画布渲染器忽略。
+若要删除滤镜，只需将此属性设置为<code>'null'</code>。</li>
 </ul>
     </div>
     
@@ -15179,7 +15174,7 @@ this data to the GPU. Can be shared between multiple Mesh objects.</p>
 <dd>
     
     <div class="description">
-        <p>The height of the Container, setting this will actually modify the scale to achieve the value set</p>
+        <p>容器的高度，设置此高度实际上会修改比例，以达到设置的值</p>
     </div>
     
     
@@ -15424,7 +15419,7 @@ Setting this to false allows PixiJS to bypass a recursive <code>hitTest</code> f
 <dd>
     
     <div class="description">
-        <p>Does any other displayObject use this object as a mask?</p>
+        <p>是否还有其他displayObject将此对象用作遮罩？</p>
     </div>
     
     
@@ -15479,7 +15474,7 @@ Setting this to false allows PixiJS to bypass a recursive <code>hitTest</code> f
 <dd>
     
     <div class="description">
-        <p>used to fast check if a sprite is.. a sprite!</p>
+        <p>用于快速检查精灵是否是.. 一个精灵!</p>
     </div>
     
     
@@ -15534,7 +15529,7 @@ Setting this to false allows PixiJS to bypass a recursive <code>hitTest</code> f
 <dd>
     
     <div class="description">
-        <p>Current transform of the object based on local factors: position, scale, other stuff.</p>
+        <p>基于局部因素的当前对象变换：位置、比例、其他内容。</p>
     </div>
     
     
@@ -15589,11 +15584,11 @@ Setting this to false allows PixiJS to bypass a recursive <code>hitTest</code> f
 <dd>
     
     <div class="description">
-        <p>Sets a mask for the displayObject. A mask is an object that limits the visibility of an
-object to the shape of the mask applied to it. In PixiJS a regular mask must be a
+        <p>设置displayObject的遮罩。遮罩是将对象的可见性限制为应用于其的遮罩形状的对象。
+在PixiJS中，常规遮罩必须是<a href="PIXI.Graphics.html">PIXI.Graphics</a>或<a href="PIXI.Sprite.html">PIXI.Sprite</a>对象。
 <a href="PIXI.Graphics.html">PIXI.Graphics</a> or a <a href="PIXI.Sprite.html">PIXI.Sprite</a> object. This allows for much faster masking in canvas as it
-utilities shape clipping. To remove a mask, set this property to <code>null</code>.</p>
-<p>For sprite mask both alpha and red channel are used. Black mask is the same as transparent mask.</p>
+这样可以在画布中更快地进行遮罩，因为它实用程序形状剪辑。若要删除掩码，请将此属性设置为<code>null</code>。</p>
+<p>对于精灵遮罩，使用alpha和red通道。黑色遮罩与透明遮罩相同。</p>
     </div>
     
     
@@ -15621,7 +15616,7 @@ utilities shape clipping. To remove a mask, set this property to <code>null</cod
     <dt class="tag-todo">TODO</dt>
     <dd class="tag-todo">
         <ul>
-            <li>At the moment, PIXI.CanvasRenderer doesn't support PIXI.Sprite as mask.</li>
+            <li>目前，PIXI.CanvasRenderer不支持PIXI.Sprite作为遮罩。</li>
         </ul>
     </dd>
     
@@ -15779,7 +15774,7 @@ sprite.mask = graphics;</code></pre>
 <dd>
     
     <div class="description">
-        <p>The display object container that contains this display object.</p>
+        <p>包含此显示对象的显示对象容器。</p>
     </div>
     
     
@@ -15834,8 +15829,8 @@ sprite.mask = graphics;</code></pre>
 <dd>
     
     <div class="description">
-        <p>The pivot point of the displayObject that it rotates around.
-Assignment by value since pixi-v4.</p>
+        <p>显示对象绕其旋转的轴心点。
+pixi-v4开始按值传递。</p>
     </div>
     
     
@@ -15949,8 +15944,8 @@ Assignment by value since pixi-v4.</p>
 <dd>
     
     <div class="description">
-        <p>The coordinate of the object relative to the local coordinates of the parent.
-Assignment by value since pixi-v4.</p>
+        <p>对象相对于父对象的局部坐标的坐标。
+pixi-v4开始按值传递。</p>
     </div>
     
     
@@ -16005,9 +16000,8 @@ Assignment by value since pixi-v4.</p>
 <dd>
     
     <div class="description">
-        <p>Can this object be rendered, if false the object will not be drawn but the updateTransform
-methods will still be called.</p>
-<p>Only affects recursive calls from parent. You can ask for bounds manually.</p>
+        <p>是否可以渲染此对象，如果为false，则不会绘制对象，但仍将调用updateTransform方法。</p>
+<p>仅影响来自父级的递归调用。 您可以手动请求边界。</p>
     </div>
     
     
@@ -16062,8 +16056,8 @@ methods will still be called.</p>
 <dd>
     
     <div class="description">
-        <p>The rotation of the object in radians.
-'rotation' and 'angle' have the same effect on a display object; rotation is in radians, angle is in degrees.</p>
+        <p>物体的弧度旋转。
+'rotation' 和 'angle' 对显示对象具有相同的效果； 旋转单位为弧度，角度单位为度。</p>
     </div>
     
     
@@ -16179,8 +16173,8 @@ To set the global default, change <a href="PIXI.settings.html#.ROUND_PIXELS">PIX
 <dd>
     
     <div class="description">
-        <p>The scale factor of the object.
-Assignment by value since pixi-v4.</p>
+        <p>对象的比例因子。
+pixi-v4开始按值传递。</p>
     </div>
     
     
@@ -16349,8 +16343,8 @@ Can be shared between multiple Mesh objects.</p>
 <dd>
     
     <div class="description">
-        <p>The skew factor for the object in radians.
-Assignment by value since pixi-v4.</p>
+        <p>对象的歪斜因子，以弧度为单位。
+pixi-v4开始按值传递。</p>
     </div>
     
     
@@ -16405,13 +16399,12 @@ Assignment by value since pixi-v4.</p>
 <dd>
     
     <div class="description">
-        <p>If set to true, the container will sort its children by zIndex value
-when updateTransform() is called, or manually if sortChildren() is called.</p>
-<p>This actually changes the order of elements in the array, so should be treated
-as a basic solution that is not performant compared to other solutions,
-such as @link https://github.com/pixijs/pixi-display</p>
-<p>Also be aware of that this may not work nicely with the addChildAt() function,
-as the zIndex sorting may cause the child to automatically sorted to another position.</p>
+        <p>如果设置为true，则在调用updateTransform()时容器将按zIndex值对其子级进行排序，
+或者在调用sortChildren()时手动排序。</p>
+<p>这实际上会更改数组中元素的顺序，因此应将其视为与其他解决方案相比性能不佳的基本解决方案，
+例如 @link https://github.com/pixijs/pixi-display</p>
+<p>还要注意，这可能无法很好地与addChildAt()函数一起工作，
+因为zIndex排序可能会导致子项自动排序到另一个位置。</p>
     </div>
     
     
@@ -16473,8 +16466,8 @@ as the zIndex sorting may cause the child to automatically sorted to another pos
 <dd>
     
     <div class="description">
-        <p>Should children be sorted by zIndex at the next updateTransform call.
-Will get automatically set to true if a new child is added, or if a child's zIndex changes.</p>
+        <p>在下一次updateTransform调用时，是否应按zIndex对子级进行排序。
+如果添加了新子级或子级的zIndex更改，则将自动设置为true。</p>
     </div>
     
     
@@ -16757,8 +16750,8 @@ blend mode, culling, depth testing, direction of rendering triangles, backface, 
 <dd>
     
     <div class="description">
-        <p>World transform and local transform of this object.
-This will become read-only later, please do not assign anything there unless you know what are you doing.</p>
+        <p>该对象的世界变换和局部变换。
+稍后它将变为只读，除非您知道自己在做什么，否则请不要在其中分配任何内容。</p>
     </div>
     
     
@@ -16924,9 +16917,8 @@ Incrementing _updateID is optional because most of Mesh objects do it anyway.</p
 <dd>
     
     <div class="description">
-        <p>The visibility of the object. If false the object will not be drawn, and
-the updateTransform function will not be called.</p>
-<p>Only affects recursive calls from parent. You can ask for bounds or call updateTransform manually.</p>
+        <p>对象的可见性。 如果为false，则不会绘制对象，并且不会调用updateTransform函数。</p>
+<p>仅影响来自父级的递归调用。 您可以请求边界或手动调用updateTransform。</p>
     </div>
     
     
@@ -16981,7 +16973,7 @@ the updateTransform function will not be called.</p>
 <dd>
     
     <div class="description">
-        <p>The width of the Container, setting this will actually modify the scale to achieve the value set</p>
+        <p>容器的宽度，设置此值实际上会修改比例，以达到设置的值</p>
     </div>
     
     
@@ -17036,7 +17028,7 @@ the updateTransform function will not be called.</p>
 <dd>
     
     <div class="description">
-        <p>The multiplied alpha of the displayObject.</p>
+        <p>displayObject的相乘alpha。</p>
     </div>
     
     
@@ -17091,7 +17083,7 @@ the updateTransform function will not be called.</p>
 <dd>
     
     <div class="description">
-        <p>Current transform of the object based on world (parent) factors.</p>
+        <p>基于世界（父）因素的对象的当前变换。</p>
     </div>
     
     
@@ -17146,7 +17138,7 @@ the updateTransform function will not be called.</p>
 <dd>
     
     <div class="description">
-        <p>Indicates if the object is globally visible.</p>
+        <p>指示对象是否世界可见。</p>
     </div>
     
     
@@ -17201,8 +17193,8 @@ the updateTransform function will not be called.</p>
 <dd>
     
     <div class="description">
-        <p>The position of the displayObject on the x axis relative to the local coordinates of the parent.
-An alias to position.x</p>
+        <p>displayObject在x轴上相对于父级本地坐标的位置。
+position.x的别名</p>
     </div>
     
     
@@ -17257,8 +17249,8 @@ An alias to position.x</p>
 <dd>
     
     <div class="description">
-        <p>The position of the displayObject on the y axis relative to the local coordinates of the parent.
-An alias to position.y</p>
+        <p>displayObject在y轴上相对于父级本地坐标的位置
+position.y的别名</p>
     </div>
     
     
@@ -17313,10 +17305,9 @@ An alias to position.y</p>
 <dd>
     
     <div class="description">
-        <p>The zIndex of the displayObject.
-If a container has the sortableChildren property set to true, children will be automatically
-sorted by zIndex value; a higher value will mean it will be moved towards the end of the array,
-and thus rendered on top of other displayObjects within the same container.</p>
+        <p>displayObject的zIndex。
+如果容器的sortableChildren属性设置为true，则子容器将按zIndex值自动排序；值越大，则表示它将移向数组的末尾，
+并以此渲染在同一容器中的其他displayObjects之上。</p>
     </div>
     
     
@@ -17456,7 +17447,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
         
         <div class="tag-source">
-            <a href="packages_display_src_DisplayObject.js.html#line202">DisplayObject.js:202</a>
+            <a href="packages_display_src_DisplayObject.js.html#line198">DisplayObject.js:198</a>
         </div>
         
     </div>
@@ -17467,8 +17458,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
     
     <div class="description">
-        <p>Recursively updates transform of all objects from the root to this one
-internal function for toLocal()</p>
+        <p>递归地将所有对象的转换从根更新为此toLocal()的一个内部函数</p>
     </div>
     
 
@@ -17912,7 +17902,7 @@ internal function for toLocal()</p>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_Container.js.html#line101">Container.js:101</a>
+            <a href="packages_display_src_Container.js.html#line100">Container.js:100</a>
         </div>
         
     </div>
@@ -17923,8 +17913,8 @@ internal function for toLocal()</p>
     
     
     <div class="description">
-        <p>Adds one or more children to the container.</p>
-<p>Multiple items can be added like so: <code>myContainer.addChild(thingOne, thingTwo, thingThree)</code></p>
+        <p>将一个或多个子项添加到容器中。</p>
+<p>可以像这样添加多个项: <code>myContainer.addChild(thingOne, thingTwo, thingThree)</code></p>
     </div>
     
 
@@ -17978,7 +17968,7 @@ internal function for toLocal()</p>
                         <span class="repeatable">repeatable</span>
                     
                 
-                <p>The DisplayObject(s) to add to the container</p></td>
+                <p>要添加到容器的显示对象(可以为复数个)</p></td>
         </tr>
 	
 	
@@ -18041,7 +18031,7 @@ internal function for toLocal()</p>
                         
                     
             </td>
-            <td class="description last">The first child that was added.</td>
+            <td class="description last">添加的第一个子项。</td>
         </tr>
     
     </tbody>
@@ -18074,7 +18064,7 @@ internal function for toLocal()</p>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_Container.js.html#line144">Container.js:144</a>
+            <a href="packages_display_src_Container.js.html#line143">Container.js:143</a>
         </div>
         
     </div>
@@ -18085,7 +18075,7 @@ internal function for toLocal()</p>
     
     
     <div class="description">
-        <p>Adds a child to the container at a specified index. If the index is out of bounds an error will be thrown</p>
+        <p>在指定索引处向容器添加子项。如果索引超出界限，将抛出一个错误</p>
     </div>
     
 
@@ -18132,7 +18122,7 @@ internal function for toLocal()</p>
             
             <td class="description last">
                 
-                <p>The child to add</p></td>
+                <p>要添加的子项</p></td>
         </tr>
 	
 	
@@ -18155,7 +18145,7 @@ internal function for toLocal()</p>
             
             <td class="description last">
                 
-                <p>The index to place the child in</p></td>
+                <p>放置子项的索引</p></td>
         </tr>
 	
 	
@@ -18218,7 +18208,7 @@ internal function for toLocal()</p>
                         
                     
             </td>
-            <td class="description last">The child that was added.</td>
+            <td class="description last">添加的子项。</td>
         </tr>
     
     </tbody>
@@ -18251,7 +18241,7 @@ internal function for toLocal()</p>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_Container.js.html#line389">Container.js:389</a>
+            <a href="packages_display_src_Container.js.html#line388">Container.js:388</a>
         </div>
         
     </div>
@@ -18842,7 +18832,7 @@ their destroy method called as well. 'options' will be passed on to those calls.
     
         
         <div class="tag-source">
-            <a href="packages_display_src_DisplayObject.js.html#line168">DisplayObject.js:168</a>
+            <a href="packages_display_src_DisplayObject.js.html#line165">DisplayObject.js:165</a>
         </div>
         
     </div>
@@ -18853,8 +18843,8 @@ their destroy method called as well. 'options' will be passed on to those calls.
     
     
     <div class="description">
-        <p>DisplayObject default updateTransform, does not update children of container.
-Will crash if there's no parent element.</p>
+        <p>DisplayObject默认为updateTransform，不更新容器的子级。
+如果没有父元素，则会崩溃。</p>
     </div>
     
 
@@ -18923,7 +18913,7 @@ Will crash if there's no parent element.</p>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_DisplayObject.js.html#line235">DisplayObject.js:235</a>
+            <a href="packages_display_src_DisplayObject.js.html#line230">DisplayObject.js:230</a>
         </div>
         
     </div>
@@ -18934,7 +18924,7 @@ Will crash if there's no parent element.</p>
     
     
     <div class="description">
-        <p>Retrieves the bounds of the displayObject as a rectangle object.</p>
+        <p>以矩形对象的形式获取displayObject的边界。</p>
     </div>
     
 
@@ -18988,9 +18978,8 @@ Will crash if there's no parent element.</p>
                         
                     
                 
-                <p>Setting to <code>true</code> will stop the transforms of the scene graph from
-being updated. This means the calculation returned MAY be out of date BUT will give you a
-nice performance boost.</p></td>
+                <p>设置为<code>true</code>将阻止场景图的变换被更新。这意味着返回的计算可能已经过时，
+但会给您带来很好的性能提升。</p></td>
         </tr>
 	
 	
@@ -19020,7 +19009,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>Optional rectangle to store the result of the bounds calculation.</p></td>
+                <p>可选的矩形，用于存储边界计算的结果。</p></td>
         </tr>
 	
 	
@@ -19083,7 +19072,7 @@ nice performance boost.</p></td>
                         
                     
             </td>
-            <td class="description last">The rectangular bounding area.</td>
+            <td class="description last">矩形边界区域</td>
         </tr>
     
     </tbody>
@@ -19116,7 +19105,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_Container.js.html#line228">Container.js:228</a>
+            <a href="packages_display_src_Container.js.html#line227">Container.js:227</a>
         </div>
         
     </div>
@@ -19127,7 +19116,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Returns the child at the specified index</p>
+        <p>返回指定索引处的子级</p>
     </div>
     
 
@@ -19174,7 +19163,7 @@ nice performance boost.</p></td>
             
             <td class="description last">
                 
-                <p>The index to get the child at</p></td>
+                <p>查找的子项索引</p></td>
         </tr>
 	
 	
@@ -19237,7 +19226,7 @@ nice performance boost.</p></td>
                         
                     
             </td>
-            <td class="description last">The child at the given index, if any.</td>
+            <td class="description last">给定索引处的子级（如果有）。</td>
         </tr>
     
     </tbody>
@@ -19424,7 +19413,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_Container.js.html#line193">Container.js:193</a>
+            <a href="packages_display_src_Container.js.html#line192">Container.js:192</a>
         </div>
         
     </div>
@@ -19435,7 +19424,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Returns the index position of a child DisplayObject instance</p>
+        <p>返回子DisplayObject实例的索引位置</p>
     </div>
     
 
@@ -19482,7 +19471,7 @@ nice performance boost.</p></td>
             
             <td class="description last">
                 
-                <p>The DisplayObject instance to identify</p></td>
+                <p>要标识的DisplayObject实例</p></td>
         </tr>
 	
 	
@@ -19545,7 +19534,7 @@ nice performance boost.</p></td>
                         
                     
             </td>
-            <td class="description last">The index position of the child display object to identify</td>
+            <td class="description last">要标识的子显示对象的索引位置</td>
         </tr>
     
     </tbody>
@@ -19785,7 +19774,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_DisplayObject.js.html#line273">DisplayObject.js:273</a>
+            <a href="packages_display_src_DisplayObject.js.html#line268">DisplayObject.js:268</a>
         </div>
         
     </div>
@@ -19796,7 +19785,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Retrieves the local bounds of the displayObject as a rectangle object.</p>
+        <p>以矩形对象的形式获取displayObject的局部范围。</p>
     </div>
     
 
@@ -19850,7 +19839,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>Optional rectangle to store the result of the bounds calculation.</p></td>
+                <p>可选的矩形，用于存储边界计算的结果。</p></td>
         </tr>
 	
 	
@@ -19913,7 +19902,7 @@ nice performance boost.</p></td>
                         
                     
             </td>
-            <td class="description last">The rectangular bounding area.</td>
+            <td class="description last">矩形边界区域</td>
         </tr>
     
     </tbody>
@@ -19946,7 +19935,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_Container.js.html#line89">Container.js:89</a>
+            <a href="packages_display_src_Container.js.html#line88">Container.js:88</a>
         </div>
         
     </div>
@@ -19957,7 +19946,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Overridable method that can be used by Container subclasses whenever the children array is modified</p>
+        <p>可重写的方法，每当修改子数组时，容器子类都可以使用该方法</p>
     </div>
     
 
@@ -20026,7 +20015,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_Container.js.html#line243">Container.js:243</a>
+            <a href="packages_display_src_Container.js.html#line242">Container.js:242</a>
         </div>
         
     </div>
@@ -20037,7 +20026,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Removes one or more children from the container.</p>
+        <p>从容器中取出一个或多个子项。</p>
     </div>
     
 
@@ -20091,7 +20080,7 @@ nice performance boost.</p></td>
                         <span class="repeatable">repeatable</span>
                     
                 
-                <p>The DisplayObject(s) to remove</p></td>
+                <p>要删除的DisplayObject(可以为复数个)</p></td>
         </tr>
 	
 	
@@ -20154,7 +20143,7 @@ nice performance boost.</p></td>
                         
                     
             </td>
-            <td class="description last">The first child that was removed.</td>
+            <td class="description last">被删除的第一个子项目。</td>
         </tr>
     
     </tbody>
@@ -20187,7 +20176,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_Container.js.html#line281">Container.js:281</a>
+            <a href="packages_display_src_Container.js.html#line280">Container.js:280</a>
         </div>
         
     </div>
@@ -20198,7 +20187,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Removes a child from the specified index position.</p>
+        <p>从指定的索引位置删除子项。</p>
     </div>
     
 
@@ -20245,7 +20234,7 @@ nice performance boost.</p></td>
             
             <td class="description last">
                 
-                <p>The index to get the child from</p></td>
+                <p>要删除的子项索引</p></td>
         </tr>
 	
 	
@@ -20308,7 +20297,7 @@ nice performance boost.</p></td>
                         
                     
             </td>
-            <td class="description last">The child that was removed.</td>
+            <td class="description last">被删除的子项。</td>
         </tr>
     
     </tbody>
@@ -20341,7 +20330,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_Container.js.html#line305">Container.js:305</a>
+            <a href="packages_display_src_Container.js.html#line304">Container.js:304</a>
         </div>
         
     </div>
@@ -20352,7 +20341,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Removes all children from this container that are within the begin and end indexes.</p>
+        <p>从此容器中删除在开始索引和结束索引内的所有子项。</p>
     </div>
     
 
@@ -20414,7 +20403,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>The beginning position.</p></td>
+                <p>起始位置。</p></td>
         </tr>
 	
 	
@@ -20450,7 +20439,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>The ending position. Default value is size of the container.</p></td>
+                <p>结束位置。 默认值是容器的大小。</p></td>
         </tr>
 	
 	
@@ -20513,7 +20502,7 @@ nice performance boost.</p></td>
                         
                     
             </td>
-            <td class="description last">List of removed children</td>
+            <td class="description last">被删除的子项列表</td>
         </tr>
     
     </tbody>
@@ -20546,7 +20535,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_Container.js.html#line436">Container.js:436</a>
+            <a href="packages_display_src_Container.js.html#line434">Container.js:434</a>
         </div>
         
     </div>
@@ -20557,7 +20546,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Renders the object using the WebGL renderer</p>
+        <p>使用WebGL渲染器渲染对象</p>
     </div>
     
 
@@ -20604,7 +20593,7 @@ nice performance boost.</p></td>
             
             <td class="description last">
                 
-                <p>The renderer</p></td>
+                <p>渲染器</p></td>
         </tr>
 	
 	
@@ -20671,7 +20660,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_Container.js.html#line464">Container.js:464</a>
+            <a href="packages_display_src_Container.js.html#line462">Container.js:462</a>
         </div>
         
     </div>
@@ -20682,7 +20671,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Render the object using the WebGL renderer and advanced features.</p>
+        <p>使用WebGL渲染器和高级功能渲染对象。</p>
     </div>
     
 
@@ -20729,7 +20718,7 @@ nice performance boost.</p></td>
             
             <td class="description last">
                 
-                <p>The renderer</p></td>
+                <p>渲染器</p></td>
         </tr>
 	
 	
@@ -20940,7 +20929,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Renders the object using the Canvas renderer</p>
+        <p>使用Canvas渲染器渲染对象</p>
     </div>
     
 
@@ -20987,7 +20976,7 @@ nice performance boost.</p></td>
             
             <td class="description last">
                 
-                <p>The renderer</p></td>
+                <p>渲染器</p></td>
         </tr>
 	
 	
@@ -21187,7 +21176,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_Container.js.html#line210">Container.js:210</a>
+            <a href="packages_display_src_Container.js.html#line209">Container.js:209</a>
         </div>
         
     </div>
@@ -21198,7 +21187,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Changes the position of an existing child in the display object container</p>
+        <p>更改现有子项在显示对象容器中的位置</p>
     </div>
     
 
@@ -21245,7 +21234,7 @@ nice performance boost.</p></td>
             
             <td class="description last">
                 
-                <p>The child DisplayObject instance for which you want to change the index number</p></td>
+                <p>要为其更改索引号的子DisplayObject实例</p></td>
         </tr>
 	
 	
@@ -21268,7 +21257,7 @@ nice performance boost.</p></td>
             
             <td class="description last">
                 
-                <p>The resulting index number for the child display object</p></td>
+                <p>子显示对象的结果索引</p></td>
         </tr>
 	
 	
@@ -21335,7 +21324,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_DisplayObject.js.html#line368">DisplayObject.js:368</a>
+            <a href="packages_display_src_DisplayObject.js.html#line363">DisplayObject.js:363</a>
         </div>
         
     </div>
@@ -21346,7 +21335,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Set the parent Container of this DisplayObject.</p>
+        <p>设置此DisplayObject的父容器。</p>
     </div>
     
 
@@ -21393,7 +21382,7 @@ nice performance boost.</p></td>
             
             <td class="description last">
                 
-                <p>The Container to add this DisplayObject to.</p></td>
+                <p>要将此DisplayObject添加到的容器。</p></td>
         </tr>
 	
 	
@@ -21456,7 +21445,7 @@ nice performance boost.</p></td>
                         
                     
             </td>
-            <td class="description last">The Container that this DisplayObject was added to.</td>
+            <td class="description last">此DisplayObject添加到的容器。</td>
         </tr>
     
     </tbody>
@@ -21489,7 +21478,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_DisplayObject.js.html#line392">DisplayObject.js:392</a>
+            <a href="packages_display_src_DisplayObject.js.html#line387">DisplayObject.js:387</a>
         </div>
         
     </div>
@@ -21500,7 +21489,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Convenience function to set the position, scale, skew and pivot at once.</p>
+        <p>便捷方法，可同时设置位置，比例，倾斜和枢轴。</p>
     </div>
     
 
@@ -21562,7 +21551,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>The X position</p></td>
+                <p>X位置</p></td>
         </tr>
 	
 	
@@ -21598,7 +21587,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>The Y position</p></td>
+                <p>Y位置</p></td>
         </tr>
 	
 	
@@ -21634,7 +21623,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>The X scale value</p></td>
+                <p>X标度值</p></td>
         </tr>
 	
 	
@@ -21670,7 +21659,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>The Y scale value</p></td>
+                <p>Y标度值</p></td>
         </tr>
 	
 	
@@ -21706,7 +21695,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>The rotation</p></td>
+                <p>旋转</p></td>
         </tr>
 	
 	
@@ -21742,7 +21731,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>The X skew value</p></td>
+                <p>X偏斜值</p></td>
         </tr>
 	
 	
@@ -21778,7 +21767,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>The Y skew value</p></td>
+                <p>Y偏斜值</p></td>
         </tr>
 	
 	
@@ -21814,7 +21803,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>The X pivot value</p></td>
+                <p>X轴值</p></td>
         </tr>
 	
 	
@@ -21850,7 +21839,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>The Y pivot value</p></td>
+                <p>Y轴值</p></td>
         </tr>
 	
 	
@@ -21913,7 +21902,7 @@ nice performance boost.</p></td>
                         
                     
             </td>
-            <td class="description last">The DisplayObject instance</td>
+            <td class="description last">DisplayObject实例</td>
         </tr>
     
     </tbody>
@@ -21946,7 +21935,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_Container.js.html#line342">Container.js:342</a>
+            <a href="packages_display_src_Container.js.html#line341">Container.js:341</a>
         </div>
         
     </div>
@@ -21957,7 +21946,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Sorts children by zIndex. Previous order is mantained for 2 children with the same zIndex.</p>
+        <p>按zIndex对子项进行排序。对于具有相同zIndex的2个子项，将维持先前的顺序。</p>
     </div>
     
 
@@ -22026,7 +22015,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_Container.js.html#line174">Container.js:174</a>
+            <a href="packages_display_src_Container.js.html#line173">Container.js:173</a>
         </div>
         
     </div>
@@ -22037,7 +22026,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Swaps the position of 2 Display Objects within this container.</p>
+        <p>交换此容器中两个显示对象的位置。</p>
     </div>
     
 
@@ -22084,7 +22073,7 @@ nice performance boost.</p></td>
             
             <td class="description last">
                 
-                <p>First display object to swap</p></td>
+                <p>要交换的第一个显示对象</p></td>
         </tr>
 	
 	
@@ -22107,7 +22096,7 @@ nice performance boost.</p></td>
             
             <td class="description last">
                 
-                <p>Second display object to swap</p></td>
+                <p>要交换的第二个显示对象</p></td>
         </tr>
 	
 	
@@ -22174,7 +22163,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_DisplayObject.js.html#line304">DisplayObject.js:304</a>
+            <a href="packages_display_src_DisplayObject.js.html#line299">DisplayObject.js:299</a>
         </div>
         
     </div>
@@ -22185,7 +22174,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Calculates the global position of the display object.</p>
+        <p>计算显示对象的世界位置。</p>
     </div>
     
 
@@ -22243,7 +22232,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>The world origin to calculate from.</p></td>
+                <p>要计算的世界原点。</p></td>
         </tr>
 	
 	
@@ -22277,8 +22266,8 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>A Point object in which to store the value, optional
-(otherwise will create a new Point).</p></td>
+                <p>存储值的Point对象，可选
+(为空时，会创建一个新的Point).</p></td>
         </tr>
 	
 	
@@ -22314,7 +22303,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>Should we skip the update transform.</p></td>
+                <p>是否跳过更新转换</p></td>
         </tr>
 	
 	
@@ -22377,7 +22366,7 @@ nice performance boost.</p></td>
                         
                     
             </td>
-            <td class="description last">A point object representing the position of this object.</td>
+            <td class="description last">表示此对象位置的Point对象。</td>
         </tr>
     
     </tbody>
@@ -22410,7 +22399,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_DisplayObject.js.html#line336">DisplayObject.js:336</a>
+            <a href="packages_display_src_DisplayObject.js.html#line331">DisplayObject.js:331</a>
         </div>
         
     </div>
@@ -22421,7 +22410,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Calculates the local position of the display object relative to another point.</p>
+        <p>计算显示对象相对于另一点的局部位置。</p>
     </div>
     
 
@@ -22479,7 +22468,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>The world origin to calculate from.</p></td>
+                <p>要计算的世界原点。</p></td>
         </tr>
 	
 	
@@ -22513,7 +22502,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>The DisplayObject to calculate the global position from.</p></td>
+                <p>从中计算世界位置的DisplayObject。</p></td>
         </tr>
 	
 	
@@ -22547,8 +22536,8 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>A Point object in which to store the value, optional
-(otherwise will create a new Point).</p></td>
+                <p>存储值的Point对象，可选
+(为空时，会创建一个新的Point).</p></td>
         </tr>
 	
 	
@@ -22584,7 +22573,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>Should we skip the update transform</p></td>
+                <p>是否跳过更新转换</p></td>
         </tr>
 	
 	
@@ -22647,7 +22636,7 @@ nice performance boost.</p></td>
                         
                     
             </td>
-            <td class="description last">A point object representing the position of this object</td>
+            <td class="description last">表示此对象位置的Point对象</td>
         </tr>
     
     </tbody>
@@ -22680,7 +22669,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_Container.js.html#line365">Container.js:365</a>
+            <a href="packages_display_src_Container.js.html#line364">Container.js:364</a>
         </div>
         
     </div>
@@ -22691,7 +22680,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Updates the transform on all children of this container for rendering</p>
+        <p>更新此容器的所有子项的变换以进行渲染</p>
     </div>
     
 
@@ -22770,7 +22759,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_display_src_DisplayObject.js.html#line139">DisplayObject.js:139</a>
+            <a href="packages_display_src_DisplayObject.js.html#line136">DisplayObject.js:136</a>
         </div>
         
     </div>
@@ -22781,7 +22770,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Fired when this DisplayObject is added to a Container.</p>
+        <p>将此DisplayObject添加到容器时触发。</p>
     </div>
     
 
@@ -22828,7 +22817,7 @@ nice performance boost.</p></td>
             
             <td class="description last">
                 
-                <p>The container added to.</p></td>
+                <p>添加到的容器。</p></td>
         </tr>
 	
 	
@@ -24788,7 +24777,7 @@ DisplayObject's <code>interactive</code> property must be set to <code>true</cod
     
         
         <div class="tag-source">
-            <a href="packages_display_src_DisplayObject.js.html#line145">DisplayObject.js:145</a>
+            <a href="packages_display_src_DisplayObject.js.html#line142">DisplayObject.js:142</a>
         </div>
         
     </div>
@@ -24799,7 +24788,7 @@ DisplayObject's <code>interactive</code> property must be set to <code>true</cod
     
     
     <div class="description">
-        <p>Fired when this DisplayObject is removed from a Container.</p>
+        <p>从容器中移除此DisplayObject时触发。</p>
     </div>
     
 
@@ -24846,7 +24835,7 @@ DisplayObject's <code>interactive</code> property must be set to <code>true</cod
             
             <td class="description last">
                 
-                <p>The container removed from.</p></td>
+                <p>从中移除的容器。</p></td>
         </tr>
 	
 	
@@ -26168,7 +26157,7 @@ DisplayObject's <code>interactive</code> property must be set to <code>true</cod
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Jan 22 2020 18:59:03 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sun Feb 02 2020 01:55:05 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

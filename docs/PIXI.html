@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>PixiJS中文文档</title>
+    <title>PixiJS中文开发文档</title>
     
-    <meta name="description" content="PixiJS库的中文文档" />
+    <meta name="description" content="PixiJS库的中文开发文档" />
     
         <meta name="keywords" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
         <meta name="keyword" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
@@ -34,7 +34,7 @@
     
     
     <script>
-    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文文档","description":"PixiJS库的中文文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
+    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS中文","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文开发文档","description":"PixiJS库的中文开发文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
     </script>
     
 
@@ -44,7 +44,7 @@
 <div id="wrap" class="clearfix">
     
 <div class="navigation">
-    <h3 class="applicationName"><a href="index.html">PixiJS</a></h3>
+    <h3 class="applicationName"><a href="index.html">PixiJS中文</a></h3>
     <button id="menuToggle" class="btn btn-link btn-lg menu-toggle">
         <span class="glyphicon glyphicon-menu-hamburger"></span>
     </button>
@@ -13866,9 +13866,9 @@
 <dd>
     
     <div class="description">
-        <p>Various blend modes supported by PIXI.</p>
-<p>IMPORTANT - The WebGL renderer only supports the NORMAL, ADD, MULTIPLY and SCREEN blend modes.
-Anything else will silently act like NORMAL.</p>
+        <p>PIXI支持各种混合模式</p>
+<p>IMPORTANT - WebGL渲染器仅支持NORMAL，ADD，MULTIPLY和SCREEN混合模式。
+其他都会像NORMAL一样默默地进行。</p>
     </div>
     
     
@@ -14683,7 +14683,7 @@ Anything else will silently act like NORMAL.</p>
 <dd>
     
     <div class="description">
-        <p>如何清除过滤器中的renderTextures</p>
+        <p>如何清除滤镜中的renderTextures</p>
     </div>
     
     
@@ -14733,7 +14733,7 @@ Anything else will silently act like NORMAL.</p>
             
             
             
-            <td class="description last"><p>Preserve the information in the texture, blend above</p></td>
+            <td class="description last"><p>保留纹理中的信息，在上面混合</p></td>
         </tr>
 	
 	
@@ -14756,7 +14756,7 @@ Anything else will silently act like NORMAL.</p>
             
             
             
-            <td class="description last"><p>Must use <code>gl.clear</code> operation</p></td>
+            <td class="description last"><p>必须使用<code>gl.clear</code>操作</p></td>
         </tr>
 	
 	
@@ -14779,7 +14779,7 @@ Anything else will silently act like NORMAL.</p>
             
             
             
-            <td class="description last"><p>Clear or blit it, depends on device and level of paranoia</p></td>
+            <td class="description last"><p>清除或变白，取决于设备和程度</p></td>
         </tr>
 	
 	
@@ -14802,7 +14802,7 @@ Anything else will silently act like NORMAL.</p>
             
             
             
-            <td class="description last"><p>Alias for BLEND, same as <code>false</code> in earlier versions</p></td>
+            <td class="description last"><p>BLEND的别名，与早期版本中的<code>false</code>相同</p></td>
         </tr>
 	
 	
@@ -14825,7 +14825,7 @@ Anything else will silently act like NORMAL.</p>
             
             
             
-            <td class="description last"><p>Alias for CLEAR, same as <code>true</code> in earlier versions</p></td>
+            <td class="description last"><p>CLEAR的别名，与早期版本中的<code>true</code>相同</p></td>
         </tr>
 	
 	
@@ -14848,7 +14848,7 @@ Anything else will silently act like NORMAL.</p>
             
             
             
-            <td class="description last"><p>Alias for BLIT</p></td>
+            <td class="description last"><p>BLIT的别名</p></td>
         </tr>
 	
 	
@@ -15113,8 +15113,7 @@ Based on: <a target="_blank" href="https://github.com/ragingwind/data-uri-regex"
 <dd>
     
     <div class="description">
-        <p>Various webgl draw modes. These can be used to specify which GL drawMode to use
-under certain situations and renderers.</p>
+        <p>各种webgl绘制模式。这些可用于指定在某些情况和渲染器下使用的GL drawMode。</p>
     </div>
     
     
@@ -15354,7 +15353,7 @@ under certain situations and renderers.</p>
 <dd>
     
     <div class="description">
-        <p>Different types of environments for WebGL.</p>
+        <p>WebGL的不同类型的环境。</p>
     </div>
     
     
@@ -15404,8 +15403,8 @@ under certain situations and renderers.</p>
             
             
             
-            <td class="description last"><p>Used for older v1 WebGL devices. PixiJS will aim to ensure compatibility
-with older / less advanced devices. If you experience unexplained flickering prefer this environment.</p></td>
+            <td class="description last"><p>用于较旧的v1 WebGL设备。
+PixiJS将致力于确保与较旧/较不先进的设备兼容。如果您遇到无法解释的闪烁，请选择此环境。</p></td>
         </tr>
 	
 	
@@ -15428,7 +15427,7 @@ with older / less advanced devices. If you experience unexplained flickering pre
             
             
             
-            <td class="description last"><p>Version 1 of WebGL</p></td>
+            <td class="description last"><p>WebGL版本1</p></td>
         </tr>
 	
 	
@@ -15451,7 +15450,7 @@ with older / less advanced devices. If you experience unexplained flickering pre
             
             
             
-            <td class="description last"><p>Version 2 of WebGL</p></td>
+            <td class="description last"><p>WebGL版本2</p></td>
         </tr>
 	
 	
@@ -15503,7 +15502,7 @@ with older / less advanced devices. If you experience unexplained flickering pre
 <dd>
     
     <div class="description">
-        <p>Various GL texture/resources formats.</p>
+        <p>各种GL纹理/资源格式。</p>
     </div>
     
     
@@ -15787,14 +15786,13 @@ with older / less advanced devices. If you experience unexplained flickering pre
 <dd>
     
     <div class="description">
-        <p>The gc modes that are supported by pixi.</p>
-<p>The <a href="PIXI.settings.html#.GC_MODE">PIXI.settings.GC_MODE</a> Garbage Collection mode for PixiJS textures is AUTO
-If set to GC_MODE, the renderer will occasionally check textures usage. If they are not
-used for a specified period of time they will be removed from the GPU. They will of course
-be uploaded again when they are required. This is a silent behind the scenes process that
-should ensure that the GPU does not  get filled up.</p>
-<p>Handy for mobile devices!
-This property only affects WebGL.</p>
+        <p>pixi支持的gc模式。</p>
+<p>PixiJS纹理的 <a href="PIXI.settings.html#.GC_MODE">PIXI.settings.GC_MODE</a> 垃圾回收模式为 AUTO
+如果设置 GC_MODE, 渲染器会定时检查纹理使用情况。
+如果在指定的时间段内没有使用它们，它们将从GPU中删除。
+他们会在需要时再次上传。这是一个静默的幕后过程，应该确保GPU不会被填满。</p>
+<p>方便移动设备使用!
+此属性仅影响WebGL。</p>
     </div>
     
     
@@ -15844,7 +15842,7 @@ This property only affects WebGL.</p>
             
             
             
-            <td class="description last"><p>Garbage collection will happen periodically automatically</p></td>
+            <td class="description last"><p>垃圾收集将自动定期进行</p></td>
         </tr>
 	
 	
@@ -15867,7 +15865,7 @@ This property only affects WebGL.</p>
             
             
             
-            <td class="description last"><p>Garbage collection will need to be called manually</p></td>
+            <td class="description last"><p>垃圾收集将需要手动调用</p></td>
         </tr>
 	
 	
@@ -16177,8 +16175,8 @@ Adaptive draw works with <code>bezierCurveTo</code> and <code>quadraticCurveTo</
 <dd>
     
     <div class="description">
-        <p>Constants for mask implementations.
-We use <code>type</code> suffix because it leads to very different behaviours</p>
+        <p>遮罩的实现常量。
+我们使用<code>type</code>后缀，因为它导致非常不同的行为</p>
     </div>
     
     
@@ -16228,7 +16226,7 @@ We use <code>type</code> suffix because it leads to very different behaviours</p
             
             
             
-            <td class="description last"><p>Mask is ignored</p></td>
+            <td class="description last"><p>忽略遮罩</p></td>
         </tr>
 	
 	
@@ -16251,7 +16249,7 @@ We use <code>type</code> suffix because it leads to very different behaviours</p
             
             
             
-            <td class="description last"><p>Scissor mask, rectangle on screen, cheap</p></td>
+            <td class="description last"><p>剪裁遮罩, 屏幕矩形, cheap</p></td>
         </tr>
 	
 	
@@ -16274,7 +16272,7 @@ We use <code>type</code> suffix because it leads to very different behaviours</p
             
             
             
-            <td class="description last"><p>Stencil mask, 1-bit, medium, works only if renderer supports stencil</p></td>
+            <td class="description last"><p>模板遮罩, 1-bit, 中等, 仅在渲染器支持模板时有效</p></td>
         </tr>
 	
 	
@@ -16297,7 +16295,7 @@ We use <code>type</code> suffix because it leads to very different behaviours</p
             
             
             
-            <td class="description last"><p>Mask that uses SpriteMaskFilter, uses temporary RenderTexture</p></td>
+            <td class="description last"><p>使用SpriteMaskFilter的蒙版使用临时的RenderTexture</p></td>
         </tr>
 	
 	
@@ -16349,12 +16347,12 @@ We use <code>type</code> suffix because it leads to very different behaviours</p
 <dd>
     
     <div class="description">
-        <p>Mipmap filtering modes that are supported by pixi.</p>
-<p>The <a href="PIXI.settings.html#.MIPMAP_TEXTURES">PIXI.settings.MIPMAP_TEXTURES</a> affects default texture filtering.
-Mipmaps are generated for a baseTexture if its <code>mipmap</code> field is <code>ON</code>,
-or its <code>POW2</code> and texture dimensions are powers of 2.
-Due to platform restriction, <code>ON</code> option will work like <code>POW2</code> for webgl-1.</p>
-<p>This property only affects WebGL.</p>
+        <p>pixi支持的Mipmap过滤模式。</p>
+<p><a href="PIXI.settings.html#.MIPMAP_TEXTURES">PIXI.settings.MIPMAP_TEXTURES</a> 影响默认的纹理过滤。
+如果baseTexture的<code>mipmap</code>字段为'ON'，则会生成Mipmap。
+否则，为<code>POW2</code>和纹理尺寸为2的n次幂。
+由于平台限制，ON<code>选项将像webgl-1的</code>POW2`一样工作。</p>
+<p>此属性仅影响WebGL。</p>
     </div>
     
     
@@ -16404,7 +16402,7 @@ Due to platform restriction, <code>ON</code> option will work like <code>POW2</c
             
             
             
-            <td class="description last"><p>No mipmaps</p></td>
+            <td class="description last"><p>没有mipmaps</p></td>
         </tr>
 	
 	
@@ -16427,7 +16425,7 @@ Due to platform restriction, <code>ON</code> option will work like <code>POW2</c
             
             
             
-            <td class="description last"><p>Generate mipmaps if texture dimensions are pow2</p></td>
+            <td class="description last"><p>如果纹理维度为pow2，则生成mipmaps</p></td>
         </tr>
 	
 	
@@ -16450,7 +16448,7 @@ Due to platform restriction, <code>ON</code> option will work like <code>POW2</c
             
             
             
-            <td class="description last"><p>Always generate mipmaps</p></td>
+            <td class="description last"><p>始终生成mipmaps</p></td>
         </tr>
 	
 	
@@ -16553,7 +16551,7 @@ Due to platform restriction, <code>ON</code> option will work like <code>POW2</c
 <dd>
     
     <div class="description">
-        <p>Constants that specify float precision in shaders.</p>
+        <p>在着色器中指定浮点精度的常量。</p>
     </div>
     
     
@@ -16772,7 +16770,7 @@ Due to platform restriction, <code>ON</code> option will work like <code>POW2</c
 <dd>
     
     <div class="description">
-        <p>Constant to identify the Renderer Type.</p>
+        <p>标识渲染器类型的常量</p>
     </div>
     
     
@@ -16822,7 +16820,7 @@ Due to platform restriction, <code>ON</code> option will work like <code>POW2</c
             
             
             
-            <td class="description last"><p>Unknown render type.</p></td>
+            <td class="description last"><p>未知渲染器类型</p></td>
         </tr>
 	
 	
@@ -16845,7 +16843,7 @@ Due to platform restriction, <code>ON</code> option will work like <code>POW2</c
             
             
             
-            <td class="description last"><p>WebGL render type.</p></td>
+            <td class="description last"><p>WebGL渲染器类型</p></td>
         </tr>
 	
 	
@@ -16868,7 +16866,7 @@ Due to platform restriction, <code>ON</code> option will work like <code>POW2</c
             
             
             
-            <td class="description last"><p>Canvas render type.</p></td>
+            <td class="description last"><p>Canvas渲染器类型</p></td>
         </tr>
 	
 	
@@ -16920,9 +16918,9 @@ Due to platform restriction, <code>ON</code> option will work like <code>POW2</c
 <dd>
     
     <div class="description">
-        <p>The scale modes that are supported by pixi.</p>
-<p>The <a href="PIXI.settings.html#.SCALE_MODE">PIXI.settings.SCALE_MODE</a> scale mode affects the default scaling mode of future operations.
-It can be re-assigned to either LINEAR or NEAREST, depending upon suitability.</p>
+        <p>pixi支持的缩放模式。</p>
+<p><a href="PIXI.settings.html#.SCALE_MODE">PIXI.settings.SCALE_MODE</a> 缩放模式会影响以后操作的默认缩放模式。
+可以根据适用性将其重新分配为LINEAR或NEAREST。</p>
     </div>
     
     
@@ -16972,7 +16970,7 @@ It can be re-assigned to either LINEAR or NEAREST, depending upon suitability.</
             
             
             
-            <td class="description last"><p>Smooth scaling</p></td>
+            <td class="description last"><p>平滑缩放</p></td>
         </tr>
 	
 	
@@ -16995,7 +16993,7 @@ It can be re-assigned to either LINEAR or NEAREST, depending upon suitability.</
             
             
             
-            <td class="description last"><p>Pixelating scaling</p></td>
+            <td class="description last"><p>像素缩放</p></td>
         </tr>
 	
 	
@@ -17300,7 +17298,7 @@ It can be re-assigned to either LINEAR or NEAREST, depending upon suitability.</
 <dd>
     
     <div class="description">
-        <p>Various GL target types.</p>
+        <p>各种GL目标类型</p>
     </div>
     
     
@@ -17897,7 +17895,7 @@ It can be re-assigned to either LINEAR or NEAREST, depending upon suitability.</
 <dd>
     
     <div class="description">
-        <p>Various GL data format types.</p>
+        <p>各种GL数据格式类型</p>
     </div>
     
     
@@ -18460,12 +18458,11 @@ priority items, such as render, should go later.</p>
 <dd>
     
     <div class="description">
-        <p>The wrap modes that are supported by pixi.</p>
-<p>The <a href="PIXI.settings.html#.WRAP_MODE">PIXI.settings.WRAP_MODE</a> wrap mode affects the default wrapping mode of future operations.
-It can be re-assigned to either CLAMP or REPEAT, depending upon suitability.
-If the texture is non power of two then clamp will be used regardless as WebGL can
-only use REPEAT if the texture is po2.</p>
-<p>This property only affects WebGL.</p>
+        <p>pixi支持的循环模式。</p>
+<p><a href="PIXI.settings.html#.WRAP_MODE">PIXI.settings.WRAP_MODE</a> 循环模式会影响以后操作的默认循环模式。
+可以根据适用性将其重新分配给CLAMP或REPEAT。
+如果纹理不是2的幂，则不管WebGL是否只能在纹理为po2时使用REPEAT，都将使用clamp。</p>
+<p>此属性仅影响WebGL。</p>
     </div>
     
     
@@ -18515,7 +18512,7 @@ only use REPEAT if the texture is po2.</p>
             
             
             
-            <td class="description last"><p>The textures uvs are clamped</p></td>
+            <td class="description last"><p>强制贴图边界拉伸</p></td>
         </tr>
 	
 	
@@ -18538,7 +18535,7 @@ only use REPEAT if the texture is po2.</p>
             
             
             
-            <td class="description last"><p>The texture uvs tile and repeat</p></td>
+            <td class="description last"><p>贴图重复平铺</p></td>
         </tr>
 	
 	
@@ -18561,7 +18558,7 @@ only use REPEAT if the texture is po2.</p>
             
             
             
-            <td class="description last"><p>The texture uvs tile and repeat with mirroring</p></td>
+            <td class="description last"><p>平铺并重复镜像</p></td>
         </tr>
 	
 	
@@ -19424,7 +19421,7 @@ PIXI.useDeprecated(); // MUST be bound to namespace</code></pre>
 <dd>
     
     <div class="description">
-        <p>Types that can be passed to drawImage</p>
+        <p>可传递给drawImage的类型</p>
     </div>
     
     
@@ -20035,7 +20032,7 @@ arguments for this are <code>(resource, next)</code></p></td>
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Jan 22 2020 18:58:51 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sun Feb 02 2020 01:55:00 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>PixiJS中文文档</title>
+    <title>PixiJS中文开发文档</title>
     
-    <meta name="description" content="PixiJS库的中文文档" />
+    <meta name="description" content="PixiJS库的中文开发文档" />
     
         <meta name="keywords" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
         <meta name="keyword" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
@@ -34,7 +34,7 @@
     
     
     <script>
-    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文文档","description":"PixiJS库的中文文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
+    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS中文","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文开发文档","description":"PixiJS库的中文开发文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
     </script>
     
 
@@ -44,7 +44,7 @@
 <div id="wrap" class="clearfix">
     
 <div class="navigation">
-    <h3 class="applicationName"><a href="index.html">PixiJS</a></h3>
+    <h3 class="applicationName"><a href="index.html">PixiJS中文</a></h3>
     <button id="menuToggle" class="btn btn-link btn-lg menu-toggle">
         <span class="glyphicon glyphicon-menu-hamburger"></span>
     </button>
@@ -13192,7 +13192,7 @@
         <h2><span class="ancestors"><a href="PIXI.html">PIXI</a><a href="PIXI.systems.html">.systems</a>~</span>BatchSystem
         </h2>
         
-            <div class="class-description"><p>System plugin to the renderer to manage batching.</p></div>
+            <div class="class-description"><p>渲染器的系统插件，用于管理批处理。</p></div>
         
     </div>
 </header>  
@@ -13274,7 +13274,7 @@
             
             <td class="description last">
                 
-                <p>The renderer this System works for.</p></td>
+                <p>此系统适用的渲染器。</p></td>
         </tr>
 	
 	
@@ -13364,7 +13364,7 @@
 <dd>
     
     <div class="description">
-        <p>The currently active ObjectRenderer.</p>
+        <p>当前活动的ObjectRenderer。</p>
     </div>
     
     
@@ -13415,7 +13415,7 @@
 <dd>
     
     <div class="description">
-        <p>An empty renderer.</p>
+        <p>一个空的渲染器。</p>
     </div>
     
     
@@ -13470,7 +13470,7 @@
 <dd>
     
     <div class="description">
-        <p>The renderer this manager works for.</p>
+        <p>此管理器作用的渲染器。</p>
     </div>
     
     
@@ -13536,9 +13536,9 @@
     
     
     <div class="description">
-        <p>Assigns batch locations to textures in array based on boundTextures state.
-All textures in texArray should have <code>_batchEnabled = _batchId</code>,
-and their count should be less than <code>maxTextures</code>.</p>
+        <p>根据boundTextures状态将批处理位置分配给数组中的纹理。
+texArray中的所有纹理都应具有<code>_batchEnabled = _batchId</code>，
+并且其数量应小于“ maxTextures”。</p>
     </div>
     
 
@@ -13585,7 +13585,7 @@ and their count should be less than <code>maxTextures</code>.</p>
             
             <td class="description last">
                 
-                <p>textures to bound</p></td>
+                <p>要绑定的纹理</p></td>
         </tr>
 	
 	
@@ -13608,7 +13608,7 @@ and their count should be less than <code>maxTextures</code>.</p>
             
             <td class="description last">
                 
-                <p>current state of bound textures</p></td>
+                <p>绑定纹理的当前状态</p></td>
         </tr>
 	
 	
@@ -13631,7 +13631,7 @@ and their count should be less than <code>maxTextures</code>.</p>
             
             <td class="description last">
                 
-                <p>marker for _batchEnabled param of textures in texArray</p></td>
+                <p>texArray中纹理的_batchEnabled参数的标记</p></td>
         </tr>
 	
 	
@@ -13654,7 +13654,7 @@ and their count should be less than <code>maxTextures</code>.</p>
             
             <td class="description last">
                 
-                <p>number of texture locations to manipulate</p></td>
+                <p>要操纵的纹理位置数</p></td>
         </tr>
 	
 	
@@ -13728,8 +13728,8 @@ and their count should be less than <code>maxTextures</code>.</p>
     
     
     <div class="description">
-        <p>Handy function for batch renderers: copies bound textures in first maxTextures locations to array
-sets actual _batchLocation for them</p>
+        <p>批处理渲染器的便捷功能：将第一个maxTextures位置中的绑定纹理复制到数组中
+为他们设置实际的_batchLocation</p>
     </div>
     
 
@@ -13867,7 +13867,7 @@ sets actual _batchLocation for them</p>
     
     
     <div class="description">
-        <p>Generic destroy methods to be overridden by the subclass</p>
+        <p>子类将覆盖通用销毁方法</p>
     </div>
     
 
@@ -13943,8 +13943,8 @@ sets actual _batchLocation for them</p>
     
     
     <div class="description">
-        <p>This should be called if you wish to do some custom rendering
-It will basically render anything that may be batched up such as sprites</p>
+        <p>如果您希望进行一些自定义渲染，则应调用此方法
+它基本上可以渲染任何可以成批渲染的对象，比如精灵</p>
     </div>
     
 
@@ -14020,7 +14020,7 @@ It will basically render anything that may be batched up such as sprites</p>
     
     
     <div class="description">
-        <p>Reset the system to an empty renderer</p>
+        <p>将系统重置为空渲染器</p>
     </div>
     
 
@@ -14096,7 +14096,7 @@ It will basically render anything that may be batched up such as sprites</p>
     
     
     <div class="description">
-        <p>Changes the current renderer to the one given in parameter</p>
+        <p>将当前渲染器更改为参数中指定的渲染器</p>
     </div>
     
 
@@ -14143,7 +14143,7 @@ It will basically render anything that may be batched up such as sprites</p>
             
             <td class="description last">
                 
-                <p>The object renderer to use.</p></td>
+                <p>要使用的对象渲染器。</p></td>
         </tr>
 	
 	
@@ -14208,7 +14208,7 @@ It will basically render anything that may be batched up such as sprites</p>
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Jan 22 2020 18:59:04 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sun Feb 02 2020 01:55:06 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

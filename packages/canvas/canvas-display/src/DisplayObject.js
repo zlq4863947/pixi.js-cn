@@ -1,10 +1,10 @@
 import { DisplayObject } from '@pixi/display';
 
 /**
- * Renders the object using the Canvas renderer
+ * 使用Canvas渲染器渲染对象
  * @method renderCanvas
  * @memberof PIXI.Container#
- * @param {PIXI.CanvasRenderer} renderer - The renderer
+ * @param {PIXI.CanvasRenderer} renderer - 渲染器
  */
 DisplayObject.prototype.renderCanvas = function renderCanvas(renderer) // eslint-disable-line no-unused-vars
 {

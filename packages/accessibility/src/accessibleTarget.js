@@ -1,6 +1,5 @@
 /**
- * Default property values of accessible objects
- * used by {@link PIXI.accessibility.AccessibilityManager}.
+ * {@link PIXI.accessibility.AccessibilityManager}使用的可访问对象的默认属性值
  *
  * @private
  * @function accessibleTarget
@@ -16,8 +15,7 @@
  */
 export const accessibleTarget = {
     /**
-     *  Flag for if the object is accessible. If true AccessibilityManager will overlay a
-     *   shadow div with attributes set
+     * 标记对象是否可访问。 如果为true，AccessibilityManager将使用属性集覆盖阴影div
      *
      * @member {boolean}
      * @memberof PIXI.DisplayObject#
@@ -25,8 +23,7 @@ export const accessibleTarget = {
     accessible: false,
 
     /**
-     * Sets the title attribute of the shadow div
-     * If accessibleTitle AND accessibleHint has not been this will default to 'displayObject [tabIndex]'
+     * 设置阴影div的title属性。如果尚未设置accessibleTitle和accessibleHint，则默认为 'displayObject [tabIndex]'
      *
      * @member {?string}
      * @memberof PIXI.DisplayObject#
@@ -34,7 +31,7 @@ export const accessibleTarget = {
     accessibleTitle: null,
 
     /**
-     * Sets the aria-label attribute of the shadow div
+     * 设置阴影div的aria-label属性
      *
      * @member {string}
      * @memberof PIXI.DisplayObject#
@@ -64,8 +61,8 @@ export const accessibleTarget = {
     _accessibleDiv: false,
 
     /**
-     * Specify the type of div the accessible layer is. Screen readers treat the element differently
-     * depending on this type. Defaults to button.
+     * 指定可访问层的div的类型。 屏幕阅读器会根据此类型对元素进行不同的处理。
+     * 默认为 button.
      *
      * @member {string}
      * @memberof PIXI.DisplayObject#
@@ -74,8 +71,8 @@ export const accessibleTarget = {
     accessibleType: 'button',
 
     /**
-     * Specify the pointer-events the accessible div will use
-     * Defaults to auto.
+     * 指定可访问的div将使用的指针事件
+     * 默认为'auto'
      *
      * @member {string}
      * @memberof PIXI.DisplayObject#
@@ -84,8 +81,7 @@ export const accessibleTarget = {
     accessiblePointerEvents: 'auto',
 
     /**
-     * Setting to false will prevent any children inside this container to
-     * be accessible. Defaults to true.
+     * 设置为false将阻止访问此容器中的所有子级。 默认为true。
      *
      * @member {boolean}
      * @memberof PIXI.DisplayObject#

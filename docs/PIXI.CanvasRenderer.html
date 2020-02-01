@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>PixiJS中文文档</title>
+    <title>PixiJS中文开发文档</title>
     
-    <meta name="description" content="PixiJS库的中文文档" />
+    <meta name="description" content="PixiJS库的中文开发文档" />
     
         <meta name="keywords" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
         <meta name="keyword" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
@@ -34,7 +34,7 @@
     
     
     <script>
-    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文文档","description":"PixiJS库的中文文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
+    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS中文","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文开发文档","description":"PixiJS库的中文开发文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
     </script>
     
 
@@ -44,7 +44,7 @@
 <div id="wrap" class="clearfix">
     
 <div class="navigation">
-    <h3 class="applicationName"><a href="index.html">PixiJS</a></h3>
+    <h3 class="applicationName"><a href="index.html">PixiJS中文</a></h3>
     <button id="menuToggle" class="btn btn-link btn-lg menu-toggle">
         <span class="glyphicon glyphicon-menu-hamburger"></span>
     </button>
@@ -13192,9 +13192,9 @@
         <h2><span class="ancestors"><a href="PIXI.html">PIXI</a>~</span>CanvasRenderer
         </h2>
         
-            <div class="class-description"><p>The CanvasRenderer draws the scene and all its content onto a 2d canvas.</p>
-<p>This renderer should be used for browsers that do not support WebGL.
-Don't forget to add the CanvasRenderer.view to your DOM or you will not see anything!</p></div>
+            <div class="class-description"><p>CanvasRenderer 将场景及其所有内容绘制到二维画布上。</p>
+<p>此渲染器应用于不支持WebGL的浏览器。
+不要忘记将CanvasRenderer.view添加到您的DOM中，否则您将看不到任何东西！</p></div>
         
     </div>
 </header>  
@@ -13222,7 +13222,7 @@ Don't forget to add the CanvasRenderer.view to your DOM or you will not see anyt
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line39">CanvasRenderer.js:39</a>
+            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line34">CanvasRenderer.js:34</a>
         </div>
         
     </div>
@@ -13283,7 +13283,7 @@ Don't forget to add the CanvasRenderer.view to your DOM or you will not see anyt
                         
                     
                 
-                <p>The optional renderer parameters</p>
+                <p>可选的渲染器参数</p>
                 
 
 <table class="params">
@@ -13337,7 +13337,7 @@ Don't forget to add the CanvasRenderer.view to your DOM or you will not see anyt
                         
                     
                 
-                <p>the width of the screen</p></td>
+                <p>屏幕的宽度</p></td>
         </tr>
 	
 	
@@ -13373,7 +13373,7 @@ Don't forget to add the CanvasRenderer.view to your DOM or you will not see anyt
                         
                     
                 
-                <p>the height of the screen</p></td>
+                <p>屏幕的高度</p></td>
         </tr>
 	
 	
@@ -13407,7 +13407,7 @@ Don't forget to add the CanvasRenderer.view to your DOM or you will not see anyt
                         
                     
                 
-                <p>the canvas to use as a view, optional</p></td>
+                <p>用作视图的画布，可选</p></td>
         </tr>
 	
 	
@@ -13443,7 +13443,7 @@ Don't forget to add the CanvasRenderer.view to your DOM or you will not see anyt
                         
                     
                 
-                <p>If the render view is transparent, default false</p></td>
+                <p>渲染视图是f\否透明的，则默认为false</p></td>
         </tr>
 	
 	
@@ -13479,8 +13479,7 @@ Don't forget to add the CanvasRenderer.view to your DOM or you will not see anyt
                         
                     
                 
-                <p>Resizes renderer view in CSS pixels to allow for
-resolutions other than 1</p></td>
+                <p>调整CSS像素中渲染器视图的大小，以允许使用非1的分辨率</p></td>
         </tr>
 	
 	
@@ -13516,7 +13515,7 @@ resolutions other than 1</p></td>
                         
                     
                 
-                <p>sets antialias</p></td>
+                <p>设置抗锯齿</p></td>
         </tr>
 	
 	
@@ -13552,8 +13551,7 @@ resolutions other than 1</p></td>
                         
                     
                 
-                <p>The resolution / device pixel ratio of the renderer. The
-resolution of the renderer retina would be 2.</p></td>
+                <p>渲染器的分辨率/设备像素比率。 渲染器视网膜的分辨率为2。</p></td>
         </tr>
 	
 	
@@ -13589,8 +13587,7 @@ resolution of the renderer retina would be 2.</p></td>
                         
                     
                 
-                <p>enables drawing buffer preservation,
-enable this if you need to call toDataUrl on the webgl context.</p></td>
+                <p>启用绘图缓冲区保留，如果需要在webgl上下文上调用toDataUrl，请启用此功能。</p></td>
         </tr>
 	
 	
@@ -13626,8 +13623,7 @@ enable this if you need to call toDataUrl on the webgl context.</p></td>
                         
                     
                 
-                <p>This sets if the renderer will clear the canvas or
-not before the new render pass.</p></td>
+                <p>这将设置渲染器是否在新的渲染过程之前清除画布。</p></td>
         </tr>
 	
 	
@@ -13663,8 +13659,7 @@ not before the new render pass.</p></td>
                         
                     
                 
-                <p>The background color of the rendered area
-(shown if not transparent).</p></td>
+                <p>渲染区域的背景色（如果不透明则显示）。</p></td>
         </tr>
 	
 	
@@ -14208,7 +14203,7 @@ not before the new render pass.</p></td>
 <dd>
     
     <div class="description">
-        <p>Tracks the blend modes useful for this renderer.</p>
+        <p>跟踪对该渲染器的混合模式。</p>
     </div>
     
     
@@ -14317,7 +14312,7 @@ not before the new render pass.</p></td>
 <dd>
     
     <div class="description">
-        <p>The currently active canvas 2d context (could change with renderTextures)</p>
+        <p>当前活动的canvas 2d上下文（可以通过renderTextures更改）</p>
     </div>
     
     
@@ -14368,7 +14363,7 @@ not before the new render pass.</p></td>
 <dd>
     
     <div class="description">
-        <p>Collection of methods for extracting data (image, pixels, etc.) from a display object or render texture</p>
+        <p>从显示对象或渲染纹理中提取数据（图像，像素等）的方法集合</p>
     </div>
     
     
@@ -14484,7 +14479,7 @@ not before the new render pass.</p></td>
 <dd>
     
     <div class="description">
-        <p>Instance of a CanvasMaskManager, handles masking when using the canvas renderer.</p>
+        <p>CanvasMaskManager的实例，在使用画布渲染器时处理遮罩。</p>
     </div>
     
     
@@ -14592,9 +14587,8 @@ not before the new render pass.</p></td>
 <dd>
     
     <div class="description">
-        <p>Collection of installed plugins. These are included by default in PIXI, but can be excluded
-by creating a custom build. Consult the README for more information about creating custom
-builds and excluding plugins.</p>
+        <p>已安装插件的集合。默认情况下，它们包含在PIXI中，但可以通过创建自定义生成来排除。
+有关创建自定义生成和排除插件的详细信息，请参阅自述文件。</p>
     </div>
     
     
@@ -14644,7 +14638,7 @@ builds and excluding plugins.</p>
             
             
             
-            <td class="description last"><p>Support tabbing interactive elements.</p></td>
+            <td class="description last"><p>支持切换交互元素。</p></td>
         </tr>
 	
 	
@@ -14667,7 +14661,7 @@ builds and excluding plugins.</p>
             
             
             
-            <td class="description last"><p>Extract image data from renderer.</p></td>
+            <td class="description last"><p>从渲染器提取图像数据。</p></td>
         </tr>
 	
 	
@@ -14690,7 +14684,7 @@ builds and excluding plugins.</p>
             
             
             
-            <td class="description last"><p>Handles mouse, touch and pointer events.</p></td>
+            <td class="description last"><p>处理鼠标、触摸和指针事件。</p></td>
         </tr>
 	
 	
@@ -14713,7 +14707,7 @@ builds and excluding plugins.</p>
             
             
             
-            <td class="description last"><p>Pre-render display objects.</p></td>
+            <td class="description last"><p>预渲染显示对象。</p></td>
         </tr>
 	
 	
@@ -14820,7 +14814,7 @@ builds and excluding plugins.</p>
 <dd>
     
     <div class="description">
-        <p>Boolean flag controlling canvas refresh.</p>
+        <p>布尔值标志，用于控制画布刷新。</p>
     </div>
     
     
@@ -14929,7 +14923,7 @@ builds and excluding plugins.</p>
 <dd>
     
     <div class="description">
-        <p>The root canvas 2d context that everything is drawn with.</p>
+        <p>绘制所有内容的根画布2d上下文。</p>
     </div>
     
     
@@ -15036,7 +15030,7 @@ builds and excluding plugins.</p>
 <dd>
     
     <div class="description">
-        <p>The canvas property used to set the canvas smoothing property.</p>
+        <p>canvas属性用于设置画布平滑属性。</p>
     </div>
     
     
@@ -15324,7 +15318,7 @@ builds and excluding plugins.</p>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line327">CanvasRenderer.js:327</a>
+            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line321">CanvasRenderer.js:321</a>
         </div>
         
     </div>
@@ -15335,7 +15329,7 @@ builds and excluding plugins.</p>
     
     
     <div class="description">
-        <p>Adds a plugin to the renderer.</p>
+        <p>将插件添加到渲染器。</p>
     </div>
     
 
@@ -15382,7 +15376,7 @@ builds and excluding plugins.</p>
             
             <td class="description last">
                 
-                <p>The name of the plugin.</p></td>
+                <p>插件的名称。</p></td>
         </tr>
 	
 	
@@ -15405,7 +15399,7 @@ builds and excluding plugins.</p>
             
             <td class="description last">
                 
-                <p>The constructor function or class for the plugin.</p></td>
+                <p>插件的构造函数或类。</p></td>
         </tr>
 	
 	
@@ -15468,7 +15462,7 @@ builds and excluding plugins.</p>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line227">CanvasRenderer.js:227</a>
+            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line222">CanvasRenderer.js:222</a>
         </div>
         
     </div>
@@ -15479,7 +15473,7 @@ builds and excluding plugins.</p>
     
     
     <div class="description">
-        <p>Clear the canvas of renderer.</p>
+        <p>清除渲染器的画布。</p>
     </div>
     
 
@@ -15533,7 +15527,7 @@ builds and excluding plugins.</p>
                         
                     
                 
-                <p>Clear the canvas with this color, except the canvas is transparent.</p></td>
+                <p>使用此颜色清除画布，除非画布已为透明。</p></td>
         </tr>
 	
 	
@@ -15598,7 +15592,7 @@ builds and excluding plugins.</p>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line273">CanvasRenderer.js:273</a>
+            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line268">CanvasRenderer.js:268</a>
         </div>
         
     </div>
@@ -15609,7 +15603,7 @@ builds and excluding plugins.</p>
     
     
     <div class="description">
-        <p>Removes everything from the renderer and optionally removes the Canvas DOM element.</p>
+        <p>从渲染器中移除所有内容，并可选地移除Canvas DOM元素。</p>
     </div>
     
 
@@ -15671,7 +15665,7 @@ builds and excluding plugins.</p>
                         
                     
                 
-                <p>Removes the Canvas element from the DOM.</p></td>
+                <p>从DOM中移除Canvas元素。</p></td>
         </tr>
 	
 	
@@ -16106,7 +16100,7 @@ builds and excluding plugins.</p>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line304">CanvasRenderer.js:304</a>
+            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line299">CanvasRenderer.js:299</a>
         </div>
         
     </div>
@@ -16117,7 +16111,7 @@ builds and excluding plugins.</p>
     
     
     <div class="description">
-        <p>Checks if blend mode has changed.</p>
+        <p>检查混合模式是否已更改。</p>
     </div>
     
 
@@ -16182,7 +16176,7 @@ builds and excluding plugins.</p>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line125">CanvasRenderer.js:125</a>
+            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line120">CanvasRenderer.js:120</a>
         </div>
         
     </div>
@@ -16193,7 +16187,7 @@ builds and excluding plugins.</p>
     
     
     <div class="description">
-        <p>Renders the object to this canvas view</p>
+        <p>将对象渲染到此画布视图</p>
     </div>
     
 
@@ -16251,7 +16245,7 @@ builds and excluding plugins.</p>
                         
                     
                 
-                <p>The object to be rendered</p></td>
+                <p>要渲染的对象</p></td>
         </tr>
 	
 	
@@ -16285,8 +16279,8 @@ builds and excluding plugins.</p>
                         
                     
                 
-                <p>A render texture to be rendered to.
-If unset, it will render to the root context.</p></td>
+                <p>要渲染到的渲染纹理。
+如果未设置，它将渲染到root context.。</p></td>
         </tr>
 	
 	
@@ -16322,7 +16316,7 @@ If unset, it will render to the root context.</p></td>
                         
                     
                 
-                <p>Whether to clear the canvas before drawing</p></td>
+                <p>绘制前是否清除画布</p></td>
         </tr>
 	
 	
@@ -16356,7 +16350,7 @@ If unset, it will render to the root context.</p></td>
                         
                     
                 
-                <p>A transformation to be applied</p></td>
+                <p>要应用的转换</p></td>
         </tr>
 	
 	
@@ -16392,7 +16386,7 @@ If unset, it will render to the root context.</p></td>
                         
                     
                 
-                <p>Whether to skip the update transform</p></td>
+                <p>是否跳过更新转换</p></td>
         </tr>
 	
 	
@@ -16457,7 +16451,7 @@ If unset, it will render to the root context.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line291">CanvasRenderer.js:291</a>
+            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line286">CanvasRenderer.js:286</a>
         </div>
         
     </div>
@@ -16468,7 +16462,7 @@ If unset, it will render to the root context.</p></td>
     
     
     <div class="description">
-        <p>Resizes the canvas view to the specified width and height.</p>
+        <p>将画布视图调整为指定的宽度和高度。</p>
     </div>
     
 
@@ -16515,7 +16509,7 @@ If unset, it will render to the root context.</p></td>
             
             <td class="description last">
                 
-                <p>the new width of the screen</p></td>
+                <p>屏幕的新宽度</p></td>
         </tr>
 	
 	
@@ -16538,7 +16532,7 @@ If unset, it will render to the root context.</p></td>
             
             <td class="description last">
                 
-                <p>the new height of the screen</p></td>
+                <p>屏幕的新高度</p></td>
         </tr>
 	
 	
@@ -16601,7 +16595,7 @@ If unset, it will render to the root context.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line249">CanvasRenderer.js:249</a>
+            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line244">CanvasRenderer.js:244</a>
         </div>
         
     </div>
@@ -16612,7 +16606,7 @@ If unset, it will render to the root context.</p></td>
     
     
     <div class="description">
-        <p>Sets the blend mode of the renderer.</p>
+        <p>设置渲染器的混合模式。</p>
     </div>
     
 
@@ -16670,7 +16664,7 @@ If unset, it will render to the root context.</p></td>
                         
                     
                 
-                <p>See <a href="PIXI.html#.BLEND_MODES">PIXI.BLEND_MODES</a> for valid values.</p></td>
+                <p>参考 <a href="PIXI.html#.BLEND_MODES">PIXI.BLEND_MODES</a> 的有效值。</p></td>
         </tr>
 	
 	
@@ -16706,8 +16700,8 @@ If unset, it will render to the root context.</p></td>
                         
                     
                 
-                <p>Some blendModes are dangerous, they affect outer space of sprite.
-Pass <code>true</code> only if you are ready to use them.</p></td>
+                <p>一些混合模式是危险的，它们影响精灵的外层空间。
+只有当你准备好使用它们的时候，才能通过<code>true</code>。</p></td>
         </tr>
 	
 	
@@ -16780,7 +16774,7 @@ Pass <code>true</code> only if you are ready to use them.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line103">CanvasRenderer.js:103</a>
+            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line98">CanvasRenderer.js:98</a>
         </div>
         
     </div>
@@ -16791,7 +16785,7 @@ Pass <code>true</code> only if you are ready to use them.</p></td>
     
     
     <div class="description">
-        <p>Fired after rendering finishes.</p>
+        <p>渲染完成后触发。</p>
     </div>
     
 
@@ -16856,7 +16850,7 @@ Pass <code>true</code> only if you are ready to use them.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line108">CanvasRenderer.js:108</a>
+            <a href="packages_canvas_canvas-renderer_src_CanvasRenderer.js.html#line103">CanvasRenderer.js:103</a>
         </div>
         
     </div>
@@ -16867,7 +16861,7 @@ Pass <code>true</code> only if you are ready to use them.</p></td>
     
     
     <div class="description">
-        <p>Fired before rendering starts.</p>
+        <p>在开始渲染之前触发。</p>
     </div>
     
 
@@ -16928,7 +16922,7 @@ Pass <code>true</code> only if you are ready to use them.</p></td>
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Jan 22 2020 18:58:54 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sun Feb 02 2020 01:55:01 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

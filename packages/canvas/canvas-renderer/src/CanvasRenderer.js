@@ -6,10 +6,10 @@ import { RENDERER_TYPE, SCALE_MODES, BLEND_MODES } from '@pixi/constants';
 import { settings } from '@pixi/settings';
 
 /**
- * The CanvasRenderer draws the scene and all its content onto a 2d canvas.
+ * CanvasRenderer 将场景及其所有内容绘制到二维画布上。
  *
- * This renderer should be used for browsers that do not support WebGL.
- * Don't forget to add the CanvasRenderer.view to your DOM or you will not see anything!
+ * 此渲染器应用于不支持WebGL的浏览器。
+ * 不要忘记将CanvasRenderer.view添加到您的DOM中，否则您将看不到任何东西！
  *
  * @class
  * @memberof PIXI
@@ -18,22 +18,17 @@ import { settings } from '@pixi/settings';
 export class CanvasRenderer extends AbstractRenderer
 {
     /**
-     * @param {object} [options] - The optional renderer parameters
-     * @param {number} [options.width=800] - the width of the screen
-     * @param {number} [options.height=600] - the height of the screen
-     * @param {HTMLCanvasElement} [options.view] - the canvas to use as a view, optional
-     * @param {boolean} [options.transparent=false] - If the render view is transparent, default false
-     * @param {boolean} [options.autoDensity=false] - Resizes renderer view in CSS pixels to allow for
-     *   resolutions other than 1
-     * @param {boolean} [options.antialias=false] - sets antialias
-     * @param {number} [options.resolution=1] - The resolution / device pixel ratio of the renderer. The
-     *  resolution of the renderer retina would be 2.
-     * @param {boolean} [options.preserveDrawingBuffer=false] - enables drawing buffer preservation,
-     *  enable this if you need to call toDataUrl on the webgl context.
-     * @param {boolean} [options.clearBeforeRender=true] - This sets if the renderer will clear the canvas or
-     *      not before the new render pass.
-     * @param {number} [options.backgroundColor=0x000000] - The background color of the rendered area
-     *  (shown if not transparent).
+     * @param {object} [options] - 可选的渲染器参数
+     * @param {number} [options.width=800] - 屏幕的宽度
+     * @param {number} [options.height=600] - 屏幕的高度
+     * @param {HTMLCanvasElement} [options.view] - 用作视图的画布，可选
+     * @param {boolean} [options.transparent=false] - 渲染视图是f\否透明的，则默认为false
+     * @param {boolean} [options.autoDensity=false] - 调整CSS像素中渲染器视图的大小，以允许使用非1的分辨率
+     * @param {boolean} [options.antialias=false] - 设置抗锯齿
+     * @param {number} [options.resolution=1] - 渲染器的分辨率/设备像素比率。 渲染器视网膜的分辨率为2。
+     * @param {boolean} [options.preserveDrawingBuffer=false] - 启用绘图缓冲区保留，如果需要在webgl上下文上调用toDataUrl，请启用此功能。
+     * @param {boolean} [options.clearBeforeRender=true] - 这将设置渲染器是否在新的渲染过程之前清除画布。
+     * @param {number} [options.backgroundColor=0x000000] - 渲染区域的背景色（如果不透明则显示）。
      */
     constructor(options, arg2, arg3)
     {
@@ -42,35 +37,35 @@ export class CanvasRenderer extends AbstractRenderer
         this.type = RENDERER_TYPE.CANVAS;
 
         /**
-         * The root canvas 2d context that everything is drawn with.
+         * 绘制所有内容的根画布2d上下文。
          *
          * @member {CanvasRenderingContext2D}
          */
         this.rootContext = this.view.getContext('2d', { alpha: this.transparent });
 
         /**
-         * The currently active canvas 2d context (could change with renderTextures)
+         * 当前活动的canvas 2d上下文（可以通过renderTextures更改）
          *
          * @member {CanvasRenderingContext2D}
          */
         this.context = this.rootContext;
 
         /**
-         * Boolean flag controlling canvas refresh.
+         * 布尔值标志，用于控制画布刷新。
          *
          * @member {boolean}
          */
         this.refresh = true;
 
         /**
-         * Instance of a CanvasMaskManager, handles masking when using the canvas renderer.
+         * CanvasMaskManager的实例，在使用画布渲染器时处理遮罩。
          *
          * @member {PIXI.CanvasMaskManager}
          */
         this.maskManager = new CanvasMaskManager(this);
 
         /**
-         * The canvas property used to set the canvas smoothing property.
+         * canvas属性用于设置画布平滑属性。
          *
          * @member {string}
          */
@@ -99,7 +94,7 @@ export class CanvasRenderer extends AbstractRenderer
         this.initPlugins(CanvasRenderer.__plugins);
 
         /**
-         * Tracks the blend modes useful for this renderer.
+         * 跟踪对该渲染器的混合模式。
          *
          * @member {object<number, string>}
          */
@@ -112,13 +107,13 @@ export class CanvasRenderer extends AbstractRenderer
         sayHello('Canvas');
 
         /**
-         * Fired after rendering finishes.
+         * 渲染完成后触发。
          *
          * @event PIXI.CanvasRenderer#postrender
          */
 
         /**
-         * Fired before rendering starts.
+         * 在开始渲染之前触发。
          *
          * @event PIXI.CanvasRenderer#prerender
          */
@@ -127,14 +122,14 @@ export class CanvasRenderer extends AbstractRenderer
     }
 
     /**
-     * Renders the object to this canvas view
+     * 将对象渲染到此画布视图
      *
-     * @param {PIXI.DisplayObject} displayObject - The object to be rendered
-     * @param {PIXI.RenderTexture} [renderTexture] - A render texture to be rendered to.
-     *  If unset, it will render to the root context.
-     * @param {boolean} [clear=false] - Whether to clear the canvas before drawing
-     * @param {PIXI.Matrix} [transform] - A transformation to be applied
-     * @param {boolean} [skipUpdateTransform=false] - Whether to skip the update transform
+     * @param {PIXI.DisplayObject} displayObject - 要渲染的对象
+     * @param {PIXI.RenderTexture} [renderTexture] - 要渲染到的渲染纹理。
+     *  如果未设置，它将渲染到root context.。
+     * @param {boolean} [clear=false] - 绘制前是否清除画布
+     * @param {PIXI.Matrix} [transform] - 要应用的转换
+     * @param {boolean} [skipUpdateTransform=false] - 是否跳过更新转换
      */
     render(displayObject, renderTexture, clear, transform, skipUpdateTransform)
     {
@@ -254,9 +249,9 @@ export class CanvasRenderer extends AbstractRenderer
     }
 
     /**
-     * Clear the canvas of renderer.
+     * 清除渲染器的画布。
      *
-     * @param {string} [clearColor] - Clear the canvas with this color, except the canvas is transparent.
+     * @param {string} [clearColor] - 使用此颜色清除画布，除非画布已为透明。
      */
     clear(clearColor)
     {
@@ -276,11 +271,11 @@ export class CanvasRenderer extends AbstractRenderer
     }
 
     /**
-     * Sets the blend mode of the renderer.
+     * 设置渲染器的混合模式。
      *
-     * @param {number} blendMode - See {@link PIXI.BLEND_MODES} for valid values.
-     * @param {boolean} [readyForOuterBlend=false] - Some blendModes are dangerous, they affect outer space of sprite.
-     * Pass `true` only if you are ready to use them.
+     * @param {number} blendMode - 参考 {@link PIXI.BLEND_MODES} 的有效值。
+     * @param {boolean} [readyForOuterBlend=false] - 一些混合模式是危险的，它们影响精灵的外层空间。
+     * 只有当你准备好使用它们的时候，才能通过`true`。
      */
     setBlendMode(blendMode, readyForOuterBlend)
     {
@@ -305,9 +300,9 @@ export class CanvasRenderer extends AbstractRenderer
     }
 
     /**
-     * Removes everything from the renderer and optionally removes the Canvas DOM element.
+     * 从渲染器中移除所有内容，并可选地移除Canvas DOM元素。
      *
-     * @param {boolean} [removeView=false] - Removes the Canvas element from the DOM.
+     * @param {boolean} [removeView=false] - 从DOM中移除Canvas元素。
      */
     destroy(removeView)
     {
@@ -325,12 +320,12 @@ export class CanvasRenderer extends AbstractRenderer
     }
 
     /**
-     * Resizes the canvas view to the specified width and height.
+     * 将画布视图调整为指定的宽度和高度。
      *
      * @extends PIXI.AbstractRenderer#resize
      *
-     * @param {number} screenWidth - the new width of the screen
-     * @param {number} screenHeight - the new height of the screen
+     * @param {number} screenWidth - 屏幕的新宽度
+     * @param {number} screenHeight - 屏幕的新高度
      */
     resize(screenWidth, screenHeight)
     {
@@ -345,7 +340,7 @@ export class CanvasRenderer extends AbstractRenderer
     }
 
     /**
-     * Checks if blend mode has changed.
+     * 检查混合模式是否已更改。
      */
     invalidateBlendMode()
     {
@@ -353,24 +348,23 @@ export class CanvasRenderer extends AbstractRenderer
     }
 
     /**
-     * Collection of installed plugins. These are included by default in PIXI, but can be excluded
-     * by creating a custom build. Consult the README for more information about creating custom
-     * builds and excluding plugins.
+     * 已安装插件的集合。默认情况下，它们包含在PIXI中，但可以通过创建自定义生成来排除。
+     * 有关创建自定义生成和排除插件的详细信息，请参阅自述文件。
      * @name PIXI.CanvasRenderer#plugins
      * @type {object}
      * @readonly
-     * @property {PIXI.accessibility.AccessibilityManager} accessibility Support tabbing interactive elements.
-     * @property {PIXI.CanvasExtract} extract Extract image data from renderer.
-     * @property {PIXI.interaction.InteractionManager} interaction Handles mouse, touch and pointer events.
-     * @property {PIXI.CanvasPrepare} prepare Pre-render display objects.
+     * @property {PIXI.accessibility.AccessibilityManager} accessibility 支持切换交互元素。
+     * @property {PIXI.CanvasExtract} extract 从渲染器提取图像数据。
+     * @property {PIXI.interaction.InteractionManager} interaction 处理鼠标、触摸和指针事件。
+     * @property {PIXI.CanvasPrepare} prepare 预渲染显示对象。
      */
 
     /**
-     * Adds a plugin to the renderer.
+     * 将插件添加到渲染器。
      *
      * @method
-     * @param {string} pluginName - The name of the plugin.
-     * @param {Function} ctor - The constructor function or class for the plugin.
+     * @param {string} pluginName - 插件的名称。
+     * @param {Function} ctor - 插件的构造函数或类。
      */
     static registerPlugin(pluginName, ctor)
     {

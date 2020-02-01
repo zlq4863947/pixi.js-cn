@@ -39,13 +39,12 @@ class CacheData
 
 Object.defineProperties(DisplayObject.prototype, {
     /**
-     * Set this to true if you want this display object to be cached as a bitmap.
-     * This basically takes a snap shot of the display object as it is at that moment. It can
-     * provide a performance benefit for complex static displayObjects.
-     * To remove simply set this property to `false`
+     * 如果希望将此显示对象缓存为位图，请将其设置为true。
+     * 这基本上是对显示对象的快照。它可以为复杂的静态displayObjects提供性能优势。
+     * 要删除，只需将此属性设置为`false`即可。
      *
-     * IMPORTANT GOTCHA - Make sure that all your textures are preloaded BEFORE setting this property to true
-     * as it will take a snapshot of what is currently there. If the textures have not loaded then they will not appear.
+     * 重要提示-在将此属性设置为true之前，请确保已预加载所有纹理，因为它将获取当前纹理的快照。
+     * 如果尚未加载纹理，则它们将不会显示。
      *
      * @member {boolean}
      * @memberof PIXI.DisplayObject#
@@ -121,12 +120,12 @@ Object.defineProperties(DisplayObject.prototype, {
 });
 
 /**
- * Renders a cached version of the sprite with WebGL
+ * 使用WebGL渲染sprite的缓存版本
  *
  * @private
  * @function _renderCached
  * @memberof PIXI.DisplayObject#
- * @param {PIXI.Renderer} renderer - the WebGL renderer
+ * @param {PIXI.Renderer} renderer - WebGL渲染器
  */
 DisplayObject.prototype._renderCached = function _renderCached(renderer)
 {
@@ -143,12 +142,12 @@ DisplayObject.prototype._renderCached = function _renderCached(renderer)
 };
 
 /**
- * Prepares the WebGL renderer to cache the sprite
+ * 准备WebGL渲染器以缓存精灵
  *
  * @private
  * @function _initCachedDisplayObject
  * @memberof PIXI.DisplayObject#
- * @param {PIXI.Renderer} renderer - the WebGL renderer
+ * @param {PIXI.Renderer} renderer - WebGL渲染器
  */
 DisplayObject.prototype._initCachedDisplayObject = function _initCachedDisplayObject(renderer)
 {
@@ -259,12 +258,12 @@ DisplayObject.prototype._initCachedDisplayObject = function _initCachedDisplayOb
 };
 
 /**
- * Renders a cached version of the sprite with canvas
+ * 用画布渲染精灵的缓存版本
  *
  * @private
  * @function _renderCachedCanvas
  * @memberof PIXI.DisplayObject#
- * @param {PIXI.Renderer} renderer - the WebGL renderer
+ * @param {PIXI.Renderer} renderer - WebGL渲染器
  */
 DisplayObject.prototype._renderCachedCanvas = function _renderCachedCanvas(renderer)
 {

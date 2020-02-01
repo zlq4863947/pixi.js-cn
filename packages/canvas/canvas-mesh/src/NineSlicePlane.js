@@ -2,7 +2,7 @@ import { canvasUtils } from '@pixi/canvas-renderer';
 import { NineSlicePlane } from '@pixi/mesh-extras';
 
 /**
- * Cached tint value so we can tell when the tint is changed.
+ * 缓存的色调值，以便我们可以知道何时更改了色调。
  * @memberof PIXI.NineSlicePlane#
  * @member {number} _cachedTint
  * @protected
@@ -10,7 +10,7 @@ import { NineSlicePlane } from '@pixi/mesh-extras';
 NineSlicePlane.prototype._cachedTint = 0xFFFFFF;
 
 /**
- * Cached tinted texture.
+ * 缓存有色纹理。
  * @memberof PIXI.NineSlicePlane#
  * @member {HTMLCanvasElement} _tintedCanvas
  * @protected
@@ -18,7 +18,7 @@ NineSlicePlane.prototype._cachedTint = 0xFFFFFF;
 NineSlicePlane.prototype._tintedCanvas = null;
 
 /**
- * Temporary storage for canvas source coords
+ * 画布源坐标的临时存储
  * @memberof PIXI.NineSlicePlane#
  * @member {number[]} _canvasUvs
  * @private
@@ -26,12 +26,12 @@ NineSlicePlane.prototype._tintedCanvas = null;
 NineSlicePlane.prototype._canvasUvs = null;
 
 /**
- * Renders the object using the Canvas renderer
+ * 使用Canvas渲染器渲染对象
  *
  * @private
  * @method _renderCanvas
  * @memberof PIXI.NineSlicePlane#
- * @param {PIXI.CanvasRenderer} renderer - The canvas renderer to render with.
+ * @param {PIXI.CanvasRenderer} renderer - 要进行渲染的画布渲染器。
  */
 NineSlicePlane.prototype._renderCanvas = function _renderCanvas(renderer)
 {

@@ -1,8 +1,8 @@
 import { DRAW_MODES } from '@pixi/constants';
 
 /**
- * Used by the batcher to draw batches.
- * Each one of these contains all information required to draw a bound geometry.
+ * 由批处理程序用于批量绘制。
+ * 其中的每一个都包含绘制绑定的几何所需的所有信息。
  *
  * @class
  * @memberof PIXI
@@ -19,7 +19,7 @@ export class BatchDrawCall
         this.size = 0;
 
         /**
-         * data for uniforms or custom webgl state
+         * uniforms或自定义webgl状态的数据
          * @member {object}
          */
         this.data = null;

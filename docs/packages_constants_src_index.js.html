@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>PixiJS中文文档</title>
+    <title>PixiJS中文开发文档</title>
     
-    <meta name="description" content="PixiJS库的中文文档" />
+    <meta name="description" content="PixiJS库的中文开发文档" />
     
         <meta name="keywords" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
         <meta name="keyword" content="docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc" />
@@ -34,7 +34,7 @@
     
     
     <script>
-    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文文档","description":"PixiJS库的中文文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
+    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true,"staticFiles":{"include":["./images/"]}},"applicationName":"PixiJS中文","footer":"Made with ♥ by Goodboy Digital (goodboydigital.com)","copyright":"PixiJS Copyright © 2013-2017 Mat Groves.","favicon":"favicon.png","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"PixiJS中文开发文档","description":"PixiJS库的中文开发文档","keyword":"docs, documentation, pixi, pixijs, renderer, html5, javascript, jsdoc"},"linenums":true,"faviconType":"image/png"};
     </script>
     
 
@@ -44,7 +44,7 @@
 <div id="wrap" class="clearfix">
     
 <div class="navigation">
-    <h3 class="applicationName"><a href="index.html">PixiJS</a></h3>
+    <h3 class="applicationName"><a href="index.html">PixiJS中文</a></h3>
     <button id="menuToggle" class="btn btn-link btn-lg menu-toggle">
         <span class="glyphicon glyphicon-menu-hamburger"></span>
     </button>
@@ -13193,16 +13193,16 @@
         </header>
         <article>
             <pre id="source-code" class="prettyprint source linenums"><code>/**
- * Different types of environments for WebGL.
+ * WebGL的不同类型的环境。
  *
  * @static
  * @memberof PIXI
  * @name ENV
  * @enum {number}
- * @property {number} WEBGL_LEGACY - Used for older v1 WebGL devices. PixiJS will aim to ensure compatibility
- *  with older / less advanced devices. If you experience unexplained flickering prefer this environment.
- * @property {number} WEBGL - Version 1 of WebGL
- * @property {number} WEBGL2 - Version 2 of WebGL
+ * @property {number} WEBGL_LEGACY - 用于较旧的v1 WebGL设备。
+ * PixiJS将致力于确保与较旧/较不先进的设备兼容。如果您遇到无法解释的闪烁，请选择此环境。
+ * @property {number} WEBGL - WebGL版本1
+ * @property {number} WEBGL2 - WebGL版本2
  */
 export var ENV;
 (function (ENV)
@@ -13212,15 +13212,15 @@ export var ENV;
     ENV[ENV.WEBGL2 = 2] = 'WEBGL2';
 })(ENV || (ENV = {}));
 /**
- * Constant to identify the Renderer Type.
+ * 标识渲染器类型的常量
  *
  * @static
  * @memberof PIXI
  * @name RENDERER_TYPE
  * @enum {number}
- * @property {number} UNKNOWN - Unknown render type.
- * @property {number} WEBGL - WebGL render type.
- * @property {number} CANVAS - Canvas render type.
+ * @property {number} UNKNOWN - 未知渲染器类型
+ * @property {number} WEBGL - WebGL渲染器类型
+ * @property {number} CANVAS - Canvas渲染器类型
  */
 export var RENDERER_TYPE;
 (function (RENDERER_TYPE)
@@ -13230,10 +13230,10 @@ export var RENDERER_TYPE;
     RENDERER_TYPE[RENDERER_TYPE.CANVAS = 2] = 'CANVAS';
 })(RENDERER_TYPE || (RENDERER_TYPE = {}));
 /**
- * Various blend modes supported by PIXI.
+ * PIXI支持各种混合模式
  *
- * IMPORTANT - The WebGL renderer only supports the NORMAL, ADD, MULTIPLY and SCREEN blend modes.
- * Anything else will silently act like NORMAL.
+ * IMPORTANT - WebGL渲染器仅支持NORMAL，ADD，MULTIPLY和SCREEN混合模式。
+ * 其他都会像NORMAL一样默默地进行。
  *
  * @memberof PIXI
  * @name BLEND_MODES
@@ -13308,8 +13308,7 @@ export var BLEND_MODES;
     BLEND_MODES[BLEND_MODES.XOR = 29] = 'XOR';
 })(BLEND_MODES || (BLEND_MODES = {}));
 /**
- * Various webgl draw modes. These can be used to specify which GL drawMode to use
- * under certain situations and renderers.
+ * 各种webgl绘制模式。这些可用于指定在某些情况和渲染器下使用的GL drawMode。
  *
  * @memberof PIXI
  * @static
@@ -13335,7 +13334,7 @@ export var DRAW_MODES;
     DRAW_MODES[DRAW_MODES.TRIANGLE_FAN = 6] = 'TRIANGLE_FAN';
 })(DRAW_MODES || (DRAW_MODES = {}));
 /**
- * Various GL texture/resources formats.
+ * 各种GL纹理/资源格式。
  *
  * @memberof PIXI
  * @static
@@ -13361,7 +13360,7 @@ export var FORMATS;
     FORMATS[FORMATS.DEPTH_STENCIL = 34041] = 'DEPTH_STENCIL';
 })(FORMATS || (FORMATS = {}));
 /**
- * Various GL target types.
+ * 各种GL目标类型
  *
  * @memberof PIXI
  * @static
@@ -13391,7 +13390,7 @@ export var TARGETS;
     TARGETS[TARGETS.TEXTURE_CUBE_MAP_NEGATIVE_Z = 34074] = 'TEXTURE_CUBE_MAP_NEGATIVE_Z';
 })(TARGETS || (TARGETS = {}));
 /**
- * Various GL data format types.
+ * 各种GL数据格式类型
  *
  * @memberof PIXI
  * @static
@@ -13417,17 +13416,17 @@ export var TYPES;
     TYPES[TYPES.HALF_FLOAT = 36193] = 'HALF_FLOAT';
 })(TYPES || (TYPES = {}));
 /**
- * The scale modes that are supported by pixi.
+ * pixi支持的缩放模式。
  *
- * The {@link PIXI.settings.SCALE_MODE} scale mode affects the default scaling mode of future operations.
- * It can be re-assigned to either LINEAR or NEAREST, depending upon suitability.
+ * {@link PIXI.settings.SCALE_MODE} 缩放模式会影响以后操作的默认缩放模式。
+ * 可以根据适用性将其重新分配为LINEAR或NEAREST。
  *
  * @memberof PIXI
  * @static
  * @name SCALE_MODES
  * @enum {number}
- * @property {number} LINEAR Smooth scaling
- * @property {number} NEAREST Pixelating scaling
+ * @property {number} LINEAR 平滑缩放
+ * @property {number} NEAREST 像素缩放
  */
 export var SCALE_MODES;
 (function (SCALE_MODES)
@@ -13436,22 +13435,21 @@ export var SCALE_MODES;
     SCALE_MODES[SCALE_MODES.LINEAR = 1] = 'LINEAR';
 })(SCALE_MODES || (SCALE_MODES = {}));
 /**
- * The wrap modes that are supported by pixi.
+ * pixi支持的循环模式。
  *
- * The {@link PIXI.settings.WRAP_MODE} wrap mode affects the default wrapping mode of future operations.
- * It can be re-assigned to either CLAMP or REPEAT, depending upon suitability.
- * If the texture is non power of two then clamp will be used regardless as WebGL can
- * only use REPEAT if the texture is po2.
+ * {@link PIXI.settings.WRAP_MODE} 循环模式会影响以后操作的默认循环模式。
+ * 可以根据适用性将其重新分配给CLAMP或REPEAT。
+ * 如果纹理不是2的幂，则不管WebGL是否只能在纹理为po2时使用REPEAT，都将使用clamp。
  *
- * This property only affects WebGL.
+ * 此属性仅影响WebGL。
  *
  * @name WRAP_MODES
  * @memberof PIXI
  * @static
  * @enum {number}
- * @property {number} CLAMP - The textures uvs are clamped
- * @property {number} REPEAT - The texture uvs tile and repeat
- * @property {number} MIRRORED_REPEAT - The texture uvs tile and repeat with mirroring
+ * @property {number} CLAMP - 强制贴图边界拉伸
+ * @property {number} REPEAT - 贴图重复平铺
+ * @property {number} MIRRORED_REPEAT - 平铺并重复镜像
  */
 export var WRAP_MODES;
 (function (WRAP_MODES)
@@ -13461,22 +13459,22 @@ export var WRAP_MODES;
     WRAP_MODES[WRAP_MODES.MIRRORED_REPEAT = 33648] = 'MIRRORED_REPEAT';
 })(WRAP_MODES || (WRAP_MODES = {}));
 /**
- * Mipmap filtering modes that are supported by pixi.
+ * pixi支持的Mipmap过滤模式。
  *
- * The {@link PIXI.settings.MIPMAP_TEXTURES} affects default texture filtering.
- * Mipmaps are generated for a baseTexture if its `mipmap` field is `ON`,
- * or its `POW2` and texture dimensions are powers of 2.
- * Due to platform restriction, `ON` option will work like `POW2` for webgl-1.
+ * {@link PIXI.settings.MIPMAP_TEXTURES} 影响默认的纹理过滤。
+ * 如果baseTexture的`mipmap`字段为'ON'，则会生成Mipmap。
+ * 否则，为`POW2`和纹理尺寸为2的n次幂。
+ * 由于平台限制，ON` 选项将像webgl-1的`POW2`一样工作。
  *
- * This property only affects WebGL.
+ * 此属性仅影响WebGL。
  *
  * @name MIPMAP_MODES
  * @memberof PIXI
  * @static
  * @enum {number}
- * @property {number} OFF - No mipmaps
- * @property {number} POW2 - Generate mipmaps if texture dimensions are pow2
- * @property {number} ON - Always generate mipmaps
+ * @property {number} OFF - 没有mipmaps
+ * @property {number} POW2 - 如果纹理维度为pow2，则生成mipmaps
+ * @property {number} ON - 始终生成mipmaps
  */
 export var MIPMAP_MODES;
 (function (MIPMAP_MODES)
@@ -13511,18 +13509,18 @@ export var ALPHA_MODES;
     ALPHA_MODES[ALPHA_MODES.PREMULTIPLY_ALPHA = 2] = 'PREMULTIPLY_ALPHA';
 })(ALPHA_MODES || (ALPHA_MODES = {}));
 /**
- * 如何清除过滤器中的renderTextures
+ * 如何清除滤镜中的renderTextures
  *
  * @name CLEAR_MODES
  * @memberof PIXI
  * @static
  * @enum {number}
- * @property {number} BLEND - Preserve the information in the texture, blend above
- * @property {number} CLEAR - Must use `gl.clear` operation
- * @property {number} BLIT - Clear or blit it, depends on device and level of paranoia
- * @property {number} NO - Alias for BLEND, same as `false` in earlier versions
- * @property {number} YES - Alias for CLEAR, same as `true` in earlier versions
- * @property {number} AUTO - Alias for BLIT
+ * @property {number} BLEND - 保留纹理中的信息，在上面混合
+ * @property {number} CLEAR - 必须使用`gl.clear`操作
+ * @property {number} BLIT - 清除或变白，取决于设备和程度
+ * @property {number} NO - BLEND的别名，与早期版本中的`false`相同
+ * @property {number} YES - CLEAR的别名，与早期版本中的`true`相同
+ * @property {number} AUTO - BLIT的别名
  */
 export var CLEAR_MODES;
 (function (CLEAR_MODES)
@@ -13535,23 +13533,22 @@ export var CLEAR_MODES;
     CLEAR_MODES[CLEAR_MODES.BLIT = 2] = 'BLIT';
 })(CLEAR_MODES || (CLEAR_MODES = {}));
 /**
- * The gc modes that are supported by pixi.
+ * pixi支持的gc模式。
  *
- * The {@link PIXI.settings.GC_MODE} Garbage Collection mode for PixiJS textures is AUTO
- * If set to GC_MODE, the renderer will occasionally check textures usage. If they are not
- * used for a specified period of time they will be removed from the GPU. They will of course
- * be uploaded again when they are required. This is a silent behind the scenes process that
- * should ensure that the GPU does not  get filled up.
+ * PixiJS纹理的 {@link PIXI.settings.GC_MODE} 垃圾回收模式为 AUTO
+ * 如果设置 GC_MODE, 渲染器会定时检查纹理使用情况。
+ * 如果在指定的时间段内没有使用它们，它们将从GPU中删除。
+ * 他们会在需要时再次上传。这是一个静默的幕后过程，应该确保GPU不会被填满。
  *
- * Handy for mobile devices!
- * This property only affects WebGL.
+ * 方便移动设备使用!
+ * 此属性仅影响WebGL。
  *
  * @name GC_MODES
  * @enum {number}
  * @static
  * @memberof PIXI
- * @property {number} AUTO - Garbage collection will happen periodically automatically
- * @property {number} MANUAL - Garbage collection will need to be called manually
+ * @property {number} AUTO - 垃圾收集将自动定期进行
+ * @property {number} MANUAL - 垃圾收集将需要手动调用
  */
 export var GC_MODES;
 (function (GC_MODES)
@@ -13560,7 +13557,7 @@ export var GC_MODES;
     GC_MODES[GC_MODES.MANUAL = 1] = 'MANUAL';
 })(GC_MODES || (GC_MODES = {}));
 /**
- * Constants that specify float precision in shaders.
+ * 在着色器中指定浮点精度的常量。
  *
  * @name PRECISION
  * @memberof PIXI
@@ -13579,17 +13576,17 @@ export var PRECISION;
     PRECISION.HIGH = 'highp';
 })(PRECISION || (PRECISION = {}));
 /**
- * Constants for mask implementations.
- * We use `type` suffix because it leads to very different behaviours
+ * 遮罩的实现常量。
+ * 我们使用`type`后缀，因为它导致非常不同的行为
  *
  * @name MASK_TYPES
  * @memberof PIXI
  * @static
  * @enum {number}
- * @property {number} NONE - Mask is ignored
- * @property {number} SCISSOR - Scissor mask, rectangle on screen, cheap
- * @property {number} STENCIL - Stencil mask, 1-bit, medium, works only if renderer supports stencil
- * @property {number} SPRITE - Mask that uses SpriteMaskFilter, uses temporary RenderTexture
+ * @property {number} NONE - 忽略遮罩
+ * @property {number} SCISSOR - 剪裁遮罩, 屏幕矩形, cheap
+ * @property {number} STENCIL - 模板遮罩, 1-bit, 中等, 仅在渲染器支持模板时有效
+ * @property {number} SPRITE - 使用SpriteMaskFilter的蒙版使用临时的RenderTexture
  */
 export var MASK_TYPES;
 (function (MASK_TYPES)
@@ -13612,7 +13609,7 @@ export var MASK_TYPES;
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Jan 22 2020 18:58:43 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sun Feb 02 2020 01:54:55 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

@@ -1,11 +1,11 @@
 import { BaseTexture } from '@pixi/core';
 
 /**
- * Get the drawable source, such as HTMLCanvasElement or HTMLImageElement suitable
- * for rendering with CanvasRenderer. Provided by **@pixi/canvas-renderer** package.
+ * 获取可绘制的源，例如HTMLCanvasElement或HTMLImageElement，
+ * 它们适合使用CanvasRenderer进行渲染。由 **@pixi/canvas-renderer** 包提供。
  * @method getDrawableSource
  * @memberof PIXI.BaseTexture#
- * @return {PIXI.ICanvasImageSource} Source to render with CanvasRenderer
+ * @return {PIXI.ICanvasImageSource} 使用CanvasRenderer渲染的源
  */
 BaseTexture.prototype.getDrawableSource = function getDrawableSource()
 {

@@ -1,7 +1,7 @@
 import { DRAW_MODES } from '@pixi/constants';
 
 /**
- * Renderer dedicated to meshes.
+ * 专用于网格的渲染器。
  *
  * @class
  * @protected
@@ -10,7 +10,7 @@ import { DRAW_MODES } from '@pixi/constants';
 export class CanvasMeshRenderer
 {
     /**
-     * @param {PIXI.CanvasRenderer} renderer - The renderer this downport works for
+     * @param {PIXI.CanvasRenderer} renderer - 此下行端口的渲染器适用于
      */
     constructor(renderer)
     {
@@ -18,9 +18,9 @@ export class CanvasMeshRenderer
     }
 
     /**
-     * Renders the Mesh
+     * 渲染网格
      *
-     * @param {PIXI.Mesh} mesh - the Mesh to render
+     * @param {PIXI.Mesh} mesh - 渲染的网格
      */
     render(mesh)
     {
@@ -67,10 +67,10 @@ export class CanvasMeshRenderer
     }
 
     /**
-     * Draws the object in Triangle Mesh mode
+     * 在“三角形网格”模式下绘制对象
      *
      * @private
-     * @param {PIXI.Mesh} mesh - the Mesh to render
+     * @param {PIXI.Mesh} mesh - 渲染的网格
      */
     _renderTriangleMesh(mesh)
     {
@@ -87,10 +87,10 @@ export class CanvasMeshRenderer
     }
 
     /**
-     * Draws the object in triangle mode using canvas
+     * 使用画布以三角形模式绘制对象
      *
      * @private
-     * @param {PIXI.Mesh} mesh - the current mesh
+     * @param {PIXI.Mesh} mesh - 当前网格
      */
     _renderTriangles(mesh)
     {
@@ -110,13 +110,13 @@ export class CanvasMeshRenderer
     }
 
     /**
-     * Draws one of the triangles that from the Mesh
+     * 从网格中绘制一个三角形
      *
      * @private
-     * @param {PIXI.Mesh} mesh - the current mesh
-     * @param {number} index0 - the index of the first vertex
-     * @param {number} index1 - the index of the second vertex
-     * @param {number} index2 - the index of the third vertex
+     * @param {PIXI.Mesh} mesh - 当前网格
+     * @param {number} index0 - 第1顶点的索引
+     * @param {number} index1 - 第2顶点的索引
+     * @param {number} index2 - 第3顶点的索引
      */
     _renderDrawTriangle(mesh, index0, index1, index2)
     {
@@ -228,10 +228,10 @@ export class CanvasMeshRenderer
     }
 
     /**
-     * Renders a flat Mesh
+     * 渲染平面网格
      *
      * @private
-     * @param {PIXI.Mesh} mesh - The Mesh to render
+     * @param {PIXI.Mesh} mesh - 要渲染的网格
      */
     renderMeshFlat(mesh)
     {
@@ -268,7 +268,7 @@ export class CanvasMeshRenderer
     }
 
     /**
-     * destroy the the renderer.
+     * 销毁渲染器。
      *
      */
     destroy()

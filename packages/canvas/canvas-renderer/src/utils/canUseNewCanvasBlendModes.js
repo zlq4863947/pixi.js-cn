@@ -1,9 +1,9 @@
 /**
- * Creates a little colored canvas
+ * 创建一个小的彩色画布
  *
  * @ignore
- * @param {string} color - The color to make the canvas
- * @return {canvas} a small canvas element
+ * @param {string} color - 画布的颜色
+ * @return {canvas} 小画布元素
  */
 function createColoredCanvas(color)
 {
@@ -21,10 +21,10 @@ function createColoredCanvas(color)
 }
 
 /**
- * Checks whether the Canvas BlendModes are supported by the current browser
+ * 检查当前浏览器是否支持画布BlendModes
  *
  * @private
- * @return {boolean} whether they are supported
+ * @return {boolean} 是否得到支持
  */
 export function canUseNewCanvasBlendModes()
 {

@@ -1,11 +1,11 @@
 import { ParticleContainer } from '@pixi/particles';
 
 /**
- * Renders the object using the Canvas renderer
+ * 使用Canvas渲染器渲染对象
  * @method renderCanvas
  * @memberof PIXI.ParticleContainer#
  * @private
- * @param {PIXI.CanvasRenderer} renderer - a reference to the canvas renderer
+ * @param {PIXI.CanvasRenderer} renderer - 对画布渲染器的引用
  */
 ParticleContainer.prototype.renderCanvas = function renderCanvas(renderer)
 {

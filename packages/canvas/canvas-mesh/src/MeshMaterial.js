@@ -1,13 +1,13 @@
 import { MeshMaterial } from '@pixi/mesh';
 
 /**
- * Renders the mesh using the Canvas renderer
+ * 使用画布渲染器渲染网格
  *
  * @protected
  * @method render
  * @memberof PIXI.MeshMaterial#
- * @param {PIXI.CanvasRenderer} renderer - The canvas renderer.
- * @param {PIXI.Mesh} mesh - Mesh to render.
+ * @param {PIXI.CanvasRenderer} renderer - 画布渲染器。
+ * @param {PIXI.Mesh} mesh - 要渲染的网格。
  */
 MeshMaterial.prototype._renderCanvas = function _renderCanvas(renderer, mesh)
 {

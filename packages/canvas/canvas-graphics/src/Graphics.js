@@ -7,13 +7,12 @@ let canvasRenderer;
 const tempMatrix = new Matrix();
 
 /**
- * Generates a canvas texture. Only available with **pixi.js-legacy** bundle
- * or the **@pixi/canvas-graphics** package.
+ * 生成画布纹理。 仅适用于**pixi.js-legacy**捆绑包或**@pixi/canvas-graphics**包。\
  * @method generateCanvasTexture
  * @memberof PIXI.Graphics#
- * @param {number} scaleMode - The scale mode of the texture.
- * @param {number} resolution - The resolution of the texture.
- * @return {PIXI.Texture} The new texture.
+ * @param {number} scaleMode - 纹理的缩放模式。
+ * @param {number} resolution - 纹理的分辨率。
+ * @return {PIXI.Texture} 新的纹理
  */
 Graphics.prototype.generateCanvasTexture = function generateCanvasTexture(scaleMode, resolution = 1)
 {
@@ -49,12 +48,12 @@ Graphics.prototype.generateCanvasTexture = function generateCanvasTexture(scaleM
 Graphics.prototype.cachedGraphicsData = [];
 
 /**
- * Renders the object using the Canvas renderer
+ * 使用Canvas渲染器渲染对象
  *
  * @method _renderCanvas
  * @memberof PIXI.Graphics#
  * @private
- * @param {PIXI.CanvasRenderer} renderer - The renderer
+ * @param {PIXI.CanvasRenderer} renderer - 渲染器
  */
 Graphics.prototype._renderCanvas = function _renderCanvas(renderer)
 {

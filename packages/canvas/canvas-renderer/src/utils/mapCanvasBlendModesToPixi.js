@@ -2,13 +2,13 @@ import { BLEND_MODES } from '@pixi/constants';
 import { canUseNewCanvasBlendModes } from './canUseNewCanvasBlendModes';
 
 /**
- * Maps blend combinations to Canvas.
+ * 将混合组合映射到画布。
  *
  * @memberof PIXI
  * @function mapCanvasBlendModesToPixi
  * @private
- * @param {string[]} [array=[]] - The array to output into.
- * @return {string[]} Mapped modes.
+ * @param {string[]} [array=[]] - 要输出到的数组。
+ * @return {string[]} 映射模式。
  */
 export function mapCanvasBlendModesToPixi(array = [])
 {

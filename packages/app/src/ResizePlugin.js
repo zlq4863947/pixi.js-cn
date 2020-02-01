@@ -1,20 +1,20 @@
 /**
- * Middleware for for Application's resize functionality
+ * 用于应用程序调整大小功能的中间件
  * @private
  * @class
  */
 export class ResizePlugin
 {
     /**
-     * Initialize the plugin with scope of application instance
+     * 使用应用程序实例的范围初始化插件
      * @static
      * @private
-     * @param {object} [options] - See application options
+     * @param {object} [options] - 查看应用程序选项
      */
     static init(options)
     {
         /**
-         * The element or window to resize the application to.
+         * 调整应用程序大小的元素或窗口。
          * @type {Window|HTMLElement}
          * @name resizeTo
          * @memberof PIXI.Application#
@@ -38,8 +38,7 @@ export class ResizePlugin
             });
 
         /**
-         * If `resizeTo` is set, calling this function
-         * will resize to the width and height of that element.
+         * 如果设置了`resizeTo`，则调用此函数重置该元素的宽度和高度。
          * @method PIXI.Application#resize
          */
         this.resize = () =>
@@ -71,7 +70,7 @@ export class ResizePlugin
     }
 
     /**
-     * Clean up the ticker, scoped to application
+     * 清理应用程序范围内的ticker
      * @static
      * @private
      */

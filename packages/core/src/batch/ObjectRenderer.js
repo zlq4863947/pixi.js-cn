@@ -1,6 +1,5 @@
 /**
- * Base for a common object renderer that can be used as a
- * system renderer plugin.
+ * 可用作系统渲染器插件的通用对象渲染器的基础。
  *
  * @class
  * @extends PIXI.System
@@ -9,12 +8,12 @@
 export class ObjectRenderer
 {
     /**
-     * @param {PIXI.Renderer} renderer - The renderer this manager works for.
+     * @param {PIXI.Renderer} renderer - 此管理器工作的渲染器。
      */
     constructor(renderer)
     {
         /**
-         * The renderer this manager works for.
+         * 此管理器工作的渲染器。
          *
          * @member {PIXI.Renderer}
          */
@@ -22,8 +21,7 @@ export class ObjectRenderer
     }
 
     /**
-     * Stub method that should be used to empty the current
-     * batch by rendering objects now.
+     * 应该通过现在渲染对象来清空当前批次的Stub方法。
      */
     flush()
     {
@@ -31,8 +29,7 @@ export class ObjectRenderer
     }
 
     /**
-     * Generic destruction method that frees all resources. This
-     * should be called by subclasses.
+     * 释放所有资源的通用销毁方法。 这应该由子类调用。
      */
     destroy()
     {
@@ -40,10 +37,9 @@ export class ObjectRenderer
     }
 
     /**
-     * Stub method that initializes any state required before
-     * rendering starts. It is different from the `prerender`
-     * signal, which occurs every frame, in that it is called
-     * whenever an object requests _this_ renderer specifically.
+     * Stub 方法，用于初始化渲染开始之前所需的任何状态。
+     * 它与`prerender`信号不同，后者在每个帧中都会出现，
+     * 因为每当对象专门请求_this_渲染器时都会调用该信号。
      */
     start()
     {
@@ -51,8 +47,7 @@ export class ObjectRenderer
     }
 
     /**
-     * Stops the renderer. It should free up any state and
-     * become dormant.
+     * 停止渲染器。 它应该释放任何状态，并变为休眠。
      */
     stop()
     {
@@ -60,10 +55,9 @@ export class ObjectRenderer
     }
 
     /**
-     * Keeps the object to render. It doesn't have to be
-     * rendered immediately.
+     * 保留要渲染的对象。不必立即渲染。
      *
-     * @param {PIXI.DisplayObject} object - The object to render.
+     * @param {PIXI.DisplayObject} object - 要渲染的对象。
      */
     render(object) // eslint-disable-line no-unused-vars
     {

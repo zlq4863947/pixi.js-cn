@@ -1,12 +1,12 @@
 import { SimpleRope } from '@pixi/mesh-extras';
 
 /**
- * Renders the object using the Canvas renderer
+ * 使用Canvas渲染器渲染对象
  *
  * @protected
  * @method _renderCanvas
  * @memberof PIXI.Mesh#
- * @param {PIXI.CanvasRenderer} renderer - The canvas renderer.
+ * @param {PIXI.CanvasRenderer} renderer - 画布渲染器。
  */
 SimpleRope.prototype._renderCanvas = function _renderCanvas(renderer)
 {

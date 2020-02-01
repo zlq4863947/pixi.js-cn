@@ -4,12 +4,12 @@ import { BasePrepare } from '@pixi/prepare';
 const CANVAS_START_SIZE = 16;
 
 /**
- * The prepare manager provides functionality to upload content to the GPU.
+ * 准备管理器提供了将内容上传到GPU的功能。
  *
- * This cannot be done directly for Canvas like in WebGL, but the effect can be achieved by drawing
- * textures to an offline canvas. This draw call will force the texture to be moved onto the GPU.
+ * 不能像WebGL中那样直接对Canvas进行此操作，但是可以通过将纹理绘制到脱机画布上来实现效果。
+ * 该绘制调用将强制将纹理移至GPU上。
  *
- * An instance of this class is automatically created by default, and can be found at `renderer.plugins.prepare`
+ * 此类的实例默认情况下会自动创建，可以在`renderer.plugins.prepare`中找到
  *
  * @class
  * @extends PIXI.BasePrepare
@@ -18,7 +18,7 @@ const CANVAS_START_SIZE = 16;
 export class CanvasPrepare extends BasePrepare
 {
     /**
-     * @param {PIXI.CanvasRenderer} renderer - A reference to the current renderer
+     * @param {PIXI.CanvasRenderer} renderer - 对当前渲染器的引用
      */
     constructor(renderer)
     {
@@ -27,7 +27,7 @@ export class CanvasPrepare extends BasePrepare
         this.uploadHookHelper = this;
 
         /**
-        * An offline canvas to render textures to
+        * 离线画布以将纹理渲染到
         * @type {HTMLCanvasElement}
         * @private
         */
@@ -36,7 +36,7 @@ export class CanvasPrepare extends BasePrepare
         this.canvas.height = CANVAS_START_SIZE;
 
         /**
-         * The context to the canvas
+         * 画布的上下文
         * @type {CanvasRenderingContext2D}
         * @private
         */
@@ -47,7 +47,7 @@ export class CanvasPrepare extends BasePrepare
     }
 
     /**
-     * Destroys the plugin, don't use after this.
+     * 销毁插件，此后请勿使用。
      *
      */
     destroy()
@@ -59,12 +59,12 @@ export class CanvasPrepare extends BasePrepare
 }
 
 /**
- * Built-in hook to upload PIXI.Texture objects to the GPU.
+ * 内置钩子将PIXI.Texture对象上传到GPU。
  *
  * @private
- * @param {*} prepare - Instance of CanvasPrepare
- * @param {*} item - Item to check
- * @return {boolean} If item was uploaded.
+ * @param {*} prepare - CanvasPrepare实例
+ * @param {*} item - 检查项目
+ * @return {boolean} true:项目已上传。
  */
 function uploadBaseTextures(prepare, item)
 {
