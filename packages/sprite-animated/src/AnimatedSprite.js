@@ -3,7 +3,7 @@ import { Sprite } from '@pixi/sprite';
 import { Ticker, UPDATE_PRIORITY } from '@pixi/ticker';
 
 /**
- * An AnimatedSprite is a simple way to display an animation depicted by a list of textures.
+ * AnimatedSprite是一种显示由纹理列表描绘的动画的简单方法。
  *
  * ```js
  * let alienImages = ["image_sequence_01.png","image_sequence_02.png","image_sequence_03.png","image_sequence_04.png"];
@@ -18,8 +18,7 @@ import { Ticker, UPDATE_PRIORITY } from '@pixi/ticker';
  * let animatedSprite = new PIXI.AnimatedSprite(textureArray);
  * ```
  *
- * The more efficient and simpler way to create an animated sprite is using a {@link PIXI.Spritesheet}
- * containing the animation definitions:
+ * 创建动画精灵的更有效，更简单的方法是使用包含动画定义的精灵表{@link PIXI.Spritesheet}:
  *
  * ```js
  * PIXI.Loader.shared.add("assets/spritesheet.json").load(setup);
@@ -38,9 +37,9 @@ import { Ticker, UPDATE_PRIORITY } from '@pixi/ticker';
 export class AnimatedSprite extends Sprite
 {
     /**
-     * @param {PIXI.Texture[]|PIXI.AnimatedSprite.FrameObject[]} textures - An array of {@link PIXI.Texture} or frame
-     *  objects that make up the animation.
-     * @param {boolean} [autoUpdate=true] - Whether to use PIXI.Ticker.shared to auto update animation time.
+     * @param {PIXI.Texture[]|PIXI.AnimatedSprite.FrameObject[]} textures - 构成动画的{@link PIXI.Texture}数组 或 帧
+     *  对象的数组。
+     * @param {boolean} [autoUpdate=true] - 是否使用{@link PIXI.Ticker.shared}自动更新动画时间。
      */
     constructor(textures, autoUpdate)
     {
@@ -61,7 +60,7 @@ export class AnimatedSprite extends Sprite
         this.textures = textures;
 
         /**
-         * `true` uses PIXI.Ticker.shared to auto update animation time.
+         * `true` 为使用{@link PIXI.Ticker.shared}自动更新动画时间。
          * @type {boolean}
          * @default true
          * @private
@@ -69,7 +68,7 @@ export class AnimatedSprite extends Sprite
         this._autoUpdate = autoUpdate !== false;
 
         /**
-         * The speed that the AnimatedSprite will play at. Higher is faster, lower is slower.
+         * AnimatedSprite播放的速度。越高速度越快，越低速度越慢。
          *
          * @member {number}
          * @default 1
@@ -77,7 +76,7 @@ export class AnimatedSprite extends Sprite
         this.animationSpeed = 1;
 
         /**
-         * Whether or not the animate sprite repeats after playing.
+         * 是否循环播放
          *
          * @member {boolean}
          * @default true
@@ -85,13 +84,11 @@ export class AnimatedSprite extends Sprite
         this.loop = true;
 
         /**
-         * Update anchor to [Texture's defaultAnchor]{@link PIXI.Texture#defaultAnchor} when frame changes.
+         * 当帧更改时，将锚点更新为[纹理的defaultAnchor]{@link PIXI.Texture#defaultAnchor}。
          *
-         * Useful with [sprite sheet animations]{@link PIXI.Spritesheet#animations} created with tools.
-         * Changing anchor for each frame allows to pin sprite origin to certain moving feature
-         * of the frame (e.g. left foot).
+         * 可用于使用工具创建的[精灵表动画]{@link PIXI.Spritesheet#animations}。更改每个帧的描点以允许将精灵原点固定到帧的某些移动点（例如:left foot）。
          *
-         * Note: Enabling this will override any previously set `anchor` on each frame change.
+         * 注意: 启用此选项将覆盖每个帧通道上先前设置的任何`anchor`
          *
          * @member {boolean}
          * @default false
@@ -99,28 +96,28 @@ export class AnimatedSprite extends Sprite
         this.updateAnchor = false;
 
         /**
-         * Function to call when an AnimatedSprite finishes playing.
+         * 函数在动画精灵完成播放时调用。
          *
          * @member {Function}
          */
         this.onComplete = null;
 
         /**
-         * Function to call when an AnimatedSprite changes which texture is being rendered.
+         * 函数在动画精灵更改要渲染的纹理时调用。
          *
          * @member {Function}
          */
         this.onFrameChange = null;
 
         /**
-         * Function to call when `loop` is true, and an AnimatedSprite is played and loops around to start again.
+         * 函数在`loop`为true时调用，播放动画精灵并循环以重新开始。
          *
          * @member {Function}
          */
         this.onLoop = null;
 
         /**
-         * Elapsed time since animation has been started, used internally to display current texture.
+         * 动画启动后经过的时间，用于内部显示当前纹理。
          *
          * @member {number}
          * @private
@@ -128,7 +125,7 @@ export class AnimatedSprite extends Sprite
         this._currentTime = 0;
 
         /**
-         * Indicates if the AnimatedSprite is currently playing.
+         * 指示动画精灵当前是否正在播放。
          *
          * @member {boolean}
          * @readonly
@@ -137,7 +134,7 @@ export class AnimatedSprite extends Sprite
     }
 
     /**
-     * Stops the AnimatedSprite.
+     * 停止AnimatedSprite
      *
      */
     stop()
@@ -155,7 +152,7 @@ export class AnimatedSprite extends Sprite
     }
 
     /**
-     * Plays the AnimatedSprite.
+     * 播放AnimatedSprite
      *
      */
     play()
@@ -173,9 +170,9 @@ export class AnimatedSprite extends Sprite
     }
 
     /**
-     * Stops the AnimatedSprite and goes to a specific frame.
+     * 停止AnimatedSprite并转到指定的帧。
      *
-     * @param {number} frameNumber - Frame index to stop at.
+     * @param {number} frameNumber - 要停止的帧索引。
      */
     gotoAndStop(frameNumber)
     {
@@ -192,9 +189,9 @@ export class AnimatedSprite extends Sprite
     }
 
     /**
-     * Goes to a specific frame and begins playing the AnimatedSprite.
+     * 转到指定帧并开始播放动画精灵。
      *
-     * @param {number} frameNumber - Frame index to start at.
+     * @param {number} frameNumber - 要开始的帧索引。
      */
     gotoAndPlay(frameNumber)
     {
@@ -211,10 +208,10 @@ export class AnimatedSprite extends Sprite
     }
 
     /**
-     * Updates the object transform for rendering.
+     * 更新要渲染的对象变换。
      *
      * @private
-     * @param {number} deltaTime - Time since last tick.
+     * @param {number} deltaTime - 自上一个tick开始的时间。
      */
     update(deltaTime)
     {
@@ -289,7 +286,7 @@ export class AnimatedSprite extends Sprite
     }
 
     /**
-     * Updates the displayed texture to match the current frame index.
+     * 更新显示的纹理以匹配当前帧索引。
      *
      * @private
      */
@@ -313,14 +310,12 @@ export class AnimatedSprite extends Sprite
     }
 
     /**
-     * Stops the AnimatedSprite and destroys it.
+     * 停止动画精灵并将其销毁。
      *
-     * @param {object|boolean} [options] - Options parameter. A boolean will act as if all options
-     *  have been set to that value.
-     * @param {boolean} [options.children=false] - If set to true, all the children will have their destroy
-     *      method called as well. 'options' will be passed on to those calls.
-     * @param {boolean} [options.texture=false] - Should it destroy the current texture of the sprite as well.
-     * @param {boolean} [options.baseTexture=false] - Should it destroy the base texture of the sprite as well.
+     * @param {object|boolean} [options] - 可选参数。可用于一次性设置全部选项
+     * @param {boolean} [options.children=false] - 如果设置为true，则所有子项也将调用其destroy方法。'options'将传递给这些调用。
+     * @param {boolean} [options.texture=false] - 是否破坏精灵的当前纹理。
+     * @param {boolean} [options.baseTexture=false] - 是否破坏精灵的基本纹理
      */
     destroy(options)
     {
@@ -333,11 +328,11 @@ export class AnimatedSprite extends Sprite
     }
 
     /**
-     * A short hand way of creating an AnimatedSprite from an array of frame ids.
+     * 根据帧ID数组创建AnimatedSprite的简便方法。
      *
      * @static
-     * @param {string[]} frames - The array of frames ids the AnimatedSprite will use as its texture frames.
-     * @return {AnimatedSprite} The new animated sprite with the specified frames.
+     * @param {string[]} frames - AnimatedSprite将使用的帧ID数组作为其纹理帧。
+     * @return {AnimatedSprite} 具有指定帧的新动画精灵。
      */
     static fromFrames(frames)
     {
@@ -352,11 +347,11 @@ export class AnimatedSprite extends Sprite
     }
 
     /**
-     * A short hand way of creating an AnimatedSprite from an array of image ids.
+     * 通过图像ID数组创建AnimatedSprite的简便方法。
      *
      * @static
-     * @param {string[]} images - The array of image urls the AnimatedSprite will use as its texture frames.
-     * @return {AnimatedSprite} The new animate sprite with the specified images as frames.
+     * @param {string[]} images - AnimatedSprite将用作其纹理帧的图像URL数组。
+     * @return {AnimatedSprite} 具有指定图像的新动画帧数组。
      */
     static fromImages(images)
     {
@@ -371,8 +366,7 @@ export class AnimatedSprite extends Sprite
     }
 
     /**
-     * The total number of frames in the AnimatedSprite. This is the same as number of textures
-     * assigned to the AnimatedSprite.
+     * AnimatedSprite中的帧总数。与分配给AnimatedSprite的纹理数量相同。
      *
      * @readonly
      * @member {number}
@@ -384,7 +378,7 @@ export class AnimatedSprite extends Sprite
     }
 
     /**
-     * The array of textures used for this AnimatedSprite.
+     * AnimatedSprite的纹理数组。
      *
      * @member {PIXI.Texture[]}
      */
@@ -416,7 +410,7 @@ export class AnimatedSprite extends Sprite
     }
 
     /**
-    * The AnimatedSprites current frame index.
+    * AnimatedSprites当前帧索引。
     *
     * @member {number}
     * @readonly
@@ -438,6 +432,6 @@ export class AnimatedSprite extends Sprite
  * @memberof PIXI.AnimatedSprite
  * @typedef {object} FrameObject
  * @type {object}
- * @property {PIXI.Texture} texture - The {@link PIXI.Texture} of the frame
- * @property {number} time - the duration of the frame in ms
+ * @property {PIXI.Texture} texture - {@link PIXI.Texture}的帧
+ * @property {number} time - 帧的持续时间（毫秒）
  */

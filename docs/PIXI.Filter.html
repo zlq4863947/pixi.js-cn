@@ -13192,36 +13192,32 @@
         <h2><span class="ancestors"><a href="PIXI.html">PIXI</a>~</span>Filter
         </h2>
         
-            <div class="class-description"><p>Filter is a special type of WebGL shader that is applied to the screen.</p>
-<p><a target="_blank" href="http://pixijs.io/examples/#/filters/blur-filter.js">Example</a> of the
-<a href="PIXI.filters.BlurFilter.html">BlurFilter</a>.</p>
-<h3>Usage</h3>
-<p>Filters can be applied to any DisplayObject or Container.
-PixiJS' <code>FilterSystem</code> renders the container into temporary Framebuffer,
-then filter renders it to the screen.
-Multiple filters can be added to the <code>filters</code> array property and stacked on each other.</p>
+            <div class="class-description"><p>滤镜是应用于屏幕的一种特殊类型的WebGL着色器。</p>
+<p><a href="PIXI.filters.BlurFilter.html">BlurFilter</a>的<a target="_blank" href="http://pixijs.io/examples/#/filters/blur-filter.js">示例</a> 。</p>
+<h3>用法</h3>
+<p>滤镜可以应用于任何DisplayObject或Container。
+PixiJS的<code>FilterSystem</code>将容器渲染到临时的Framebuffer中，然后滤镜将其渲染到屏幕上。
+可以将多个滤镜添加到<code>filters</code>数组属性并相互堆叠。</p>
 <pre class="prettyprint source"><code>const filter = new PIXI.Filter(myShaderVert, myShaderFrag, { myUniform: 0.5 });
 const container = new PIXI.Container();
 container.filters = [filter];
 </code></pre>
-<h3>Previous Version Differences</h3>
-<p>In PixiJS <strong>v3</strong>, a filter was always applied to <em>whole screen</em>.</p>
-<p>In PixiJS <strong>v4</strong>, a filter can be applied <em>only part of the screen</em>.
-Developers had to create a set of uniforms to deal with coordinates.</p>
-<p>In PixiJS <strong>v5</strong> combines <em>both approaches</em>.
-Developers can use normal coordinates of v3 and then allow filter to use partial Framebuffers,
-bringing those extra uniforms into account.</p>
-<p>Also be aware that we have changed default vertex shader, please consult
+<h3>过去版本的差异</h3>
+<p>PixiJS <strong>v3</strong>, 滤镜始终应用于_整个屏幕_。</p>
+<p>PixiJS <strong>v4</strong>, 滤镜只能应用于_部分屏幕_。
+开发人员必须创建一套uniforms来处理坐标。</p>
+<p>PixiJS <strong>v5</strong> 结合了_两种方法_。
+开发人员可以使用v3的法线坐标，然后允许滤镜使用部分Framebuffer，从而将这些额外的uniform考虑在内。</p>
+<p>另请注意，我们已更改了默认的顶点着色器，请参见
 <a target="_blank" href="https://github.com/pixijs/pixi.js/wiki/v5-Creating-filters">Wiki</a>.</p>
-<h3>Built-in Uniforms</h3>
-<p>PixiJS viewport uses screen (CSS) coordinates, <code>(0, 0, renderer.screen.width, renderer.screen.height)</code>,
-and <code>projectionMatrix</code> uniform maps it to the gl viewport.</p>
+<h3>内置Uniforms</h3>
+<p>PixiJS视口使用屏幕 (CSS) 坐标, <code>(0, 0, renderer.screen.width, renderer.screen.height)</code>,
+和 <code>projectionMatrix</code> uniform 将其映射到gl视口。</p>
 <p><strong>uSampler</strong></p>
-<p>The most important uniform is the input texture that container was rendered into.
-<em>Important note: as with all Framebuffers in PixiJS, both input and output are
-premultiplied by alpha.</em></p>
-<p>By default, input normalized coordinates are passed to fragment shader with <code>vTextureCoord</code>.
-Use it to sample the input.</p>
+<p>最重要的uniform是渲染到容器的输入纹理。
+_重要说明：与PixiJS中的所有帧缓冲区一样，输入和输出都将预先乘以alpha。</p>
+<p>默认情况下，输入的归一化坐标通过<code>vTextureCoord</code>传递给片段着色器。
+用它来采样输入。</p>
 <pre class="prettyprint source"><code>const fragment = `
 varying vec2 vTextureCoord;
 uniform sampler2D uSampler;
@@ -13233,14 +13229,14 @@ void main(void)
 
 const myFilter = new PIXI.Filter(null, fragment);
 </code></pre>
-<p>This filter is just one uniform less than <a href="PIXI.filters.AlphaFilter.html">AlphaFilter</a>.</p>
+<p>该滤镜仅比<a href="PIXI.filters.AlphaFilter.html">AlphaFilter</a>小一个uniform。</p>
 <p><strong>outputFrame</strong></p>
-<p>The <code>outputFrame</code> holds the rectangle where filter is applied in screen (CSS) coordinates.
-It's the same as <code>renderer.screen</code> for a fullscreen filter.
-Only a part of  <code>outputFrame.zw</code> size of temporary Framebuffer is used,
+<p><code>outputFrame</code> 是包含在屏幕 (CSS) 坐标中应用滤镜的矩形。
+它与全屏滤镜 <code>renderer.screen</code> 相同。
+临时Framebuffer仅使用<code>outputFrame.zw</code>大小的一部分，
 <code>(0, 0, outputFrame.width, outputFrame.height)</code>,</p>
-<p>Filters uses this quad to normalized (0-1) space, its passed into <code>aVertexPosition</code> attribute.
-To calculate vertex position in screen space using normalized (0-1) space:</p>
+<p>滤镜使用此四边形归一化（0-1）空间，并将其传递到 <code>aVertexPosition</code> 属性中。
+要使用归一化（0-1）空间来计算屏幕空间中的顶点位置：</p>
 <pre class="prettyprint source"><code>vec4 filterVertexPosition( void )
 {
     vec2 position = aVertexPosition * max(outputFrame.zw, vec2(0.)) + outputFrame.xy;
@@ -13248,9 +13244,9 @@ To calculate vertex position in screen space using normalized (0-1) space:</p>
 }
 </code></pre>
 <p><strong>inputSize</strong></p>
-<p>Temporary framebuffer is different, it can be either the size of screen, either power-of-two.
-The <code>inputSize.xy</code> are size of temporary framebuffer that holds input.
-The <code>inputSize.zw</code> is inverted, it's a shortcut to evade division inside the shader.</p>
+<p>临时帧缓冲区不同，它可以是屏幕的大小，也可以是2的幂。
+<code>inputSize.xy</code> 是保存输入的临时帧缓冲区的大小。
+<code>inputSize.zw</code> 是反转的，这是一个避免在着色器中划分的快捷方式。</p>
 <p>Set <code>inputSize.xy = outputFrame.zw</code> for a fullscreen filter.</p>
 <p>To calculate input normalized coordinate, you have to map it to filter normalized space.
 Multiply by <code>outputFrame.zw</code> to get input coordinate.
@@ -13308,7 +13304,7 @@ For displacements, coordinates has to be clamped.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_filters_Filter.js.html#line152">Filter.js:152</a>
+            <a href="packages_core_src_filters_Filter.js.html#line148">Filter.js:148</a>
         </div>
         
     </div>
@@ -14150,7 +14146,7 @@ increase the performance of the filter.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_filters_Filter.js.html#line208">Filter.js:208</a>
+            <a href="packages_core_src_filters_Filter.js.html#line204">Filter.js:204</a>
         </div>
         
     </div>
@@ -14394,7 +14390,7 @@ target, filters, sourceFrame, destinationFrame, renderTarget, resolution</p></td
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sun Feb 02 2020 01:55:02 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Tue Feb 11 2020 02:47:46 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

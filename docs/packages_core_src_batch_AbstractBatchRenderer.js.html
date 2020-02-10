@@ -13334,27 +13334,23 @@ export class AbstractBatchRenderer extends ObjectRenderer
          */
         this._packedGeometryPoolSize = 2;
         /**
-         * A flush may occur multiple times in a single
-         * frame. On iOS devices or when
-         * `settings.CAN_UPLOAD_SAME_BUFFER` is false, the
-         * batch renderer does not upload data to the same
-         * `WebGLBuffer` for performance reasons.
+         * 同一帧中可能发生多次刷新。
+         * 在iOS设备上或当`settings.CAN_UPLOAD_SAME_BUFFER`为false时，
+         * 出于性能原因，批处理渲染器不会将数据上传到同一`WebGLBuffer`上。
          *
-         * This is the index into `packedGeometries` that points to
-         * geometry holding the most recent buffers.
+         * 这是`packedGeometries`的索引，该索引指向保存最新缓冲区的几何。
          *
          * @member {number}
          * @private
          */
         this._flushId = 0;
         /**
-         * Pool of `ViewableBuffer` objects that are sorted in
-         * order of increasing size. The flush method uses
-         * the buffer with the least size above the amount
-         * it requires. These are used for passing attributes.
+         * 按大小递增顺序排序的“ ViewableBuffer”对象池。
+         * 刷新方法使用的缓冲区的大小要比其所需的大小小。
+         * 它们用于传递属性。
          *
-         * The first buffer has a size of 8; each subsequent
-         * buffer has double capacity of its previous.
+         * 第一个缓冲区的大小为8；
+         * 每个后续缓冲区的容量是其先前缓冲区的两倍。
          *
          * @member {PIXI.ViewableBuffer[]}
          * @private
@@ -13362,13 +13358,12 @@ export class AbstractBatchRenderer extends ObjectRenderer
          */
         this._aBuffers = {};
         /**
-         * Pool of `Uint16Array` objects that are sorted in
-         * order of increasing size. The flush method uses
-         * the buffer with the least size above the amount
-         * it requires. These are used for passing indices.
+         * 按大小递增顺序排序的`Uint16Array`对象池。
+         * flush方法使用的缓冲区的最小大小超过了它所需的大小。
+         * 它们用于传递索引。
          *
-         * The first buffer has a size of 12; each subsequent
-         * buffer has double capacity of its previous.
+         * 第一个缓冲区的大小为12；
+         * 每个后续缓冲区的容量是前一个缓冲区的两倍。
          *
          * @member {Uint16Array[]}
          * @private
@@ -13376,9 +13371,8 @@ export class AbstractBatchRenderer extends ObjectRenderer
          */
         this._iBuffers = {};
         /**
-         * Maximum number of textures that can be uploaded to
-         * the GPU under the current context. It is initialized
-         * properly in `this.contextChange`.
+         * 在当前上下文下可以上载到GPU的最大纹理数。
+         * 它已在`this.contextChange`中正确初始化。
          *
          * @member {number}
          * @see PIXI.AbstractBatchRenderer#contextChange
@@ -13396,9 +13390,9 @@ export class AbstractBatchRenderer extends ObjectRenderer
     }
     /**
      * Handles the `contextChange` signal.
+     * 处理`contextChange`信号。
      *
-     * It calculates `this.MAX_TEXTURES` and allocating the
-     * packed-geometry object pool.
+     * 它计算`this.MAX_TEXTURES`并分配压缩几何对象池。
      */
     contextChange()
     {
@@ -13426,7 +13420,7 @@ export class AbstractBatchRenderer extends ObjectRenderer
         this.initFlushBuffers();
     }
     /**
-     * Makes sure that static and dynamic flush pooled objects have correct dimensions
+     * 确保静态和动态刷新池对象的尺寸正确
      */
     initFlushBuffers()
     {
@@ -13450,21 +13444,18 @@ export class AbstractBatchRenderer extends ObjectRenderer
         }
     }
     /**
-     * Handles the `prerender` signal.
+     * 处理`prerender`信号。
      *
-     * It ensures that flushes start from the first geometry
-     * object again.
+     * 它确保刷新从第一个几何对象开始。
      */
     onPrerender()
     {
         this._flushId = 0;
     }
     /**
-     * Buffers the "batchable" object. It need not be rendered
-     * immediately.
+     * 缓冲“可批量”对象。 它不需要立即渲染。
      *
-     * @param {PIXI.DisplayObject} element - the element to render when
-     *    using this renderer
+     * @param {PIXI.DisplayObject} element - 使用此渲染器时要渲染的元素
      */
     render(element)
     {
@@ -13530,7 +13521,7 @@ export class AbstractBatchRenderer extends ObjectRenderer
         BaseTexture._globalBatch = TICK;
     }
     /**
-     * Populating drawcalls for rendering
+     * 绘制的填充drawcalls
      *
      * @param {PIXI.BatchTextureArray} texArray
      * @param {number} start
@@ -13577,7 +13568,7 @@ export class AbstractBatchRenderer extends ObjectRenderer
         this._iIndex = iIndex;
     }
     /**
-     * Bind textures for current rendering
+     * 绑定纹理以进行当前渲染绑定纹理以进行当前渲染
      *
      * @param {PIXI.BatchTextureArray} texArray
      */
@@ -13641,7 +13632,7 @@ export class AbstractBatchRenderer extends ObjectRenderer
         }
     }
     /**
-     * Renders the content _now_ and empties the current batch.
+     * 立刻渲染内容并清空当前批处理。
      */
     flush()
     {
@@ -13663,7 +13654,7 @@ export class AbstractBatchRenderer extends ObjectRenderer
         this._indexCount = 0;
     }
     /**
-     * Starts a new sprite batch.
+     * 开始新的精灵批处理。
      */
     start()
     {
@@ -13676,14 +13667,14 @@ export class AbstractBatchRenderer extends ObjectRenderer
         }
     }
     /**
-     * Stops and flushes the current batch.
+     * 停止并刷新当前批处理。
      */
     stop()
     {
         this.flush();
     }
     /**
-     * Destroys this `AbstractBatchRenderer`. It cannot be used again.
+     * 销毁此`AbstractBatchRenderer`。不能再被调用。
      */
     destroy()
     {
@@ -13708,11 +13699,10 @@ export class AbstractBatchRenderer extends ObjectRenderer
         super.destroy();
     }
     /**
-     * Fetches an attribute buffer from `this._aBuffers` that
-     * can hold atleast `size` floats.
+     * 从`this._aBuffers`取得一个属性缓冲区，该缓冲区可以容纳至少`size`个浮点数。
      *
-     * @param {number} size - minimum capacity required
-     * @return {ViewableBuffer} - buffer than can hold atleast `size` floats
+     * @param {number} size - 所需的最小容量
+     * @return {ViewableBuffer} - 缓冲区可以容纳至少`size`个浮点数
      * @private
      */
     getAttributeBuffer(size)
@@ -13736,12 +13726,10 @@ export class AbstractBatchRenderer extends ObjectRenderer
         return buffer;
     }
     /**
-     * Fetches an index buffer from `this._iBuffers` that can
-     * has atleast `size` capacity.
+     * 从`this._aBuffers`取得一个索引缓冲区，该缓冲区可以容纳至少`size`的容量。
      *
-     * @param {number} size - minimum required capacity
-     * @return {Uint16Array} - buffer that can fit `size`
-     *    indices.
+     * @param {number} size - 最小所需容量
+     * @return {Uint16Array} - 可以容纳`size`索引的缓冲区。
      * @private
      */
     getIndexBuffer(size)
@@ -13765,18 +13753,16 @@ export class AbstractBatchRenderer extends ObjectRenderer
         return buffer;
     }
     /**
-     * Takes the four batching parameters of `element`, interleaves
-     * and pushes them into the batching attribute/index buffers given.
+     * 接受元素的四个批处理参数，交织并将其推入指定的批处理属性/索引缓冲区。
      *
-     * It uses these properties: `vertexData` `uvs`, `textureId` and
-     * `indicies`. It also uses the "tint" of the base-texture, if
-     * present.
+     * 它使用以下属性：`vertexData`，`uvs`，`textureId`和`indicies`。
+     * 如果存在，它也会使用基础纹理的"tint"。
      *
-     * @param {PIXI.Sprite} element - element being rendered
-     * @param {PIXI.ViewableBuffer} attributeBuffer - attribute buffer.
-     * @param {Uint16Array} indexBuffer - index buffer
-     * @param {number} aIndex - number of floats already in the attribute buffer
-     * @param {number} iIndex - number of indices already in `indexBuffer`
+     * @param {PIXI.Sprite} element - 被渲染的元素
+     * @param {PIXI.ViewableBuffer} attributeBuffer - 属性缓冲区。
+     * @param {Uint16Array} indexBuffer - 索引缓冲区
+     * @param {number} aIndex -  `attributeBuffer`中已经存在的浮点数
+     * @param {number} iIndex - `indexBuffer`中已经存在的索引数
      */
     packInterleavedGeometry(element, attributeBuffer, indexBuffer, aIndex, iIndex)
     {
@@ -13809,22 +13795,21 @@ export class AbstractBatchRenderer extends ObjectRenderer
     }
 }
 /**
- * Pool of `BatchDrawCall` objects that `flush` used
- * to create "batches" of the objects being rendered.
+ * `flush`用于创建要渲染对象的"batches"的`BatchDrawCall`对象池。
  *
- * These are never re-allocated again.
- * Shared between all batch renderers because it can be only one "flush" working at the moment.
+ * 这些再也不会重新分配。
+ * 在所有批处理渲染器之间共享，因为目前只能进行一个“刷新”操作。
  *
  * @static
  * @member {PIXI.BatchDrawCall[]}
  */
 AbstractBatchRenderer._drawCallPool = [];
 /**
- * Pool of `BatchDrawCall` objects that `flush` used
- * to create "batches" of the objects being rendered.
+ * `flush`用于创建要渲染对象的"batches"的`BatchDrawCall`对象池。
  *
- * These are never re-allocated again.
+ * 这些再也不会重新分配。
  * Shared between all batch renderers because it can be only one "flush" working at the moment.
+ * 在所有批处理渲染器之间共享，因为目前只能进行一个“刷新”操作。
  *
  * @static
  * @member {PIXI.BatchTextureArray[]}
@@ -13843,7 +13828,7 @@ AbstractBatchRenderer._textureArrayPool = [];
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sun Feb 02 2020 01:54:55 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Tue Feb 11 2020 02:47:38 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

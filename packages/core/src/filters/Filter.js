@@ -6,16 +6,14 @@ import defaultVertex from './defaultFilter.vert';
 import defaultFragment from './defaultFilter.frag';
 
 /**
- * Filter is a special type of WebGL shader that is applied to the screen.
+ * 滤镜是应用于屏幕的一种特殊类型的WebGL着色器。
  *
- * {@link http://pixijs.io/examples/#/filters/blur-filter.js Example} of the
- * {@link PIXI.filters.BlurFilter BlurFilter}.
+ * {@link PIXI.filters.BlurFilter BlurFilter}的{@link http://pixijs.io/examples/#/filters/blur-filter.js 示例} 。
  *
- * ### Usage
- * Filters can be applied to any DisplayObject or Container.
- * PixiJS' `FilterSystem` renders the container into temporary Framebuffer,
- * then filter renders it to the screen.
- * Multiple filters can be added to the `filters` array property and stacked on each other.
+ * ### 用法
+ * 滤镜可以应用于任何DisplayObject或Container。
+ * PixiJS的`FilterSystem`将容器渲染到临时的Framebuffer中，然后滤镜将其渲染到屏幕上。
+ * 可以将多个滤镜添加到`filters`数组属性并相互堆叠。
  *
  * ```
  * const filter = new PIXI.Filter(myShaderVert, myShaderFrag, { myUniform: 0.5 });
@@ -23,33 +21,31 @@ import defaultFragment from './defaultFilter.frag';
  * container.filters = [filter];
  * ```
  *
- * ### Previous Version Differences
+ * ### 过去版本的差异
  *
- * In PixiJS **v3**, a filter was always applied to _whole screen_.
+ * PixiJS **v3**, 滤镜始终应用于_整个屏幕_。
  *
- * In PixiJS **v4**, a filter can be applied _only part of the screen_.
- * Developers had to create a set of uniforms to deal with coordinates.
+ * PixiJS **v4**, 滤镜只能应用于_部分屏幕_。
+ * 开发人员必须创建一套uniforms来处理坐标。
  *
- * In PixiJS **v5** combines _both approaches_.
- * Developers can use normal coordinates of v3 and then allow filter to use partial Framebuffers,
- * bringing those extra uniforms into account.
+ * PixiJS **v5** 结合了_两种方法_。
+ * 开发人员可以使用v3的法线坐标，然后允许滤镜使用部分Framebuffer，从而将这些额外的uniform考虑在内。
  *
- * Also be aware that we have changed default vertex shader, please consult
+ * 另请注意，我们已更改了默认的顶点着色器，请参见
  * {@link https://github.com/pixijs/pixi.js/wiki/v5-Creating-filters Wiki}.
  *
- * ### Built-in Uniforms
+ * ### 内置Uniforms
  *
- * PixiJS viewport uses screen (CSS) coordinates, `(0, 0, renderer.screen.width, renderer.screen.height)`,
- * and `projectionMatrix` uniform maps it to the gl viewport.
+ * PixiJS视口使用屏幕 (CSS) 坐标, `(0, 0, renderer.screen.width, renderer.screen.height)`,
+ * 和 `projectionMatrix` uniform 将其映射到gl视口。
  *
  * **uSampler**
  *
- * The most important uniform is the input texture that container was rendered into.
- * _Important note: as with all Framebuffers in PixiJS, both input and output are
- * premultiplied by alpha._
+ * 最重要的uniform是渲染到容器的输入纹理。
+ * _重要说明：与PixiJS中的所有帧缓冲区一样，输入和输出都将预先乘以alpha。
  *
- * By default, input normalized coordinates are passed to fragment shader with `vTextureCoord`.
- * Use it to sample the input.
+ * 默认情况下，输入的归一化坐标通过`vTextureCoord`传递给片段着色器。
+ * 用它来采样输入。
  *
  * ```
  * const fragment = `
@@ -64,17 +60,17 @@ import defaultFragment from './defaultFilter.frag';
  * const myFilter = new PIXI.Filter(null, fragment);
  * ```
  *
- * This filter is just one uniform less than {@link PIXI.filters.AlphaFilter AlphaFilter}.
+ * 该滤镜仅比{@link PIXI.filters.AlphaFilter AlphaFilter}小一个uniform。
  *
  * **outputFrame**
  *
- * The `outputFrame` holds the rectangle where filter is applied in screen (CSS) coordinates.
- * It's the same as `renderer.screen` for a fullscreen filter.
- * Only a part of  `outputFrame.zw` size of temporary Framebuffer is used,
+ * `outputFrame` 是包含在屏幕 (CSS) 坐标中应用滤镜的矩形。
+ * 它与全屏滤镜 `renderer.screen` 相同。
+ * 临时Framebuffer仅使用`outputFrame.zw`大小的一部分，
  * `(0, 0, outputFrame.width, outputFrame.height)`,
  *
- * Filters uses this quad to normalized (0-1) space, its passed into `aVertexPosition` attribute.
- * To calculate vertex position in screen space using normalized (0-1) space:
+ * 滤镜使用此四边形归一化（0-1）空间，并将其传递到 `aVertexPosition` 属性中。
+ * 要使用归一化（0-1）空间来计算屏幕空间中的顶点位置：
  *
  * ```
  * vec4 filterVertexPosition( void )
@@ -86,9 +82,9 @@ import defaultFragment from './defaultFilter.frag';
  *
  * **inputSize**
  *
- * Temporary framebuffer is different, it can be either the size of screen, either power-of-two.
- * The `inputSize.xy` are size of temporary framebuffer that holds input.
- * The `inputSize.zw` is inverted, it's a shortcut to evade division inside the shader.
+ * 临时帧缓冲区不同，它可以是屏幕的大小，也可以是2的幂。
+ * `inputSize.xy` 是保存输入的临时帧缓冲区的大小。
+ * `inputSize.zw` 是反转的，这是一个避免在着色器中划分的快捷方式。
  *
  * Set `inputSize.xy = outputFrame.zw` for a fullscreen filter.
  *

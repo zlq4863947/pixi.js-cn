@@ -1,6 +1,6 @@
 /**
- * Used by the batcher to build texture batches.
- * Holds list of textures and their respective locations.
+ * 批处理程序用于构建纹理批处理。
+ * 存放纹理及其各自位置的列表。
  *
  * @class
  * @memberof PIXI
@@ -10,17 +10,17 @@ export class BatchTextureArray
     constructor()
     {
         /**
-         * inside textures array
+         * 内部纹理数组
          * @member {PIXI.BaseTexture[]}
          */
         this.elements = [];
         /**
-         * Respective locations for textures
+         * 各个纹理位置
          * @member {number[]}
          */
         this.ids = [];
         /**
-         * number of filled elements
+         * 填充元素数
          * @member {number}
          */
         this.count = 0;

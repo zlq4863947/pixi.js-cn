@@ -13192,7 +13192,7 @@
         <h2><span class="ancestors"><a href="PIXI.html">PIXI</a>~</span>AnimatedSprite
         </h2>
         
-            <div class="class-description"><p>An AnimatedSprite is a simple way to display an animation depicted by a list of textures.</p>
+            <div class="class-description"><p>AnimatedSprite是一种显示由纹理列表描绘的动画的简单方法。</p>
 <pre class="prettyprint source lang-js"><code>let alienImages = [&quot;image_sequence_01.png&quot;,&quot;image_sequence_02.png&quot;,&quot;image_sequence_03.png&quot;,&quot;image_sequence_04.png&quot;];
 let textureArray = [];
 
@@ -13204,8 +13204,7 @@ for (let i=0; i &lt; 4; i++)
 
 let animatedSprite = new PIXI.AnimatedSprite(textureArray);
 </code></pre>
-<p>The more efficient and simpler way to create an animated sprite is using a <a href="PIXI.Spritesheet.html">PIXI.Spritesheet</a>
-containing the animation definitions:</p>
+<p>创建动画精灵的更有效，更简单的方法是使用包含动画定义的精灵表<a href="PIXI.Spritesheet.html">PIXI.Spritesheet</a>:</p>
 <pre class="prettyprint source lang-js"><code>PIXI.Loader.shared.add(&quot;assets/spritesheet.json&quot;).load(setup);
 
 function setup() {
@@ -13241,7 +13240,7 @@ function setup() {
     
         
         <div class="tag-source">
-            <a href="packages_sprite-animated_src_AnimatedSprite.js.html#line46">AnimatedSprite.js:46</a>
+            <a href="packages_sprite-animated_src_AnimatedSprite.js.html#line45">AnimatedSprite.js:45</a>
         </div>
         
     </div>
@@ -13309,8 +13308,8 @@ function setup() {
                         
                     
                 
-                <p>An array of <a href="PIXI.Texture.html">PIXI.Texture</a> or frame
-objects that make up the animation.</p></td>
+                <p>构成动画的<a href="PIXI.Texture.html">PIXI.Texture</a>数组 或 帧
+对象的数组。</p></td>
         </tr>
 	
 	
@@ -13346,7 +13345,7 @@ objects that make up the animation.</p></td>
                         
                     
                 
-                <p>Whether to use PIXI.Ticker.shared to auto update animation time.</p></td>
+                <p>是否使用<a href="PIXI.Ticker.html#.shared">PIXI.Ticker.shared</a>自动更新动画时间。</p></td>
         </tr>
 	
 	
@@ -14735,7 +14734,7 @@ sprite.anchor.set(0.5); // This will set the origin to center. (0.5) is same as 
 <dd>
     
     <div class="description">
-        <p>The speed that the AnimatedSprite will play at. Higher is faster, lower is slower.</p>
+        <p>AnimatedSprite播放的速度。越高速度越快，越低速度越慢。</p>
     </div>
     
     
@@ -15034,7 +15033,7 @@ sprite.buttonMode = true;</code></pre>
 <dd>
     
     <div class="description">
-        <p>The AnimatedSprites current frame index.</p>
+        <p>AnimatedSprites当前帧索引。</p>
     </div>
     
     
@@ -15683,7 +15682,7 @@ Setting this to false allows PixiJS to bypass a recursive <code>hitTest</code> f
 <dd>
     
     <div class="description">
-        <p>Whether or not the animate sprite repeats after playing.</p>
+        <p>是否循环播放</p>
     </div>
     
     
@@ -15872,7 +15871,7 @@ sprite.mask = graphics;</code></pre>
 <dd>
     
     <div class="description">
-        <p>Function to call when an AnimatedSprite finishes playing.</p>
+        <p>函数在动画精灵完成播放时调用。</p>
     </div>
     
     
@@ -15923,7 +15922,7 @@ sprite.mask = graphics;</code></pre>
 <dd>
     
     <div class="description">
-        <p>Function to call when an AnimatedSprite changes which texture is being rendered.</p>
+        <p>函数在动画精灵更改要渲染的纹理时调用。</p>
     </div>
     
     
@@ -15974,7 +15973,7 @@ sprite.mask = graphics;</code></pre>
 <dd>
     
     <div class="description">
-        <p>Function to call when <code>loop</code> is true, and an AnimatedSprite is played and loops around to start again.</p>
+        <p>函数在<code>loop</code>为true时调用，播放动画精灵并循环以重新开始。</p>
     </div>
     
     
@@ -16136,7 +16135,7 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>Indicates if the AnimatedSprite is currently playing.</p>
+        <p>指示动画精灵当前是否正在播放。</p>
     </div>
     
     
@@ -16820,7 +16819,7 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>The array of textures used for this AnimatedSprite.</p>
+        <p>AnimatedSprite的纹理数组。</p>
     </div>
     
     
@@ -16930,8 +16929,7 @@ A value of 0xFFFFFF will remove any tint effect.</p>
 <dd>
     
     <div class="description">
-        <p>The total number of frames in the AnimatedSprite. This is the same as number of textures
-assigned to the AnimatedSprite.</p>
+        <p>AnimatedSprite中的帧总数。与分配给AnimatedSprite的纹理数量相同。</p>
     </div>
     
     
@@ -17041,11 +17039,9 @@ assigned to the AnimatedSprite.</p>
 <dd>
     
     <div class="description">
-        <p>Update anchor to <a href="PIXI.Texture.html#defaultAnchor">Texture's defaultAnchor</a> when frame changes.</p>
-<p>Useful with <a href="PIXI.Spritesheet.html#animations">sprite sheet animations</a> created with tools.
-Changing anchor for each frame allows to pin sprite origin to certain moving feature
-of the frame (e.g. left foot).</p>
-<p>Note: Enabling this will override any previously set <code>anchor</code> on each frame change.</p>
+        <p>当帧更改时，将锚点更新为<a href="PIXI.Texture.html#defaultAnchor">纹理的defaultAnchor</a>。</p>
+<p>可用于使用工具创建的<a href="PIXI.Spritesheet.html#animations">精灵表动画</a>。更改每个帧的描点以允许将精灵原点固定到帧的某些移动点（例如:left foot）。</p>
+<p>注意: 启用此选项将覆盖每个帧通道上先前设置的任何<code>anchor</code></p>
     </div>
     
     
@@ -17548,7 +17544,7 @@ position.y的别名</p>
     
         
         <div class="tag-source">
-            <a href="packages_sprite-animated_src_AnimatedSprite.js.html#line306">AnimatedSprite.js:306</a>
+            <a href="packages_sprite-animated_src_AnimatedSprite.js.html#line301">AnimatedSprite.js:301</a>
         </div>
         
     </div>
@@ -17559,7 +17555,7 @@ position.y的别名</p>
     
     
     <div class="description">
-        <p>A short hand way of creating an AnimatedSprite from an array of frame ids.</p>
+        <p>根据帧ID数组创建AnimatedSprite的简便方法。</p>
     </div>
     
 
@@ -17606,7 +17602,7 @@ position.y的别名</p>
             
             <td class="description last">
                 
-                <p>The array of frames ids the AnimatedSprite will use as its texture frames.</p></td>
+                <p>AnimatedSprite将使用的帧ID数组作为其纹理帧。</p></td>
         </tr>
 	
 	
@@ -17669,7 +17665,7 @@ position.y的别名</p>
                         
                     
             </td>
-            <td class="description last">The new animated sprite with the specified frames.</td>
+            <td class="description last">具有指定帧的新动画精灵。</td>
         </tr>
     
     </tbody>
@@ -17698,7 +17694,7 @@ position.y的别名</p>
     
         
         <div class="tag-source">
-            <a href="packages_sprite-animated_src_AnimatedSprite.js.html#line324">AnimatedSprite.js:324</a>
+            <a href="packages_sprite-animated_src_AnimatedSprite.js.html#line319">AnimatedSprite.js:319</a>
         </div>
         
     </div>
@@ -17709,7 +17705,7 @@ position.y的别名</p>
     
     
     <div class="description">
-        <p>A short hand way of creating an AnimatedSprite from an array of image ids.</p>
+        <p>通过图像ID数组创建AnimatedSprite的简便方法。</p>
     </div>
     
 
@@ -17756,7 +17752,7 @@ position.y的别名</p>
             
             <td class="description last">
                 
-                <p>The array of image urls the AnimatedSprite will use as its texture frames.</p></td>
+                <p>AnimatedSprite将用作其纹理帧的图像URL数组。</p></td>
         </tr>
 	
 	
@@ -17819,7 +17815,7 @@ position.y的别名</p>
                         
                     
             </td>
-            <td class="description last">The new animate sprite with the specified images as frames.</td>
+            <td class="description last">具有指定图像的新动画帧数组。</td>
         </tr>
     
     </tbody>
@@ -18869,7 +18865,7 @@ This is used to ensure that the true width and height of a trimmed texture is re
     
         
         <div class="tag-source">
-            <a href="packages_sprite-animated_src_AnimatedSprite.js.html#line291">AnimatedSprite.js:291</a>
+            <a href="packages_sprite-animated_src_AnimatedSprite.js.html#line286">AnimatedSprite.js:286</a>
         </div>
         
     </div>
@@ -18880,7 +18876,7 @@ This is used to ensure that the true width and height of a trimmed texture is re
     
     
     <div class="description">
-        <p>Stops the AnimatedSprite and destroys it.</p>
+        <p>停止动画精灵并将其销毁。</p>
     </div>
     
 
@@ -18937,8 +18933,7 @@ This is used to ensure that the true width and height of a trimmed texture is re
                         
                     
                 
-                <p>Options parameter. A boolean will act as if all options
-have been set to that value.</p>
+                <p>可选参数。可用于一次性设置全部选项</p>
                 
 
 <table class="params">
@@ -18992,8 +18987,7 @@ have been set to that value.</p>
                         
                     
                 
-                <p>If set to true, all the children will have their destroy
-method called as well. 'options' will be passed on to those calls.</p></td>
+                <p>如果设置为true，则所有子项也将调用其destroy方法。'options'将传递给这些调用。</p></td>
         </tr>
 	
 	
@@ -19029,7 +19023,7 @@ method called as well. 'options' will be passed on to those calls.</p></td>
                         
                     
                 
-                <p>Should it destroy the current texture of the sprite as well.</p></td>
+                <p>是否破坏精灵的当前纹理。</p></td>
         </tr>
 	
 	
@@ -19065,7 +19059,7 @@ method called as well. 'options' will be passed on to those calls.</p></td>
                         
                     
                 
-                <p>Should it destroy the base texture of the sprite as well.</p></td>
+                <p>是否破坏精灵的基本纹理</p></td>
         </tr>
 	
 	
@@ -20237,7 +20231,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_sprite-animated_src_AnimatedSprite.js.html#line180">AnimatedSprite.js:180</a>
+            <a href="packages_sprite-animated_src_AnimatedSprite.js.html#line177">AnimatedSprite.js:177</a>
         </div>
         
     </div>
@@ -20248,7 +20242,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Goes to a specific frame and begins playing the AnimatedSprite.</p>
+        <p>转到指定帧并开始播放动画精灵。</p>
     </div>
     
 
@@ -20295,7 +20289,7 @@ nice performance boost.</p></td>
             
             <td class="description last">
                 
-                <p>Frame index to start at.</p></td>
+                <p>要开始的帧索引。</p></td>
         </tr>
 	
 	
@@ -20358,7 +20352,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_sprite-animated_src_AnimatedSprite.js.html#line164">AnimatedSprite.js:164</a>
+            <a href="packages_sprite-animated_src_AnimatedSprite.js.html#line161">AnimatedSprite.js:161</a>
         </div>
         
     </div>
@@ -20369,7 +20363,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Stops the AnimatedSprite and goes to a specific frame.</p>
+        <p>停止AnimatedSprite并转到指定的帧。</p>
     </div>
     
 
@@ -20416,7 +20410,7 @@ nice performance boost.</p></td>
             
             <td class="description last">
                 
-                <p>Frame index to stop at.</p></td>
+                <p>要停止的帧索引。</p></td>
         </tr>
 	
 	
@@ -20559,7 +20553,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_sprite-animated_src_AnimatedSprite.js.html#line147">AnimatedSprite.js:147</a>
+            <a href="packages_sprite-animated_src_AnimatedSprite.js.html#line144">AnimatedSprite.js:144</a>
         </div>
         
     </div>
@@ -20570,7 +20564,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Plays the AnimatedSprite.</p>
+        <p>播放AnimatedSprite</p>
     </div>
     
 
@@ -22635,7 +22629,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_sprite-animated_src_AnimatedSprite.js.html#line131">AnimatedSprite.js:131</a>
+            <a href="packages_sprite-animated_src_AnimatedSprite.js.html#line128">AnimatedSprite.js:128</a>
         </div>
         
     </div>
@@ -22646,7 +22640,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Stops the AnimatedSprite.</p>
+        <p>停止AnimatedSprite</p>
     </div>
     
 
@@ -23499,7 +23493,7 @@ nice performance boost.</p></td>
             
             
             
-            <td class="description last"><p>The <a href="PIXI.Texture.html">PIXI.Texture</a> of the frame</p></td>
+            <td class="description last"><p><a href="PIXI.Texture.html">PIXI.Texture</a>的帧</p></td>
         </tr>
 	
 	
@@ -23522,7 +23516,7 @@ nice performance boost.</p></td>
             
             
             
-            <td class="description last"><p>the duration of the frame in ms</p></td>
+            <td class="description last"><p>帧的持续时间（毫秒）</p></td>
         </tr>
 	
 	
@@ -26982,7 +26976,7 @@ DisplayObject's <code>interactive</code> property must be set to <code>true</cod
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sun Feb 02 2020 01:55:00 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Tue Feb 11 2020 02:47:44 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

@@ -4,7 +4,7 @@ import { UniformGroup } from '../shader/UniformGroup';
 import { Matrix } from '@pixi/math';
 
 /**
- * Helper that generates batching multi-texture shader. Use it with your new BatchRenderer
+ * 生成批处理多纹理着色器的帮助类。与new BatchRenderer一起使用
  *
  * @class
  * @memberof PIXI
@@ -12,20 +12,20 @@ import { Matrix } from '@pixi/math';
 export class BatchShaderGenerator
 {
     /**
-     * @param {string} vertexSrc - Vertex shader
-     * @param {string} fragTemplate - Fragment shader template
+     * @param {string} vertexSrc - 顶点着色器
+     * @param {string} fragTemplate - 片段着色器模板
      */
     constructor(vertexSrc, fragTemplate)
     {
         /**
-         * Reference to the vertex shader source.
+         * 引用的顶点着色器源。
          *
          * @member {string}
          */
         this.vertexSrc = vertexSrc;
 
         /**
-         * Reference to the fragement shader template. Must contain "%count%" and "%forloop%".
+         * 引用的顶片段着色器模板。 必须包含"％count％"和"％forloop％"。
          *
          * @member {string}
          */

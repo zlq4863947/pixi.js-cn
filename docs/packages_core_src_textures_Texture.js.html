@@ -13201,12 +13201,12 @@ import { Rectangle, Point } from '@pixi/math';
 import { uid, TextureCache, getResolutionOfUrl, EventEmitter } from '@pixi/utils';
 const DEFAULT_UVS = new TextureUvs();
 /**
- * A texture stores the information that represents an image or part of an image.
+ * 纹理表示图像或图像的一部分信息。
  *
- * It cannot be added to the display list directly; instead use it as the texture for a Sprite.
- * If no frame is provided for a texture, then the whole image is used.
+ * 不能直接将其添加到显示列表中；请将其用作精灵的纹理。
+ * 如果没有为纹理提供区域，则使用整个图像。
  *
- * You can directly create a texture from an image and then reuse it multiple times like this :
+ * 您可以直接从图像创建纹理，然后多次重复使用，如下所示：
  *
  * ```js
  * let texture = PIXI.Texture.from('assets/image.png');
@@ -13214,17 +13214,17 @@ const DEFAULT_UVS = new TextureUvs();
  * let sprite2 = new PIXI.Sprite(texture);
  * ```
  *
- * If you didnt pass the texture frame to constructor, it enables `noFrame` mode:
- * it subscribes on baseTexture events, it automatically resizes at the same time as baseTexture.
+ * 如果您没有将纹理区域传递给构造函数，它将启用`noFrame`模式：
+ * 它订阅baseTexture事件，并同时自动调整大小。
  *
- * Textures made from SVGs, loaded or not, cannot be used before the file finishes processing.
- * You can check for this by checking the sprite's _textureID property.
+ * 由SVG制成的纹理（已加载或未加载）在文件完成处理之前无法使用。
+ * 您可以通过查看精灵的_textureID属性来进行检查。
  * ```js
  * var texture = PIXI.Texture.from('assets/image.svg');
  * var sprite1 = new PIXI.Sprite(texture);
- * //sprite1._textureID should not be undefined if the texture has finished processing the SVG file
+ * //如果纹理文件已完成处理，sprite1._textureID将不为undefined
  * ```
- * You can use a ticker or rAF to ensure your sprites load the finished textures after processing. See issue #3068.
+ * 您可以使用ticker或rAF来确保您的精灵在加载完成纹理后执行处理。请参阅issue #3068。
  *
  * @class
  * @extends PIXI.utils.EventEmitter
@@ -13234,31 +13234,32 @@ const DEFAULT_UVS = new TextureUvs();
 export class Texture extends EventEmitter
 {
     /**
-     * @param {PIXI.BaseTexture} baseTexture - The base texture source to create the texture from
-     * @param {PIXI.Rectangle} [frame] - The rectangle frame of the texture to show
-     * @param {PIXI.Rectangle} [orig] - The area of original texture
-     * @param {PIXI.Rectangle} [trim] - Trimmed rectangle of original texture
-     * @param {number} [rotate] - indicates how the texture was rotated by texture packer. See {@link PIXI.groupD8}
-     * @param {PIXI.Point} [anchor] - Default anchor point used for sprite placement / rotation
+     * @param {PIXI.BaseTexture} baseTexture - 用于从中创建纹理的基础纹理源
+     * @param {PIXI.Rectangle} [frame] - 要显示的纹理的矩形框
+     * @param {PIXI.Rectangle} [orig] - 原始纹理区域
+     * @param {PIXI.Rectangle} [trim] - 原始纹理的修剪矩形
+     * @param {number} [rotate] - 指示纹理打包器如何旋转纹理。请参见{@link PIXI.groupD8}
+     * @param {PIXI.Point} [anchor] - 用于精灵放置/旋转的默认锚点
      */
     constructor(baseTexture, frame, orig, trim, rotate, anchor)
     {
         super();
         /**
-         * Does this Texture have any frame data assigned to it?
+         * 纹理是否分配了任何区域数据？
          *
-         * This mode is enabled automatically if no frame was passed inside constructor.
+         * 如果没有在构造函数中传递任何区域，则自动启用此模式。
          *
-         * In this mode texture is subscribed to baseTexture events, and fires `update` on any change.
+         * 在这种模式下，纹理订阅了baseTexture事件，并在发生任意更改时触发 `update` 。
          *
-         * Beware, after loading or resize of baseTexture event can fired two times!
-         * If you want more control, subscribe on baseTexture itself.
+         * 当心，加载或调整baseTexture事件的大小后，可能会触发两次！
+         * 如果需要更多控制，请订阅baseTexture本身。
          *
          * ```js
          * texture.on('update', () => {});
          * ```
          *
          * Any assignment of `frame` switches off `noFrame` mode.
+         * 任何对`frame`的分配都会关闭`noFrame`模式。
          *
          * @member {boolean}
          */
@@ -13273,39 +13274,38 @@ export class Texture extends EventEmitter
             baseTexture = baseTexture.baseTexture;
         }
         /**
-         * The base texture that this texture uses.
+         * 该纹理使用的基本纹理。
          *
          * @member {PIXI.BaseTexture}
          */
         this.baseTexture = baseTexture;
         /**
-         * This is the area of the BaseTexture image to actually copy to the Canvas / WebGL when rendering,
-         * irrespective of the actual frame size or placement (which can be influenced by trimmed texture atlases)
+         * BaseTexture图像在渲染时实际复制到Canvas / WebGL的区域，
+         * 不管实际的区域大小或位置如何（可能受修剪的纹理图集影响）
          *
          * @member {PIXI.Rectangle}
          */
         this._frame = frame;
         /**
-         * This is the trimmed area of original texture, before it was put in atlas
-         * Please call `updateUvs()` after you change coordinates of `trim` manually.
+         * 原始纹理的修剪区域，在放入图集之前，请手动更改`trim`的坐标后调用`updateUvs()`。
          *
          * @member {PIXI.Rectangle}
          */
         this.trim = trim;
         /**
-         * This will let the renderer know if the texture is valid. If it's not then it cannot be rendered.
+         * 让渲染器知道纹理是否有效。如果为false，则无法渲染。
          *
          * @member {boolean}
          */
         this.valid = false;
         /**
-         * This will let a renderer know that a texture has been updated (used mainly for WebGL uv updates)
+         *让渲染器知道纹理是否已更新（主要用于WebGL uv更新）
          *
          * @member {boolean}
          */
         this.requiresUpdate = false;
         /**
-         * The WebGL UV data cache. Can be used as quad UV
+         * WebGL UV数据缓存。可用作一个quad(二个triangle)
          *
          * @member {PIXI.TextureUvs}
          * @protected
@@ -13784,7 +13784,7 @@ removeAllHandlers(Texture.WHITE.baseTexture);
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sun Feb 02 2020 01:54:58 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Tue Feb 11 2020 02:47:41 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

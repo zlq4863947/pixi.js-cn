@@ -5,7 +5,7 @@ import { ENV } from '@pixi/constants';
 let CONTEXT_UID = 0;
 
 /**
- * System plugin to the renderer to manage the context.
+ * 渲染器的系统插件，用于管理上下文。
  *
  * @class
  * @extends PIXI.System
@@ -14,21 +14,21 @@ let CONTEXT_UID = 0;
 export class ContextSystem extends System
 {
     /**
-     * @param {PIXI.Renderer} renderer - The renderer this System works for.
+     * @param {PIXI.Renderer} renderer - 此系统适用的渲染器。
      */
     constructor(renderer)
     {
         super(renderer);
 
         /**
-         * Either 1 or 2 to reflect the WebGL version being used
+         * 1或2以反映所使用的WebGL版本
          * @member {number}
          * @readonly
          */
         this.webGLVersion = 1;
 
         /**
-         * Extensions being used
+         * 使用的扩展名
          * @member {object}
          * @readonly
          * @property {WEBGL_draw_buffers} drawBuffers - WebGL v1 extension
@@ -49,7 +49,7 @@ export class ContextSystem extends System
     }
 
     /**
-     * `true` if the context is lost
+     * `true` 为上下文丢失
      * @member {boolean}
      * @readonly
      */
@@ -59,7 +59,7 @@ export class ContextSystem extends System
     }
 
     /**
-     * Handle the context change event
+     * 处理上下文更改事件
      * @param {WebGLRenderingContext} gl new webgl context
      */
     contextChange(gl)
@@ -76,10 +76,10 @@ export class ContextSystem extends System
     }
 
     /**
-     * Initialize the context
+     * 初始化上下文
      *
      * @protected
-     * @param {WebGLRenderingContext} gl - WebGL context
+     * @param {WebGLRenderingContext} gl - WebGL上下文
      */
     initFromContext(gl)
     {
@@ -91,11 +91,11 @@ export class ContextSystem extends System
     }
 
     /**
-     * Initialize from context options
+     * 从上下文选项初始化
      *
      * @protected
      * @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext
-     * @param {object} options - context attributes
+     * @param {object} options - 上下文属性
      */
     initFromOptions(options)
     {
@@ -105,12 +105,12 @@ export class ContextSystem extends System
     }
 
     /**
-     * Helper class to create a WebGL Context
+     * 创建WebGL上下文的Helper类
      *
-     * @param canvas {HTMLCanvasElement} the canvas element that we will get the context from
-     * @param options {object} An options object that gets passed in to the canvas element containing the context attributes
-     * @see https://developer.mozilla.org/en/docs/Web/API/HTMLCanvasElement/getContext
-     * @return {WebGLRenderingContext} the WebGL context
+     * @param canvas {HTMLCanvasElement} 我们将从中获取上下文的canvas元素
+     * @param options {object} 一个选项对象，该对象传递给包含上下文属性的canvas元素
+     * @see https://developer.mozilla.org/zh/docs/Web/API/HTMLCanvasElement/getContext
+     * @return {WebGLRenderingContext} WebGL上下文
      */
     createContext(canvas, options)
     {
@@ -147,7 +147,7 @@ export class ContextSystem extends System
     }
 
     /**
-     * Auto-populate the extensions
+     * 自动填充扩展名
      *
      * @protected
      */
@@ -186,10 +186,10 @@ export class ContextSystem extends System
     }
 
     /**
-     * Handles a lost webgl context
+     * 处理丢失的webgl上下文
      *
      * @protected
-     * @param {WebGLContextEvent} event - The context lost event.
+     * @param {WebGLContextEvent} event - 上下文丢失事件。
      */
     handleContextLost(event)
     {
@@ -197,7 +197,7 @@ export class ContextSystem extends System
     }
 
     /**
-     * Handles a restored webgl context
+     * 处理还原的webgl上下文
      *
      * @protected
      */
@@ -223,7 +223,7 @@ export class ContextSystem extends System
     }
 
     /**
-     * Handle the post-render runner event
+     * 处理渲染后runner事件
      *
      * @protected
      */
@@ -236,10 +236,10 @@ export class ContextSystem extends System
     }
 
     /**
-     * Validate context
+     * 验证上下文
      *
      * @protected
-     * @param {WebGLRenderingContext} gl - Render context
+     * @param {WebGLRenderingContext} gl - 渲染器上下文
      */
     validateContext(gl)
     {

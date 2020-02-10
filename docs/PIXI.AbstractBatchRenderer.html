@@ -13370,10 +13370,9 @@
 <dd>
     
     <div class="description">
-        <p>Pool of <code>BatchDrawCall</code> objects that <code>flush</code> used
-to create &quot;batches&quot; of the objects being rendered.</p>
-<p>These are never re-allocated again.
-Shared between all batch renderers because it can be only one &quot;flush&quot; working at the moment.</p>
+        <p><code>flush</code>用于创建要渲染对象的&quot;batches&quot;的<code>BatchDrawCall</code>对象池。</p>
+<p>这些再也不会重新分配。
+在所有批处理渲染器之间共享，因为目前只能进行一个“刷新”操作。</p>
     </div>
     
     
@@ -13424,10 +13423,10 @@ Shared between all batch renderers because it can be only one &quot;flush&quot; 
 <dd>
     
     <div class="description">
-        <p>Pool of <code>BatchDrawCall</code> objects that <code>flush</code> used
-to create &quot;batches&quot; of the objects being rendered.</p>
-<p>These are never re-allocated again.
-Shared between all batch renderers because it can be only one &quot;flush&quot; working at the moment.</p>
+        <p><code>flush</code>用于创建要渲染对象的&quot;batches&quot;的<code>BatchDrawCall</code>对象池。</p>
+<p>这些再也不会重新分配。
+Shared between all batch renderers because it can be only one &quot;flush&quot; working at the moment.
+在所有批处理渲染器之间共享，因为目前只能进行一个“刷新”操作。</p>
     </div>
     
     
@@ -13584,9 +13583,8 @@ Shared between all batch renderers because it can be only one &quot;flush&quot; 
 <dd>
     
     <div class="description">
-        <p>Maximum number of textures that can be uploaded to
-the GPU under the current context. It is initialized
-properly in <code>this.contextChange</code>.</p>
+        <p>在当前上下文下可以上载到GPU的最大纹理数。
+它已在<code>this.contextChange</code>中正确初始化。</p>
     </div>
     
     
@@ -13935,7 +13933,7 @@ properly in <code>this.contextChange</code>.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line392">AbstractBatchRenderer.js:392</a>
+            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line383">AbstractBatchRenderer.js:383</a>
         </div>
         
     </div>
@@ -13946,7 +13944,7 @@ properly in <code>this.contextChange</code>.</p>
     
     
     <div class="description">
-        <p>Bind textures for current rendering</p>
+        <p>绑定纹理以进行当前渲染绑定纹理以进行当前渲染</p>
     </div>
     
 
@@ -14056,7 +14054,7 @@ properly in <code>this.contextChange</code>.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line347">AbstractBatchRenderer.js:347</a>
+            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line338">AbstractBatchRenderer.js:338</a>
         </div>
         
     </div>
@@ -14067,7 +14065,7 @@ properly in <code>this.contextChange</code>.</p>
     
     
     <div class="description">
-        <p>Populating drawcalls for rendering</p>
+        <p>绘制的填充drawcalls</p>
     </div>
     
 
@@ -14223,7 +14221,7 @@ properly in <code>this.contextChange</code>.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line211">AbstractBatchRenderer.js:211</a>
+            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line205">AbstractBatchRenderer.js:205</a>
         </div>
         
     </div>
@@ -14234,9 +14232,9 @@ properly in <code>this.contextChange</code>.</p>
     
     
     <div class="description">
-        <p>Handles the <code>contextChange</code> signal.</p>
-<p>It calculates <code>this.MAX_TEXTURES</code> and allocating the
-packed-geometry object pool.</p>
+        <p>Handles the <code>contextChange</code> signal.
+处理<code>contextChange</code>信号。</p>
+<p>它计算<code>this.MAX_TEXTURES</code>并分配压缩几何对象池。</p>
     </div>
     
 
@@ -14303,7 +14301,7 @@ packed-geometry object pool.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line496">AbstractBatchRenderer.js:496</a>
+            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line487">AbstractBatchRenderer.js:487</a>
         </div>
         
     </div>
@@ -14314,7 +14312,7 @@ packed-geometry object pool.</p>
     
     
     <div class="description">
-        <p>Destroys this <code>AbstractBatchRenderer</code>. It cannot be used again.</p>
+        <p>销毁此<code>AbstractBatchRenderer</code>。不能再被调用。</p>
     </div>
     
 
@@ -14381,7 +14379,7 @@ packed-geometry object pool.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line454">AbstractBatchRenderer.js:454</a>
+            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line445">AbstractBatchRenderer.js:445</a>
         </div>
         
     </div>
@@ -14392,7 +14390,7 @@ packed-geometry object pool.</p>
     
     
     <div class="description">
-        <p>Renders the content <em>now</em> and empties the current batch.</p>
+        <p>立刻渲染内容并清空当前批处理。</p>
     </div>
     
 
@@ -14457,7 +14455,7 @@ packed-geometry object pool.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line239">AbstractBatchRenderer.js:239</a>
+            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line233">AbstractBatchRenderer.js:233</a>
         </div>
         
     </div>
@@ -14468,7 +14466,7 @@ packed-geometry object pool.</p>
     
     
     <div class="description">
-        <p>Makes sure that static and dynamic flush pooled objects have correct dimensions</p>
+        <p>确保静态和动态刷新池对象的尺寸正确</p>
     </div>
     
 
@@ -14533,7 +14531,7 @@ packed-geometry object pool.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line266">AbstractBatchRenderer.js:266</a>
+            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line259">AbstractBatchRenderer.js:259</a>
         </div>
         
     </div>
@@ -14544,9 +14542,8 @@ packed-geometry object pool.</p>
     
     
     <div class="description">
-        <p>Handles the <code>prerender</code> signal.</p>
-<p>It ensures that flushes start from the first geometry
-object again.</p>
+        <p>处理<code>prerender</code>信号。</p>
+<p>它确保刷新从第一个几何对象开始。</p>
     </div>
     
 
@@ -14611,7 +14608,7 @@ object again.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line589">AbstractBatchRenderer.js:589</a>
+            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line575">AbstractBatchRenderer.js:575</a>
         </div>
         
     </div>
@@ -14622,11 +14619,9 @@ object again.</p>
     
     
     <div class="description">
-        <p>Takes the four batching parameters of <code>element</code>, interleaves
-and pushes them into the batching attribute/index buffers given.</p>
-<p>It uses these properties: <code>vertexData</code> <code>uvs</code>, <code>textureId</code> and
-<code>indicies</code>. It also uses the &quot;tint&quot; of the base-texture, if
-present.</p>
+        <p>接受元素的四个批处理参数，交织并将其推入指定的批处理属性/索引缓冲区。</p>
+<p>它使用以下属性：<code>vertexData</code>，<code>uvs</code>，<code>textureId</code>和<code>indicies</code>。
+如果存在，它也会使用基础纹理的&quot;tint&quot;。</p>
     </div>
     
 
@@ -14673,7 +14668,7 @@ present.</p>
             
             <td class="description last">
                 
-                <p>element being rendered</p></td>
+                <p>被渲染的元素</p></td>
         </tr>
 	
 	
@@ -14696,7 +14691,7 @@ present.</p>
             
             <td class="description last">
                 
-                <p>attribute buffer.</p></td>
+                <p>属性缓冲区。</p></td>
         </tr>
 	
 	
@@ -14719,7 +14714,7 @@ present.</p>
             
             <td class="description last">
                 
-                <p>index buffer</p></td>
+                <p>索引缓冲区</p></td>
         </tr>
 	
 	
@@ -14742,7 +14737,7 @@ present.</p>
             
             <td class="description last">
                 
-                <p>number of floats already in the attribute buffer</p></td>
+                <p><code>attributeBuffer</code>中已经存在的浮点数</p></td>
         </tr>
 	
 	
@@ -14765,7 +14760,7 @@ present.</p>
             
             <td class="description last">
                 
-                <p>number of indices already in <code>indexBuffer</code></p></td>
+                <p><code>indexBuffer</code>中已经存在的索引数</p></td>
         </tr>
 	
 	
@@ -14830,7 +14825,7 @@ present.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line277">AbstractBatchRenderer.js:277</a>
+            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line268">AbstractBatchRenderer.js:268</a>
         </div>
         
     </div>
@@ -14841,8 +14836,7 @@ present.</p>
     
     
     <div class="description">
-        <p>Buffers the &quot;batchable&quot; object. It need not be rendered
-immediately.</p>
+        <p>缓冲“可批量”对象。 它不需要立即渲染。</p>
     </div>
     
 
@@ -14889,8 +14883,7 @@ immediately.</p>
             
             <td class="description last">
                 
-                <p>the element to render when
-using this renderer</p></td>
+                <p>使用此渲染器时要渲染的元素</p></td>
         </tr>
 	
 	
@@ -14955,7 +14948,7 @@ using this renderer</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line476">AbstractBatchRenderer.js:476</a>
+            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line467">AbstractBatchRenderer.js:467</a>
         </div>
         
     </div>
@@ -14966,7 +14959,7 @@ using this renderer</p></td>
     
     
     <div class="description">
-        <p>Starts a new sprite batch.</p>
+        <p>开始新的精灵批处理。</p>
     </div>
     
 
@@ -15033,7 +15026,7 @@ using this renderer</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line489">AbstractBatchRenderer.js:489</a>
+            <a href="packages_core_src_batch_AbstractBatchRenderer.js.html#line480">AbstractBatchRenderer.js:480</a>
         </div>
         
     </div>
@@ -15044,7 +15037,7 @@ using this renderer</p></td>
     
     
     <div class="description">
-        <p>Stops and flushes the current batch.</p>
+        <p>停止并刷新当前批处理。</p>
     </div>
     
 
@@ -15111,7 +15104,7 @@ using this renderer</p></td>
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sun Feb 02 2020 01:55:00 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Tue Feb 11 2020 02:47:44 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

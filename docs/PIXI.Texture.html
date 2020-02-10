@@ -13192,23 +13192,23 @@
         <h2><span class="ancestors"><a href="PIXI.html">PIXI</a>~</span>Texture
         </h2>
         
-            <div class="class-description"><p>A texture stores the information that represents an image or part of an image.</p>
-<p>It cannot be added to the display list directly; instead use it as the texture for a Sprite.
-If no frame is provided for a texture, then the whole image is used.</p>
-<p>You can directly create a texture from an image and then reuse it multiple times like this :</p>
+            <div class="class-description"><p>纹理表示图像或图像的一部分信息。</p>
+<p>不能直接将其添加到显示列表中；请将其用作精灵的纹理。
+如果没有为纹理提供区域，则使用整个图像。</p>
+<p>您可以直接从图像创建纹理，然后多次重复使用，如下所示：</p>
 <pre class="prettyprint source lang-js"><code>let texture = PIXI.Texture.from('assets/image.png');
 let sprite1 = new PIXI.Sprite(texture);
 let sprite2 = new PIXI.Sprite(texture);
 </code></pre>
-<p>If you didnt pass the texture frame to constructor, it enables <code>noFrame</code> mode:
-it subscribes on baseTexture events, it automatically resizes at the same time as baseTexture.</p>
-<p>Textures made from SVGs, loaded or not, cannot be used before the file finishes processing.
-You can check for this by checking the sprite's _textureID property.</p>
+<p>如果您没有将纹理区域传递给构造函数，它将启用<code>noFrame</code>模式：
+它订阅baseTexture事件，并同时自动调整大小。</p>
+<p>由SVG制成的纹理（已加载或未加载）在文件完成处理之前无法使用。
+您可以通过查看精灵的_textureID属性来进行检查。</p>
 <pre class="prettyprint source lang-js"><code>var texture = PIXI.Texture.from('assets/image.svg');
 var sprite1 = new PIXI.Sprite(texture);
-//sprite1._textureID should not be undefined if the texture has finished processing the SVG file
+//如果纹理文件已完成处理，sprite1._textureID将不为undefined
 </code></pre>
-<p>You can use a ticker or rAF to ensure your sprites load the finished textures after processing. See issue #3068.</p></div>
+<p>您可以使用ticker或rAF来确保您的精灵在加载完成纹理后执行处理。请参阅issue #3068。</p></div>
         
     </div>
 </header>  
@@ -13295,7 +13295,7 @@ var sprite1 = new PIXI.Sprite(texture);
                         
                     
                 
-                <p>The base texture source to create the texture from</p></td>
+                <p>用于从中创建纹理的基础纹理源</p></td>
         </tr>
 	
 	
@@ -13325,7 +13325,7 @@ var sprite1 = new PIXI.Sprite(texture);
                         
                     
                 
-                <p>The rectangle frame of the texture to show</p></td>
+                <p>要显示的纹理的矩形框</p></td>
         </tr>
 	
 	
@@ -13355,7 +13355,7 @@ var sprite1 = new PIXI.Sprite(texture);
                         
                     
                 
-                <p>The area of original texture</p></td>
+                <p>原始纹理区域</p></td>
         </tr>
 	
 	
@@ -13385,7 +13385,7 @@ var sprite1 = new PIXI.Sprite(texture);
                         
                     
                 
-                <p>Trimmed rectangle of original texture</p></td>
+                <p>原始纹理的修剪矩形</p></td>
         </tr>
 	
 	
@@ -13415,7 +13415,7 @@ var sprite1 = new PIXI.Sprite(texture);
                         
                     
                 
-                <p>indicates how the texture was rotated by texture packer. See <a href="PIXI.groupD8.html">PIXI.groupD8</a></p></td>
+                <p>指示纹理打包器如何旋转纹理。请参见<a href="PIXI.groupD8.html">PIXI.groupD8</a></p></td>
         </tr>
 	
 	
@@ -13445,7 +13445,7 @@ var sprite1 = new PIXI.Sprite(texture);
                         
                     
                 
-                <p>Default anchor point used for sprite placement / rotation</p></td>
+                <p>用于精灵放置/旋转的默认锚点</p></td>
         </tr>
 	
 	
@@ -13639,8 +13639,8 @@ Can not be destroyed.</p>
 <dd>
     
     <div class="description">
-        <p>This is the area of the BaseTexture image to actually copy to the Canvas / WebGL when rendering,
-irrespective of the actual frame size or placement (which can be influenced by trimmed texture atlases)</p>
+        <p>BaseTexture图像在渲染时实际复制到Canvas / WebGL的区域，
+不管实际的区域大小或位置如何（可能受修剪的纹理图集影响）</p>
     </div>
     
     
@@ -13743,7 +13743,7 @@ Call updateUvs() to increment it.</p>
 <dd>
     
     <div class="description">
-        <p>The WebGL UV data cache. Can be used as quad UV</p>
+        <p>WebGL UV数据缓存。可用作一个quad(二个triangle)</p>
     </div>
     
     
@@ -13794,7 +13794,7 @@ Call updateUvs() to increment it.</p>
 <dd>
     
     <div class="description">
-        <p>The base texture that this texture uses.</p>
+        <p>该纹理使用的基本纹理。</p>
     </div>
     
     
@@ -14003,14 +14003,15 @@ Please call <code>updateUvs()</code> after you change coordinates of <code>frame
 <dd>
     
     <div class="description">
-        <p>Does this Texture have any frame data assigned to it?</p>
-<p>This mode is enabled automatically if no frame was passed inside constructor.</p>
-<p>In this mode texture is subscribed to baseTexture events, and fires <code>update</code> on any change.</p>
-<p>Beware, after loading or resize of baseTexture event can fired two times!
-If you want more control, subscribe on baseTexture itself.</p>
+        <p>纹理是否分配了任何区域数据？</p>
+<p>如果没有在构造函数中传递任何区域，则自动启用此模式。</p>
+<p>在这种模式下，纹理订阅了baseTexture事件，并在发生任意更改时触发 <code>update</code> 。</p>
+<p>当心，加载或调整baseTexture事件的大小后，可能会触发两次！
+如果需要更多控制，请订阅baseTexture本身。</p>
 <pre class="prettyprint source lang-js"><code>texture.on('update', () => {});
 </code></pre>
-<p>Any assignment of <code>frame</code> switches off <code>noFrame</code> mode.</p>
+<p>Any assignment of <code>frame</code> switches off <code>noFrame</code> mode.
+任何对<code>frame</code>的分配都会关闭<code>noFrame</code>模式。</p>
     </div>
     
     
@@ -14112,7 +14113,7 @@ If you want more control, subscribe on baseTexture itself.</p>
 <dd>
     
     <div class="description">
-        <p>This will let a renderer know that a texture has been updated (used mainly for WebGL uv updates)</p>
+        <p>让渲染器知道纹理是否已更新（主要用于WebGL uv更新）</p>
     </div>
     
     
@@ -14322,8 +14323,7 @@ Texture is added directly to the TextureCache array.</p>
 <dd>
     
     <div class="description">
-        <p>This is the trimmed area of original texture, before it was put in atlas
-Please call <code>updateUvs()</code> after you change coordinates of <code>trim</code> manually.</p>
+        <p>原始纹理的修剪区域，在放入图集之前，请手动更改<code>trim</code>的坐标后调用<code>updateUvs()</code>。</p>
     </div>
     
     
@@ -14426,7 +14426,7 @@ By default that object is not created because its heavy</p>
 <dd>
     
     <div class="description">
-        <p>This will let the renderer know if the texture is valid. If it's not then it cannot be rendered.</p>
+        <p>让渲染器知道纹理是否有效。如果为false，则无法渲染。</p>
     </div>
     
     
@@ -16607,7 +16607,7 @@ Call it after changing the frame</p>
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sun Feb 02 2020 01:55:07 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Tue Feb 11 2020 02:47:51 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>
