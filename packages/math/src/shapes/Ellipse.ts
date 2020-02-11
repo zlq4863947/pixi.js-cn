@@ -2,7 +2,7 @@ import { Rectangle } from './Rectangle';
 import { SHAPES } from '../const';
 
 /**
- * The Ellipse object is used to help draw graphics and can also be used to specify a hit area for displayObjects.
+ * 椭圆对象用于帮助绘制图形，也可用于指定显示对象的命中区域。
  *
  * @class
  * @memberof PIXI
@@ -16,10 +16,10 @@ export class Ellipse
     public readonly type: number;
 
     /**
-     * @param {number} [x=0] - The X coordinate of the center of this ellipse
-     * @param {number} [y=0] - The Y coordinate of the center of this ellipse
-     * @param {number} [halfWidth=0] - The half width of this ellipse
-     * @param {number} [halfHeight=0] - The half height of this ellipse
+     * @param {number} [x=0] - 椭圆中心的X坐标
+     * @param {number} [y=0] - 椭圆中心的Y坐标
+     * @param {number} [halfWidth=0] - 椭圆的半径宽度
+     * @param {number} [halfHeight=0] - 椭圆的半径高度
      */
     constructor(x = 0, y = 0, halfWidth = 0, halfHeight = 0)
     {
@@ -48,7 +48,7 @@ export class Ellipse
         this.height = halfHeight;
 
         /**
-         * The type of the object, mainly used to avoid `instanceof` checks
+         * 对象的类型，主要用于避免执行 `instanceof` 检查
          *
          * @member {number}
          * @readOnly
@@ -59,9 +59,9 @@ export class Ellipse
     }
 
     /**
-     * Creates a clone of this Ellipse instance
+     * 创建椭圆实例的克隆
      *
-     * @return {PIXI.Ellipse} a copy of the ellipse
+     * @return {PIXI.Ellipse} 椭圈的副本
      */
     clone(): Ellipse
     {
@@ -69,11 +69,11 @@ export class Ellipse
     }
 
     /**
-     * Checks whether the x and y coordinates given are contained within this ellipse
+     * 检查指定的x和y坐标是否包含在椭圆范围内
      *
-     * @param {number} x - The X coordinate of the point to test
-     * @param {number} y - The Y coordinate of the point to test
-     * @return {boolean} Whether the x/y coords are within this ellipse
+     * @param {number} x - 测试点的X坐标
+     * @param {number} y - 测试点的Y坐标
+     * @return {boolean} x/y坐标是否包含
      */
     contains(x: number, y: number): boolean
     {
@@ -93,9 +93,9 @@ export class Ellipse
     }
 
     /**
-     * Returns the framing rectangle of the ellipse as a Rectangle object
+     * 以Rectangle对象的形式返回椭圆的矩形框架
      *
-     * @return {PIXI.Rectangle} the framing rectangle
+     * @return {PIXI.Rectangle} 矩形框架
      */
     getBounds(): Rectangle
     {

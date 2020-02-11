@@ -129,15 +129,15 @@ export class Texture extends EventEmitter
         this._uvs = DEFAULT_UVS;
 
         /**
-         * Default TextureMatrix instance for this texture
-         * By default that object is not created because its heavy
+         * 纹理默认的TextureMatrix实例
+         * 默认情况下，不会创建该对象，因为它很重
          *
          * @member {PIXI.TextureMatrix}
          */
         this.uvMatrix = null;
 
         /**
-         * This is the area of original texture, before it was put in atlas
+         * 原始纹理的区域，在它被放入图集之前
          *
          * @member {PIXI.Rectangle}
          */
@@ -156,16 +156,16 @@ export class Texture extends EventEmitter
         }
 
         /**
-         * Anchor point that is used as default if sprite is created with this texture.
-         * Changing the `defaultAnchor` at a later point of time will not update Sprite's anchor point.
+         * 使用此纹理创建精灵时，默认的描点。
+         * 在创建后更改`defaultAnchor`不会更新精灵的描点。
          * @member {PIXI.Point}
          * @default {0,0}
          */
         this.defaultAnchor = anchor ? new Point(anchor.x, anchor.y) : new Point(0, 0);
 
         /**
-         * Update ID is observed by sprites and TextureMatrix instances.
-         * Call updateUvs() to increment it.
+         * 精灵和TextureMatrix实例可以观察到更新ID。
+         * 调用updateUvs()将其递增。
          *
          * @member {number}
          * @protected
@@ -174,9 +174,9 @@ export class Texture extends EventEmitter
         this._updateID = 0;
 
         /**
-         * The ids under which this Texture has been added to the texture cache. This is
-         * automatically set as long as Texture.addToCache is used, but may not be set if a
-         * Texture is added directly to the TextureCache array.
+         * 将纹理添加到纹理缓存的ID数组。
+         * 只要使用了Texture.addToCache，就会自动设置该选项，
+         * 但如果直接将纹理添加到TextureCache数组，则可能不会设置该选项。
          *
          * @member {string[]}
          */
@@ -206,11 +206,12 @@ export class Texture extends EventEmitter
     }
 
     /**
-     * Updates this texture on the gpu.
+     * 在gpu上更新此纹理。
      *
-     * Calls the TextureResource update.
+     * 调用TextureResource更新。
      *
      * If you adjusted `frame` manually, please call `updateUvs()` instead.
+     * 如果手动调整 `frame` ，请改为调用`updateUvs()`。
      *
      */
     update()
@@ -222,10 +223,10 @@ export class Texture extends EventEmitter
     }
 
     /**
-     * Called when the base texture is updated
+     * 在更新基础纹理时调用
      *
      * @protected
-     * @param {PIXI.BaseTexture} baseTexture - The base texture.
+     * @param {PIXI.BaseTexture} baseTexture - 基础纹理
      */
     onBaseTextureUpdated(baseTexture)
     {
@@ -244,7 +245,7 @@ export class Texture extends EventEmitter
         else
         {
             // TODO this code looks confusing.. boo to abusing getters and setters!
-            // if user gave us frame that has bigger size than resized texture it can be a problem
+            // 如果用户为我们提供尺寸大于调整尺寸纹理的框架，则可能是一个问题
             this.frame = this._frame;
         }
 
@@ -252,9 +253,9 @@ export class Texture extends EventEmitter
     }
 
     /**
-     * Destroys this texture
+     * 销毁纹理
      *
-     * @param {boolean} [destroyBase=false] Whether to destroy the base texture as well
+     * @param {boolean} [destroyBase=false] 是否一起销毁基础纹理
      */
     destroy(destroyBase)
     {
@@ -291,9 +292,9 @@ export class Texture extends EventEmitter
     }
 
     /**
-     * Creates a new texture object that acts the same as this one.
+     * 克隆一个新的纹理对象。
      *
-     * @return {PIXI.Texture} The new texture
+     * @return {PIXI.Texture} 新的纹理对象
      */
     clone()
     {
@@ -301,8 +302,8 @@ export class Texture extends EventEmitter
     }
 
     /**
-     * Updates the internal WebGL UV cache. Use it after you change `frame` or `trim` of the texture.
-     * Call it after changing the frame
+     * 更新内部WebGL UV缓存。更改纹理的 `frame` 或 `trim` 后使用。
+     * 改变frame调用
      */
     updateUvs()
     {

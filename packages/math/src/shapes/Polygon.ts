@@ -2,7 +2,7 @@ import { SHAPES } from '../const';
 import { Point } from '../Point';
 
 /**
- * A class to define a shape via user defined co-orinates.
+ * 通过用户定义的坐标自定义形状的类。
  *
  * @class
  * @memberof PIXI
@@ -14,11 +14,10 @@ export class Polygon
     public readonly type: number;
 
     /**
-     * @param {PIXI.Point[]|number[]|number[][]} points - This can be an array of Points
-     *  that form the polygon, a flat array of numbers that will be interpreted as [x,y, x,y, ...], or
-     *  the arguments passed can be all the points of the polygon e.g.
-     *  `new PIXI.Polygon(new PIXI.Point(), new PIXI.Point(), ...)`, or the arguments passed can be flat
-     *  x,y values e.g. `new Polygon(x,y, x,y, x,y, ...)` where `x` and `y` are Numbers.
+     * @param {PIXI.Point[]|number[]|number[][]} points - 可以为形成多边形的Point数组
+     *  也可以是[x,y, x,y, ...]的打平坐标数组，或者 传递的参数可以是多边形的所有点，例如
+     *  `new PIXI.Polygon(new PIXI.Point(), new PIXI.Point(), ...)`, 或者传递的参数可以是打平的
+     *  x,y 值 例如: `new Polygon(x,y, x,y, x,y, ...)` 其中`x`和`y`是数字类型。
      */
     constructor(...points: Point[]|number[]|number[][])
     {
@@ -43,14 +42,14 @@ export class Polygon
         }
 
         /**
-         * An array of the points of this polygon
+         * 多边形的点数组
          *
          * @member {number[]}
          */
         this.points = points as number[];
 
         /**
-         * The type of the object, mainly used to avoid `instanceof` checks
+         * 对象的类型，主要用于避免执行 `instanceof` 检查
          *
          * @member {number}
          * @readOnly
@@ -60,7 +59,7 @@ export class Polygon
         this.type = SHAPES.POLY;
 
         /**
-         * `false` after moveTo, `true` after `closePath`. In all other cases it is `true`.
+         * moveTo之后为`false`，closePath之后为`true`。 所有其他情况为`true`。
          * @member {boolean}
          * @default true
          */
@@ -68,9 +67,9 @@ export class Polygon
     }
 
     /**
-     * Creates a clone of this polygon
+     * 创建多边形实例的克隆
      *
-     * @return {PIXI.Polygon} a copy of the polygon
+     * @return {PIXI.Polygon} 多边形的副本
      */
     clone(): Polygon
     {
@@ -83,11 +82,11 @@ export class Polygon
     }
 
     /**
-     * Checks whether the x and y coordinates passed to this function are contained within this polygon
+     * 检查传递给此函数的x和y坐标是否包含在此多边形内
      *
-     * @param {number} x - The X coordinate of the point to test
-     * @param {number} y - The Y coordinate of the point to test
-     * @return {boolean} Whether the x/y coordinates are within this polygon
+     * @param {number} x - 测试点的X坐标
+     * @param {number} y - 测试点的Y坐标
+     * @return {boolean} x/y坐标是否包含
      */
     contains(x: number, y: number): boolean
     {

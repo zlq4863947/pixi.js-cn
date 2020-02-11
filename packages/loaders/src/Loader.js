@@ -3,55 +3,55 @@ import { EventEmitter } from '@pixi/utils';
 import { TextureLoader } from './TextureLoader';
 
 /**
- * The new loader, extends Resource Loader by Chad Engler: https://github.com/englercj/resource-loader
+ * 全新的加载器，扩展了Chad Engler的Resource Loader: https://github.com/englercj/resource-loader
  *
  * ```js
- * const loader = PIXI.Loader.shared; // PixiJS exposes a premade instance for you to use.
- * //or
- * const loader = new PIXI.Loader(); // you can also create your own if you want
+ * const loader = PIXI.Loader.shared; // PixiJS公开了一个预制实例供您使用。
+ * //或
+ * const loader = new PIXI.Loader(); // 您也可以根据需要创建自己的
  *
  * const sprites = {};
  *
  * // Chainable `add` to enqueue a resource
+ * // 可链接的`add`使资源进入队列
  * loader.add('bunny', 'data/bunny.png')
  *       .add('spaceship', 'assets/spritesheet.json');
  * loader.add('scoreFont', 'assets/score.fnt');
  *
- * // Chainable `pre` to add a middleware that runs for each resource, *before* loading that resource.
- * // This is useful to implement custom caching modules (using filesystem, indexeddb, memory, etc).
+ * // 可链接的 `pre` 添加一个为每种资源运行的中间件，在加载该资源*之前*。
+ * // 这对于实现自定义缓存模块（使用文件系统，indexeddb，内存等）很有用。
  * loader.pre(cachingMiddleware);
  *
- * // Chainable `use` to add a middleware that runs for each resource, *after* loading that resource.
- * // This is useful to implement custom parsing modules (like spritesheet parsers, spine parser, etc).
+ * // 可链接的 `use` 添加一个为每个资源运行的中间件，在加载该资源*之后*。
+ * // 这对于实现自定义解析模块（如精灵表解析器，骨骼解析器等）很有用。
  * loader.use(parsingMiddleware);
  *
- * // The `load` method loads the queue of resources, and calls the passed in callback called once all
- * // resources have loaded.
+ * // `load` 方法加载资源队列，并在所有资源加载完毕后调用传入的回调。
  * loader.load((loader, resources) => {
- *     // resources is an object where the key is the name of the resource loaded and the value is the resource object.
- *     // They have a couple default properties:
- *     // - `url`: The URL that the resource was loaded from
- *     // - `error`: The error that happened when trying to load (if any)
- *     // - `data`: The raw data that was loaded
- *     // also may contain other properties based on the middleware that runs.
+ *     // resources是一个对象，其中key是加载的资源的名称，而value是资源对象。
+ *     // 它们具有几个默认属性:
+ *     // - `url`: 从中加载资源的URL
+ *     // - `error`: 尝试加载时发生的错误（如果有）
+ *     // - `data`: 加载的原始数据
+ *     // 也可以包含其他基于运行的中间件的属性。
  *     sprites.bunny = new PIXI.TilingSprite(resources.bunny.texture);
  *     sprites.spaceship = new PIXI.TilingSprite(resources.spaceship.texture);
  *     sprites.scoreFont = new PIXI.TilingSprite(resources.scoreFont.texture);
  * });
  *
- * // throughout the process multiple signals can be dispatched.
- * loader.onProgress.add(() => {}); // called once per loaded/errored file
- * loader.onError.add(() => {}); // called once per errored file
- * loader.onLoad.add(() => {}); // called once per loaded file
- * loader.onComplete.add(() => {}); // called once when the queued resources all load.
+ * // 在整个过程中，可以发出多个信号。
+ * loader.onProgress.add(() => {}); // 每个加载/错误的文件调用一次
+ * loader.onError.add(() => {}); // 每个错误文件调用一次
+ * loader.onLoad.add(() => {}); // 每个加载文件调用一次
+ * loader.onComplete.add(() => {}); // 排队的资源全部加载时调用一次。
  * ```
  *
  * @see https://github.com/englercj/resource-loader
  *
  * @class Loader
  * @memberof PIXI
- * @param {string} [baseUrl=''] - The base url for all resources loaded by this loader.
- * @param {number} [concurrency=10] - The number of resources to load concurrently.
+ * @param {string} [baseUrl=''] - 此加载器加载的所有资源的基础URL。
+ * @param {number} [concurrency=10] - 要同时加载的资源数量。
  */
 export class Loader extends ResourceLoader
 {
@@ -106,7 +106,7 @@ export class Loader extends ResourceLoader
     }
 
     /**
-     * A premade instance of the loader that can be used to load resources.
+     * 加载器的预制实例，可用于加载资源。
      * @name shared
      * @type {PIXI.Loader}
      * @static
@@ -131,7 +131,7 @@ export class Loader extends ResourceLoader
 Object.assign(Loader.prototype, EventEmitter.prototype);
 
 /**
- * Collection of all installed `use` middleware for Loader.
+ * 加载器的所有已安装`use`中间件的集合。
  *
  * @static
  * @member {Array<PIXI.ILoaderPlugin>} _plugins
@@ -141,14 +141,13 @@ Object.assign(Loader.prototype, EventEmitter.prototype);
 Loader._plugins = [];
 
 /**
- * Adds a Loader plugin for the global shared loader and all
- * new Loader instances created.
+ * 为全局共享的加载器和创建的所有新的Loader实例添加一个Loader插件。
  *
  * @static
  * @method registerPlugin
  * @memberof PIXI.Loader
- * @param {PIXI.ILoaderPlugin} plugin - The plugin to add
- * @return {PIXI.Loader} Reference to PIXI.Loader for chaining
+ * @param {PIXI.ILoaderPlugin} plugin - 要添加的插件
+ * @return {PIXI.Loader} PIXI.Loader的引用
  */
 Loader.registerPlugin = function registerPlugin(plugin)
 {
@@ -169,15 +168,13 @@ Loader.registerPlugin({ use: middleware.parsing });
 Loader.registerPlugin(TextureLoader);
 
 /**
- * Plugin to be installed for handling specific Loader resources.
+ * 要安装用于处理特定加载器资源的插件。
  *
  * @memberof PIXI
  * @typedef ILoaderPlugin
- * @property {function} [add] - Function to call immediate after registering plugin.
- * @property {PIXI.Loader.loaderMiddleware} [pre] - Middleware function to run before load, the
- *           arguments for this are `(resource, next)`
- * @property {PIXI.Loader.loaderMiddleware} [use] - Middleware function to run after load, the
- *           arguments for this are `(resource, next)`
+ * @property {function} [add] - 注册插件后立即调用的函数。
+ * @property {PIXI.Loader.loaderMiddleware} [pre] - 要在加载前运行的中间件函数，其参数为 `(resource, next)`
+ * @property {PIXI.Loader.loaderMiddleware} [use] - 加载后要运行的中间件函数，其参数为 `(resource, next)`
  */
 
 /**

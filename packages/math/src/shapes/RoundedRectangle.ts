@@ -1,8 +1,7 @@
 import { SHAPES } from '../const';
 
 /**
- * The Rounded Rectangle object is an area that has nice rounded corners, as indicated by its
- * top-left corner point (x, y) and by its width and its height and its radius.
+ * 圆角矩形对象是一个具有圆角的区域，由其左上角点（x，y）以及其宽度，高度和半径表示。
  *
  * @class
  * @memberof PIXI
@@ -17,11 +16,11 @@ export class RoundedRectangle
     public readonly type: number;
 
     /**
-     * @param {number} [x=0] - The X coordinate of the upper-left corner of the rounded rectangle
-     * @param {number} [y=0] - The Y coordinate of the upper-left corner of the rounded rectangle
-     * @param {number} [width=0] - The overall width of this rounded rectangle
-     * @param {number} [height=0] - The overall height of this rounded rectangle
-     * @param {number} [radius=20] - Controls the radius of the rounded corners
+     * @param {number} [x=0] - 圆角矩形左上角的X坐标
+     * @param {number} [y=0] - 圆角矩形左上角的Y坐标
+     * @param {number} [width=0] - 圆角矩形的整体宽度
+     * @param {number} [height=0] - 圆角矩形的整体高度
+     * @param {number} [radius=20] - 控制圆角的半径
      */
     constructor(x = 0, y = 0, width = 0, height = 0, radius = 20)
     {
@@ -56,7 +55,7 @@ export class RoundedRectangle
         this.radius = radius;
 
         /**
-         * The type of the object, mainly used to avoid `instanceof` checks
+         * 对象的类型，主要用于避免执行 `instanceof` 检查
          *
          * @member {number}
          * @readonly
@@ -67,9 +66,9 @@ export class RoundedRectangle
     }
 
     /**
-     * Creates a clone of this Rounded Rectangle
+     * 创建圆角矩形实例的克隆
      *
-     * @return {PIXI.RoundedRectangle} a copy of the rounded rectangle
+     * @return {PIXI.RoundedRectangle} 圆角矩形的副本
      */
     clone(): RoundedRectangle
     {
@@ -77,11 +76,11 @@ export class RoundedRectangle
     }
 
     /**
-     * Checks whether the x and y coordinates given are contained within this Rounded Rectangle
+     * 检查传递给此函数的x和y坐标是否包含在此圆角矩形内
      *
-     * @param {number} x - The X coordinate of the point to test
-     * @param {number} y - The Y coordinate of the point to test
-     * @return {boolean} Whether the x/y coordinates are within this Rounded Rectangle
+     * @param {number} x - 测试点的X坐标
+     * @param {number} y - 测试点的Y坐标
+     * @return {boolean} x/y坐标是否包含
      */
     contains(x: number, y: number): boolean
     {
