@@ -13202,8 +13202,8 @@
 
         
             
-                <div class="description"><p>User's customizable globals for overriding the default PIXI settings, such
-as a renderer's default resolution, framerate, float precision, etc.</p></div>
+                <div class="description"><p>用户自定义的全局变量，用于覆盖默认的PIXI设置，例如
+作为渲染器的默认分辨率、帧率、浮点精度等。</p></div>
             
 
             
@@ -13235,11 +13235,11 @@ as a renderer's default resolution, framerate, float precision, etc.</p></div>
                 
 
     
-    <pre class="prettyprint"><code>// Use the native window resolution as the default resolution
-// will support high-density displays when rendering
+    <pre class="prettyprint"><code>// 使用本机窗口分辨率作为默认分辨率
+// 渲染时支持高密度显示
 PIXI.settings.RESOLUTION = window.devicePixelRatio;
 
-// Disable interpolation when scaling, will make texture be pixelated
+// 缩放时禁用插值，将使纹理像素化
 PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;</code></pre>
     
 
@@ -13283,7 +13283,7 @@ PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;</code></pre>
 <dd>
     
     <div class="description">
-        <p>Default anisotropic filtering level of textures.
+        <p>纹理的默认各向异性过滤级别。
 Usually from 0 to 16</p>
     </div>
     
@@ -13338,7 +13338,7 @@ Usually from 0 to 16</p>
 <dd>
     
     <div class="description">
-        <p>Can we upload the same buffer in a single frame?</p>
+        <p>我们能在一个帧中上传相同的缓冲区吗？</p>
     </div>
     
     
@@ -13389,7 +13389,7 @@ Usually from 0 to 16</p>
 <dd>
     
     <div class="description">
-        <p>Enables bitmap creation before image load. This feature is experimental.</p>
+        <p>在图像加载之前启用位图创建。此功能是实验性的。</p>
     </div>
     
     
@@ -13499,7 +13499,7 @@ However, it can be useful to disable under certain scenarios, such as headless u
 <dd>
     
     <div class="description">
-        <p>Default filter resolution.</p>
+        <p>默认滤镜分辨率。</p>
     </div>
     
     
@@ -13553,7 +13553,7 @@ However, it can be useful to disable under certain scenarios, such as headless u
 <dd>
     
     <div class="description">
-        <p>Default Garbage Collection maximum check count.</p>
+        <p>默认垃圾收集最大检查计数。</p>
     </div>
     
     
@@ -13607,7 +13607,7 @@ However, it can be useful to disable under certain scenarios, such as headless u
 <dd>
     
     <div class="description">
-        <p>Default Garbage Collection max idle.</p>
+        <p>默认垃圾回收最大空闲。</p>
     </div>
     
     
@@ -13661,7 +13661,7 @@ However, it can be useful to disable under certain scenarios, such as headless u
 <dd>
     
     <div class="description">
-        <p>Default Garbage Collection mode.</p>
+        <p>默认垃圾回收模式。</p>
     </div>
     
     
@@ -13776,8 +13776,8 @@ However, it can be useful to disable under certain scenarios, such as headless u
 <dd>
     
     <div class="description">
-        <p>If set to true WebGL will attempt make textures mimpaped by default.
-Mipmapping will only succeed if the base texture uploaded has power of two dimensions.</p>
+        <p>如果设置为true，WebGL将尝试在默认情况下将纹理设为mimpaped。
+Mipmapping只有在上传的基础纹理具有二维能力时才会成功。</p>
     </div>
     
     
@@ -13831,8 +13831,8 @@ Mipmapping will only succeed if the base texture uploaded has power of two dimen
 <dd>
     
     <div class="description">
-        <p>Default specify float precision in fragment shader.
-iOS is best set at highp due to https://github.com/pixijs/pixi.js/issues/3742</p>
+        <p>默认在片段着色器中指定浮点精度。
+iOS最好设置为highp，原因是 https://github.com/pixijs/pixi.js/issues/3742</p>
     </div>
     
     
@@ -13886,7 +13886,7 @@ iOS is best set at highp due to https://github.com/pixijs/pixi.js/issues/3742</p
 <dd>
     
     <div class="description">
-        <p>Default specify float precision in vertex shader.</p>
+        <p>默认在顶点着色器中指定浮点精度。</p>
     </div>
     
     
@@ -13940,13 +13940,10 @@ iOS is best set at highp due to https://github.com/pixijs/pixi.js/issues/3742</p
 <dd>
     
     <div class="description">
-        <p>The maximum support for using WebGL. If a device does not
-support WebGL version, for instance WebGL 2, it will still
-attempt to fallback support to WebGL 1. If you want to
-explicitly remove feature support to target a more stable
-baseline, prefer a lower environment.</p>
-<p>Due to <a target="_blank" href="https://bugs.chromium.org/p/chromium/issues/detail?id=934823">bug in chromium</a>
-we disable webgl2 by default for all non-apple mobile devices.</p>
+        <p>对使用WebGL的最大支持。 如果设备不支持WebGL版本，例如WebGL 2，它将尝试回退对WebGL 1的支持。
+如果要显式删除功能支持以实现更稳定的基准，请选择较低的环境。</p>
+<p>由于<a target="_blank" href="https://bugs.chromium.org/p/chromium/issues/detail?id=934823">in chromium</a>，
+我们默认为所有非Apple移动设备禁用webgl2。</p>
     </div>
     
     
@@ -14000,7 +13997,7 @@ we disable webgl2 by default for all non-apple mobile devices.</p>
 <dd>
     
     <div class="description">
-        <p>The default render options if none are supplied to <a href="PIXI.Renderer.html">PIXI.Renderer</a>
+        <p>默认渲染选项，如果没有提供<a href="PIXI.Renderer.html">PIXI.Renderer</a>
 or <a href="PIXI.CanvasRenderer.html">PIXI.CanvasRenderer</a>.</p>
     </div>
     
@@ -14430,7 +14427,7 @@ or <a href="PIXI.CanvasRenderer.html">PIXI.CanvasRenderer</a>.</p>
 <dd>
     
     <div class="description">
-        <p>Default resolution / device pixel ratio of the renderer.</p>
+        <p>渲染器的默认分辨率/设备像素比率。</p>
     </div>
     
     
@@ -14546,9 +14543,9 @@ or <a href="PIXI.CanvasRenderer.html">PIXI.CanvasRenderer</a>.</p>
 <dd>
     
     <div class="description">
-        <p>If true PixiJS will Math.floor() x/y values when rendering, stopping pixel interpolation.
-Advantages can include sharper image quality (like text) and faster rendering on canvas.
-The main disadvantage is movement of objects may appear less smooth.</p>
+        <p>如果为true，则在渲染时，PixiJS将使用Math.floor() x/y值，从而停止像素插值。
+优点包括更清晰的图像质量（如文本）和在canvas上更快的渲染。
+主要缺点是物体的运动可能看起来不太平滑。</p>
     </div>
     
     
@@ -14602,7 +14599,7 @@ The main disadvantage is movement of objects may appear less smooth.</p>
 <dd>
     
     <div class="description">
-        <p>Default scale mode for textures.</p>
+        <p>纹理的默认缩放模式。</p>
     </div>
     
     
@@ -14716,8 +14713,8 @@ The main disadvantage is movement of objects may appear less smooth.</p>
 <dd>
     
     <div class="description">
-        <p>The default sprite batch size.</p>
-<p>The default aims to balance desktop and mobile devices.</p>
+        <p>默认的精灵批处理大小。</p>
+<p>默认的目标是平衡桌面和移动设备。</p>
     </div>
     
     
@@ -14771,7 +14768,7 @@ The main disadvantage is movement of objects may appear less smooth.</p>
 <dd>
     
     <div class="description">
-        <p>The maximum textures that this device supports.</p>
+        <p>此设备支持的最大纹理。</p>
     </div>
     
     
@@ -14825,13 +14822,12 @@ The main disadvantage is movement of objects may appear less smooth.</p>
 <dd>
     
     <div class="description">
-        <p>If set to <code>true</code>, Textures and BaseTexture objects stored
-in the caches (<a href="PIXI.utils.html#.TextureCache">TextureCache</a> and
-<a href="PIXI.utils.html#.BaseTextureCache">BaseTextureCache</a>) can <em>only</em> be
-used when calling <a href="PIXI.Texture.html#.from">Texture.from</a> or
-<a href="PIXI.BaseTexture.html#.from">BaseTexture.from</a>.
-Otherwise, these <code>from</code> calls throw an exception. Using this property
-can be useful if you want to enforce preloading all assets with
+        <p>如果设置为 <code>true</code>，则Textures和BaseTexture对象存储在缓存中
+(<a href="PIXI.utils.html#.TextureCache">TextureCache</a> 和
+<a href="PIXI.utils.html#.BaseTextureCache">BaseTextureCache</a>)
+<em>只能</em>在调用<a href="PIXI.Texture.html#.from">Texture.from</a> 或
+<a href="PIXI.BaseTexture.html#.from">BaseTexture.from</a>时使用。
+否则，这些<code>from</code>调用将引发异常。如果您想通过<a href="PIXI.Loader.html">Loader</a> 强制预加载所有资源，则使用此属性可能很有用。
 <a href="PIXI.Loader.html">Loader</a>.</p>
     </div>
     
@@ -15053,7 +15049,7 @@ can be useful if you want to enforce preloading all assets with
 <dd>
     
     <div class="description">
-        <p>Default wrap modes that are supported by pixi.</p>
+        <p>pixi支持的默认循环模式。</p>
     </div>
     
     
@@ -15109,7 +15105,7 @@ can be useful if you want to enforce preloading all assets with
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Tue Feb 11 2020 02:47:50 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Mon Apr 06 2020 03:40:39 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

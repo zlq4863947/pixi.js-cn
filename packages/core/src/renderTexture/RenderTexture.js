@@ -2,15 +2,15 @@ import { BaseRenderTexture } from './BaseRenderTexture';
 import { Texture } from '../textures/Texture';
 
 /**
- * A RenderTexture is a special texture that allows any PixiJS display object to be rendered to it.
+ * RenderTexture是一种特殊的纹理，它允许将任何PixiJS显示对象渲染给它。
  *
- * __Hint__: All DisplayObjects (i.e. Sprites) that render to a RenderTexture should be preloaded
- * otherwise black rectangles will be drawn instead.
+ * __Hint__: 所有渲染到RenderTexture的显示对象（即精灵）都应预加载
+ * 否则将绘制黑色矩形。
  *
- * __Hint-2__: The actual memory allocation will happen on first render.
- * You shouldn't create renderTextures each frame just to delete them after, try to reuse them.
+ * __Hint-2__: 实际内存分配将在第一次渲染时发生。
+ * 您不应该仅在删除每个帧之后创建renderTextures，而是尝试重用它们。
  *
- * A RenderTexture takes a snapshot of any Display Object given to its render method. For example:
+ * RenderTexture获取指定给其呈现方法的任何显示对象的快照。例如：
  *
  * ```js
  * let renderer = PIXI.autoDetectRenderer();
@@ -25,8 +25,8 @@ import { Texture } from '../textures/Texture';
  * renderer.render(sprite, renderTexture);
  * ```
  *
- * The Sprite in this case will be rendered using its local transform. To render this sprite at 0,0
- * you can clear the transform
+ * 本例中的精灵将使用其局部变换进行渲染。在0,0渲染此精灵
+ * 你可以清除转换
  *
  * ```js
  *
@@ -34,7 +34,7 @@ import { Texture } from '../textures/Texture';
  *
  * let renderTexture = new PIXI.RenderTexture.create(100, 100);
  *
- * renderer.render(sprite, renderTexture);  // Renders to center of RenderTexture
+ * renderer.render(sprite, renderTexture);  // 渲染到RenderTexture的中心
  * ```
  *
  * @class
@@ -44,7 +44,7 @@ import { Texture } from '../textures/Texture';
 export class RenderTexture extends Texture
 {
     /**
-     * @param {PIXI.BaseRenderTexture} baseRenderTexture - The base texture object that this texture uses
+     * @param {PIXI.BaseRenderTexture} baseRenderTexture - 此纹理使用的基础纹理对象
      * @param {PIXI.Rectangle} [frame] - The rectangle frame of the texture to show
      */
     constructor(baseRenderTexture, frame)
@@ -75,7 +75,7 @@ export class RenderTexture extends Texture
         }
 
         /**
-         * The base texture object that this texture uses
+         * 此纹理使用的基础纹理对象
          *
          * @member {PIXI.BaseTexture}
          */
@@ -84,15 +84,15 @@ export class RenderTexture extends Texture
         this.legacyRenderer = _legacyRenderer;
 
         /**
-         * This will let the renderer know if the texture is valid. If it's not then it cannot be rendered.
+         * 这将使渲染器知道纹理是否有效。 如果不是，则无法渲染。
          *
          * @member {boolean}
          */
         this.valid = true;
 
         /**
-         * Stores `sourceFrame` when this texture is inside current filter stack.
-         * You can read it inside filters.
+         * Stores 当此纹理位于当前滤镜堆栈中时存储`sourceFrame`。
+         * 你可以在滤镜里面读取它。
          *
          * @readonly
          * @member {PIXI.Rectangle}
@@ -100,7 +100,7 @@ export class RenderTexture extends Texture
         this.filterFrame = null;
 
         /**
-         * The key for pooled texture of FilterSystem
+         * FilterSystem混合纹理的key
          * @protected
          * @member {string}
          */
@@ -110,11 +110,11 @@ export class RenderTexture extends Texture
     }
 
     /**
-     * Resizes the RenderTexture.
+     * 调整RenderTexture的大小。
      *
-     * @param {number} width - The width to resize to.
-     * @param {number} height - The height to resize to.
-     * @param {boolean} [resizeBaseTexture=true] - Should the baseTexture.width and height values be resized as well?
+     * @param {number} width - 要调整大小的宽度。
+     * @param {number} height - 要调整大小的高度。
+     * @param {boolean} [resizeBaseTexture=true] - 是否需要baseTexture.width和height值也调整大小？
      */
     resize(width, height, resizeBaseTexture = true)
     {
@@ -136,9 +136,9 @@ export class RenderTexture extends Texture
     }
 
     /**
-     * Changes the resolution of baseTexture, but does not change framebuffer size.
+     * 更改baseTexture的分辨率，但不更改帧缓冲区大小。
      *
-     * @param {number} resolution - The new resolution to apply to RenderTexture
+     * @param {number} resolution - 应用于RenderTexture的新分辨率
      */
     setResolution(resolution)
     {
@@ -154,14 +154,14 @@ export class RenderTexture extends Texture
     }
 
     /**
-     * A short hand way of creating a render texture.
+     * 创建渲染纹理的简单方法。
      *
      * @param {object} [options] - Options
-     * @param {number} [options.width=100] - The width of the render texture
-     * @param {number} [options.height=100] - The height of the render texture
-     * @param {number} [options.scaleMode=PIXI.settings.SCALE_MODE] - See {@link PIXI.SCALE_MODES} for possible values
-     * @param {number} [options.resolution=1] - The resolution / device pixel ratio of the texture being generated
-     * @return {PIXI.RenderTexture} The new render texture
+     * @param {number} [options.width=100] - 渲染纹理的宽度
+     * @param {number} [options.height=100] - 渲染纹理的高度
+     * @param {number} [options.scaleMode=PIXI.settings.SCALE_MODE] - 有关可选值，请参见{@link PIXI.SCALE_MODES}
+     * @param {number} [options.resolution=1] - 生成的纹理的分辨率/设备像素比
+     * @return {PIXI.RenderTexture} 新的渲染纹理
      */
     static create(options)
     {

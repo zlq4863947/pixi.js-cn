@@ -13192,7 +13192,7 @@
         <h2><span class="ancestors"><a href="PIXI.html">PIXI</a>~</span>Polygon
         </h2>
         
-            <div class="class-description"><p>A class to define a shape via user defined co-orinates.</p></div>
+            <div class="class-description"><p>通过用户定义的坐标自定义形状的类。</p></div>
         
     </div>
 </header>  
@@ -13220,7 +13220,7 @@
     
         
         <div class="tag-source">
-            <a href="packages_math_src_shapes_Polygon.js.html#line20">Polygon.js:20</a>
+            <a href="packages_math_src_shapes_Polygon.js.html#line19">Polygon.js:19</a>
         </div>
         
     </div>
@@ -13287,11 +13287,10 @@
                         <span class="repeatable">repeatable</span>
                     
                 
-                <p>This can be an array of Points
-that form the polygon, a flat array of numbers that will be interpreted as [x,y, x,y, ...], or
-the arguments passed can be all the points of the polygon e.g.
-<code>new PIXI.Polygon(new PIXI.Point(), new PIXI.Point(), ...)</code>, or the arguments passed can be flat
-x,y values e.g. <code>new Polygon(x,y, x,y, x,y, ...)</code> where <code>x</code> and <code>y</code> are Numbers.</p></td>
+                <p>可以为形成多边形的Point数组
+也可以是[x,y, x,y, ...]的打平坐标数组，或者 传递的参数可以是多边形的所有点，例如
+<code>new PIXI.Polygon(new PIXI.Point(), new PIXI.Point(), ...)</code>, 或者传递的参数可以是打平的
+x,y 值 例如: <code>new Polygon(x,y, x,y, x,y, ...)</code> 其中<code>x</code>和<code>y</code>是数字类型。</p></td>
         </tr>
 	
 	
@@ -13375,7 +13374,7 @@ x,y values e.g. <code>new Polygon(x,y, x,y, x,y, ...)</code> where <code>x</code
 <dd>
     
     <div class="description">
-        <p><code>false</code> after moveTo, <code>true</code> after <code>closePath</code>. In all other cases it is <code>true</code>.</p>
+        <p>moveTo之后为<code>false</code>，closePath之后为<code>true</code>。 所有其他情况为<code>true</code>。</p>
     </div>
     
     
@@ -13429,7 +13428,7 @@ x,y values e.g. <code>new Polygon(x,y, x,y, x,y, ...)</code> where <code>x</code
 <dd>
     
     <div class="description">
-        <p>An array of the points of this polygon</p>
+        <p>多边形的点数组</p>
     </div>
     
     
@@ -13480,7 +13479,7 @@ x,y values e.g. <code>new Polygon(x,y, x,y, x,y, ...)</code> where <code>x</code
 <dd>
     
     <div class="description">
-        <p>The type of the object, mainly used to avoid <code>instanceof</code> checks</p>
+        <p>对象的类型，主要用于避免执行 <code>instanceof</code> 检查</p>
     </div>
     
     
@@ -13545,7 +13544,7 @@ x,y values e.g. <code>new Polygon(x,y, x,y, x,y, ...)</code> where <code>x</code
     
         
         <div class="tag-source">
-            <a href="packages_math_src_shapes_Polygon.js.html#line65">Polygon.js:65</a>
+            <a href="packages_math_src_shapes_Polygon.js.html#line64">Polygon.js:64</a>
         </div>
         
     </div>
@@ -13556,7 +13555,7 @@ x,y values e.g. <code>new Polygon(x,y, x,y, x,y, ...)</code> where <code>x</code
     
     
     <div class="description">
-        <p>Creates a clone of this polygon</p>
+        <p>创建多边形实例的克隆</p>
     </div>
     
 
@@ -13621,7 +13620,7 @@ x,y values e.g. <code>new Polygon(x,y, x,y, x,y, ...)</code> where <code>x</code
                         
                     
             </td>
-            <td class="description last">a copy of the polygon</td>
+            <td class="description last">多边形的副本</td>
         </tr>
     
     </tbody>
@@ -13650,7 +13649,7 @@ x,y values e.g. <code>new Polygon(x,y, x,y, x,y, ...)</code> where <code>x</code
     
         
         <div class="tag-source">
-            <a href="packages_math_src_shapes_Polygon.js.html#line81">Polygon.js:81</a>
+            <a href="packages_math_src_shapes_Polygon.js.html#line80">Polygon.js:80</a>
         </div>
         
     </div>
@@ -13661,7 +13660,7 @@ x,y values e.g. <code>new Polygon(x,y, x,y, x,y, ...)</code> where <code>x</code
     
     
     <div class="description">
-        <p>Checks whether the x and y coordinates passed to this function are contained within this polygon</p>
+        <p>检查传递给此函数的x和y坐标是否包含在此多边形内</p>
     </div>
     
 
@@ -13708,7 +13707,7 @@ x,y values e.g. <code>new Polygon(x,y, x,y, x,y, ...)</code> where <code>x</code
             
             <td class="description last">
                 
-                <p>The X coordinate of the point to test</p></td>
+                <p>测试点的X坐标</p></td>
         </tr>
 	
 	
@@ -13731,7 +13730,7 @@ x,y values e.g. <code>new Polygon(x,y, x,y, x,y, ...)</code> where <code>x</code
             
             <td class="description last">
                 
-                <p>The Y coordinate of the point to test</p></td>
+                <p>测试点的Y坐标</p></td>
         </tr>
 	
 	
@@ -13794,7 +13793,7 @@ x,y values e.g. <code>new Polygon(x,y, x,y, x,y, ...)</code> where <code>x</code
                         
                     
             </td>
-            <td class="description last">Whether the x/y coordinates are within this polygon</td>
+            <td class="description last">x/y坐标是否包含</td>
         </tr>
     
     </tbody>
@@ -13825,7 +13824,7 @@ x,y values e.g. <code>new Polygon(x,y, x,y, x,y, ...)</code> where <code>x</code
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Tue Feb 11 2020 02:47:48 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Mon Apr 06 2020 03:40:38 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

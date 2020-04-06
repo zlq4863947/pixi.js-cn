@@ -13192,13 +13192,12 @@
         <h2><span class="ancestors"><a href="PIXI.html">PIXI</a>~</span>ParticleContainer
         </h2>
         
-            <div class="class-description"><p>The ParticleContainer class is a really fast version of the Container built solely for speed,
-so use when you need a lot of sprites or particles.</p>
-<p>The tradeoff of the ParticleContainer is that most advanced functionality will not work.
-ParticleContainer implements the basic object transform (position, scale, rotation)
-and some advanced functionality like tint (as of v4.5.6).</p>
-<p>Other more advanced functionality like masking, children, filters, etc will not work on sprites in this batch.</p>
-<p>It's extremely easy to use:</p>
+            <div class="class-description"><p>ParticleContainer类是专为快速构建的容器的一个非常快速的版本，因此在需要大量精灵或粒子时使用。</p>
+<p>ParticleContainer的权衡在于，大多数高级功能将不起作用。
+ParticleContainer实现基本的对象变换（位置，比例，旋转）
+以及一些高级功能，例如色调（自v4.5.6起）。</p>
+<p>其他更高级的功能（如遮罩，子级，滤镜等）将不适用于该批处理中的sprite。</p>
+<p>它非常容易使用:</p>
 <pre class="prettyprint source lang-js"><code>let container = new ParticleContainer();
 
 for (let i = 0; i &lt; 100; ++i)
@@ -13207,7 +13206,7 @@ for (let i = 0; i &lt; 100; ++i)
     container.addChild(sprite);
 }
 </code></pre>
-<p>And here you have a hundred sprites that will be rendered at the speed of light.</p></div>
+<p>在这里，您将有一百个精灵以光速渲染。</p></div>
         
     </div>
 </header>  
@@ -13235,7 +13234,7 @@ for (let i = 0; i &lt; 100; ++i)
     
         
         <div class="tag-source">
-            <a href="packages_particles_src_ParticleContainer.js.html#line49">ParticleContainer.js:49</a>
+            <a href="packages_particles_src_ParticleContainer.js.html#line47">ParticleContainer.js:47</a>
         </div>
         
     </div>
@@ -13304,8 +13303,8 @@ for (let i = 0; i &lt; 100; ++i)
                         
                     
                 
-                <p>The maximum number of particles that can be rendered by the container.
-Affects size of allocated buffers.</p></td>
+                <p>容器可以渲染的最大粒子数。
+影响分配的缓冲区的大小。</p></td>
         </tr>
 	
 	
@@ -13339,7 +13338,7 @@ Affects size of allocated buffers.</p></td>
                         
                     
                 
-                <p>The properties of children that should be uploaded to the gpu and applied.</p>
+                <p>将上载到gpu并应用的子级属性。</p>
                 
 
 <table class="params">
@@ -13393,8 +13392,8 @@ Affects size of allocated buffers.</p></td>
                         
                     
                 
-                <p>When true, vertices be uploaded and applied.
-if sprite's <code>scale/anchor/trim/frame/orig</code> is dynamic, please set <code>true</code>.</p></td>
+                <p>如果为true，则将上载和应用顶点。
+如果 sprite 的 <code>scale/anchor/trim/frame/orig</code> 是动态的，请设置为 <code>true</code>.</p></td>
         </tr>
 	
 	
@@ -13430,7 +13429,7 @@ if sprite's <code>scale/anchor/trim/frame/orig</code> is dynamic, please set <co
                         
                     
                 
-                <p>When true, position be uploaded and applied.</p></td>
+                <p>为true时，位置将被上传并应用。</p></td>
         </tr>
 	
 	
@@ -13466,7 +13465,7 @@ if sprite's <code>scale/anchor/trim/frame/orig</code> is dynamic, please set <co
                         
                     
                 
-                <p>When true, rotation be uploaded and applied.</p></td>
+                <p>如果为true，则上传并应用旋转。</p></td>
         </tr>
 	
 	
@@ -13502,7 +13501,7 @@ if sprite's <code>scale/anchor/trim/frame/orig</code> is dynamic, please set <co
                         
                     
                 
-                <p>When true, uvs be uploaded and applied.</p></td>
+                <p>如果为true，则将上载并应用uvs。</p></td>
         </tr>
 	
 	
@@ -13538,7 +13537,7 @@ if sprite's <code>scale/anchor/trim/frame/orig</code> is dynamic, please set <co
                         
                     
                 
-                <p>When true, alpha and tint be uploaded and applied.</p></td>
+                <p>如果为true，则将上载和应用alpha和色调。</p></td>
         </tr>
 	
 	
@@ -13580,7 +13579,7 @@ if sprite's <code>scale/anchor/trim/frame/orig</code> is dynamic, please set <co
                         
                     
                 
-                <p>Number of particles per batch. If less than maxSize, it uses maxSize instead.</p></td>
+                <p>每批次的粒子数。 如果小于maxSize，则改用maxSize。</p></td>
         </tr>
 	
 	
@@ -13616,8 +13615,7 @@ if sprite's <code>scale/anchor/trim/frame/orig</code> is dynamic, please set <co
                         
                     
                 
-                <p>If true, container allocates more batches in case
-there are more than <code>maxSize</code> particles.</p></td>
+                <p>如果为true，则容器分配更多批次，以防存在超过 <code>maxSize</code> 个粒子的情况。</p></td>
         </tr>
 	
 	
@@ -14823,7 +14821,8 @@ there are more than <code>maxSize</code> particles.</p></td>
 <dd>
     
     <div class="description">
-        <p>If true, container allocates more batches in case there are more than <code>maxSize</code> particles.</p>
+        <p>If true, container allocates more batches in case there are more than <code>maxSize</code> particles.
+如果为true，则容器会分配更多的批处理，以防出现超出<code>maxSize</code>的粒子。</p>
     </div>
     
     
@@ -14877,7 +14876,7 @@ there are more than <code>maxSize</code> particles.</p></td>
 <dd>
     
     <div class="description">
-        <p>The texture used to render the children.</p>
+        <p>用于渲染子对象的纹理。</p>
     </div>
     
     
@@ -14928,8 +14927,7 @@ there are more than <code>maxSize</code> particles.</p></td>
 <dd>
     
     <div class="description">
-        <p>The blend mode to be applied to the sprite. Apply a value of <code>PIXI.BLEND_MODES.NORMAL</code>
-to reset the blend mode.</p>
+        <p>要应用于精灵的混合模式。应用值<code>PIXI.BLEND_MODES.NORMAL</code>, 以重置混合模式。</p>
     </div>
     
     
@@ -16175,10 +16173,10 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>If true PixiJS will Math.floor() x/y values when rendering, stopping pixel interpolation.
-Advantages can include sharper image quality (like text) and faster rendering on canvas.
-The main disadvantage is movement of objects may appear less smooth.
-Default to true here as performance is usually the priority for particles.</p>
+        <p>如果为true，则在渲染时，PixiJS将使用Math.floor() x/y值，从而停止像素插值。
+优点包括更清晰的图像质量（如文本）和在canvas上更快的渲染。
+主要缺点是物体的运动可能看起来不太平滑。
+这里默认为true，因为性能通常是粒子的优先级。</p>
     </div>
     
     
@@ -16467,10 +16465,10 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>The tint applied to the container. This is a hex value.
+        <p>应用于容器的色调。16进制值。
 A value of 0xFFFFFF will remove any tint effect.</p>
 <ul>
-<li>IMPORTANT: This is a WebGL only feature and will be ignored by the canvas renderer.</li>
+<li>重要提示：这是一个WebGL独有的功能，将被canvas渲染器忽略。</li>
 </ul>
     </div>
     
@@ -17861,7 +17859,7 @@ position.y的别名</p>
     
         
         <div class="tag-source">
-            <a href="packages_particles_src_ParticleContainer.js.html#line252">ParticleContainer.js:252</a>
+            <a href="packages_particles_src_ParticleContainer.js.html#line250">ParticleContainer.js:250</a>
         </div>
         
     </div>
@@ -17872,7 +17870,7 @@ position.y的别名</p>
     
     
     <div class="description">
-        <p>Destroys the container</p>
+        <p>销毁容器</p>
     </div>
     
 
@@ -20444,7 +20442,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_particles_src_ParticleContainer.js.html#line150">ParticleContainer.js:150</a>
+            <a href="packages_particles_src_ParticleContainer.js.html#line148">ParticleContainer.js:148</a>
         </div>
         
     </div>
@@ -20455,7 +20453,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Sets the private properties array to dynamic / static based on the passed properties object</p>
+        <p>根据传递的属性对象将私有属性数组设置为动态/静态</p>
     </div>
     
 
@@ -20502,7 +20500,7 @@ nice performance boost.</p></td>
             
             <td class="description last">
                 
-                <p>The properties to be uploaded</p></td>
+                <p>要上载的属性</p></td>
         </tr>
 	
 	
@@ -25168,7 +25166,7 @@ DisplayObject's <code>interactive</code> property must be set to <code>true</cod
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Tue Feb 11 2020 02:47:48 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Mon Apr 06 2020 03:40:37 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

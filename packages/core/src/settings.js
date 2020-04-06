@@ -3,14 +3,11 @@ import { ENV } from '@pixi/constants';
 import { isMobile } from '@pixi/utils';
 
 /**
- * The maximum support for using WebGL. If a device does not
- * support WebGL version, for instance WebGL 2, it will still
- * attempt to fallback support to WebGL 1. If you want to
- * explicitly remove feature support to target a more stable
- * baseline, prefer a lower environment.
+ * 对使用WebGL的最大支持。 如果设备不支持WebGL版本，例如WebGL 2，它将尝试回退对WebGL 1的支持。
+ * 如果要显式删除功能支持以实现更稳定的基准，请选择较低的环境。
  *
- * Due to {@link https://bugs.chromium.org/p/chromium/issues/detail?id=934823|bug in chromium}
- * we disable webgl2 by default for all non-apple mobile devices.
+ * 由于{@link https://bugs.chromium.org/p/chromium/issues/detail?id=934823 in chromium}，
+ * 我们默认为所有非Apple移动设备禁用webgl2。
  *
  * @static
  * @name PREFER_ENV
@@ -21,13 +18,12 @@ import { isMobile } from '@pixi/utils';
 settings.PREFER_ENV = isMobile.any ? ENV.WEBGL : ENV.WEBGL2;
 
 /**
- * If set to `true`, Textures and BaseTexture objects stored
- * in the caches ({@link PIXI.utils.TextureCache TextureCache} and
- * {@link PIXI.utils.BaseTextureCache BaseTextureCache}) can *only* be
- * used when calling {@link PIXI.Texture.from Texture.from} or
- * {@link PIXI.BaseTexture.from BaseTexture.from}.
- * Otherwise, these `from` calls throw an exception. Using this property
- * can be useful if you want to enforce preloading all assets with
+ * 如果设置为 `true`，则Textures和BaseTexture对象存储在缓存中
+ * ({@link PIXI.utils.TextureCache TextureCache} 和
+ * {@link PIXI.utils.BaseTextureCache BaseTextureCache})
+ * *只能*在调用{@link PIXI.Texture.from Texture.from} 或
+ * {@link PIXI.BaseTexture.from BaseTexture.from}时使用。
+ * 否则，这些`from`调用将引发异常。如果您想通过{@link PIXI.Loader Loader} 强制预加载所有资源，则使用此属性可能很有用。
  * {@link PIXI.Loader Loader}.
  *
  * @static

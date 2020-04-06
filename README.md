@@ -11,9 +11,7 @@ PixiJS中文开发文档
 
 ### 在线地址
 
-Github Pages: [https://zlq4863947.github.io/pixi.js-cn](https://zlq4863947.github.io/pixi.js-cn)
-
-国内地址: 待发布
+[http://b.aitrade.ga/pixi.js-cn](http://b.aitrade.ga/pixi.js-cn)
 
 ### 开发交流QQ群
 

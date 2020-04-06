@@ -318,15 +318,15 @@ export class Texture extends EventEmitter
     }
 
     /**
-     * Helper function that creates a new Texture based on the source you provide.
-     * The source can be - frame id, image url, video url, canvas element, video element, base texture
+     * 可以根据您提供的源创建一个新的精灵的辅助函数。
+     * 源可以是-帧id、图像url、视频url、canvas元素、video元素、base texture
      *
      * @static
      * @param {string|HTMLImageElement|HTMLCanvasElement|HTMLVideoElement|PIXI.BaseTexture} source
-     *        Source to create texture from
-     * @param {object} [options] See {@link PIXI.BaseTexture}'s constructor for options.
+     *        从中创建纹理的来源
+     * @param {object} [options] 请参见 {@link PIXI.BaseTexture} 的构造函数。
      * @param {boolean} [strict] Enforce strict-mode, see {@link PIXI.settings.STRICT_TEXTURE_CACHE}.
-     * @return {PIXI.Texture} The newly created texture
+     * @return {PIXI.Texture} 新创建的精灵
      */
     static from(source, options = {}, strict = settings.STRICT_TEXTURE_CACHE)
     {
@@ -381,7 +381,7 @@ export class Texture extends EventEmitter
      *        is provided, a new Float32Array is created.
      * @param {number} width - Width of the resource
      * @param {number} height - Height of the resource
-     * @param {object} [options] See {@link PIXI.BaseTexture}'s constructor for options.
+     * @param {object} [options] 请参见 {@link PIXI.BaseTexture} 的构造函数。
      * @return {PIXI.Texture} The resulting new BaseTexture
      */
     static fromBuffer(buffer, width, height, options)
@@ -433,11 +433,11 @@ export class Texture extends EventEmitter
     }
 
     /**
-     * Adds a Texture to the global TextureCache. This cache is shared across the whole PIXI object.
+     * 将纹理添加到全局TextureCache。该缓存在整个PIXI对象之间共享。
      *
      * @static
-     * @param {PIXI.Texture} texture - The Texture to add to the cache.
-     * @param {string} id - The id that the Texture will be stored against.
+     * @param {PIXI.Texture} texture - 要添加到缓存的纹理。
+     * @param {string} id - 将根据其存储纹理的id。
      */
     static addToCache(texture, id)
     {
@@ -459,11 +459,11 @@ export class Texture extends EventEmitter
     }
 
     /**
-     * Remove a Texture from the global TextureCache.
+     * 从全局纹理缓存中移除纹理。
      *
      * @static
-     * @param {string|PIXI.Texture} texture - id of a Texture to be removed, or a Texture instance itself
-     * @return {PIXI.Texture|null} The Texture that was removed
+     * @param {string|PIXI.Texture} texture - 要移除的纹理或纹理实例本身的id
+     * @return {PIXI.Texture|null} 被移除的纹理
      */
     static removeFromCache(texture)
     {
@@ -505,7 +505,7 @@ export class Texture extends EventEmitter
     }
 
     /**
-     * Returns resolution of baseTexture
+     * 返回baseTexture的分辨率
      *
      * @member {number}
      * @readonly
@@ -516,8 +516,8 @@ export class Texture extends EventEmitter
     }
 
     /**
-     * The frame specifies the region of the base texture that this texture uses.
-     * Please call `updateUvs()` after you change coordinates of `frame` manually.
+     * 帧指定此纹理使用的基础纹理的区域。
+     * 手动更改`frame`的坐标后，请调用`updateUvs()`。
      *
      * @member {PIXI.Rectangle}
      */
@@ -560,10 +560,10 @@ export class Texture extends EventEmitter
     }
 
     /**
-     * Indicates whether the texture is rotated inside the atlas
+     * 指示纹理是否在图集内旋转
      * set to 2 to compensate for texture packer rotation
      * set to 6 to compensate for spine packer rotation
-     * can be used to rotate or mirror sprites
+     * 可用于旋转或镜像精灵
      * See {@link PIXI.groupD8} for explanation
      *
      * @member {number}
@@ -583,7 +583,7 @@ export class Texture extends EventEmitter
     }
 
     /**
-     * The width of the Texture in pixels.
+     * 纹理的宽度（以像素为单位）。
      *
      * @member {number}
      */
@@ -593,7 +593,7 @@ export class Texture extends EventEmitter
     }
 
     /**
-     * The height of the Texture in pixels.
+     * 纹理的高度（像素）。
      *
      * @member {number}
      */
@@ -627,8 +627,8 @@ function removeAllHandlers(tex)
 }
 
 /**
- * An empty texture, used often to not have to create multiple empty textures.
- * Can not be destroyed.
+ * 空纹理，通常不必创建多个空纹理。
+ * 无法销毁。
  *
  * @static
  * @constant
@@ -639,8 +639,8 @@ removeAllHandlers(Texture.EMPTY);
 removeAllHandlers(Texture.EMPTY.baseTexture);
 
 /**
- * A white texture of 16x16 size, used for graphics and other things
- * Can not be destroyed.
+ * 16x16大小的白色纹理，用于图形和其他用途
+ * 无法销毁。
  *
  * @static
  * @constant

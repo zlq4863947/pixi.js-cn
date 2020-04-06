@@ -13312,14 +13312,14 @@ export class Texture extends EventEmitter
          */
         this._uvs = DEFAULT_UVS;
         /**
-         * Default TextureMatrix instance for this texture
-         * By default that object is not created because its heavy
+         * 纹理默认的TextureMatrix实例
+         * 默认情况下，不会创建该对象，因为它很重
          *
          * @member {PIXI.TextureMatrix}
          */
         this.uvMatrix = null;
         /**
-         * This is the area of original texture, before it was put in atlas
+         * 原始纹理的区域，在它被放入图集之前
          *
          * @member {PIXI.Rectangle}
          */
@@ -13335,24 +13335,24 @@ export class Texture extends EventEmitter
             throw new Error('attempt to use diamond-shaped UVs. If you are sure, set rotation manually');
         }
         /**
-         * Anchor point that is used as default if sprite is created with this texture.
-         * Changing the `defaultAnchor` at a later point of time will not update Sprite's anchor point.
+         * 使用此纹理创建精灵时，默认的描点。
+         * 在创建后更改`defaultAnchor`不会更新精灵的描点。
          * @member {PIXI.Point}
          * @default {0,0}
          */
         this.defaultAnchor = anchor ? new Point(anchor.x, anchor.y) : new Point(0, 0);
         /**
-         * Update ID is observed by sprites and TextureMatrix instances.
-         * Call updateUvs() to increment it.
+         * 精灵和TextureMatrix实例可以观察到更新ID。
+         * 调用updateUvs()将其递增。
          *
          * @member {number}
          * @protected
          */
         this._updateID = 0;
         /**
-         * The ids under which this Texture has been added to the texture cache. This is
-         * automatically set as long as Texture.addToCache is used, but may not be set if a
-         * Texture is added directly to the TextureCache array.
+         * 将纹理添加到纹理缓存的ID数组。
+         * 只要使用了Texture.addToCache，就会自动设置该选项，
+         * 但如果直接将纹理添加到TextureCache数组，则可能不会设置该选项。
          *
          * @member {string[]}
          */
@@ -13379,11 +13379,12 @@ export class Texture extends EventEmitter
         }
     }
     /**
-     * Updates this texture on the gpu.
+     * 在gpu上更新此纹理。
      *
-     * Calls the TextureResource update.
+     * 调用TextureResource更新。
      *
      * If you adjusted `frame` manually, please call `updateUvs()` instead.
+     * 如果手动调整 `frame` ，请改为调用`updateUvs()`。
      *
      */
     update()
@@ -13394,10 +13395,10 @@ export class Texture extends EventEmitter
         }
     }
     /**
-     * Called when the base texture is updated
+     * 在更新基础纹理时调用
      *
      * @protected
-     * @param {PIXI.BaseTexture} baseTexture - The base texture.
+     * @param {PIXI.BaseTexture} baseTexture - 基础纹理
      */
     onBaseTextureUpdated(baseTexture)
     {
@@ -13415,15 +13416,15 @@ export class Texture extends EventEmitter
         else
         {
             // TODO this code looks confusing.. boo to abusing getters and setters!
-            // if user gave us frame that has bigger size than resized texture it can be a problem
+            // 如果用户为我们提供尺寸大于调整尺寸纹理的框架，则可能是一个问题
             this.frame = this._frame;
         }
         this.emit('update', this);
     }
     /**
-     * Destroys this texture
+     * 销毁纹理
      *
-     * @param {boolean} [destroyBase=false] Whether to destroy the base texture as well
+     * @param {boolean} [destroyBase=false] 是否一起销毁基础纹理
      */
     destroy(destroyBase)
     {
@@ -13453,17 +13454,17 @@ export class Texture extends EventEmitter
         this.textureCacheIds = null;
     }
     /**
-     * Creates a new texture object that acts the same as this one.
+     * 克隆一个新的纹理对象。
      *
-     * @return {PIXI.Texture} The new texture
+     * @return {PIXI.Texture} 新的纹理对象
      */
     clone()
     {
         return new Texture(this.baseTexture, this.frame, this.orig, this.trim, this.rotate, this.defaultAnchor);
     }
     /**
-     * Updates the internal WebGL UV cache. Use it after you change `frame` or `trim` of the texture.
-     * Call it after changing the frame
+     * 更新内部WebGL UV缓存。更改纹理的 `frame` 或 `trim` 后使用。
+     * 改变frame调用
      */
     updateUvs()
     {
@@ -13475,15 +13476,15 @@ export class Texture extends EventEmitter
         this._updateID++;
     }
     /**
-     * Helper function that creates a new Texture based on the source you provide.
-     * The source can be - frame id, image url, video url, canvas element, video element, base texture
+     * 可以根据您提供的源创建一个新的精灵的辅助函数。
+     * 源可以是-帧id、图像url、视频url、canvas元素、video元素、base texture
      *
      * @static
      * @param {string|HTMLImageElement|HTMLCanvasElement|HTMLVideoElement|PIXI.BaseTexture} source
-     *        Source to create texture from
-     * @param {object} [options] See {@link PIXI.BaseTexture}'s constructor for options.
+     *        从中创建纹理的来源
+     * @param {object} [options] 请参见 {@link PIXI.BaseTexture} 的构造函数。
      * @param {boolean} [strict] Enforce strict-mode, see {@link PIXI.settings.STRICT_TEXTURE_CACHE}.
-     * @return {PIXI.Texture} The newly created texture
+     * @return {PIXI.Texture} 新创建的精灵
      */
     static from(source, options = {}, strict = settings.STRICT_TEXTURE_CACHE)
     {
@@ -13531,7 +13532,7 @@ export class Texture extends EventEmitter
      *        is provided, a new Float32Array is created.
      * @param {number} width - Width of the resource
      * @param {number} height - Height of the resource
-     * @param {object} [options] See {@link PIXI.BaseTexture}'s constructor for options.
+     * @param {object} [options] 请参见 {@link PIXI.BaseTexture} 的构造函数。
      * @return {PIXI.Texture} The resulting new BaseTexture
      */
     static fromBuffer(buffer, width, height, options)
@@ -13577,11 +13578,11 @@ export class Texture extends EventEmitter
         return texture;
     }
     /**
-     * Adds a Texture to the global TextureCache. This cache is shared across the whole PIXI object.
+     * 将纹理添加到全局TextureCache。该缓存在整个PIXI对象之间共享。
      *
      * @static
-     * @param {PIXI.Texture} texture - The Texture to add to the cache.
-     * @param {string} id - The id that the Texture will be stored against.
+     * @param {PIXI.Texture} texture - 要添加到缓存的纹理。
+     * @param {string} id - 将根据其存储纹理的id。
      */
     static addToCache(texture, id)
     {
@@ -13600,11 +13601,11 @@ export class Texture extends EventEmitter
         }
     }
     /**
-     * Remove a Texture from the global TextureCache.
+     * 从全局纹理缓存中移除纹理。
      *
      * @static
-     * @param {string|PIXI.Texture} texture - id of a Texture to be removed, or a Texture instance itself
-     * @return {PIXI.Texture|null} The Texture that was removed
+     * @param {string|PIXI.Texture} texture - 要移除的纹理或纹理实例本身的id
+     * @return {PIXI.Texture|null} 被移除的纹理
      */
     static removeFromCache(texture)
     {
@@ -13643,7 +13644,7 @@ export class Texture extends EventEmitter
         return null;
     }
     /**
-     * Returns resolution of baseTexture
+     * 返回baseTexture的分辨率
      *
      * @member {number}
      * @readonly
@@ -13653,8 +13654,8 @@ export class Texture extends EventEmitter
         return this.baseTexture.resolution;
     }
     /**
-     * The frame specifies the region of the base texture that this texture uses.
-     * Please call `updateUvs()` after you change coordinates of `frame` manually.
+     * 帧指定此纹理使用的基础纹理的区域。
+     * 手动更改`frame`的坐标后，请调用`updateUvs()`。
      *
      * @member {PIXI.Rectangle}
      */
@@ -13690,10 +13691,10 @@ export class Texture extends EventEmitter
         }
     }
     /**
-     * Indicates whether the texture is rotated inside the atlas
+     * 指示纹理是否在图集内旋转
      * set to 2 to compensate for texture packer rotation
      * set to 6 to compensate for spine packer rotation
-     * can be used to rotate or mirror sprites
+     * 可用于旋转或镜像精灵
      * See {@link PIXI.groupD8} for explanation
      *
      * @member {number}
@@ -13711,7 +13712,7 @@ export class Texture extends EventEmitter
         }
     }
     /**
-     * The width of the Texture in pixels.
+     * 纹理的宽度（以像素为单位）。
      *
      * @member {number}
      */
@@ -13720,7 +13721,7 @@ export class Texture extends EventEmitter
         return this.orig.width;
     }
     /**
-     * The height of the Texture in pixels.
+     * 纹理的高度（像素）。
      *
      * @member {number}
      */
@@ -13750,8 +13751,8 @@ function removeAllHandlers(tex)
     tex.emit = function _emptyEmit() { };
 }
 /**
- * An empty texture, used often to not have to create multiple empty textures.
- * Can not be destroyed.
+ * 空纹理，通常不必创建多个空纹理。
+ * 无法销毁。
  *
  * @static
  * @constant
@@ -13761,8 +13762,8 @@ Texture.EMPTY = new Texture(new BaseTexture());
 removeAllHandlers(Texture.EMPTY);
 removeAllHandlers(Texture.EMPTY.baseTexture);
 /**
- * A white texture of 16x16 size, used for graphics and other things
- * Can not be destroyed.
+ * 16x16大小的白色纹理，用于图形和其他用途
+ * 无法销毁。
  *
  * @static
  * @constant
@@ -13784,7 +13785,7 @@ removeAllHandlers(Texture.WHITE.baseTexture);
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Tue Feb 11 2020 02:47:41 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Mon Apr 06 2020 03:40:26 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

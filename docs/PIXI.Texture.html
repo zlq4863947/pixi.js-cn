@@ -13535,8 +13535,8 @@ var sprite1 = new PIXI.Sprite(texture);
 <dd>
     
     <div class="description">
-        <p>An empty texture, used often to not have to create multiple empty textures.
-Can not be destroyed.</p>
+        <p>空纹理，通常不必创建多个空纹理。
+无法销毁。</p>
     </div>
     
     
@@ -13587,8 +13587,8 @@ Can not be destroyed.</p>
 <dd>
     
     <div class="description">
-        <p>A white texture of 16x16 size, used for graphics and other things
-Can not be destroyed.</p>
+        <p>16x16大小的白色纹理，用于图形和其他用途
+无法销毁。</p>
     </div>
     
     
@@ -13691,8 +13691,8 @@ Can not be destroyed.</p>
 <dd>
     
     <div class="description">
-        <p>Update ID is observed by sprites and TextureMatrix instances.
-Call updateUvs() to increment it.</p>
+        <p>精灵和TextureMatrix实例可以观察到更新ID。
+调用updateUvs()将其递增。</p>
     </div>
     
     
@@ -13845,8 +13845,8 @@ Call updateUvs() to increment it.</p>
 <dd>
     
     <div class="description">
-        <p>Anchor point that is used as default if sprite is created with this texture.
-Changing the <code>defaultAnchor</code> at a later point of time will not update Sprite's anchor point.</p>
+        <p>使用此纹理创建精灵时，默认的描点。
+在创建后更改<code>defaultAnchor</code>不会更新精灵的描点。</p>
     </div>
     
     
@@ -13900,8 +13900,8 @@ Changing the <code>defaultAnchor</code> at a later point of time will not update
 <dd>
     
     <div class="description">
-        <p>The frame specifies the region of the base texture that this texture uses.
-Please call <code>updateUvs()</code> after you change coordinates of <code>frame</code> manually.</p>
+        <p>帧指定此纹理使用的基础纹理的区域。
+手动更改<code>frame</code>的坐标后，请调用<code>updateUvs()</code>。</p>
     </div>
     
     
@@ -13952,7 +13952,7 @@ Please call <code>updateUvs()</code> after you change coordinates of <code>frame
 <dd>
     
     <div class="description">
-        <p>The height of the Texture in pixels.</p>
+        <p>纹理的高度（像素）。</p>
     </div>
     
     
@@ -14062,7 +14062,7 @@ Please call <code>updateUvs()</code> after you change coordinates of <code>frame
 <dd>
     
     <div class="description">
-        <p>This is the area of original texture, before it was put in atlas</p>
+        <p>原始纹理的区域，在它被放入图集之前</p>
     </div>
     
     
@@ -14164,7 +14164,7 @@ Please call <code>updateUvs()</code> after you change coordinates of <code>frame
 <dd>
     
     <div class="description">
-        <p>Returns resolution of baseTexture</p>
+        <p>返回baseTexture的分辨率</p>
     </div>
     
     
@@ -14215,10 +14215,10 @@ Please call <code>updateUvs()</code> after you change coordinates of <code>frame
 <dd>
     
     <div class="description">
-        <p>Indicates whether the texture is rotated inside the atlas
+        <p>指示纹理是否在图集内旋转
 set to 2 to compensate for texture packer rotation
 set to 6 to compensate for spine packer rotation
-can be used to rotate or mirror sprites
+可用于旋转或镜像精灵
 See <a href="PIXI.groupD8.html">PIXI.groupD8</a> for explanation</p>
     </div>
     
@@ -14270,9 +14270,9 @@ See <a href="PIXI.groupD8.html">PIXI.groupD8</a> for explanation</p>
 <dd>
     
     <div class="description">
-        <p>The ids under which this Texture has been added to the texture cache. This is
-automatically set as long as Texture.addToCache is used, but may not be set if a
-Texture is added directly to the TextureCache array.</p>
+        <p>将纹理添加到纹理缓存的ID数组。
+只要使用了Texture.addToCache，就会自动设置该选项，
+但如果直接将纹理添加到TextureCache数组，则可能不会设置该选项。</p>
     </div>
     
     
@@ -14374,8 +14374,8 @@ Texture is added directly to the TextureCache array.</p>
 <dd>
     
     <div class="description">
-        <p>Default TextureMatrix instance for this texture
-By default that object is not created because its heavy</p>
+        <p>纹理默认的TextureMatrix实例
+默认情况下，不会创建该对象，因为它很重</p>
     </div>
     
     
@@ -14477,7 +14477,7 @@ By default that object is not created because its heavy</p>
 <dd>
     
     <div class="description">
-        <p>The width of the Texture in pixels.</p>
+        <p>纹理的宽度（以像素为单位）。</p>
     </div>
     
     
@@ -14532,7 +14532,7 @@ By default that object is not created because its heavy</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_Texture.js.html#line393">Texture.js:393</a>
+            <a href="packages_core_src_textures_Texture.js.html#line394">Texture.js:394</a>
         </div>
         
     </div>
@@ -14543,7 +14543,7 @@ By default that object is not created because its heavy</p>
     
     
     <div class="description">
-        <p>Adds a Texture to the global TextureCache. This cache is shared across the whole PIXI object.</p>
+        <p>将纹理添加到全局TextureCache。该缓存在整个PIXI对象之间共享。</p>
     </div>
     
 
@@ -14590,7 +14590,7 @@ By default that object is not created because its heavy</p>
             
             <td class="description last">
                 
-                <p>The Texture to add to the cache.</p></td>
+                <p>要添加到缓存的纹理。</p></td>
         </tr>
 	
 	
@@ -14613,7 +14613,7 @@ By default that object is not created because its heavy</p>
             
             <td class="description last">
                 
-                <p>The id that the Texture will be stored against.</p></td>
+                <p>将根据其存储纹理的id。</p></td>
         </tr>
 	
 	
@@ -14676,7 +14676,7 @@ By default that object is not created because its heavy</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_Texture.js.html#line295">Texture.js:295</a>
+            <a href="packages_core_src_textures_Texture.js.html#line296">Texture.js:296</a>
         </div>
         
     </div>
@@ -14687,8 +14687,8 @@ By default that object is not created because its heavy</p>
     
     
     <div class="description">
-        <p>Helper function that creates a new Texture based on the source you provide.
-The source can be - frame id, image url, video url, canvas element, video element, base texture</p>
+        <p>可以根据您提供的源创建一个新的精灵的辅助函数。
+源可以是-帧id、图像url、视频url、canvas元素、video元素、base texture</p>
     </div>
     
 
@@ -14752,7 +14752,7 @@ The source can be - frame id, image url, video url, canvas element, video elemen
                         
                     
                 
-                <p>Source to create texture from</p></td>
+                <p>从中创建纹理的来源</p></td>
         </tr>
 	
 	
@@ -14782,7 +14782,7 @@ The source can be - frame id, image url, video url, canvas element, video elemen
                         
                     
                 
-                <p>See <a href="PIXI.BaseTexture.html">PIXI.BaseTexture</a>'s constructor for options.</p></td>
+                <p>请参见 <a href="PIXI.BaseTexture.html">PIXI.BaseTexture</a> 的构造函数。</p></td>
         </tr>
 	
 	
@@ -14875,7 +14875,7 @@ The source can be - frame id, image url, video url, canvas element, video elemen
                         
                     
             </td>
-            <td class="description last">The newly created texture</td>
+            <td class="description last">新创建的精灵</td>
         </tr>
     
     </tbody>
@@ -14904,7 +14904,7 @@ The source can be - frame id, image url, video url, canvas element, video elemen
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_Texture.js.html#line344">Texture.js:344</a>
+            <a href="packages_core_src_textures_Texture.js.html#line345">Texture.js:345</a>
         </div>
         
     </div>
@@ -15058,7 +15058,7 @@ is provided, a new Float32Array is created.</p></td>
                         
                     
                 
-                <p>See <a href="PIXI.BaseTexture.html">PIXI.BaseTexture</a>'s constructor for options.</p></td>
+                <p>请参见 <a href="PIXI.BaseTexture.html">PIXI.BaseTexture</a> 的构造函数。</p></td>
         </tr>
 	
 	
@@ -15489,7 +15489,7 @@ is provided, a new Float32Array is created.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_Texture.js.html#line358">Texture.js:358</a>
+            <a href="packages_core_src_textures_Texture.js.html#line359">Texture.js:359</a>
         </div>
         
     </div>
@@ -15932,7 +15932,7 @@ specified, only <code>imageUrl</code> will be used as the cache ID.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_Texture.js.html#line416">Texture.js:416</a>
+            <a href="packages_core_src_textures_Texture.js.html#line417">Texture.js:417</a>
         </div>
         
     </div>
@@ -15943,7 +15943,7 @@ specified, only <code>imageUrl</code> will be used as the cache ID.</p></td>
     
     
     <div class="description">
-        <p>Remove a Texture from the global TextureCache.</p>
+        <p>从全局纹理缓存中移除纹理。</p>
     </div>
     
 
@@ -15993,7 +15993,7 @@ specified, only <code>imageUrl</code> will be used as the cache ID.</p></td>
             
             <td class="description last">
                 
-                <p>id of a Texture to be removed, or a Texture instance itself</p></td>
+                <p>要移除的纹理或纹理实例本身的id</p></td>
         </tr>
 	
 	
@@ -16059,7 +16059,7 @@ specified, only <code>imageUrl</code> will be used as the cache ID.</p></td>
                         
                     
             </td>
-            <td class="description last">The Texture that was removed</td>
+            <td class="description last">被移除的纹理</td>
         </tr>
     
     </tbody>
@@ -16088,7 +16088,7 @@ specified, only <code>imageUrl</code> will be used as the cache ID.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_Texture.js.html#line267">Texture.js:267</a>
+            <a href="packages_core_src_textures_Texture.js.html#line268">Texture.js:268</a>
         </div>
         
     </div>
@@ -16099,7 +16099,7 @@ specified, only <code>imageUrl</code> will be used as the cache ID.</p></td>
     
     
     <div class="description">
-        <p>Creates a new texture object that acts the same as this one.</p>
+        <p>克隆一个新的纹理对象。</p>
     </div>
     
 
@@ -16164,7 +16164,7 @@ specified, only <code>imageUrl</code> will be used as the cache ID.</p></td>
                         
                     
             </td>
-            <td class="description last">The new texture</td>
+            <td class="description last">新的纹理对象</td>
         </tr>
     
     </tbody>
@@ -16193,7 +16193,7 @@ specified, only <code>imageUrl</code> will be used as the cache ID.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_Texture.js.html#line235">Texture.js:235</a>
+            <a href="packages_core_src_textures_Texture.js.html#line236">Texture.js:236</a>
         </div>
         
     </div>
@@ -16204,7 +16204,7 @@ specified, only <code>imageUrl</code> will be used as the cache ID.</p></td>
     
     
     <div class="description">
-        <p>Destroys this texture</p>
+        <p>销毁纹理</p>
     </div>
     
 
@@ -16266,7 +16266,7 @@ specified, only <code>imageUrl</code> will be used as the cache ID.</p></td>
                         
                     
                 
-                <p>Whether to destroy the base texture as well</p></td>
+                <p>是否一起销毁基础纹理</p></td>
         </tr>
 	
 	
@@ -16329,7 +16329,7 @@ specified, only <code>imageUrl</code> will be used as the cache ID.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_Texture.js.html#line209">Texture.js:209</a>
+            <a href="packages_core_src_textures_Texture.js.html#line210">Texture.js:210</a>
         </div>
         
     </div>
@@ -16340,7 +16340,7 @@ specified, only <code>imageUrl</code> will be used as the cache ID.</p></td>
     
     
     <div class="description">
-        <p>Called when the base texture is updated</p>
+        <p>在更新基础纹理时调用</p>
     </div>
     
 
@@ -16387,7 +16387,7 @@ specified, only <code>imageUrl</code> will be used as the cache ID.</p></td>
             
             <td class="description last">
                 
-                <p>The base texture.</p></td>
+                <p>基础纹理</p></td>
         </tr>
 	
 	
@@ -16450,7 +16450,7 @@ specified, only <code>imageUrl</code> will be used as the cache ID.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_Texture.js.html#line196">Texture.js:196</a>
+            <a href="packages_core_src_textures_Texture.js.html#line197">Texture.js:197</a>
         </div>
         
     </div>
@@ -16461,9 +16461,10 @@ specified, only <code>imageUrl</code> will be used as the cache ID.</p></td>
     
     
     <div class="description">
-        <p>Updates this texture on the gpu.</p>
-<p>Calls the TextureResource update.</p>
-<p>If you adjusted <code>frame</code> manually, please call <code>updateUvs()</code> instead.</p>
+        <p>在gpu上更新此纹理。</p>
+<p>调用TextureResource更新。</p>
+<p>If you adjusted <code>frame</code> manually, please call <code>updateUvs()</code> instead.
+如果手动调整 <code>frame</code> ，请改为调用<code>updateUvs()</code>。</p>
     </div>
     
 
@@ -16528,7 +16529,7 @@ specified, only <code>imageUrl</code> will be used as the cache ID.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_Texture.js.html#line275">Texture.js:275</a>
+            <a href="packages_core_src_textures_Texture.js.html#line276">Texture.js:276</a>
         </div>
         
     </div>
@@ -16539,8 +16540,8 @@ specified, only <code>imageUrl</code> will be used as the cache ID.</p></td>
     
     
     <div class="description">
-        <p>Updates the internal WebGL UV cache. Use it after you change <code>frame</code> or <code>trim</code> of the texture.
-Call it after changing the frame</p>
+        <p>更新内部WebGL UV缓存。更改纹理的 <code>frame</code> 或 <code>trim</code> 后使用。
+改变frame调用</p>
     </div>
     
 
@@ -16607,7 +16608,7 @@ Call it after changing the frame</p>
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Tue Feb 11 2020 02:47:51 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Mon Apr 06 2020 03:40:41 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

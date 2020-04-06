@@ -13192,12 +13192,12 @@
         <h2><span class="ancestors"><a href="PIXI.html">PIXI</a>~</span>RenderTexture
         </h2>
         
-            <div class="class-description"><p>A RenderTexture is a special texture that allows any PixiJS display object to be rendered to it.</p>
-<p><strong>Hint</strong>: All DisplayObjects (i.e. Sprites) that render to a RenderTexture should be preloaded
-otherwise black rectangles will be drawn instead.</p>
-<p><strong>Hint-2</strong>: The actual memory allocation will happen on first render.
-You shouldn't create renderTextures each frame just to delete them after, try to reuse them.</p>
-<p>A RenderTexture takes a snapshot of any Display Object given to its render method. For example:</p>
+            <div class="class-description"><p>RenderTexture是一种特殊的纹理，它允许将任何PixiJS显示对象渲染给它。</p>
+<p><strong>Hint</strong>: 所有渲染到RenderTexture的显示对象（即精灵）都应预加载
+否则将绘制黑色矩形。</p>
+<p><strong>Hint-2</strong>: 实际内存分配将在第一次渲染时发生。
+您不应该仅在删除每个帧之后创建renderTextures，而是尝试重用它们。</p>
+<p>RenderTexture获取指定给其呈现方法的任何显示对象的快照。例如：</p>
 <pre class="prettyprint source lang-js"><code>let renderer = PIXI.autoDetectRenderer();
 let renderTexture = PIXI.RenderTexture.create(800, 600);
 let sprite = PIXI.Sprite.from(&quot;spinObj_01.png&quot;);
@@ -13209,14 +13209,14 @@ sprite.anchor.y = 0.5;
 
 renderer.render(sprite, renderTexture);
 </code></pre>
-<p>The Sprite in this case will be rendered using its local transform. To render this sprite at 0,0
-you can clear the transform</p>
+<p>本例中的精灵将使用其局部变换进行渲染。在0,0渲染此精灵
+你可以清除转换</p>
 <pre class="prettyprint source lang-js"><code>
 sprite.setTransform()
 
 let renderTexture = new PIXI.RenderTexture.create(100, 100);
 
-renderer.render(sprite, renderTexture);  // Renders to center of RenderTexture
+renderer.render(sprite, renderTexture);  // 渲染到RenderTexture的中心
 </code></pre></div>
         
     </div>
@@ -13304,7 +13304,7 @@ renderer.render(sprite, renderTexture);  // Renders to center of RenderTexture
                         
                     
                 
-                <p>The base texture object that this texture uses</p></td>
+                <p>此纹理使用的基础纹理对象</p></td>
         </tr>
 	
 	
@@ -13484,8 +13484,8 @@ renderer.render(sprite, renderTexture);  // Renders to center of RenderTexture
 <dd>
     
     <div class="description">
-        <p>Update ID is observed by sprites and TextureMatrix instances.
-Call updateUvs() to increment it.</p>
+        <p>精灵和TextureMatrix实例可以观察到更新ID。
+调用updateUvs()将其递增。</p>
     </div>
     
     
@@ -13650,8 +13650,8 @@ Call updateUvs() to increment it.</p>
 <dd>
     
     <div class="description">
-        <p>Anchor point that is used as default if sprite is created with this texture.
-Changing the <code>defaultAnchor</code> at a later point of time will not update Sprite's anchor point.</p>
+        <p>使用此纹理创建精灵时，默认的描点。
+在创建后更改<code>defaultAnchor</code>不会更新精灵的描点。</p>
     </div>
     
     
@@ -13705,8 +13705,8 @@ Changing the <code>defaultAnchor</code> at a later point of time will not update
 <dd>
     
     <div class="description">
-        <p>Stores <code>sourceFrame</code> when this texture is inside current filter stack.
-You can read it inside filters.</p>
+        <p>Stores 当此纹理位于当前滤镜堆栈中时存储<code>sourceFrame</code>。
+你可以在滤镜里面读取它。</p>
     </div>
     
     
@@ -13757,7 +13757,7 @@ You can read it inside filters.</p>
 <dd>
     
     <div class="description">
-        <p>The key for pooled texture of FilterSystem</p>
+        <p>FilterSystem混合纹理的key</p>
     </div>
     
     
@@ -13812,8 +13812,8 @@ You can read it inside filters.</p>
 <dd>
     
     <div class="description">
-        <p>The frame specifies the region of the base texture that this texture uses.
-Please call <code>updateUvs()</code> after you change coordinates of <code>frame</code> manually.</p>
+        <p>帧指定此纹理使用的基础纹理的区域。
+手动更改<code>frame</code>的坐标后，请调用<code>updateUvs()</code>。</p>
     </div>
     
     
@@ -13868,7 +13868,7 @@ Please call <code>updateUvs()</code> after you change coordinates of <code>frame
 <dd>
     
     <div class="description">
-        <p>The height of the Texture in pixels.</p>
+        <p>纹理的高度（像素）。</p>
     </div>
     
     
@@ -13986,7 +13986,7 @@ Please call <code>updateUvs()</code> after you change coordinates of <code>frame
 <dd>
     
     <div class="description">
-        <p>This is the area of original texture, before it was put in atlas</p>
+        <p>原始纹理的区域，在它被放入图集之前</p>
     </div>
     
     
@@ -14096,7 +14096,7 @@ Please call <code>updateUvs()</code> after you change coordinates of <code>frame
 <dd>
     
     <div class="description">
-        <p>Returns resolution of baseTexture</p>
+        <p>返回baseTexture的分辨率</p>
     </div>
     
     
@@ -14151,10 +14151,10 @@ Please call <code>updateUvs()</code> after you change coordinates of <code>frame
 <dd>
     
     <div class="description">
-        <p>Indicates whether the texture is rotated inside the atlas
+        <p>指示纹理是否在图集内旋转
 set to 2 to compensate for texture packer rotation
 set to 6 to compensate for spine packer rotation
-can be used to rotate or mirror sprites
+可用于旋转或镜像精灵
 See <a href="PIXI.groupD8.html">PIXI.groupD8</a> for explanation</p>
     </div>
     
@@ -14314,9 +14314,9 @@ See <a href="PIXI.groupD8.html">PIXI.groupD8</a> for explanation</p>
 <dd>
     
     <div class="description">
-        <p>The ids under which this Texture has been added to the texture cache. This is
-automatically set as long as Texture.addToCache is used, but may not be set if a
-Texture is added directly to the TextureCache array.</p>
+        <p>将纹理添加到纹理缓存的ID数组。
+只要使用了Texture.addToCache，就会自动设置该选项，
+但如果直接将纹理添加到TextureCache数组，则可能不会设置该选项。</p>
     </div>
     
     
@@ -14426,8 +14426,8 @@ Texture is added directly to the TextureCache array.</p>
 <dd>
     
     <div class="description">
-        <p>Default TextureMatrix instance for this texture
-By default that object is not created because its heavy</p>
+        <p>纹理默认的TextureMatrix实例
+默认情况下，不会创建该对象，因为它很重</p>
     </div>
     
     
@@ -14480,7 +14480,7 @@ By default that object is not created because its heavy</p>
 <dd>
     
     <div class="description">
-        <p>This will let the renderer know if the texture is valid. If it's not then it cannot be rendered.</p>
+        <p>这将使渲染器知道纹理是否有效。 如果不是，则无法渲染。</p>
     </div>
     
     
@@ -14535,7 +14535,7 @@ By default that object is not created because its heavy</p>
 <dd>
     
     <div class="description">
-        <p>The width of the Texture in pixels.</p>
+        <p>纹理的宽度（以像素为单位）。</p>
     </div>
     
     
@@ -14601,7 +14601,7 @@ By default that object is not created because its heavy</p>
     
     
     <div class="description">
-        <p>A short hand way of creating a render texture.</p>
+        <p>创建渲染纹理的简单方法。</p>
     </div>
     
 
@@ -14709,7 +14709,7 @@ By default that object is not created because its heavy</p>
                         
                     
                 
-                <p>The width of the render texture</p></td>
+                <p>渲染纹理的宽度</p></td>
         </tr>
 	
 	
@@ -14745,7 +14745,7 @@ By default that object is not created because its heavy</p>
                         
                     
                 
-                <p>The height of the render texture</p></td>
+                <p>渲染纹理的高度</p></td>
         </tr>
 	
 	
@@ -14781,7 +14781,7 @@ By default that object is not created because its heavy</p>
                         
                     
                 
-                <p>See <a href="PIXI.html#.SCALE_MODES">PIXI.SCALE_MODES</a> for possible values</p></td>
+                <p>有关可选值，请参见<a href="PIXI.html#.SCALE_MODES">PIXI.SCALE_MODES</a></p></td>
         </tr>
 	
 	
@@ -14817,7 +14817,7 @@ By default that object is not created because its heavy</p>
                         
                     
                 
-                <p>The resolution / device pixel ratio of the texture being generated</p></td>
+                <p>生成的纹理的分辨率/设备像素比</p></td>
         </tr>
 	
 	
@@ -14886,7 +14886,7 @@ By default that object is not created because its heavy</p>
                         
                     
             </td>
-            <td class="description last">The new render texture</td>
+            <td class="description last">新的渲染纹理</td>
         </tr>
     
     </tbody>
@@ -14919,7 +14919,7 @@ By default that object is not created because its heavy</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_Texture.js.html#line267">Texture.js:267</a>
+            <a href="packages_core_src_textures_Texture.js.html#line268">Texture.js:268</a>
         </div>
         
     </div>
@@ -14930,7 +14930,7 @@ By default that object is not created because its heavy</p>
     
     
     <div class="description">
-        <p>Creates a new texture object that acts the same as this one.</p>
+        <p>克隆一个新的纹理对象。</p>
     </div>
     
 
@@ -14995,7 +14995,7 @@ By default that object is not created because its heavy</p>
                         
                     
             </td>
-            <td class="description last">The new texture</td>
+            <td class="description last">新的纹理对象</td>
         </tr>
     
     </tbody>
@@ -15028,7 +15028,7 @@ By default that object is not created because its heavy</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_Texture.js.html#line235">Texture.js:235</a>
+            <a href="packages_core_src_textures_Texture.js.html#line236">Texture.js:236</a>
         </div>
         
     </div>
@@ -15039,7 +15039,7 @@ By default that object is not created because its heavy</p>
     
     
     <div class="description">
-        <p>Destroys this texture</p>
+        <p>销毁纹理</p>
     </div>
     
 
@@ -15101,7 +15101,7 @@ By default that object is not created because its heavy</p>
                         
                     
                 
-                <p>Whether to destroy the base texture as well</p></td>
+                <p>是否一起销毁基础纹理</p></td>
         </tr>
 	
 	
@@ -15168,7 +15168,7 @@ By default that object is not created because its heavy</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_Texture.js.html#line209">Texture.js:209</a>
+            <a href="packages_core_src_textures_Texture.js.html#line210">Texture.js:210</a>
         </div>
         
     </div>
@@ -15179,7 +15179,7 @@ By default that object is not created because its heavy</p>
     
     
     <div class="description">
-        <p>Called when the base texture is updated</p>
+        <p>在更新基础纹理时调用</p>
     </div>
     
 
@@ -15226,7 +15226,7 @@ By default that object is not created because its heavy</p>
             
             <td class="description last">
                 
-                <p>The base texture.</p></td>
+                <p>基础纹理</p></td>
         </tr>
 	
 	
@@ -15300,7 +15300,7 @@ By default that object is not created because its heavy</p>
     
     
     <div class="description">
-        <p>Resizes the RenderTexture.</p>
+        <p>调整RenderTexture的大小。</p>
     </div>
     
 
@@ -15358,7 +15358,7 @@ By default that object is not created because its heavy</p>
                         
                     
                 
-                <p>The width to resize to.</p></td>
+                <p>要调整大小的宽度。</p></td>
         </tr>
 	
 	
@@ -15390,7 +15390,7 @@ By default that object is not created because its heavy</p>
                         
                     
                 
-                <p>The height to resize to.</p></td>
+                <p>要调整大小的高度。</p></td>
         </tr>
 	
 	
@@ -15426,7 +15426,7 @@ By default that object is not created because its heavy</p>
                         
                     
                 
-                <p>Should the baseTexture.width and height values be resized as well?</p></td>
+                <p>是否需要baseTexture.width和height值也调整大小？</p></td>
         </tr>
 	
 	
@@ -15500,7 +15500,7 @@ By default that object is not created because its heavy</p>
     
     
     <div class="description">
-        <p>Changes the resolution of baseTexture, but does not change framebuffer size.</p>
+        <p>更改baseTexture的分辨率，但不更改帧缓冲区大小。</p>
     </div>
     
 
@@ -15547,7 +15547,7 @@ By default that object is not created because its heavy</p>
             
             <td class="description last">
                 
-                <p>The new resolution to apply to RenderTexture</p></td>
+                <p>应用于RenderTexture的新分辨率</p></td>
         </tr>
 	
 	
@@ -15614,7 +15614,7 @@ By default that object is not created because its heavy</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_Texture.js.html#line196">Texture.js:196</a>
+            <a href="packages_core_src_textures_Texture.js.html#line197">Texture.js:197</a>
         </div>
         
     </div>
@@ -15625,9 +15625,10 @@ By default that object is not created because its heavy</p>
     
     
     <div class="description">
-        <p>Updates this texture on the gpu.</p>
-<p>Calls the TextureResource update.</p>
-<p>If you adjusted <code>frame</code> manually, please call <code>updateUvs()</code> instead.</p>
+        <p>在gpu上更新此纹理。</p>
+<p>调用TextureResource更新。</p>
+<p>If you adjusted <code>frame</code> manually, please call <code>updateUvs()</code> instead.
+如果手动调整 <code>frame</code> ，请改为调用<code>updateUvs()</code>。</p>
     </div>
     
 
@@ -15696,7 +15697,7 @@ By default that object is not created because its heavy</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_Texture.js.html#line275">Texture.js:275</a>
+            <a href="packages_core_src_textures_Texture.js.html#line276">Texture.js:276</a>
         </div>
         
     </div>
@@ -15707,8 +15708,8 @@ By default that object is not created because its heavy</p>
     
     
     <div class="description">
-        <p>Updates the internal WebGL UV cache. Use it after you change <code>frame</code> or <code>trim</code> of the texture.
-Call it after changing the frame</p>
+        <p>更新内部WebGL UV缓存。更改纹理的 <code>frame</code> 或 <code>trim</code> 后使用。
+改变frame调用</p>
     </div>
     
 
@@ -15775,7 +15776,7 @@ Call it after changing the frame</p>
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Tue Feb 11 2020 02:47:49 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Mon Apr 06 2020 03:40:38 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

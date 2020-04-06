@@ -191,9 +191,9 @@ export class Mesh extends Container
     }
 
     /**
-     * If true PixiJS will Math.floor() x/y values when rendering, stopping pixel interpolation.
-     * Advantages can include sharper image quality (like text) and faster rendering on canvas.
-     * The main disadvantage is movement of objects may appear less smooth.
+     * 如果为true，则在渲染时，PixiJS将使用Math.floor() x/y值，从而停止像素插值。
+     * 优点包括更清晰的图像质量（如文本）和在canvas上更快的渲染。
+     * 主要缺点是物体的运动可能看起来不太平滑。
      * To set the global default, change {@link PIXI.settings.ROUND_PIXELS}
      *
      * @member {boolean}

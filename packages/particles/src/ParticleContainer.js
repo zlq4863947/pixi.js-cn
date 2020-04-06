@@ -3,16 +3,15 @@ import { hex2rgb } from '@pixi/utils';
 import { Container } from '@pixi/display';
 
 /**
- * The ParticleContainer class is a really fast version of the Container built solely for speed,
- * so use when you need a lot of sprites or particles.
+ * ParticleContainer类是专为快速构建的容器的一个非常快速的版本，因此在需要大量精灵或粒子时使用。
  *
- * The tradeoff of the ParticleContainer is that most advanced functionality will not work.
- * ParticleContainer implements the basic object transform (position, scale, rotation)
- * and some advanced functionality like tint (as of v4.5.6).
+ * ParticleContainer的权衡在于，大多数高级功能将不起作用。
+ * ParticleContainer实现基本的对象变换（位置，比例，旋转）
+ * 以及一些高级功能，例如色调（自v4.5.6起）。
  *
- * Other more advanced functionality like masking, children, filters, etc will not work on sprites in this batch.
+ * 其他更高级的功能（如遮罩，子级，滤镜等）将不适用于该批处理中的sprite。
  *
- * It's extremely easy to use:
+ * 它非常容易使用:
  * ```js
  * let container = new ParticleContainer();
  *
@@ -23,7 +22,7 @@ import { Container } from '@pixi/display';
  * }
  * ```
  *
- * And here you have a hundred sprites that will be rendered at the speed of light.
+ * 在这里，您将有一百个精灵以光速渲染。
  *
  * @class
  * @extends PIXI.Container
@@ -32,26 +31,25 @@ import { Container } from '@pixi/display';
 export class ParticleContainer extends Container
 {
     /**
-     * @param {number} [maxSize=1500] - The maximum number of particles that can be rendered by the container.
-     *  Affects size of allocated buffers.
-     * @param {object} [properties] - The properties of children that should be uploaded to the gpu and applied.
-     * @param {boolean} [properties.vertices=false] - When true, vertices be uploaded and applied.
-     *                  if sprite's ` scale/anchor/trim/frame/orig` is dynamic, please set `true`.
-     * @param {boolean} [properties.position=true] - When true, position be uploaded and applied.
-     * @param {boolean} [properties.rotation=false] - When true, rotation be uploaded and applied.
-     * @param {boolean} [properties.uvs=false] - When true, uvs be uploaded and applied.
-     * @param {boolean} [properties.tint=false] - When true, alpha and tint be uploaded and applied.
-     * @param {number} [batchSize=16384] - Number of particles per batch. If less than maxSize, it uses maxSize instead.
-     * @param {boolean} [autoResize=false] If true, container allocates more batches in case
-     *  there are more than `maxSize` particles.
+     * @param {number} [maxSize=1500] - 容器可以渲染的最大粒子数。
+     *  影响分配的缓冲区的大小。
+     * @param {object} [properties] - 将上载到gpu并应用的子级属性。
+     * @param {boolean} [properties.vertices=false] - 如果为true，则将上载和应用顶点。
+     *                  如果 sprite 的 ` scale/anchor/trim/frame/orig` 是动态的，请设置为 `true`.
+     * @param {boolean} [properties.position=true] - 为true时，位置将被上传并应用。
+     * @param {boolean} [properties.rotation=false] - 如果为true，则上传并应用旋转。
+     * @param {boolean} [properties.uvs=false] - 如果为true，则将上载并应用uvs。
+     * @param {boolean} [properties.tint=false] - 如果为true，则将上载和应用alpha和色调。
+     * @param {number} [batchSize=16384] - 每批次的粒子数。 如果小于maxSize，则改用maxSize。
+     * @param {boolean} [autoResize=false] 如果为true，则容器分配更多批次，以防存在超过 `maxSize` 个粒子的情况。
      */
     constructor(maxSize = 1500, properties, batchSize = 16384, autoResize = false)
     {
         super();
 
-        // Making sure the batch size is valid
-        // 65535 is max vertex index in the index buffer (see ParticleRenderer)
-        // so max number of particles is 65536 / 4 = 16384
+        // 确保批次大小有效
+        // 65535是索引缓冲区中的最大顶点索引（请参阅ParticleRenderer）
+        // 所以最大粒子数是 65536 / 4 = 16384
         const maxBatchSize = 16384;
 
         if (batchSize > maxBatchSize)
@@ -60,7 +58,7 @@ export class ParticleContainer extends Container
         }
 
         /**
-         * Set properties to be dynamic (true) / static (false)
+         * 将属性设置为动态(true)/静态(false)
          *
          * @member {boolean[]}
          * @private
@@ -86,14 +84,14 @@ export class ParticleContainer extends Container
         this._buffers = null;
 
         /**
-         * for every batch stores _updateID corresponding to the last change in that batch
+         * 对于每个批次，存储与该批次中的最后更改相对应的_updateID
          * @member {number[]}
          * @private
          */
         this._bufferUpdateIDs = [];
 
         /**
-         * when child inserted, removed or changes position this number goes up
+         * 当子节点插入，移除或更改位置时，此数字会上升
          * @member {number[]}
          * @private
          */
@@ -106,8 +104,7 @@ export class ParticleContainer extends Container
         this.interactiveChildren = false;
 
         /**
-         * The blend mode to be applied to the sprite. Apply a value of `PIXI.BLEND_MODES.NORMAL`
-         * to reset the blend mode.
+         * 要应用于精灵的混合模式。应用值`PIXI.BLEND_MODES.NORMAL`, 以重置混合模式。
          *
          * @member {number}
          * @default PIXI.BLEND_MODES.NORMAL
@@ -117,16 +114,17 @@ export class ParticleContainer extends Container
 
         /**
          * If true, container allocates more batches in case there are more than `maxSize` particles.
+         * 如果为true，则容器会分配更多的批处理，以防出现超出`maxSize`的粒子。
          * @member {boolean}
          * @default false
          */
         this.autoResize = autoResize;
 
         /**
-         * If true PixiJS will Math.floor() x/y values when rendering, stopping pixel interpolation.
-         * Advantages can include sharper image quality (like text) and faster rendering on canvas.
-         * The main disadvantage is movement of objects may appear less smooth.
-         * Default to true here as performance is usually the priority for particles.
+         * 如果为true，则在渲染时，PixiJS将使用Math.floor() x/y值，从而停止像素插值。
+         * 优点包括更清晰的图像质量（如文本）和在canvas上更快的渲染。
+         * 主要缺点是物体的运动可能看起来不太平滑。
+         * 这里默认为true，因为性能通常是粒子的优先级。
          *
          * @member {boolean}
          * @default true
@@ -134,7 +132,7 @@ export class ParticleContainer extends Container
         this.roundPixels = true;
 
         /**
-         * The texture used to render the children.
+         * 用于渲染子对象的纹理。
          *
          * @readonly
          * @member {PIXI.BaseTexture}
@@ -144,8 +142,8 @@ export class ParticleContainer extends Container
         this.setProperties(properties);
 
         /**
-         * The tint applied to the container.
-         * This is a hex value. A value of 0xFFFFFF will remove any tint effect.
+         * 应用于容器的色调。
+         * 16进制值。 0xFFFFFF将消除调色效果
          *
          * @private
          * @member {number}
@@ -157,9 +155,9 @@ export class ParticleContainer extends Container
     }
 
     /**
-     * Sets the private properties array to dynamic / static based on the passed properties object
+     * 根据传递的属性对象将私有属性数组设置为动态/静态
      *
-     * @param {object} properties - The properties to be uploaded
+     * @param {object} properties - 要上载的属性
      */
     setProperties(properties)
     {
@@ -176,7 +174,7 @@ export class ParticleContainer extends Container
     }
 
     /**
-     * Updates the object transform for rendering
+     * 更新对象转换以进行渲染
      *
      * @private
      */
@@ -188,9 +186,9 @@ export class ParticleContainer extends Container
     }
 
     /**
-     * The tint applied to the container. This is a hex value.
+     * 应用于容器的色调。16进制值。
      * A value of 0xFFFFFF will remove any tint effect.
-     ** IMPORTANT: This is a WebGL only feature and will be ignored by the canvas renderer.
+     ** 重要提示：这是一个WebGL独有的功能，将被canvas渲染器忽略。
      * @member {number}
      * @default 0xFFFFFF
      */
@@ -206,7 +204,7 @@ export class ParticleContainer extends Container
     }
 
     /**
-     * Renders the container using the WebGL renderer
+     * 使用WebGL渲染器渲染容器
      *
      * @private
      * @param {PIXI.Renderer} renderer - The webgl renderer
@@ -232,10 +230,10 @@ export class ParticleContainer extends Container
     }
 
     /**
-     * Set the flag that static data should be updated to true
+     * 设置将静态数据更新为true的标志
      *
      * @private
-     * @param {number} smallestChildIndex - The smallest child index
+     * @param {number} smallestChildIndex - 最小子索引
      */
     onChildrenChange(smallestChildIndex)
     {
@@ -262,7 +260,7 @@ export class ParticleContainer extends Container
     }
 
     /**
-     * Destroys the container
+     * 销毁容器
      *
      * @param {object|boolean} [options] - Options parameter. A boolean will act as if all options
      *  have been set to that value

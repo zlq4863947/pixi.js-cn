@@ -13229,45 +13229,45 @@
     
     
     <div class="description">
-        <p>The new loader, extends Resource Loader by Chad Engler: https://github.com/englercj/resource-loader</p>
-<pre class="prettyprint source lang-js"><code>const loader = PIXI.Loader.shared; // PixiJS exposes a premade instance for you to use.
-//or
-const loader = new PIXI.Loader(); // you can also create your own if you want
+        <p>全新的加载器，扩展了Chad Engler的Resource Loader: https://github.com/englercj/resource-loader</p>
+<pre class="prettyprint source lang-js"><code>const loader = PIXI.Loader.shared; // PixiJS公开了一个预制实例供您使用。
+//或
+const loader = new PIXI.Loader(); // 您也可以根据需要创建自己的
 
 const sprites = {};
 
 // Chainable `add` to enqueue a resource
+// 可链接的`add`使资源进入队列
 loader.add('bunny', 'data/bunny.png')
       .add('spaceship', 'assets/spritesheet.json');
 loader.add('scoreFont', 'assets/score.fnt');
 
-// Chainable `pre` to add a middleware that runs for each resource, *before* loading that resource.
-// This is useful to implement custom caching modules (using filesystem, indexeddb, memory, etc).
+// 可链接的 `pre` 添加一个为每种资源运行的中间件，在加载该资源*之前*。
+// 这对于实现自定义缓存模块（使用文件系统，indexeddb，内存等）很有用。
 loader.pre(cachingMiddleware);
 
-// Chainable `use` to add a middleware that runs for each resource, *after* loading that resource.
-// This is useful to implement custom parsing modules (like spritesheet parsers, spine parser, etc).
+// 可链接的 `use` 添加一个为每个资源运行的中间件，在加载该资源*之后*。
+// 这对于实现自定义解析模块（如精灵表解析器，骨骼解析器等）很有用。
 loader.use(parsingMiddleware);
 
-// The `load` method loads the queue of resources, and calls the passed in callback called once all
-// resources have loaded.
+// `load` 方法加载资源队列，并在所有资源加载完毕后调用传入的回调。
 loader.load((loader, resources) => {
-    // resources is an object where the key is the name of the resource loaded and the value is the resource object.
-    // They have a couple default properties:
-    // - `url`: The URL that the resource was loaded from
-    // - `error`: The error that happened when trying to load (if any)
-    // - `data`: The raw data that was loaded
-    // also may contain other properties based on the middleware that runs.
+    // resources是一个对象，其中key是加载的资源的名称，而value是资源对象。
+    // 它们具有几个默认属性:
+    // - `url`: 从中加载资源的URL
+    // - `error`: 尝试加载时发生的错误（如果有）
+    // - `data`: 加载的原始数据
+    // 也可以包含其他基于运行的中间件的属性。
     sprites.bunny = new PIXI.TilingSprite(resources.bunny.texture);
     sprites.spaceship = new PIXI.TilingSprite(resources.spaceship.texture);
     sprites.scoreFont = new PIXI.TilingSprite(resources.scoreFont.texture);
 });
 
-// throughout the process multiple signals can be dispatched.
-loader.onProgress.add(() => {}); // called once per loaded/errored file
-loader.onError.add(() => {}); // called once per errored file
-loader.onLoad.add(() => {}); // called once per loaded file
-loader.onComplete.add(() => {}); // called once when the queued resources all load.
+// 在整个过程中，可以发出多个信号。
+loader.onProgress.add(() => {}); // 每个加载/错误的文件调用一次
+loader.onError.add(() => {}); // 每个错误文件调用一次
+loader.onLoad.add(() => {}); // 每个加载文件调用一次
+loader.onComplete.add(() => {}); // 排队的资源全部加载时调用一次。
 </code></pre>
     </div>
     
@@ -13330,7 +13330,7 @@ loader.onComplete.add(() => {}); // called once when the queued resources all lo
                         
                     
                 
-                <p>The base url for all resources loaded by this loader.</p></td>
+                <p>此加载器加载的所有资源的基础URL。</p></td>
         </tr>
 	
 	
@@ -13366,7 +13366,7 @@ loader.onComplete.add(() => {}); // called once when the queued resources all lo
                         
                     
                 
-                <p>The number of resources to load concurrently.</p></td>
+                <p>要同时加载的资源数量。</p></td>
         </tr>
 	
 	
@@ -13457,7 +13457,7 @@ loader.onComplete.add(() => {}); // called once when the queued resources all lo
 <dd>
     
     <div class="description">
-        <p>A premade instance of the loader that can be used to load resources.</p>
+        <p>加载器的预制实例，可用于加载资源。</p>
     </div>
     
     
@@ -13758,8 +13758,7 @@ loader.onComplete.add(() => {}); // called once when the queued resources all lo
     
     
     <div class="description">
-        <p>Adds a Loader plugin for the global shared loader and all
-new Loader instances created.</p>
+        <p>为全局共享的加载器和创建的所有新的Loader实例添加一个Loader插件。</p>
     </div>
     
 
@@ -13806,7 +13805,7 @@ new Loader instances created.</p>
             
             <td class="description last">
                 
-                <p>The plugin to add</p></td>
+                <p>要添加的插件</p></td>
         </tr>
 	
 	
@@ -13869,7 +13868,7 @@ new Loader instances created.</p>
                         
                     
             </td>
-            <td class="description last">Reference to PIXI.Loader for chaining</td>
+            <td class="description last">PIXI.Loader的引用</td>
         </tr>
     
     </tbody>
@@ -13904,7 +13903,7 @@ new Loader instances created.</p>
     
         
         <div class="tag-source">
-            <a href="packages_loaders_src_Loader.js.html#line170">Loader.js:170</a>
+            <a href="packages_loaders_src_Loader.js.html#line167">Loader.js:167</a>
         </div>
         
     </div>
@@ -14044,7 +14043,7 @@ new Loader instances created.</p>
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Tue Feb 11 2020 02:47:47 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Mon Apr 06 2020 03:40:36 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

@@ -5,7 +5,7 @@ import { Framebuffer } from '../framebuffer/Framebuffer';
  * A BaseRenderTexture is a special texture that allows any PixiJS display object to be rendered to it.
  *
  * __Hint__: All DisplayObjects (i.e. Sprites) that render to a BaseRenderTexture should be preloaded
- * otherwise black rectangles will be drawn instead.
+ * 否则将绘制黑色矩形。
  *
  * A BaseRenderTexture takes a snapshot of any Display Object given to its render method. The position
  * and rotation of the given Display Objects is ignored. For example:
@@ -24,8 +24,8 @@ import { Framebuffer } from '../framebuffer/Framebuffer';
  * renderer.render(sprite, renderTexture);
  * ```
  *
- * The Sprite in this case will be rendered using its local transform. To render this sprite at 0,0
- * you can clear the transform
+ * 本例中的精灵将使用其局部变换进行渲染。在0,0渲染此精灵
+ * 你可以清除转换
  *
  * ```js
  *
@@ -34,7 +34,7 @@ import { Framebuffer } from '../framebuffer/Framebuffer';
  * let baseRenderTexture = new PIXI.BaseRenderTexture({ width: 100, height: 100 });
  * let renderTexture = new PIXI.RenderTexture(baseRenderTexture);
  *
- * renderer.render(sprite, renderTexture);  // Renders to center of RenderTexture
+ * renderer.render(sprite, renderTexture);  // 渲染到RenderTexture的中心
  * ```
  *
  * @class
@@ -47,8 +47,8 @@ export class BaseRenderTexture extends BaseTexture
      * @param {object} [options]
      * @param {number} [options.width=100] - The width of the base render texture.
      * @param {number} [options.height=100] - The height of the base render texture.
-     * @param {PIXI.SCALE_MODES} [options.scaleMode] - See {@link PIXI.SCALE_MODES} for possible values.
-     * @param {number} [options.resolution=1] - The resolution / device pixel ratio of the texture being generated.
+     * @param {PIXI.SCALE_MODES} [options.scaleMode] - 有关可选值，请参见{@link PIXI.SCALE_MODES}.
+     * @param {number} [options.resolution=1] - 生成的纹理的分辨率/设备像素比.
      */
     constructor(options)
     {
@@ -108,8 +108,8 @@ export class BaseRenderTexture extends BaseTexture
     /**
      * Resizes the BaseRenderTexture.
      *
-     * @param {number} width - The width to resize to.
-     * @param {number} height - The height to resize to.
+     * @param {number} width - 要调整大小的宽度。
+     * @param {number} height - 要调整大小的高度。
      */
     resize(width, height)
     {

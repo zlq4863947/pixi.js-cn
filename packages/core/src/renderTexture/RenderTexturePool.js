@@ -18,7 +18,7 @@ export class RenderTexturePool
 {
     /**
      * @param {object} [textureOptions] - options that will be passed to BaseRenderTexture constructor
-     * @param {PIXI.SCALE_MODES} [textureOptions.scaleMode] - See {@link PIXI.SCALE_MODES} for possible values.
+     * @param {PIXI.SCALE_MODES} [textureOptions.scaleMode] - 有关可选值，请参见{@link PIXI.SCALE_MODES}.
      */
     constructor(textureOptions)
     {
@@ -63,7 +63,7 @@ export class RenderTexturePool
      * @param {number} minWidth - The minimum width of the render texture in real pixels.
      * @param {number} minHeight - The minimum height of the render texture in real pixels.
      * @param {number} [resolution=1] - The resolution of the render texture.
-     * @return {PIXI.RenderTexture} The new render texture.
+     * @return {PIXI.RenderTexture} 新的渲染纹理.
      */
     getOptimalTexture(minWidth, minHeight, resolution = 1)
     {

@@ -435,7 +435,7 @@ export class FilterSystem extends System
      * @param {number} minWidth - The minimum width of the render texture in real pixels.
      * @param {number} minHeight - The minimum height of the render texture in real pixels.
      * @param {number} [resolution=1] - The resolution of the render texture.
-     * @return {PIXI.RenderTexture} The new render texture.
+     * @return {PIXI.RenderTexture} 新的渲染纹理.
      */
     getOptimalFilterTexture(minWidth, minHeight, resolution = 1)
     {

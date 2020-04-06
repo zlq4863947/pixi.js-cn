@@ -45,22 +45,22 @@ export interface ISettings {
 }
 
 /**
- * User's customizable globals for overriding the default PIXI settings, such
- * as a renderer's default resolution, framerate, float precision, etc.
+ * 用户自定义的全局变量，用于覆盖默认的PIXI设置，例如
+ * 作为渲染器的默认分辨率、帧率、浮点精度等。
  * @example
- * // Use the native window resolution as the default resolution
- * // will support high-density displays when rendering
+ * // 使用本机窗口分辨率作为默认分辨率
+ * // 渲染时支持高密度显示
  * PIXI.settings.RESOLUTION = window.devicePixelRatio;
  *
- * // Disable interpolation when scaling, will make texture be pixelated
+ * // 缩放时禁用插值，将使纹理像素化
  * PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
  * @namespace PIXI.settings
  */
 export const settings: ISettings = {
 
     /**
-     * If set to true WebGL will attempt make textures mimpaped by default.
-     * Mipmapping will only succeed if the base texture uploaded has power of two dimensions.
+     * 如果设置为true，WebGL将尝试在默认情况下将纹理设为mimpaped。
+     * Mipmapping只有在上传的基础纹理具有二维能力时才会成功。
      *
      * @static
      * @name MIPMAP_TEXTURES
@@ -71,7 +71,7 @@ export const settings: ISettings = {
     MIPMAP_TEXTURES: 1,
 
     /**
-     * Default anisotropic filtering level of textures.
+     * 纹理的默认各向异性过滤级别。
      * Usually from 0 to 16
      *
      * @static
@@ -83,7 +83,7 @@ export const settings: ISettings = {
     ANISOTROPIC_LEVEL: 0,
 
     /**
-     * Default resolution / device pixel ratio of the renderer.
+     * 渲染器的默认分辨率/设备像素比率。
      *
      * @static
      * @name RESOLUTION
@@ -94,7 +94,7 @@ export const settings: ISettings = {
     RESOLUTION: 1,
 
     /**
-     * Default filter resolution.
+     * 默认滤镜分辨率。
      *
      * @static
      * @name FILTER_RESOLUTION
@@ -105,7 +105,7 @@ export const settings: ISettings = {
     FILTER_RESOLUTION: 1,
 
     /**
-     * The maximum textures that this device supports.
+     * 此设备支持的最大纹理。
      *
      * @static
      * @name SPRITE_MAX_TEXTURES
@@ -119,9 +119,9 @@ export const settings: ISettings = {
     // TODO: maybe add PARTICLE.BATCH_SIZE: 15000
 
     /**
-     * The default sprite batch size.
+     * 默认的精灵批处理大小。
      *
-     * The default aims to balance desktop and mobile devices.
+     * 默认的目标是平衡桌面和移动设备。
      *
      * @static
      * @name SPRITE_BATCH_SIZE
@@ -132,7 +132,7 @@ export const settings: ISettings = {
     SPRITE_BATCH_SIZE: 4096,
 
     /**
-     * The default render options if none are supplied to {@link PIXI.Renderer}
+     * 默认渲染选项，如果没有提供{@link PIXI.Renderer}
      * or {@link PIXI.CanvasRenderer}.
      *
      * @static
@@ -167,7 +167,7 @@ export const settings: ISettings = {
     },
 
     /**
-     * Default Garbage Collection mode.
+     * 默认垃圾回收模式。
      *
      * @static
      * @name GC_MODE
@@ -178,7 +178,7 @@ export const settings: ISettings = {
     GC_MODE: 0,
 
     /**
-     * Default Garbage Collection max idle.
+     * 默认垃圾回收最大空闲。
      *
      * @static
      * @name GC_MAX_IDLE
@@ -189,7 +189,7 @@ export const settings: ISettings = {
     GC_MAX_IDLE: 60 * 60,
 
     /**
-     * Default Garbage Collection maximum check count.
+     * 默认垃圾收集最大检查计数。
      *
      * @static
      * @name GC_MAX_CHECK_COUNT
@@ -200,7 +200,7 @@ export const settings: ISettings = {
     GC_MAX_CHECK_COUNT: 60 * 10,
 
     /**
-     * Default wrap modes that are supported by pixi.
+     * pixi支持的默认循环模式。
      *
      * @static
      * @name WRAP_MODE
@@ -211,7 +211,7 @@ export const settings: ISettings = {
     WRAP_MODE: 33071,
 
     /**
-     * Default scale mode for textures.
+     * 纹理的默认缩放模式。
      *
      * @static
      * @name SCALE_MODE
@@ -222,7 +222,7 @@ export const settings: ISettings = {
     SCALE_MODE: 1,
 
     /**
-     * Default specify float precision in vertex shader.
+     * 默认在顶点着色器中指定浮点精度。
      *
      * @static
      * @name PRECISION_VERTEX
@@ -233,8 +233,8 @@ export const settings: ISettings = {
     PRECISION_VERTEX: 'highp',
 
     /**
-     * Default specify float precision in fragment shader.
-     * iOS is best set at highp due to https://github.com/pixijs/pixi.js/issues/3742
+     * 默认在片段着色器中指定浮点精度。
+     * iOS最好设置为highp，原因是 https://github.com/pixijs/pixi.js/issues/3742
      *
      * @static
      * @name PRECISION_FRAGMENT
@@ -245,7 +245,7 @@ export const settings: ISettings = {
     PRECISION_FRAGMENT: isMobile.apple.device ? 'highp' : 'mediump',
 
     /**
-     * Can we upload the same buffer in a single frame?
+     * 我们能在一个帧中上传相同的缓冲区吗？
      *
      * @static
      * @name CAN_UPLOAD_SAME_BUFFER
@@ -255,7 +255,7 @@ export const settings: ISettings = {
     CAN_UPLOAD_SAME_BUFFER: canUploadSameBuffer(),
 
     /**
-     * Enables bitmap creation before image load. This feature is experimental.
+     * 在图像加载之前启用位图创建。此功能是实验性的。
      *
      * @static
      * @name CREATE_IMAGE_BITMAP
@@ -266,9 +266,9 @@ export const settings: ISettings = {
     CREATE_IMAGE_BITMAP: false,
 
     /**
-     * If true PixiJS will Math.floor() x/y values when rendering, stopping pixel interpolation.
-     * Advantages can include sharper image quality (like text) and faster rendering on canvas.
-     * The main disadvantage is movement of objects may appear less smooth.
+     * 如果为true，则在渲染时，PixiJS将使用Math.floor() x/y值，从而停止像素插值。
+     * 优点包括更清晰的图像质量（如文本）和在canvas上更快的渲染。
+     * 主要缺点是物体的运动可能看起来不太平滑。
      *
      * @static
      * @constant
