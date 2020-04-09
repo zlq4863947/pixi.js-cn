@@ -5,10 +5,10 @@ import { TickerListener } from './TickerListener';
 export type TickerCallback<T> = (this: T, dt: number) => any;
 
 /**
- * A Ticker class that runs an update loop that other objects listen to.
+ * 一个运行其他对象侦听的更新循环的Ticker类。
  *
- * This class is composed around listeners meant for execution on the next requested animation frame.
- * Animation frames are requested only when necessary, e.g. When the ticker is started and the emitter has listeners.
+ * 此类围绕用于在下一个请求的动画帧上执行的侦听器组成。
+ * 仅在必要时才请求动画帧，例如 当ticker器启动并且发射器具有侦听器时。
  *
  * @class
  * @memberof PIXI
@@ -37,30 +37,30 @@ export class Ticker
     constructor()
     {
         /**
-         * The first listener. All new listeners added are chained on this.
+         * 第一个剑监听器。 添加的所有新侦听器都链接在此上。
          * @private
          * @type {TickerListener}
          */
         this._head = new TickerListener(null, null, Infinity);
 
         /**
-         * Internal current frame request ID
+         * 内部当前帧请求ID
          * @type {?number}
          * @private
          */
         this._requestId = null;
 
         /**
-         * Internal value managed by minFPS property setter and getter.
-         * This is the maximum allowed milliseconds between updates.
+         * 由minFPS属性setter和getter管理的内部值。
+         * 这是两次更新之间允许的最大毫秒数。
          * @type {number}
          * @private
          */
         this._maxElapsedMS = 100;
 
         /**
-         * Internal value managed by maxFPS property setter and getter.
-         * This is the minimum allowed milliseconds between updates.
+         * 由minFPS属性setter和getter管理的内部值。
+         * 这是两次更新之间允许的最小毫秒数。
          * @type {number}
          * @private
          */
@@ -77,10 +77,10 @@ export class Ticker
         this.autoStart = false;
 
         /**
-         * Scalar time value from last frame to this frame.
-         * This value is capped by setting {@link PIXI.Ticker#minFPS}
-         * and is scaled with {@link PIXI.Ticker#speed}.
-         * **Note:** The cap may be exceeded by scaling.
+         * 从最后一帧到此帧的标量时间值。
+         * 通过设置 {@link PIXI.Ticker#minFPS} 可以设置此值的上限,
+         * 并使用 {@link PIXI.Ticker#speed} 进行缩放。
+         * **注意:** 缩放可能会超出上限。
          *
          * @member {number}
          * @default 1

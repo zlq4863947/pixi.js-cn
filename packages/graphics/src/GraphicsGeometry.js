@@ -22,11 +22,9 @@ const tmpPoint = new Point();
 const tmpBounds = new Bounds();
 
 /**
- * The Graphics class contains methods used to draw primitive shapes such as lines, circles and
- * rectangles to the display, and to color and fill them.
+ * The Graphics类包含一些方法，这些方法可将原始形状（例如线条，圆形和矩形）绘制到显示器上，并为它们上色和填充。
  *
- * GraphicsGeometry is designed to not be continually updating the geometry since it's expensive
- * to re-tesselate using **earcut**. Consider using {@link PIXI.Mesh} for this use-case, it's much faster.
+ * GraphicsGeometry的设计目的是为防止不断更新几何图形，因为使用**earcut**重新镶嵌的成本很高。可以考虑在这个用例中使用{@link PIXI.Mesh}，速度会快得多。
  *
  * @class
  * @extends PIXI.BatchGeometry
