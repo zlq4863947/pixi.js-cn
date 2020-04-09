@@ -13192,10 +13192,10 @@
         <h2><span class="ancestors"><a href="PIXI.html">PIXI</a>~</span>Extract
         </h2>
         
-            <div class="class-description"><p>This class provides renderer-specific plugins for exporting content from a renderer.
-For instance, these plugins can be used for saving an Image, Canvas element or for exporting the raw image data (pixels).</p>
-<p>Do not instantiate these plugins directly. It is available from the <code>renderer.plugins</code> property.
-See <a href="PIXI.CanvasRenderer.html#plugins">PIXI.CanvasRenderer#plugins</a> or <a href="PIXI.Renderer.html#plugins">PIXI.Renderer#plugins</a>.</p></div>
+            <div class="class-description"><p>此类提供了特定于渲染器的插件，用于从渲染器中导出内容。
+例如，这些插件可用于保存Image，Canvas元素或导出原始图像数据（像素）。</p>
+<p>不要直接实例化这些插件 可以通过 <code>renderer.plugins</code> 属性获得。
+查看 <a href="PIXI.CanvasRenderer.html#plugins">PIXI.CanvasRenderer#plugins</a> 或 <a href="PIXI.Renderer.html#plugins">PIXI.Renderer#plugins</a>.</p></div>
         
     </div>
 </header>  
@@ -13324,15 +13324,15 @@ See <a href="PIXI.CanvasRenderer.html#plugins">PIXI.CanvasRenderer#plugins</a> o
         
 
     
-    <pre class="prettyprint"><code>// Create a new app (will auto-add extract plugin to renderer)
+    <pre class="prettyprint"><code>// 创建一个新应用（将提取插件自动添加到渲染器）
 const app = new PIXI.Application();
 
-// Draw a red circle
+// 画一个红色圆圈
 const graphics = new PIXI.Graphics()
     .beginFill(0xFF0000)
     .drawCircle(0, 0, 50);
 
-// Render the graphics as an HTMLImageElement
+// 将图形渲染为HTMLImageElement
 const image = app.renderer.plugins.extract.image(graphics);
 document.body.appendChild(image);</code></pre>
     
@@ -13379,7 +13379,7 @@ document.body.appendChild(image);</code></pre>
     
         
         <div class="tag-source">
-            <a href="packages_extract_src_Extract.js.html#line73">Extract.js:73</a>
+            <a href="packages_extract_src_Extract.js.html#line72">Extract.js:72</a>
         </div>
         
     </div>
@@ -13390,8 +13390,7 @@ document.body.appendChild(image);</code></pre>
     
     
     <div class="description">
-        <p>Will return a a base64 encoded string of this target. It works by calling
-<code>Extract.getCanvas</code> and then running toDataURL on that.</p>
+        <p>将返回目标的base64编码的字符串。 它通过调用<code>Extract.getCanvas</code>，然后在其上运行toDataURL来工作。</p>
     </div>
     
 
@@ -13599,7 +13598,7 @@ to convert. If left empty will use the main renderer</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_extract_src_Extract.js.html#line84">Extract.js:84</a>
+            <a href="packages_extract_src_Extract.js.html#line83">Extract.js:83</a>
         </div>
         
     </div>
@@ -13753,7 +13752,7 @@ to convert. If left empty will use the main renderer</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_extract_src_Extract.js.html#line209">Extract.js:209</a>
+            <a href="packages_extract_src_Extract.js.html#line208">Extract.js:208</a>
         </div>
         
     </div>
@@ -13840,7 +13839,7 @@ to convert. If left empty will use the main renderer</p></td>
     
     
     <div class="description">
-        <p>Will return a HTML Image of the target</p>
+        <p>将返回目标的HTML图像</p>
     </div>
     
 
@@ -13895,8 +13894,8 @@ to convert. If left empty will use the main renderer</p></td>
                         
                     
                 
-                <p>A displayObject or renderTexture
-to convert. If left empty will use the main renderer</p></td>
+                <p>要转换的displayObject或renderTexture。
+如果保留为空，将使用主渲染器</p></td>
         </tr>
 	
 	
@@ -13926,7 +13925,7 @@ to convert. If left empty will use the main renderer</p></td>
                         
                     
                 
-                <p>Image format, e.g. &quot;image/jpeg&quot; or &quot;image/webp&quot;.</p></td>
+                <p>图像格式，例如 &quot;image/jpeg&quot; 或 &quot;image/webp&quot;。</p></td>
         </tr>
 	
 	
@@ -13956,7 +13955,7 @@ to convert. If left empty will use the main renderer</p></td>
                         
                     
                 
-                <p>JPEG or Webp compression from 0 to 1. Default is 0.92.</p></td>
+                <p>JPEG或Webp压缩从0到1。默认值为0.92。</p></td>
         </tr>
 	
 	
@@ -14019,7 +14018,7 @@ to convert. If left empty will use the main renderer</p></td>
                         
                     
             </td>
-            <td class="description last">HTML Image of the target</td>
+            <td class="description last">目标的HTML图像</td>
         </tr>
     
     </tbody>
@@ -14048,7 +14047,7 @@ to convert. If left empty will use the main renderer</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_extract_src_Extract.js.html#line155">Extract.js:155</a>
+            <a href="packages_extract_src_Extract.js.html#line154">Extract.js:154</a>
         </div>
         
     </div>
@@ -14205,7 +14204,7 @@ to convert. If left empty will use the main renderer</p></td>
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Thu Apr 09 2020 16:17:07 GMT+0900 (GMT+09:00)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Thu Apr 09 2020 22:24:25 GMT+0900 (GMT+09:00)
             </div>
         </footer>
     </div>

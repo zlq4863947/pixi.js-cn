@@ -1,10 +1,9 @@
 import { IPoint } from './IPoint';
 
 /**
- * The Point object represents a location in a two-dimensional coordinate system, where x represents
- * the horizontal axis and y represents the vertical axis.
+ * Point对象表示二维坐标系中的位置，其中x表示水平轴，y表示垂直轴。
  *
- * An ObservablePoint is a point that triggers a callback when the point's position is changed.
+ * ObservablePoint是一个指针，当该指针的位置更改时，它将触发回调。
  *
  * @class
  * @memberof PIXI
@@ -18,10 +17,10 @@ export class ObservablePoint<T = any> implements IPoint
     protected _y: number;
 
     /**
-     * @param {Function} cb - callback when changed
-     * @param {object} scope - owner of callback
-     * @param {number} [x=0] - position of the point on the x axis
-     * @param {number} [y=0] - position of the point on the y axis
+     * @param {Function} cb - 更改时回调
+     * @param {object} scope - 回调的所有者
+     * @param {number} [x=0] - 点在x轴上的位置
+     * @param {number} [y=0] - 点在y轴上的位置
      */
     constructor(cb: (this: T) => any, scope: T, x = 0, y = 0)
     {
@@ -33,14 +32,13 @@ export class ObservablePoint<T = any> implements IPoint
     }
 
     /**
-     * Creates a clone of this point.
-     * The callback and scope params can be overidden otherwise they will default
-     * to the clone object's values.
+     * 创建此点的副本。
+     * 回调和范围参数可以被覆盖，不填时，它们将默认为克隆对象的值。
      *
      * @override
-     * @param {Function} [cb=null] - callback when changed
-     * @param {object} [scope=null] - owner of callback
-     * @return {PIXI.ObservablePoint} a copy of the point
+     * @param {Function} [cb=null] - 更改时回调
+     * @param {object} [scope=null] - 回调的所有者
+     * @return {PIXI.ObservablePoint} 点的副本
      */
     clone(cb = this.cb, scope = this.scope): ObservablePoint
     {
@@ -48,11 +46,11 @@ export class ObservablePoint<T = any> implements IPoint
     }
 
     /**
-     * Sets the point to a new x and y position.
-     * If y is omitted, both x and y will be set to x.
+     * 将点设置为新的x和y位置。
+     * 如果省略y，则x和y都将设置为x。
      *
-     * @param {number} [x=0] - position of the point on the x axis
-     * @param {number} [y=x] - position of the point on the y axis
+     * @param {number} [x=0] - 点在x轴上的位置
+     * @param {number} [y=x] - 点在y轴上的位置
      * @returns {this} Returns itself.
      */
     set(x = 0, y = x): this
@@ -68,9 +66,9 @@ export class ObservablePoint<T = any> implements IPoint
     }
 
     /**
-     * Copies x and y from the given point
+     * 从指定点复制x和y
      *
-     * @param {PIXI.IPoint} p - The point to copy from.
+     * @param {PIXI.IPoint} p - 要复制的点。
      * @returns {this} Returns itself.
      */
     copyFrom(p: IPoint): this
@@ -86,10 +84,10 @@ export class ObservablePoint<T = any> implements IPoint
     }
 
     /**
-     * Copies x and y into the given point
+     * 将x和y复制到指定点
      *
-     * @param {PIXI.IPoint} p - The point to copy.
-     * @returns {PIXI.IPoint} Given point with values updated
+     * @param {PIXI.IPoint} p - 要复制的点。
+     * @returns {PIXI.IPoint} 已更新值的指定点
      */
     copyTo<T extends IPoint>(p: T): T
     {
@@ -99,7 +97,7 @@ export class ObservablePoint<T = any> implements IPoint
     }
 
     /**
-     * Returns true if the given point is equal to this point
+     * 如果指定点等于该点，则返回true
      *
      * @param {PIXI.IPoint} p - The point to check
      * @returns {boolean} Whether the given point equal to this point
@@ -110,7 +108,7 @@ export class ObservablePoint<T = any> implements IPoint
     }
 
     /**
-     * The position of the displayObject on the x axis relative to the local coordinates of the parent.
+     * displayObject在x轴上相对于父级本地坐标的位置。
      *
      * @member {number}
      */
@@ -129,7 +127,7 @@ export class ObservablePoint<T = any> implements IPoint
     }
 
     /**
-     * The position of the displayObject on the x axis relative to the local coordinates of the parent.
+     * displayObject在y轴上相对于父级本地坐标的位置
      *
      * @member {number}
      */
