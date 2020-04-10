@@ -13213,12 +13213,12 @@ import { UniformGroup } from './shader/UniformGroup';
 import { Matrix } from '@pixi/math';
 import { Runner } from '@pixi/runner';
 /**
- * The Renderer draws the scene and all its content onto a WebGL enabled canvas.
+ * 渲染器将场景及其所有内容绘制到启用WebGL的画布上。
  *
- * This renderer should be used for browsers that support WebGL.
+ * 此渲染器应用于支持WebGL的浏览器。
  *
- * This renderer works by automatically managing WebGLBatchesm, so no need for Sprite Batches or Sprite Clouds.
- * Don't forget to add the view to your DOM or you will not see anything!
+ * 该渲染器通过自动管理WebGLBatchesm来工作，因此不需要Sprite Batchs或Sprite Cloud。
+ * 不要忘记将视图添加到DOM中，否则您将看不到任何内容！
  *
  * @class
  * @memberof PIXI
@@ -13227,9 +13227,8 @@ import { Runner } from '@pixi/runner';
 export class Renderer extends AbstractRenderer
 {
     /**
-     * Create renderer if WebGL is available. Overrideable
-     * by the **@pixi/canvas-renderer** package to allow fallback.
-     * throws error if WebGL is not available.
+     * 如果WebGL可用，则创建渲染器。 可被 **@pixi/canvas-renderer** 包重写以允许回退。
+     * 如果WebGL不可用，则会引发错误。
      * @static
      * @private
      */
@@ -13242,29 +13241,24 @@ export class Renderer extends AbstractRenderer
         throw new Error('WebGL unsupported in this browser, use "pixi.js-legacy" for fallback canvas2d support.');
     }
     /**
-     * @param {object} [options] - The optional renderer parameters.
-     * @param {number} [options.width=800] - The width of the screen.
-     * @param {number} [options.height=600] - The height of the screen.
-     * @param {HTMLCanvasElement} [options.view] - The canvas to use as a view, optional.
-     * @param {boolean} [options.transparent=false] - If the render view is transparent.
-     * @param {boolean} [options.autoDensity=false] - Resizes renderer view in CSS pixels to allow for
-     *   resolutions other than 1.
-     * @param {boolean} [options.antialias=false] - Sets antialias. If not available natively then FXAA
-     *  antialiasing is used.
-     * @param {boolean} [options.forceFXAA=false] - Forces FXAA antialiasing to be used over native.
-     *  FXAA is faster, but may not always look as great.
-     * @param {number} [options.resolution=1] - The resolution / device pixel ratio of the renderer.
-     *  The resolution of the renderer retina would be 2.
-     * @param {boolean} [options.clearBeforeRender=true] - This sets if the renderer will clear
-     *  the canvas or not before the new render pass. If you wish to set this to false, you *must* set
-     *  preserveDrawingBuffer to `true`.
-     * @param {boolean} [options.preserveDrawingBuffer=false] - Enables drawing buffer preservation,
-     *  enable this if you need to call toDataUrl on the WebGL context.
-     * @param {number} [options.backgroundColor=0x000000] - The background color of the rendered area
-     *  (shown if not transparent).
-     * @param {string} [options.powerPreference] - Parameter passed to WebGL context, set to "high-performance"
-     *  for devices with dual graphics card.
-     * @param {object} [options.context] If WebGL context already exists, all parameters must be taken from it.
+     * @param {object} [options] - 可选的渲染器参数。
+     * @param {number} [options.width=800] - 屏幕的宽度。
+     * @param {number} [options.height=600] - 屏幕的高度。
+     * @param {HTMLCanvasElement} [options.view] - 用作视图的画布，可选。
+     * @param {boolean} [options.transparent=false] - true时，设置渲染视图为透明
+     * @param {boolean} [options.autoDensity=false] - 调整渲染器视图的CSS像素大小，以允许使用非1的分辨率。
+     * @param {boolean} [options.antialias=false] - 设置抗锯齿。 如果本机不可用，则使用FXAA抗锯齿。
+     * @param {boolean} [options.forceFXAA=false] - 强制在本机上使用FXAA抗锯齿。
+     *  FXAA更快，但可能并不总是那么好。
+     * @param {number} [options.resolution=1] - 渲染器的分辨率/设备像素比率。
+     *  渲染器视网膜的分辨率为2。
+     * @param {boolean} [options.clearBeforeRender=true] - 这将设置渲染器是否在新的渲染过程之前清除画布。
+     * 如果您希望将其设置为false，则 *必须* 将prepareDrawingBuffer设置为 `true`。
+     * @param {boolean} [options.preserveDrawingBuffer=false] - 启用绘图缓冲区保留，
+     *  如果需要在WebGL上下文上调用toDataUrl，请启用此功能。
+     * @param {number} [options.backgroundColor=0x000000] - 渲染区域的背景色（如果不透明则显示）。
+     * @param {string} [options.powerPreference] - 传递给WebGL上下文的参数，对于具有双显卡的设备，设置为"high-performance"。
+     * @param {object} [options.context] 如果WebGL上下文已经存在，则必须从中获取所有参数。
      */
     constructor(options = {})
     {
@@ -13272,14 +13266,14 @@ export class Renderer extends AbstractRenderer
         // the options will have been modified here in the super constructor with pixi's default settings..
         options = this.options;
         /**
-         * The type of this renderer as a standardized const
+         * 此渲染器的类型为标准化const
          *
          * @member {number}
          * @see PIXI.RENDERER_TYPE
          */
         this.type = RENDERER_TYPE.WEBGL;
         /**
-         * WebGL context, set by the contextSystem (this.context)
+         * WebGL上下文，由contextSystem（this.context）设置
          *
          * @readonly
          * @member {WebGLRenderingContext}
@@ -13288,20 +13282,19 @@ export class Renderer extends AbstractRenderer
         this.CONTEXT_UID = 0;
         // TODO legacy!
         /**
-         * Internal signal instances of **runner**, these
-         * are assigned to each system created.
+         * 内部信号实例 **runner**，这些实例分配给创建的每个系统。
          * @see PIXI.Runner
          * @name PIXI.Renderer#runners
          * @private
          * @type {object}
          * @readonly
-         * @property {PIXI.Runner} destroy - Destroy runner
-         * @property {PIXI.Runner} contextChange - Context change runner
-         * @property {PIXI.Runner} reset - Reset runner
-         * @property {PIXI.Runner} update - Update runner
-         * @property {PIXI.Runner} postrender - Post-render runner
-         * @property {PIXI.Runner} prerender - Pre-render runner
-         * @property {PIXI.Runner} resize - Resize runner
+         * @property {PIXI.Runner} destroy - 销毁 runner
+         * @property {PIXI.Runner} contextChange - 上下文变更 runner
+         * @property {PIXI.Runner} reset - 重置 runner
+         * @property {PIXI.Runner} update - 更新 runner
+         * @property {PIXI.Runner} postrender - 后期渲染 runner
+         * @property {PIXI.Runner} prerender - 预渲染 runner
+         * @property {PIXI.Runner} resize - 调整大小 runner
          */
         this.runners = {
             destroy: new Runner('destroy'),
@@ -13313,7 +13306,7 @@ export class Renderer extends AbstractRenderer
             resize: new Runner('resize', 2),
         };
         /**
-         * Global uniforms
+         * 全局 uniforms
          * @member {PIXI.UniformGroup}
          */
         this.globalUniforms = new UniformGroup({
@@ -13324,98 +13317,98 @@ export class Renderer extends AbstractRenderer
         this.batch = null;
         this.filter = null;
         /**
-         * Mask system instance
+         * 遮罩系统实例
          * @member {PIXI.systems.MaskSystem} mask
          * @memberof PIXI.Renderer#
          * @readonly
          */
         this.addSystem(MaskSystem, 'mask')
             /**
-             * Context system instance
+             * 上下文系统实例
              * @member {PIXI.systems.ContextSystem} context
              * @memberof PIXI.Renderer#
              * @readonly
              */
             .addSystem(ContextSystem, 'context')
             /**
-             * State system instance
+             * 状态系统实例
              * @member {PIXI.systems.StateSystem} state
              * @memberof PIXI.Renderer#
              * @readonly
              */
             .addSystem(StateSystem, 'state')
             /**
-             * Shader system instance
+             * 着色器系统实例
              * @member {PIXI.systems.ShaderSystem} shader
              * @memberof PIXI.Renderer#
              * @readonly
              */
             .addSystem(ShaderSystem, 'shader')
             /**
-             * Texture system instance
+             * 纹理系统实例
              * @member {PIXI.systems.TextureSystem} texture
              * @memberof PIXI.Renderer#
              * @readonly
              */
             .addSystem(TextureSystem, 'texture')
             /**
-             * Geometry system instance
+             * 几何系统实例
              * @member {PIXI.systems.GeometrySystem} geometry
              * @memberof PIXI.Renderer#
              * @readonly
              */
             .addSystem(GeometrySystem, 'geometry')
             /**
-             * Framebuffer system instance
+             * 帧缓冲系统实例
              * @member {PIXI.systems.FramebufferSystem} framebuffer
              * @memberof PIXI.Renderer#
              * @readonly
              */
             .addSystem(FramebufferSystem, 'framebuffer')
             /**
-             * Scissor system instance
+             * 剪式系统实例
              * @member {PIXI.systems.ScissorSystem} scissor
              * @memberof PIXI.Renderer#
              * @readonly
              */
             .addSystem(ScissorSystem, 'scissor')
             /**
-             * Stencil system instance
+             * 模具系统实例
              * @member {PIXI.systems.StencilSystem} stencil
              * @memberof PIXI.Renderer#
              * @readonly
              */
             .addSystem(StencilSystem, 'stencil')
             /**
-             * Projection system instance
+             * 投影系统实例
              * @member {PIXI.systems.ProjectionSystem} projection
              * @memberof PIXI.Renderer#
              * @readonly
              */
             .addSystem(ProjectionSystem, 'projection')
             /**
-             * Texture garbage collector system instance
+             * 纹理垃圾收集器系统实例
              * @member {PIXI.systems.TextureGCSystem} textureGC
              * @memberof PIXI.Renderer#
              * @readonly
              */
             .addSystem(TextureGCSystem, 'textureGC')
             /**
-             * Filter system instance
+             * 滤镜系统实例
              * @member {PIXI.systems.FilterSystem} filter
              * @memberof PIXI.Renderer#
              * @readonly
              */
             .addSystem(FilterSystem, 'filter')
             /**
-             * RenderTexture system instance
+             * RenderTexture系统实例
              * @member {PIXI.systems.RenderTextureSystem} renderTexture
              * @memberof PIXI.Renderer#
              * @readonly
              */
             .addSystem(RenderTextureSystem, 'renderTexture')
             /**
-             * Batch system instance
+             * 批处理系统实例
              * @member {PIXI.systems.BatchSystem} batch
              * @memberof PIXI.Renderer#
              * @readonly
@@ -13423,7 +13416,7 @@ export class Renderer extends AbstractRenderer
             .addSystem(BatchSystem, 'batch');
         this.initPlugins(Renderer.__plugins);
         /**
-         * The options passed in to create a new WebGL context.
+         * 传递来创建新的WebGL上下文的选项。
          */
         if (options.context)
         {
@@ -13451,13 +13444,11 @@ export class Renderer extends AbstractRenderer
         this.resize(this.options.width, this.options.height);
     }
     /**
-     * Add a new system to the renderer.
-     * @param {Function} ClassRef - Class reference
-     * @param {string} [name] - Property name for system, if not specified
-     *        will use a static `name` property on the class itself. This
-     *        name will be assigned as s property on the Renderer so make
-     *        sure it doesn't collide with properties on Renderer.
-     * @return {PIXI.Renderer} Return instance of renderer
+     * 将新系统添加到渲染器。
+     * @param {Function} ClassRef - 类引用
+     * @param {string} [name] - 系统的属性名称（如果未指定）将在类本身上使用静态的 `name` 属性。
+     *        此名称将在Renderer上分配为s属性，因此请确保它不会与Renderer上的属性冲突。
+     * @return {PIXI.Renderer} 返回渲染器实例
      */
     addSystem(ClassRef, name)
     {
@@ -13477,17 +13468,17 @@ export class Renderer extends AbstractRenderer
             this.runners[i].add(system);
         }
         /**
-         * Fired after rendering finishes.
+         * 渲染完成后触发。
          *
          * @event PIXI.Renderer#postrender
          */
         /**
-         * Fired before rendering starts.
+         * 在渲染开始之前触发。
          *
          * @event PIXI.Renderer#prerender
          */
         /**
-         * Fired when the WebGL context is set.
+         * 设置WebGL上下文时触发。
          *
          * @event PIXI.Renderer#context
          * @param {WebGLRenderingContext} gl - WebGL context.
@@ -13495,13 +13486,13 @@ export class Renderer extends AbstractRenderer
         return this;
     }
     /**
-     * Renders the object to its WebGL view
+     * 将对象渲染到其WebGL视图
      *
-     * @param {PIXI.DisplayObject} displayObject - The object to be rendered.
-     * @param {PIXI.RenderTexture} [renderTexture] - The render texture to render to.
-     * @param {boolean} [clear=true] - Should the canvas be cleared before the new render.
-     * @param {PIXI.Matrix} [transform] - A transform to apply to the render texture before rendering.
-     * @param {boolean} [skipUpdateTransform=false] - Should we skip the update transform pass?
+     * @param {PIXI.DisplayObject} displayObject - 要渲染的对象。
+     * @param {PIXI.RenderTexture} [renderTexture] - 要渲染到的渲染纹理。
+     * @param {boolean} [clear=true] - 在新渲染之前清除画布。
+     * @param {PIXI.Matrix} [transform] - 在渲染之前应用于渲染纹理的变换。
+     * @param {boolean} [skipUpdateTransform=false] - 我们应该跳过更新转换吗？
      */
     render(displayObject, renderTexture, clear, transform, skipUpdateTransform)
     {
@@ -13549,10 +13540,10 @@ export class Renderer extends AbstractRenderer
         this.emit('postrender');
     }
     /**
-     * Resizes the WebGL view to the specified width and height.
+     * 将WebGL视图调整为指定的宽度和高度。
      *
-     * @param {number} screenWidth - The new width of the screen.
-     * @param {number} screenHeight - The new height of the screen.
+     * @param {number} screenWidth - 屏幕的新宽度。
+     * @param {number} screenHeight - 屏幕的新高度。
      */
     resize(screenWidth, screenHeight)
     {
@@ -13560,7 +13551,7 @@ export class Renderer extends AbstractRenderer
         this.runners.resize.run(screenWidth, screenHeight);
     }
     /**
-     * Resets the WebGL state so you can render things however you fancy!
+     * 重置WebGL状态，以便您可以根据自己的喜好渲染事物！
      *
      * @return {PIXI.Renderer} Returns itself.
      */
@@ -13571,7 +13562,7 @@ export class Renderer extends AbstractRenderer
         return this;
     }
     /**
-     * Clear the frame buffer
+     * 清除帧缓冲区
      */
     clear()
     {
@@ -13579,9 +13570,9 @@ export class Renderer extends AbstractRenderer
         this.framebuffer.clear();
     }
     /**
-     * Removes everything from the renderer (event listeners, spritebatch, etc...)
+     * 从渲染器中删除所有内容（事件监听器，spritebatch等）
      *
-     * @param {boolean} [removeView=false] - Removes the Canvas element from the DOM.
+     * @param {boolean} [removeView=false] - 从DOM中删除Canvas元素。
      *  See: https://github.com/pixijs/pixi.js/issues/2233
      */
     destroy(removeView)
@@ -13597,23 +13588,22 @@ export class Renderer extends AbstractRenderer
         this.gl = null;
     }
     /**
-     * Collection of installed plugins. These are included by default in PIXI, but can be excluded
-     * by creating a custom build. Consult the README for more information about creating custom
-     * builds and excluding plugins.
+     * 已安装插件的集合。 这些默认包含在PIXI中，但可以通过创建自定义版本来排除。
+     * 有关创建自定义版本和排除插件的更多信息，请查阅README。
      * @name PIXI.Renderer#plugins
      * @type {object}
      * @readonly
-     * @property {PIXI.accessibility.AccessibilityManager} accessibility Support tabbing interactive elements.
-     * @property {PIXI.Extract} extract Extract image data from renderer.
-     * @property {PIXI.interaction.InteractionManager} interaction Handles mouse, touch and pointer events.
-     * @property {PIXI.Prepare} prepare Pre-render display objects.
+     * @property {PIXI.accessibility.AccessibilityManager} accessibility 支持制表互动元素。
+     * @property {PIXI.Extract} extract 从渲染器提取图像数据。.
+     * @property {PIXI.interaction.InteractionManager} interaction 处理鼠标，触摸和指针事件。
+     * @property {PIXI.Prepare} prepare 预渲染显示对象。
      */
     /**
-     * Adds a plugin to the renderer.
+     * 将插件添加到渲染器。
      *
      * @method
-     * @param {string} pluginName - The name of the plugin.
-     * @param {Function} ctor - The constructor function or class for the plugin.
+     * @param {string} pluginName - 插件的名称。
+     * @param {Function} ctor - 插件的构造函数或类。
      */
     static registerPlugin(pluginName, ctor)
     {
@@ -13634,7 +13624,7 @@ export class Renderer extends AbstractRenderer
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Fri Apr 10 2020 01:56:21 GMT+0900 (GMT+09:00)
+                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Apr 11 2020 01:24:54 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

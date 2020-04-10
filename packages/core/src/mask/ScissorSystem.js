@@ -1,7 +1,7 @@
 import { AbstractMaskSystem } from './AbstractMaskSystem';
 
 /**
- * System plugin to the renderer to manage scissor rects (used for masks).
+ * 渲染器的系统插件，用于管理剪刀矩形（用于遮罩）。
  *
  * @class
  * @extends PIXI.System
@@ -10,7 +10,7 @@ import { AbstractMaskSystem } from './AbstractMaskSystem';
 export class ScissorSystem extends AbstractMaskSystem
 {
     /**
-     * @param {PIXI.Renderer} renderer - The renderer this System works for.
+     * @param {PIXI.Renderer} renderer - 此系统适用的渲染器。
      */
     constructor(renderer)
     {
@@ -32,9 +32,9 @@ export class ScissorSystem extends AbstractMaskSystem
     }
 
     /**
-     * Applies the Mask and adds it to the current stencil stack. @alvin
+     * 应用遮罩并将其添加到当前的模板堆栈中。@alvin
      *
-     * @param {PIXI.MaskData} maskData - The mask data
+     * @param {PIXI.MaskData} maskData - 遮罩数据
      */
     push(maskData)
     {

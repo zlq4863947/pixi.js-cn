@@ -3,10 +3,9 @@ import { Texture } from '@pixi/core';
 import { getResolutionOfUrl } from '@pixi/utils';
 
 /**
- * Utility class for maintaining reference to a collection
- * of Textures on a single Spritesheet.
+ * 用于维护对单个Spritesheet上纹理集合的工具类。
  *
- * To access a sprite sheet from your code pass its JSON data file to Pixi's loader:
+ * 要通过您的代码访问精灵表，请将其JSON数据文件传递给Pixi的加载器:
  *
  * ```js
  * PIXI.Loader.shared.add("images/spritesheet.json").load(setup);
@@ -16,12 +15,11 @@ import { getResolutionOfUrl } from '@pixi/utils';
  *   ...
  * }
  * ```
- * With the `sheet.textures` you can create Sprite objects,`sheet.animations` can be used to create an AnimatedSprite.
+ * 使用 `sheet.textures` 可以创建Sprite对象，`sheet.animations` 可以用来创建AnimatedSprite。
  *
- * Sprite sheets can be packed using tools like {@link https://codeandweb.com/texturepacker|TexturePacker},
- * {@link https://renderhjs.net/shoebox/|Shoebox} or {@link https://github.com/krzysztof-o/spritesheet.js|Spritesheet.js}.
- * Default anchor points (see {@link PIXI.Texture#defaultAnchor}) and grouping of animation sprites are currently only
- * supported by TexturePacker.
+ * 可以使用 {@link https://codeandweb.com/texturepacker|TexturePacker},
+ * {@link https://renderhjs.net/shoebox/|Shoebox} 或 {@link https://github.com/krzysztof-o/spritesheet.js|Spritesheet.js}。
+ * 当前仅由TexturePacker支持默认锚点（请参阅 {@link PIXI.Texture#defaultAnchor}）和动画精灵的分组。
  *
  * @class
  * @memberof PIXI
@@ -29,7 +27,7 @@ import { getResolutionOfUrl } from '@pixi/utils';
 export class Spritesheet
 {
     /**
-     * The maximum number of Textures to build per process.
+     * 每个进程要生成的最大纹理数。
      *
      * @type {number}
      * @default 1000
@@ -40,23 +38,21 @@ export class Spritesheet
     }
 
     /**
-     * @param {PIXI.BaseTexture} baseTexture Reference to the source BaseTexture object.
-     * @param {Object} data - Spritesheet image data.
-     * @param {string} [resolutionFilename] - The filename to consider when determining
-     *        the resolution of the spritesheet. If not provided, the imageUrl will
-     *        be used on the BaseTexture.
+     * @param {PIXI.BaseTexture} baseTexture 源BaseTexture对象的引用。
+     * @param {Object} data - Spritesheet图像数据。
+     * @param {string} [resolutionFilename] - 在确定spritesheet的分辨率时要考虑的文件名。如果没有提供，imageUrl将用于BaseTexture。
      */
     constructor(baseTexture, data, resolutionFilename = null)
     {
         /**
-         * Reference to ths source texture
+         * 源纹理的引用
          * @type {PIXI.BaseTexture}
          */
         this.baseTexture = baseTexture;
 
         /**
-         * A map containing all textures of the sprite sheet.
-         * Can be used to create a {@link PIXI.Sprite|Sprite}:
+         * 包含精灵表所有纹理的图集。
+         * 可以用来创建一个{@link PIXI.Sprite|Sprite}:
          * ```js
          * new PIXI.Sprite(sheet.textures["image.png"]);
          * ```
@@ -65,8 +61,8 @@ export class Spritesheet
         this.textures = {};
 
         /**
-         * A map containing the textures for each animation.
-         * Can be used to create an {@link PIXI.AnimatedSprite|AnimatedSprite}:
+         * 包含每个动画的纹理的贴图。
+         * 可以用来创建一个 {@link PIXI.AnimatedSprite|AnimatedSprite}:
          * ```js
          * new PIXI.AnimatedSprite(sheet.animations["anim_name"])
          * ```
@@ -75,13 +71,13 @@ export class Spritesheet
         this.animations = {};
 
         /**
-         * Reference to the original JSON data.
+         * 原始JSON数据的引用。
          * @type {Object}
          */
         this.data = data;
 
         /**
-         * The resolution of the spritesheet.
+         * 精灵表的分辨率。
          * @type {number}
          */
         this.resolution = this._updateResolution(
@@ -90,28 +86,28 @@ export class Spritesheet
         );
 
         /**
-         * Map of spritesheet frames.
+         * 精灵表中的一组子帧
          * @type {Object}
          * @private
          */
         this._frames = this.data.frames;
 
         /**
-         * Collection of frame names.
+         * 帧名称的集合。
          * @type {string[]}
          * @private
          */
         this._frameKeys = Object.keys(this._frames);
 
         /**
-         * Current batch index being processed.
+         * 当前正在处理的批次索引。
          * @type {number}
          * @private
          */
         this._batchIndex = 0;
 
         /**
-         * Callback when parse is completed.
+         * 解析完成时的回调。
          * @type {Function}
          * @private
          */
@@ -119,13 +115,11 @@ export class Spritesheet
     }
 
     /**
-     * Generate the resolution from the filename or fallback
-     * to the meta.scale field of the JSON data.
+     * 从文件名或回退到JSON数据的meta.scale字段生成分辨率。
      *
      * @private
-     * @param {string} resolutionFilename - The filename to use for resolving
-     *        the default resolution.
-     * @return {number} Resolution to use for spritesheet.
+     * @param {string} resolutionFilename - 用于解析默认分辨率的文件名。
+     * @return {number} 用于精灵表的分辨率。
      */
     _updateResolution(resolutionFilename)
     {
@@ -151,11 +145,9 @@ export class Spritesheet
     }
 
     /**
-     * Parser spritesheet from loaded data. This is done asynchronously
-     * to prevent creating too many Texture within a single process.
+     * 从加载的数据中解析精灵表。这是异步完成的，以防止在单个进程中创建过多的纹理。
      *
-     * @param {Function} callback - Callback when complete returns
-     *        a map of the Textures for this spritesheet.
+     * @param {Function} callback - 完成时回调返回此精灵表的纹理数组。
      */
     parse(callback)
     {
@@ -175,10 +167,10 @@ export class Spritesheet
     }
 
     /**
-     * Process a batch of frames
+     * 处理一批帧
      *
      * @private
-     * @param {number} initialFrameIndex - The index of frame to start.
+     * @param {number} initialFrameIndex - 要开始的帧的索引。
      */
     _processFrames(initialFrameIndex)
     {
@@ -253,7 +245,7 @@ export class Spritesheet
     }
 
     /**
-     * Parse animations config
+     * 解析动画配置
      *
      * @private
      */
@@ -274,7 +266,7 @@ export class Spritesheet
     }
 
     /**
-     * The parse has completed.
+     * 解析已完成。
      *
      * @private
      */
@@ -288,7 +280,7 @@ export class Spritesheet
     }
 
     /**
-     * Begin the next batch of textures.
+     * 开始下一批纹理。
      *
      * @private
      */
@@ -311,9 +303,9 @@ export class Spritesheet
     }
 
     /**
-     * Destroy Spritesheet and don't use after this.
+     * 销毁精灵表后不再使用。
      *
-     * @param {boolean} [destroyBase=false] Whether to destroy the base texture as well
+     * @param {boolean} [destroyBase=false] 是否也要销毁基础纹理
      */
     destroy(destroyBase = false)
     {

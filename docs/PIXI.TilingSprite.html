@@ -13732,8 +13732,8 @@
 <dd>
     
     <div class="description">
-        <p>Cached tint value so we can tell when the tint is changed.
-Value is used for 2d CanvasRenderer.</p>
+        <p>缓存的色调值，以便我们可以知道何时更改了色调。
+该值用于2d CanvasRenderer。</p>
     </div>
     
     
@@ -14750,7 +14750,7 @@ sprite.anchor.set(0.5); // 这会将原点设置为居中。(0.5)与(0.5, 0.5)�
 <dd>
     
     <div class="description">
-        <p>The blend mode to be applied to the sprite. Apply a value of <code>PIXI.BLEND_MODES.NORMAL</code> to reset the blend mode.</p>
+        <p>应用于精灵的混合模式。应用值为 <code>PIXI.BLEND_MODES.NORMAL</code> 时，将重置混合模式。</p>
     </div>
     
     
@@ -14815,8 +14815,8 @@ sprite.anchor.set(0.5); // 这会将原点设置为居中。(0.5)与(0.5, 0.5)�
 <dd>
     
     <div class="description">
-        <p>If enabled, the mouse cursor use the pointer behavior when hovered over the displayObject if it is interactive
-Setting this changes the 'cursor' property to <code>'pointer'</code>.</p>
+        <p>如果启用，则鼠标光标悬停在displayObject上时，如果它是交互式的，则使用指针行为
+设置此项会将'cursor'属性更改为''pointer'`。</p>
     </div>
     
     
@@ -15050,8 +15050,7 @@ Change to -0.5 to add a pixel to the edge, recommended for transparent trimmed t
 <dd>
     
     <div class="description">
-        <p>This defines what cursor mode is used when the mouse cursor
-is hovered over the displayObject.</p>
+        <p>定义鼠标光标时使用的光标模式悬停在displayObject上。</p>
     </div>
     
     
@@ -15291,8 +15290,9 @@ sprite.cursor = 'wait';</code></pre>
 <dd>
     
     <div class="description">
-        <p>Interaction shape. Children will be hit first, then this shape will be checked.
-Setting this will cause this shape to be checked in hit tests rather than the displayObject's bounds.</p>
+        <p>元素可点击范围
+互动形状。首先将命中子集，然后再检查此形状。
+设置此项将导致在命中测试中将使用此范围，而不是显示对象的边界范围。</p>
     </div>
     
     
@@ -15357,8 +15357,7 @@ sprite.hitArea = new PIXI.Rectangle(0, 0, 100, 100);</code></pre>
 <dd>
     
     <div class="description">
-        <p>Enable interaction events for the DisplayObject. Touch, pointer and mouse
-events will not be emitted unless <code>interactive</code> is set to <code>true</code>.</p>
+        <p>启用DisplayObject的交互事件。如果不将<code>interactive</code>设置为<code>true</code>，则不会触发触摸，指针和鼠标事件。</p>
     </div>
     
     
@@ -15394,7 +15393,7 @@ events will not be emitted unless <code>interactive</code> is set to <code>true<
     <pre class="prettyprint"><code>const sprite = new PIXI.Sprite(texture);
 sprite.interactive = true;
 sprite.on('tap', (event) => {
-   //handle event
+   //处理事件
 });</code></pre>
     
 
@@ -15425,8 +15424,8 @@ sprite.on('tap', (event) => {
 <dd>
     
     <div class="description">
-        <p>Determines if the children to the displayObject can be clicked/touched
-Setting this to false allows PixiJS to bypass a recursive <code>hitTest</code> function</p>
+        <p>确定是否可以触发displayObject的子节点的clicked/touched
+设置为false将允许PixiJS绕过递归的<code>hitTest</code>函数</p>
     </div>
     
     
@@ -15536,7 +15535,7 @@ Setting this to false allows PixiJS to bypass a recursive <code>hitTest</code> f
 <dd>
     
     <div class="description">
-        <p>used to fast check if a sprite is.. a sprite!</p>
+        <p>用于快速检查精灵是否是精灵。</p>
     </div>
     
     
@@ -15890,7 +15889,7 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>Plugin that is responsible for rendering this element.
+        <p>负责渲染此元素的插件。
 Allows to customize the rendering process without overriding '_render' method.</p>
     </div>
     
@@ -16234,7 +16233,7 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>The shader that will be used to render the sprite. Set to null to remove a current shader.</p>
+        <p>将用于渲染精灵的着色器。 设置为null时，将删除当前着色器。</p>
     </div>
     
     
@@ -16468,7 +16467,7 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>The texture that the sprite is using</p>
+        <p>精灵正在使用的纹理</p>
     </div>
     
     
@@ -18811,7 +18810,7 @@ If the image is not in the texture cache it will be loaded</p>
     
         
         <div class="tag-source">
-            <a href="packages_sprite_src_Sprite.js.html#line279">Sprite.js:279</a>
+            <a href="packages_sprite_src_Sprite.js.html#line274">Sprite.js:274</a>
         </div>
         
     </div>
@@ -18822,8 +18821,8 @@ If the image is not in the texture cache it will be loaded</p>
     
     
     <div class="description">
-        <p>calculates worldTransform * vertices for a non texture with a trim. store it in vertexTrimmedData
-This is used to ensure that the true width and height of a trimmed texture is respected</p>
+        <p>计算带有修剪的非纹理的worldTransform * vertices。 将其存储在vertexTrimmedData中
+这用于确保获得修剪出的纹理的真实宽度和高度</p>
     </div>
     
 
@@ -18892,7 +18891,7 @@ This is used to ensure that the true width and height of a trimmed texture is re
     
         
         <div class="tag-source">
-            <a href="packages_sprite_src_Sprite.js.html#line205">Sprite.js:205</a>
+            <a href="packages_sprite_src_Sprite.js.html#line200">Sprite.js:200</a>
         </div>
         
     </div>
@@ -18903,7 +18902,7 @@ This is used to ensure that the true width and height of a trimmed texture is re
     
     
     <div class="description">
-        <p>calculates worldTransform * vertices, store it in vertexData</p>
+        <p>计算worldTransform * vertices，并将其存储在vertexData中</p>
     </div>
     
 
@@ -19133,7 +19132,7 @@ This is used to ensure that the true width and height of a trimmed texture is re
     
     
     <div class="description">
-        <p>Destroys this sprite and optionally its texture and children</p>
+        <p>销毁该精灵，并销毁其纹理和子元素</p>
     </div>
     
 
@@ -26707,7 +26706,7 @@ DisplayObject's <code>interactive</code> property must be set to <code>true</cod
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Fri Apr 10 2020 01:56:31 GMT+0900 (GMT+09:00)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Apr 11 2020 01:25:05 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

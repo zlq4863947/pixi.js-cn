@@ -13192,10 +13192,10 @@
         <h2><span class="ancestors"><a href="PIXI.html">PIXI</a>~</span>Renderer
         </h2>
         
-            <div class="class-description"><p>The Renderer draws the scene and all its content onto a WebGL enabled canvas.</p>
-<p>This renderer should be used for browsers that support WebGL.</p>
-<p>This renderer works by automatically managing WebGLBatchesm, so no need for Sprite Batches or Sprite Clouds.
-Don't forget to add the view to your DOM or you will not see anything!</p></div>
+            <div class="class-description"><p>渲染器将场景及其所有内容绘制到启用WebGL的画布上。</p>
+<p>此渲染器应用于支持WebGL的浏览器。</p>
+<p>该渲染器通过自动管理WebGLBatchesm来工作，因此不需要Sprite Batchs或Sprite Cloud。
+不要忘记将视图添加到DOM中，否则您将看不到任何内容！</p></div>
         
     </div>
 </header>  
@@ -13223,7 +13223,7 @@ Don't forget to add the view to your DOM or you will not see anything!</p></div>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_Renderer.js.html#line77">Renderer.js:77</a>
+            <a href="packages_core_src_Renderer.js.html#line71">Renderer.js:71</a>
         </div>
         
     </div>
@@ -13284,7 +13284,7 @@ Don't forget to add the view to your DOM or you will not see anything!</p></div>
                         
                     
                 
-                <p>The optional renderer parameters.</p>
+                <p>可选的渲染器参数。</p>
                 
 
 <table class="params">
@@ -13338,7 +13338,7 @@ Don't forget to add the view to your DOM or you will not see anything!</p></div>
                         
                     
                 
-                <p>The width of the screen.</p></td>
+                <p>屏幕的宽度。</p></td>
         </tr>
 	
 	
@@ -13374,7 +13374,7 @@ Don't forget to add the view to your DOM or you will not see anything!</p></div>
                         
                     
                 
-                <p>The height of the screen.</p></td>
+                <p>屏幕的高度。</p></td>
         </tr>
 	
 	
@@ -13408,7 +13408,7 @@ Don't forget to add the view to your DOM or you will not see anything!</p></div>
                         
                     
                 
-                <p>The canvas to use as a view, optional.</p></td>
+                <p>用作视图的画布，可选。</p></td>
         </tr>
 	
 	
@@ -13444,7 +13444,7 @@ Don't forget to add the view to your DOM or you will not see anything!</p></div>
                         
                     
                 
-                <p>If the render view is transparent.</p></td>
+                <p>true时，设置渲染视图为透明</p></td>
         </tr>
 	
 	
@@ -13480,8 +13480,7 @@ Don't forget to add the view to your DOM or you will not see anything!</p></div>
                         
                     
                 
-                <p>Resizes renderer view in CSS pixels to allow for
-resolutions other than 1.</p></td>
+                <p>调整渲染器视图的CSS像素大小，以允许使用非1的分辨率。</p></td>
         </tr>
 	
 	
@@ -13517,8 +13516,7 @@ resolutions other than 1.</p></td>
                         
                     
                 
-                <p>Sets antialias. If not available natively then FXAA
-antialiasing is used.</p></td>
+                <p>设置抗锯齿。 如果本机不可用，则使用FXAA抗锯齿。</p></td>
         </tr>
 	
 	
@@ -13554,8 +13552,8 @@ antialiasing is used.</p></td>
                         
                     
                 
-                <p>Forces FXAA antialiasing to be used over native.
-FXAA is faster, but may not always look as great.</p></td>
+                <p>强制在本机上使用FXAA抗锯齿。
+FXAA更快，但可能并不总是那么好。</p></td>
         </tr>
 	
 	
@@ -13591,8 +13589,8 @@ FXAA is faster, but may not always look as great.</p></td>
                         
                     
                 
-                <p>The resolution / device pixel ratio of the renderer.
-The resolution of the renderer retina would be 2.</p></td>
+                <p>渲染器的分辨率/设备像素比率。
+渲染器视网膜的分辨率为2。</p></td>
         </tr>
 	
 	
@@ -13628,9 +13626,8 @@ The resolution of the renderer retina would be 2.</p></td>
                         
                     
                 
-                <p>This sets if the renderer will clear
-the canvas or not before the new render pass. If you wish to set this to false, you <em>must</em> set
-preserveDrawingBuffer to <code>true</code>.</p></td>
+                <p>这将设置渲染器是否在新的渲染过程之前清除画布。
+如果您希望将其设置为false，则 <em>必须</em> 将prepareDrawingBuffer设置为 <code>true</code>。</p></td>
         </tr>
 	
 	
@@ -13666,8 +13663,8 @@ preserveDrawingBuffer to <code>true</code>.</p></td>
                         
                     
                 
-                <p>Enables drawing buffer preservation,
-enable this if you need to call toDataUrl on the WebGL context.</p></td>
+                <p>启用绘图缓冲区保留，
+如果需要在WebGL上下文上调用toDataUrl，请启用此功能。</p></td>
         </tr>
 	
 	
@@ -13703,8 +13700,7 @@ enable this if you need to call toDataUrl on the WebGL context.</p></td>
                         
                     
                 
-                <p>The background color of the rendered area
-(shown if not transparent).</p></td>
+                <p>渲染区域的背景色（如果不透明则显示）。</p></td>
         </tr>
 	
 	
@@ -13738,8 +13734,7 @@ enable this if you need to call toDataUrl on the WebGL context.</p></td>
                         
                     
                 
-                <p>Parameter passed to WebGL context, set to &quot;high-performance&quot;
-for devices with dual graphics card.</p></td>
+                <p>传递给WebGL上下文的参数，对于具有双显卡的设备，设置为&quot;high-performance&quot;。</p></td>
         </tr>
 	
 	
@@ -13773,7 +13768,7 @@ for devices with dual graphics card.</p></td>
                         
                     
                 
-                <p>If WebGL context already exists, all parameters must be taken from it.</p></td>
+                <p>如果WebGL上下文已经存在，则必须从中获取所有参数。</p></td>
         </tr>
 	
 	
@@ -14317,7 +14312,7 @@ for devices with dual graphics card.</p></td>
 <dd>
     
     <div class="description">
-        <p>Batch system instance</p>
+        <p>批处理系统实例</p>
     </div>
     
     
@@ -14426,7 +14421,7 @@ for devices with dual graphics card.</p></td>
 <dd>
     
     <div class="description">
-        <p>Context system instance</p>
+        <p>上下文系统实例</p>
     </div>
     
     
@@ -14535,7 +14530,7 @@ for devices with dual graphics card.</p></td>
 <dd>
     
     <div class="description">
-        <p>Filter system instance</p>
+        <p>滤镜系统实例</p>
     </div>
     
     
@@ -14586,7 +14581,7 @@ for devices with dual graphics card.</p></td>
 <dd>
     
     <div class="description">
-        <p>Framebuffer system instance</p>
+        <p>帧缓冲系统实例</p>
     </div>
     
     
@@ -14637,7 +14632,7 @@ for devices with dual graphics card.</p></td>
 <dd>
     
     <div class="description">
-        <p>Geometry system instance</p>
+        <p>几何系统实例</p>
     </div>
     
     
@@ -14688,7 +14683,7 @@ for devices with dual graphics card.</p></td>
 <dd>
     
     <div class="description">
-        <p>WebGL context, set by the contextSystem (this.context)</p>
+        <p>WebGL上下文，由contextSystem（this.context）设置</p>
     </div>
     
     
@@ -14739,7 +14734,7 @@ for devices with dual graphics card.</p></td>
 <dd>
     
     <div class="description">
-        <p>Global uniforms</p>
+        <p>全局 uniforms</p>
     </div>
     
     
@@ -14848,7 +14843,7 @@ for devices with dual graphics card.</p></td>
 <dd>
     
     <div class="description">
-        <p>Mask system instance</p>
+        <p>遮罩系统实例</p>
     </div>
     
     
@@ -14956,9 +14951,8 @@ for devices with dual graphics card.</p></td>
 <dd>
     
     <div class="description">
-        <p>Collection of installed plugins. These are included by default in PIXI, but can be excluded
-by creating a custom build. Consult the README for more information about creating custom
-builds and excluding plugins.</p>
+        <p>已安装插件的集合。 这些默认包含在PIXI中，但可以通过创建自定义版本来排除。
+有关创建自定义版本和排除插件的更多信息，请查阅README。</p>
     </div>
     
     
@@ -15008,7 +15002,7 @@ builds and excluding plugins.</p>
             
             
             
-            <td class="description last"><p>Support tabbing interactive elements.</p></td>
+            <td class="description last"><p>支持制表互动元素。</p></td>
         </tr>
 	
 	
@@ -15031,7 +15025,7 @@ builds and excluding plugins.</p>
             
             
             
-            <td class="description last"><p>Extract image data from renderer.</p></td>
+            <td class="description last"><p>从渲染器提取图像数据。.</p></td>
         </tr>
 	
 	
@@ -15054,7 +15048,7 @@ builds and excluding plugins.</p>
             
             
             
-            <td class="description last"><p>Handles mouse, touch and pointer events.</p></td>
+            <td class="description last"><p>处理鼠标，触摸和指针事件。</p></td>
         </tr>
 	
 	
@@ -15077,7 +15071,7 @@ builds and excluding plugins.</p>
             
             
             
-            <td class="description last"><p>Pre-render display objects.</p></td>
+            <td class="description last"><p>预渲染显示对象。</p></td>
         </tr>
 	
 	
@@ -15184,7 +15178,7 @@ builds and excluding plugins.</p>
 <dd>
     
     <div class="description">
-        <p>Projection system instance</p>
+        <p>投影系统实例</p>
     </div>
     
     
@@ -15289,7 +15283,7 @@ builds and excluding plugins.</p>
 <dd>
     
     <div class="description">
-        <p>RenderTexture system instance</p>
+        <p>RenderTexture系统实例</p>
     </div>
     
     
@@ -15398,7 +15392,7 @@ builds and excluding plugins.</p>
 <dd>
     
     <div class="description">
-        <p>Scissor system instance</p>
+        <p>剪式系统实例</p>
     </div>
     
     
@@ -15505,7 +15499,7 @@ builds and excluding plugins.</p>
 <dd>
     
     <div class="description">
-        <p>Shader system instance</p>
+        <p>着色器系统实例</p>
     </div>
     
     
@@ -15556,7 +15550,7 @@ builds and excluding plugins.</p>
 <dd>
     
     <div class="description">
-        <p>State system instance</p>
+        <p>状态系统实例</p>
     </div>
     
     
@@ -15607,7 +15601,7 @@ builds and excluding plugins.</p>
 <dd>
     
     <div class="description">
-        <p>Stencil system instance</p>
+        <p>模具系统实例</p>
     </div>
     
     
@@ -15658,7 +15652,7 @@ builds and excluding plugins.</p>
 <dd>
     
     <div class="description">
-        <p>Texture system instance</p>
+        <p>纹理系统实例</p>
     </div>
     
     
@@ -15709,7 +15703,7 @@ builds and excluding plugins.</p>
 <dd>
     
     <div class="description">
-        <p>Texture garbage collector system instance</p>
+        <p>纹理垃圾收集器系统实例</p>
     </div>
     
     
@@ -15876,7 +15870,7 @@ builds and excluding plugins.</p>
 <dd>
     
     <div class="description">
-        <p>The type of this renderer as a standardized const</p>
+        <p>此渲染器的类型为标准化const</p>
     </div>
     
     
@@ -16051,7 +16045,7 @@ builds and excluding plugins.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_Renderer.js.html#line426">Renderer.js:426</a>
+            <a href="packages_core_src_Renderer.js.html#line416">Renderer.js:416</a>
         </div>
         
     </div>
@@ -16062,7 +16056,7 @@ builds and excluding plugins.</p>
     
     
     <div class="description">
-        <p>Adds a plugin to the renderer.</p>
+        <p>将插件添加到渲染器。</p>
     </div>
     
 
@@ -16109,7 +16103,7 @@ builds and excluding plugins.</p>
             
             <td class="description last">
                 
-                <p>The name of the plugin.</p></td>
+                <p>插件的名称。</p></td>
         </tr>
 	
 	
@@ -16132,7 +16126,7 @@ builds and excluding plugins.</p>
             
             <td class="description last">
                 
-                <p>The constructor function or class for the plugin.</p></td>
+                <p>插件的构造函数或类。</p></td>
         </tr>
 	
 	
@@ -16195,7 +16189,7 @@ builds and excluding plugins.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_Renderer.js.html#line270">Renderer.js:270</a>
+            <a href="packages_core_src_Renderer.js.html#line261">Renderer.js:261</a>
         </div>
         
     </div>
@@ -16206,7 +16200,7 @@ builds and excluding plugins.</p>
     
     
     <div class="description">
-        <p>Add a new system to the renderer.</p>
+        <p>将新系统添加到渲染器。</p>
     </div>
     
 
@@ -16258,7 +16252,7 @@ builds and excluding plugins.</p>
                         
                     
                 
-                <p>Class reference</p></td>
+                <p>类引用</p></td>
         </tr>
 	
 	
@@ -16288,10 +16282,8 @@ builds and excluding plugins.</p>
                         
                     
                 
-                <p>Property name for system, if not specified
-will use a static <code>name</code> property on the class itself. This
-name will be assigned as s property on the Renderer so make
-sure it doesn't collide with properties on Renderer.</p></td>
+                <p>系统的属性名称（如果未指定）将在类本身上使用静态的 <code>name</code> 属性。
+此名称将在Renderer上分配为s属性，因此请确保它不会与Renderer上的属性冲突。</p></td>
         </tr>
 	
 	
@@ -16354,7 +16346,7 @@ sure it doesn't collide with properties on Renderer.</p></td>
                         
                     
             </td>
-            <td class="description last">Return instance of renderer</td>
+            <td class="description last">返回渲染器实例</td>
         </tr>
     
     </tbody>
@@ -16383,7 +16375,7 @@ sure it doesn't collide with properties on Renderer.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_Renderer.js.html#line384">Renderer.js:384</a>
+            <a href="packages_core_src_Renderer.js.html#line375">Renderer.js:375</a>
         </div>
         
     </div>
@@ -16394,7 +16386,7 @@ sure it doesn't collide with properties on Renderer.</p></td>
     
     
     <div class="description">
-        <p>Clear the frame buffer</p>
+        <p>清除帧缓冲区</p>
     </div>
     
 
@@ -16461,7 +16453,7 @@ sure it doesn't collide with properties on Renderer.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_Renderer.js.html#line395">Renderer.js:395</a>
+            <a href="packages_core_src_Renderer.js.html#line386">Renderer.js:386</a>
         </div>
         
     </div>
@@ -16472,7 +16464,7 @@ sure it doesn't collide with properties on Renderer.</p></td>
     
     
     <div class="description">
-        <p>Removes everything from the renderer (event listeners, spritebatch, etc...)</p>
+        <p>从渲染器中删除所有内容（事件监听器，spritebatch等）</p>
     </div>
     
 
@@ -16534,7 +16526,7 @@ sure it doesn't collide with properties on Renderer.</p></td>
                         
                     
                 
-                <p>Removes the Canvas element from the DOM.
+                <p>从DOM中删除Canvas元素。
 See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
         </tr>
 	
@@ -16970,7 +16962,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_Renderer.js.html#line314">Renderer.js:314</a>
+            <a href="packages_core_src_Renderer.js.html#line305">Renderer.js:305</a>
         </div>
         
     </div>
@@ -16981,7 +16973,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
     
     
     <div class="description">
-        <p>Renders the object to its WebGL view</p>
+        <p>将对象渲染到其WebGL视图</p>
     </div>
     
 
@@ -17039,7 +17031,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
                         
                     
                 
-                <p>The object to be rendered.</p></td>
+                <p>要渲染的对象。</p></td>
         </tr>
 	
 	
@@ -17073,7 +17065,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
                         
                     
                 
-                <p>The render texture to render to.</p></td>
+                <p>要渲染到的渲染纹理。</p></td>
         </tr>
 	
 	
@@ -17109,7 +17101,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
                         
                     
                 
-                <p>Should the canvas be cleared before the new render.</p></td>
+                <p>在新渲染之前清除画布。</p></td>
         </tr>
 	
 	
@@ -17143,7 +17135,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
                         
                     
                 
-                <p>A transform to apply to the render texture before rendering.</p></td>
+                <p>在渲染之前应用于渲染纹理的变换。</p></td>
         </tr>
 	
 	
@@ -17179,7 +17171,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
                         
                     
                 
-                <p>Should we skip the update transform pass?</p></td>
+                <p>我们应该跳过更新转换吗？</p></td>
         </tr>
 	
 	
@@ -17242,7 +17234,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_Renderer.js.html#line375">Renderer.js:375</a>
+            <a href="packages_core_src_Renderer.js.html#line366">Renderer.js:366</a>
         </div>
         
     </div>
@@ -17253,7 +17245,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
     
     
     <div class="description">
-        <p>Resets the WebGL state so you can render things however you fancy!</p>
+        <p>重置WebGL状态，以便您可以根据自己的喜好渲染事物！</p>
     </div>
     
 
@@ -17349,7 +17341,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_Renderer.js.html#line365">Renderer.js:365</a>
+            <a href="packages_core_src_Renderer.js.html#line356">Renderer.js:356</a>
         </div>
         
     </div>
@@ -17360,7 +17352,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
     
     
     <div class="description">
-        <p>Resizes the WebGL view to the specified width and height.</p>
+        <p>将WebGL视图调整为指定的宽度和高度。</p>
     </div>
     
 
@@ -17407,7 +17399,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
             
             <td class="description last">
                 
-                <p>The new width of the screen.</p></td>
+                <p>屏幕的新宽度。</p></td>
         </tr>
 	
 	
@@ -17430,7 +17422,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
             
             <td class="description last">
                 
-                <p>The new height of the screen.</p></td>
+                <p>屏幕的新高度。</p></td>
         </tr>
 	
 	
@@ -17503,7 +17495,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_Renderer.js.html#line297">Renderer.js:297</a>
+            <a href="packages_core_src_Renderer.js.html#line288">Renderer.js:288</a>
         </div>
         
     </div>
@@ -17514,7 +17506,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
     
     
     <div class="description">
-        <p>Fired when the WebGL context is set.</p>
+        <p>设置WebGL上下文时触发。</p>
     </div>
     
 
@@ -17624,7 +17616,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_Renderer.js.html#line287">Renderer.js:287</a>
+            <a href="packages_core_src_Renderer.js.html#line278">Renderer.js:278</a>
         </div>
         
     </div>
@@ -17635,7 +17627,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
     
     
     <div class="description">
-        <p>Fired after rendering finishes.</p>
+        <p>渲染完成后触发。</p>
     </div>
     
 
@@ -17700,7 +17692,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_Renderer.js.html#line292">Renderer.js:292</a>
+            <a href="packages_core_src_Renderer.js.html#line283">Renderer.js:283</a>
         </div>
         
     </div>
@@ -17711,7 +17703,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
     
     
     <div class="description">
-        <p>Fired before rendering starts.</p>
+        <p>在渲染开始之前触发。</p>
     </div>
     
 
@@ -17772,7 +17764,7 @@ See: https://github.com/pixijs/pixi.js/issues/2233</p></td>
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Fri Apr 10 2020 01:56:29 GMT+0900 (GMT+09:00)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Apr 11 2020 01:25:02 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

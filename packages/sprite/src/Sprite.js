@@ -9,16 +9,16 @@ const tempPoint = new Point();
 const indices = new Uint16Array([0, 1, 2, 0, 2, 3]);
 
 /**
- * The Sprite object is the base for all textured objects that are rendered to the screen
+ * Sprite对象是渲染到屏幕上的所有纹理对象的基础
 *
- * A sprite can be created directly from an image like this:
+ * 可以直接从这里的图像创建精灵:
  *
  * ```js
  * let sprite = PIXI.Sprite.from('assets/image.png');
  * ```
  *
- * The more efficient way to create sprites is using a {@link PIXI.Spritesheet},
- * as swapping base textures when rendering to the screen is inefficient.
+ * 创建精灵的更有效方法是使用 {@link PIXI.Spritesheet},
+ * 因为在渲染到屏幕时替换基本纹理效率很低。
  *
  * ```js
  * PIXI.Loader.shared.add("assets/spritesheet.json").load(setup);
@@ -37,23 +37,19 @@ const indices = new Uint16Array([0, 1, 2, 0, 2, 3]);
 export class Sprite extends Container
 {
     /**
-     * @param {PIXI.Texture} [texture] - The texture for this sprite.
+     * @param {PIXI.Texture} [texture] - 此精灵的纹理。
      */
     constructor(texture)
     {
         super();
 
         /**
-         * The anchor point defines the normalized coordinates
-         * in the texture that map to the position of this
-         * sprite.
+         * 锚点定义纹理中映射到此精灵位置的归一化坐标。
          *
-         * By default, this is `(0,0)` (or `texture.defaultAnchor`
-         * if you have modified that), which means the position
-         * `(x,y)` of this `Sprite` will be the top-left corner.
+         * 默认情况下，为 `(0,0)`（或 `texture.defaultAnchor`
+         * 如果您已对其进行修改），则表示位置 `(x,y)` 为 `Sprite` 的左上角。
          *
-         * Note: Updating `texture.defaultAnchor` after
-         * constructing a `Sprite` does _not_ update its anchor.
+         * 注意：构造`Sprite`之后更新`texture.defaultAnchor`将_不会_更新其锚点。
          *
          * {@link https://docs.cocos2d-x.org/cocos2d-x/en/sprites/manipulation.html}
          *
@@ -69,7 +65,7 @@ export class Sprite extends Container
         );
 
         /**
-         * The texture that the sprite is using
+         * 精灵正在使用的纹理
          *
          * @private
          * @member {PIXI.Texture}
@@ -77,7 +73,7 @@ export class Sprite extends Container
         this._texture = null;
 
         /**
-         * The width of the sprite (this is initially set by the texture)
+         * 精灵的宽度（最初由纹理设置）
          *
          * @private
          * @member {number}
@@ -85,7 +81,7 @@ export class Sprite extends Container
         this._width = 0;
 
         /**
-         * The height of the sprite (this is initially set by the texture)
+         * 精灵的高度（最初由纹理设置）
          *
          * @private
          * @member {number}
@@ -93,7 +89,7 @@ export class Sprite extends Container
         this._height = 0;
 
         /**
-         * The tint applied to the sprite. This is a hex value. A value of 0xFFFFFF will remove any tint effect.
+         * 应用于精灵的色调。这是一个十六进制值。 值为0xFFFFFF时，将消除任何色调效果。
          *
          * @private
          * @member {number}
@@ -104,7 +100,7 @@ export class Sprite extends Container
         this.tint = 0xFFFFFF;
 
         /**
-         * The blend mode to be applied to the sprite. Apply a value of `PIXI.BLEND_MODES.NORMAL` to reset the blend mode.
+         * 应用于精灵的混合模式。应用值为 `PIXI.BLEND_MODES.NORMAL` 时，将重置混合模式。
          *
          * @member {number}
          * @default PIXI.BLEND_MODES.NORMAL
@@ -113,15 +109,15 @@ export class Sprite extends Container
         this.blendMode = BLEND_MODES.NORMAL;
 
         /**
-         * The shader that will be used to render the sprite. Set to null to remove a current shader.
+         * 将用于渲染精灵的着色器。 设置为null时，将删除当前着色器。
          *
          * @member {PIXI.Filter|PIXI.Shader}
          */
         this.shader = null;
 
         /**
-         * Cached tint value so we can tell when the tint is changed.
-         * Value is used for 2d CanvasRenderer.
+         * 缓存的色调值，以便我们可以知道何时更改了色调。
+         * 该值用于2d CanvasRenderer。
          *
          * @protected
          * @member {number}
@@ -130,8 +126,7 @@ export class Sprite extends Container
         this._cachedTint = 0xFFFFFF;
 
         /**
-         * this is used to store the uvs data of the sprite, assigned at the same time
-         * as the vertexData in calculateVertices()
+         *作为calculateVertices()中的vertexData
          *
          * @private
          * @member {Float32Array}
@@ -142,7 +137,7 @@ export class Sprite extends Container
         this.texture = texture || Texture.EMPTY;
 
         /**
-         * this is used to store the vertex data of the sprite (basically a quad)
+         * 这用于存储精灵的顶点数据（一般为一个四边形）
          *
          * @private
          * @member {Float32Array}
@@ -150,7 +145,7 @@ export class Sprite extends Container
         this.vertexData = new Float32Array(8);
 
         /**
-         * This is used to calculate the bounds of the object IF it is a trimmed sprite
+         * 如果它是修剪后精灵，则用于计算对象的边界
          *
          * @private
          * @member {Float32Array}
@@ -170,8 +165,8 @@ export class Sprite extends Container
         this.start = 0;
 
         /**
-         * Plugin that is responsible for rendering this element.
-         * Allows to customize the rendering process without overriding '_render' & '_renderCanvas' methods.
+         * 负责渲染此元素的插件。
+         * 允许自定义渲染过程，而无需覆盖 '_render' 和' '_renderCanvas' '_render' 方法。
          *
          * @member {string}
          * @default 'batch'
@@ -179,13 +174,13 @@ export class Sprite extends Container
         this.pluginName = 'batch';
 
         /**
-         * used to fast check if a sprite is.. a sprite!
+         * 用于快速检查精灵是否是精灵。
          * @member {boolean}
          */
         this.isSprite = true;
 
         /**
-         * Internal roundPixels field
+         * 内部roundPixels字段
          *
          * @member {boolean}
          * @private
@@ -194,7 +189,7 @@ export class Sprite extends Container
     }
 
     /**
-     * When the texture is updated, this event will fire to update the scale and frame
+     * 更新纹理后，将触发此事件以更新比例和frame
      *
      * @private
      */
@@ -217,7 +212,7 @@ export class Sprite extends Container
     }
 
     /**
-     * Called when the anchor position updates.
+     * 在锚点位置更新时调用。
      *
      * @private
      */
@@ -228,7 +223,7 @@ export class Sprite extends Container
     }
 
     /**
-     * calculates worldTransform * vertices, store it in vertexData
+     * 计算worldTransform * vertices，并将其存储在vertexData中
      */
     calculateVertices()
     {
@@ -314,8 +309,8 @@ export class Sprite extends Container
     }
 
     /**
-     * calculates worldTransform * vertices for a non texture with a trim. store it in vertexTrimmedData
-     * This is used to ensure that the true width and height of a trimmed texture is respected
+     * 计算带有修剪的非纹理的worldTransform * vertices。 将其存储在vertexTrimmedData中
+     * 这用于确保获得修剪出的纹理的真实宽度和高度
      */
     calculateTrimmedVertices()
     {
@@ -371,7 +366,7 @@ export class Sprite extends Container
 
     /**
     *
-    * Renders the object using the WebGL renderer
+    * 使用WebGL渲染器渲染对象
     *
     * @protected
     * @param {PIXI.Renderer} renderer - The webgl renderer to use.
@@ -385,7 +380,7 @@ export class Sprite extends Container
     }
 
     /**
-     * Updates the bounds of the sprite.
+     * 更新精灵的边界。
      *
      * @protected
      */
@@ -394,26 +389,26 @@ export class Sprite extends Container
         const trim = this._texture.trim;
         const orig = this._texture.orig;
 
-        // First lets check to see if the current texture has a trim..
+        // 首先让我们检查一下当前纹理是否有修剪..
         if (!trim || (trim.width === orig.width && trim.height === orig.height))
         {
-            // no trim! lets use the usual calculations..
+            // 不有修剪！ 让我们使用通常的计算..
             this.calculateVertices();
             this._bounds.addQuad(this.vertexData);
         }
         else
         {
-            // lets calculate a special trimmed bounds...
+            // 让我们计算一个特殊的修剪范围...
             this.calculateTrimmedVertices();
             this._bounds.addQuad(this.vertexTrimmedData);
         }
     }
 
     /**
-     * Gets the local bounds of the sprite object.
+     * 获取子画面对象的局部边界。
      *
-     * @param {PIXI.Rectangle} [rect] - The output rectangle.
-     * @return {PIXI.Rectangle} The bounds.
+     * @param {PIXI.Rectangle} [rect] - 输出矩形。
+     * @return {PIXI.Rectangle} 边界
      */
     getLocalBounds(rect)
     {
@@ -442,10 +437,10 @@ export class Sprite extends Container
     }
 
     /**
-     * Tests if a point is inside this sprite
+     * 测试点是否在此精灵内
      *
-     * @param {PIXI.Point} point - the point to test
-     * @return {boolean} the result of the test
+     * @param {PIXI.Point} point - 要测试的点
+     * @return {boolean} 测试结果
      */
     containsPoint(point)
     {
@@ -470,7 +465,7 @@ export class Sprite extends Container
     }
 
     /**
-     * Destroys this sprite and optionally its texture and children
+     * 销毁该精灵，并销毁其纹理和子元素
      *
      * @param {object|boolean} [options] - Options parameter. A boolean will act as if all options
      *  have been set to that value
@@ -544,7 +539,7 @@ export class Sprite extends Container
     }
 
     /**
-     * The width of the sprite, setting this will actually modify the scale to achieve the value set
+     * 精灵的宽度，设置该值实际上将修改比例，以实现设置的值
      *
      * @member {number}
      */
@@ -562,7 +557,7 @@ export class Sprite extends Container
     }
 
     /**
-     * The height of the sprite, setting this will actually modify the scale to achieve the value set
+     * 精灵的高度，设置该值实际上将修改比例以达到设置的值
      *
      * @member {number}
      */
@@ -626,7 +621,7 @@ export class Sprite extends Container
     }
 
     /**
-     * The texture that the sprite is using
+     * 精灵正在使用的纹理
      *
      * @member {PIXI.Texture}
      */

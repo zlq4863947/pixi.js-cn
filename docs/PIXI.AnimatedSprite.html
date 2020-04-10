@@ -13720,8 +13720,8 @@ function setup() {
 <dd>
     
     <div class="description">
-        <p>Cached tint value so we can tell when the tint is changed.
-Value is used for 2d CanvasRenderer.</p>
+        <p>缓存的色调值，以便我们可以知道何时更改了色调。
+该值用于2d CanvasRenderer。</p>
     </div>
     
     
@@ -14792,7 +14792,7 @@ sprite.anchor.set(0.5); // 这会将原点设置为居中。(0.5)与(0.5, 0.5)�
 <dd>
     
     <div class="description">
-        <p>The blend mode to be applied to the sprite. Apply a value of <code>PIXI.BLEND_MODES.NORMAL</code> to reset the blend mode.</p>
+        <p>应用于精灵的混合模式。应用值为 <code>PIXI.BLEND_MODES.NORMAL</code> 时，将重置混合模式。</p>
     </div>
     
     
@@ -14857,8 +14857,8 @@ sprite.anchor.set(0.5); // 这会将原点设置为居中。(0.5)与(0.5, 0.5)�
 <dd>
     
     <div class="description">
-        <p>If enabled, the mouse cursor use the pointer behavior when hovered over the displayObject if it is interactive
-Setting this changes the 'cursor' property to <code>'pointer'</code>.</p>
+        <p>如果启用，则鼠标光标悬停在displayObject上时，如果它是交互式的，则使用指针行为
+设置此项会将'cursor'属性更改为''pointer'`。</p>
     </div>
     
     
@@ -15088,8 +15088,7 @@ sprite.buttonMode = true;</code></pre>
 <dd>
     
     <div class="description">
-        <p>This defines what cursor mode is used when the mouse cursor
-is hovered over the displayObject.</p>
+        <p>定义鼠标光标时使用的光标模式悬停在displayObject上。</p>
     </div>
     
     
@@ -15276,7 +15275,7 @@ sprite.cursor = 'wait';</code></pre>
 <dd>
     
     <div class="description">
-        <p>The height of the sprite, setting this will actually modify the scale to achieve the value set</p>
+        <p>精灵的高度，设置该值实际上将修改比例以达到设置的值</p>
     </div>
     
     
@@ -15331,8 +15330,9 @@ sprite.cursor = 'wait';</code></pre>
 <dd>
     
     <div class="description">
-        <p>Interaction shape. Children will be hit first, then this shape will be checked.
-Setting this will cause this shape to be checked in hit tests rather than the displayObject's bounds.</p>
+        <p>元素可点击范围
+互动形状。首先将命中子集，然后再检查此形状。
+设置此项将导致在命中测试中将使用此范围，而不是显示对象的边界范围。</p>
     </div>
     
     
@@ -15397,8 +15397,7 @@ sprite.hitArea = new PIXI.Rectangle(0, 0, 100, 100);</code></pre>
 <dd>
     
     <div class="description">
-        <p>Enable interaction events for the DisplayObject. Touch, pointer and mouse
-events will not be emitted unless <code>interactive</code> is set to <code>true</code>.</p>
+        <p>启用DisplayObject的交互事件。如果不将<code>interactive</code>设置为<code>true</code>，则不会触发触摸，指针和鼠标事件。</p>
     </div>
     
     
@@ -15434,7 +15433,7 @@ events will not be emitted unless <code>interactive</code> is set to <code>true<
     <pre class="prettyprint"><code>const sprite = new PIXI.Sprite(texture);
 sprite.interactive = true;
 sprite.on('tap', (event) => {
-   //handle event
+   //处理事件
 });</code></pre>
     
 
@@ -15465,8 +15464,8 @@ sprite.on('tap', (event) => {
 <dd>
     
     <div class="description">
-        <p>Determines if the children to the displayObject can be clicked/touched
-Setting this to false allows PixiJS to bypass a recursive <code>hitTest</code> function</p>
+        <p>确定是否可以触发displayObject的子节点的clicked/touched
+设置为false将允许PixiJS绕过递归的<code>hitTest</code>函数</p>
     </div>
     
     
@@ -15576,7 +15575,7 @@ Setting this to false allows PixiJS to bypass a recursive <code>hitTest</code> f
 <dd>
     
     <div class="description">
-        <p>used to fast check if a sprite is.. a sprite!</p>
+        <p>用于快速检查精灵是否是精灵。</p>
     </div>
     
     
@@ -16190,8 +16189,8 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>Plugin that is responsible for rendering this element.
-Allows to customize the rendering process without overriding '_render' &amp; '_renderCanvas' methods.</p>
+        <p>负责渲染此元素的插件。
+允许自定义渲染过程，而无需覆盖 '_render' 和' '_renderCanvas' '_render' 方法。</p>
     </div>
     
     
@@ -16534,7 +16533,7 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>The shader that will be used to render the sprite. Set to null to remove a current shader.</p>
+        <p>将用于渲染精灵的着色器。 设置为null时，将删除当前着色器。</p>
     </div>
     
     
@@ -16768,7 +16767,7 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>The texture that the sprite is using</p>
+        <p>精灵正在使用的纹理</p>
     </div>
     
     
@@ -17155,7 +17154,7 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>The width of the sprite, setting this will actually modify the scale to achieve the value set</p>
+        <p>精灵的宽度，设置该值实际上将修改比例，以实现设置的值</p>
     </div>
     
     
@@ -17848,7 +17847,7 @@ position.y的别名</p>
     
         
         <div class="tag-source">
-            <a href="packages_sprite_src_Sprite.js.html#line340">Sprite.js:340</a>
+            <a href="packages_sprite_src_Sprite.js.html#line335">Sprite.js:335</a>
         </div>
         
     </div>
@@ -17859,7 +17858,7 @@ position.y的别名</p>
     
     
     <div class="description">
-        <p>Updates the bounds of the sprite.</p>
+        <p>更新精灵的边界。</p>
     </div>
     
 
@@ -18008,7 +18007,7 @@ position.y的别名</p>
     
         
         <div class="tag-source">
-            <a href="packages_sprite_src_Sprite.js.html#line329">Sprite.js:329</a>
+            <a href="packages_sprite_src_Sprite.js.html#line324">Sprite.js:324</a>
         </div>
         
     </div>
@@ -18019,7 +18018,7 @@ position.y的别名</p>
     
     
     <div class="description">
-        <p>Renders the object using the WebGL renderer</p>
+        <p>使用WebGL渲染器渲染对象</p>
     </div>
     
 
@@ -18552,7 +18551,7 @@ position.y的别名</p>
     
         
         <div class="tag-source">
-            <a href="packages_sprite_src_Sprite.js.html#line279">Sprite.js:279</a>
+            <a href="packages_sprite_src_Sprite.js.html#line274">Sprite.js:274</a>
         </div>
         
     </div>
@@ -18563,8 +18562,8 @@ position.y的别名</p>
     
     
     <div class="description">
-        <p>calculates worldTransform * vertices for a non texture with a trim. store it in vertexTrimmedData
-This is used to ensure that the true width and height of a trimmed texture is respected</p>
+        <p>计算带有修剪的非纹理的worldTransform * vertices。 将其存储在vertexTrimmedData中
+这用于确保获得修剪出的纹理的真实宽度和高度</p>
     </div>
     
 
@@ -18633,7 +18632,7 @@ This is used to ensure that the true width and height of a trimmed texture is re
     
         
         <div class="tag-source">
-            <a href="packages_sprite_src_Sprite.js.html#line205">Sprite.js:205</a>
+            <a href="packages_sprite_src_Sprite.js.html#line200">Sprite.js:200</a>
         </div>
         
     </div>
@@ -18644,7 +18643,7 @@ This is used to ensure that the true width and height of a trimmed texture is re
     
     
     <div class="description">
-        <p>calculates worldTransform * vertices, store it in vertexData</p>
+        <p>计算worldTransform * vertices，并将其存储在vertexData中</p>
     </div>
     
 
@@ -18713,7 +18712,7 @@ This is used to ensure that the true width and height of a trimmed texture is re
     
         
         <div class="tag-source">
-            <a href="packages_sprite_src_Sprite.js.html#line394">Sprite.js:394</a>
+            <a href="packages_sprite_src_Sprite.js.html#line389">Sprite.js:389</a>
         </div>
         
     </div>
@@ -18724,7 +18723,7 @@ This is used to ensure that the true width and height of a trimmed texture is re
     
     
     <div class="description">
-        <p>Tests if a point is inside this sprite</p>
+        <p>测试点是否在此精灵内</p>
     </div>
     
 
@@ -18771,7 +18770,7 @@ This is used to ensure that the true width and height of a trimmed texture is re
             
             <td class="description last">
                 
-                <p>the point to test</p></td>
+                <p>要测试的点</p></td>
         </tr>
 	
 	
@@ -18834,7 +18833,7 @@ This is used to ensure that the true width and height of a trimmed texture is re
                         
                     
             </td>
-            <td class="description last">the result of the test</td>
+            <td class="description last">测试结果</td>
         </tr>
     
     </tbody>
@@ -20074,7 +20073,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_sprite_src_Sprite.js.html#line365">Sprite.js:365</a>
+            <a href="packages_sprite_src_Sprite.js.html#line360">Sprite.js:360</a>
         </div>
         
     </div>
@@ -20085,7 +20084,7 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Gets the local bounds of the sprite object.</p>
+        <p>获取子画面对象的局部边界。</p>
     </div>
     
 
@@ -20139,7 +20138,7 @@ nice performance boost.</p></td>
                         
                     
                 
-                <p>The output rectangle.</p></td>
+                <p>输出矩形。</p></td>
         </tr>
 	
 	
@@ -20202,7 +20201,7 @@ nice performance boost.</p></td>
                         
                     
             </td>
-            <td class="description last">The bounds.</td>
+            <td class="description last">边界</td>
         </tr>
     
     </tbody>
@@ -26976,7 +26975,7 @@ DisplayObject's <code>interactive</code> property must be set to <code>true</cod
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Fri Apr 10 2020 01:56:24 GMT+0900 (GMT+09:00)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Apr 11 2020 01:24:57 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

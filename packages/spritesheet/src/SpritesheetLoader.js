@@ -3,10 +3,9 @@ import { LoaderResource } from '@pixi/loaders';
 import { Spritesheet } from './Spritesheet';
 
 /**
- * {@link PIXI.Loader Loader} middleware for loading texture atlases that have been created with
- * TexturePacker or similar JSON-based spritesheet.
+ * {@link PIXI.Loader Loader} 中间件，用于加载使用TexturePacker或类似的基于JSON的精灵表创建的纹理图集。
  *
- * This middleware automatically generates Texture resources.
+ * 该中间件自动生成纹理资源。
  *
  * @class
  * @memberof PIXI
@@ -15,7 +14,7 @@ import { Spritesheet } from './Spritesheet';
 export class SpritesheetLoader
 {
     /**
-     * Called after a resource is loaded.
+     * 加载资源后调用。
      * @see PIXI.Loader.loaderMiddleware
      * @param {PIXI.LoaderResource} resource
      * @param {function} next
@@ -70,9 +69,9 @@ export class SpritesheetLoader
     }
 
     /**
-     * Get the spritesheets root path
-     * @param {PIXI.LoaderResource} resource - Resource to check path
-     * @param {string} baseUrl - Base root url
+     * 获取精灵表根路径
+     * @param {PIXI.LoaderResource} resource - 检查路径的资源
+     * @param {string} baseUrl - 基础根路径
      */
     static getResourcePath(resource, baseUrl)
     {

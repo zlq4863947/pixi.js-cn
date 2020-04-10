@@ -113,7 +113,7 @@ export class Graphics extends Container
         this._holeMode = false;
 
         /**
-         * Current path
+         * 当前路径
          *
          * @member {PIXI.Polygon}
          * @protected
@@ -121,11 +121,10 @@ export class Graphics extends Container
         this.currentPath = null;
 
         /**
-         * When cacheAsBitmap is set to true the graphics object will be rendered as if it was a sprite.
-         * This is useful if your graphics element does not change often, as it will speed up the rendering
-         * of the object in exchange for taking up texture memory. It is also useful if you need the graphics
-         * object to be anti-aliased, because it will be rendered using canvas. This is not recommended if
-         * you are constantly redrawing the graphics element.
+         * 当cacheAsBitmap设置为true时，图形对象将被渲染为精灵。
+         * 如果您的图形元素不经常更改，这将很有用，因为它将加快对象的渲染速度，以换取占用的纹理内存。
+         * 如果您需要对图形对象进行抗锯齿处理，这也很有用，因为它将使用画布进行渲染。
+         * 如果您不断重绘图形元素，则不建议这样做。
          *
          * @name cacheAsBitmap
          * @member {boolean}
@@ -134,7 +133,7 @@ export class Graphics extends Container
          */
 
         /**
-         * A collections of batches! These can be drawn by the renderer batch system.
+         * 批处理集合！这些可以由渲染器批处理系统绘制。
          *
          * @protected
          * @member {object[]}
@@ -142,7 +141,7 @@ export class Graphics extends Container
         this.batches = [];
 
         /**
-         * Update dirty for limiting calculating tints for batches.
+         * 更新dirty以限制批处理的计算色度。
          *
          * @protected
          * @member {number}
@@ -151,7 +150,7 @@ export class Graphics extends Container
         this.batchTint = -1;
 
         /**
-         * Copy of the object vertex data.
+         * 对象顶点数据的副本。
          *
          * @protected
          * @member {Float32Array}
@@ -162,7 +161,7 @@ export class Graphics extends Container
         this.batchDirty = -1;
 
         /**
-         * Renderer plugin for batching
+         * 批处理渲染器插件
          *
          * @member {string}
          * @default 'batch'
@@ -175,10 +174,10 @@ export class Graphics extends Container
     }
 
     /**
-     * Creates a new Graphics object with the same values as this one.
-     * Note that the only the properties of the object are cloned, not its transform (position,scale,etc)
+     * 创建一个具有与此值相同值的新Graphics对象。
+     * 请注意，仅克隆对象的属性，而不克隆其变换（位置，比例等）
      *
-     * @return {PIXI.Graphics} A clone of the graphics object
+     * @return {PIXI.Graphics} 图形对象的克隆
      */
     clone()
     {
@@ -188,8 +187,7 @@ export class Graphics extends Container
     }
 
     /**
-     * The blend mode to be applied to the graphic shape. Apply a value of
-     * `PIXI.BLEND_MODES.NORMAL` to reset the blend mode.
+     * 要应用于图形形状的混合模式。使用`PIXI.BLEND_MODES.NORMAL`，可以重置混合模式。
      *
      * @member {number}
      * @default PIXI.BLEND_MODES.NORMAL;
@@ -206,8 +204,7 @@ export class Graphics extends Container
     }
 
     /**
-     * The tint applied to the graphic shape. This is a hex value. A value of
-     * 0xFFFFFF will remove any tint effect.
+     * 色彩应用于图形形状。这是一个十六进制值。值为0xFFFFFF时，将消除任何色调效果。
      *
      * @member {number}
      * @default 0xFFFFFF
@@ -222,7 +219,7 @@ export class Graphics extends Container
     }
 
     /**
-     * The current fill style.
+     * 当前的填充样式。
      *
      * @member {PIXI.FillStyle}
      * @readonly
@@ -233,7 +230,7 @@ export class Graphics extends Container
     }
 
     /**
-     * The current line style.
+     * 当前的线样式。
      *
      * @member {PIXI.LineStyle}
      * @readonly
@@ -244,28 +241,26 @@ export class Graphics extends Container
     }
 
     /**
-     * Specifies the line style used for subsequent calls to Graphics methods such as the lineTo()
-     * method or the drawCircle() method.
+     * 指定用于随后调用Graphics方法的线样式，例如：`lineTo()`方法 或 `drawCircle()`方法
      *
      * @method PIXI.Graphics#lineStyle
-     * @param {number} [width=0] - width of the line to draw, will update the objects stored style
-     * @param {number} [color=0x0] - color of the line to draw, will update the objects stored style
-     * @param {number} [alpha=1] - alpha of the line to draw, will update the objects stored style
-     * @param {number} [alignment=0.5] - alignment of the line to draw, (0 = inner, 0.5 = middle, 1 = outter)
-     * @param {boolean} [native=false] - If true the lines will be draw using LINES instead of TRIANGLE_STRIP
-     * @return {PIXI.Graphics} This Graphics object. Good for chaining method calls
+     * @param {number} [width=0] - 画线的宽度，将更新对象存储的样式
+     * @param {number} [color=0x0] - 绘制线条的颜色，将更新对象存储的样式
+     * @param {number} [alpha=1] - 绘制线条的Alpha，将更新对象存储的样式
+     * @param {number} [alignment=0.5] - 绘制线的对齐方式（0 = 内部，0.5 = 居中，1 = 外部）
+     * @param {boolean} [native=false] - 如果为true，则将使用LINES来代替TRIANGLE_STRIP绘制线条
+     * @return {PIXI.Graphics} 此Graphics对象。可以使用链式方法调用
      */
     /**
-     * Specifies the line style used for subsequent calls to Graphics methods such as the lineTo()
-     * method or the drawCircle() method.
+     * 指定用于随后调用Graphics方法的线样式，例如：`lineTo()`方法 或 `drawCircle()`方法
      *
-     * @param {object} [options] - Line style options
-     * @param {number} [options.width=0] - width of the line to draw, will update the objects stored style
-     * @param {number} [options.color=0x0] - color of the line to draw, will update the objects stored style
-     * @param {number} [options.alpha=1] - alpha of the line to draw, will update the objects stored style
-     * @param {number} [options.alignment=0.5] - alignment of the line to draw, (0 = inner, 0.5 = middle, 1 = outter)
-     * @param {boolean} [options.native=false] - If true the lines will be draw using LINES instead of TRIANGLE_STRIP
-     * @return {PIXI.Graphics} This Graphics object. Good for chaining method calls
+     * @param {object} [options] - 线样式选项
+     * @param {number} [options.width=0] - 画线的宽度，将更新对象存储的样式
+     * @param {number} [options.color=0x0] - 绘制线条的颜色，将更新对象存储的样式
+     * @param {number} [options.alpha=1] - 绘制线条的Alpha，将更新对象存储的样式
+     * @param {number} [options.alignment=0.5] - 绘制线的对齐方式（0 = 内部，0.5 = 居中，1 = 外部）
+     * @param {boolean} [options.native=false] - 如果为true，则将使用LINES来代替TRIANGLE_STRIP绘制线条
+     * @return {PIXI.Graphics} 此Graphics对象。可以使用链式方法调用
      */
     lineStyle(options)
     {

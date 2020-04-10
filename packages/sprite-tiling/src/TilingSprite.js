@@ -64,7 +64,7 @@ export class TilingSprite extends Sprite
         this.uvMatrix = texture.uvMatrix || new TextureMatrix(texture);
 
         /**
-         * Plugin that is responsible for rendering this element.
+         * 负责渲染此元素的插件。
          * Allows to customize the rendering process without overriding '_render' method.
          *
          * @member {string}
@@ -238,7 +238,7 @@ export class TilingSprite extends Sprite
     }
 
     /**
-     * Destroys this sprite and optionally its texture and children
+     * 销毁该精灵，并销毁其纹理和子元素
      *
      * @param {object|boolean} [options] - Options parameter. A boolean will act as if all options
      *  have been set to that value

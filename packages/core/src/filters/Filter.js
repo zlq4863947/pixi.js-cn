@@ -32,7 +32,7 @@ import defaultFragment from './defaultFilter.frag';
  * 开发人员可以使用v3的法线坐标，然后允许滤镜使用部分Framebuffer，从而将这些额外的uniform考虑在内。
  *
  * 另请注意，我们已更改了默认的顶点着色器，请参见
- * {@link https://github.com/pixijs/pixi.js/wiki/v5-Creating-filters Wiki}.
+ * {@link https://github.com/zlq4863947/pixi.js-cn/wiki/v5-Creating-filters Wiki}.
  *
  * ### 内置Uniforms
  *

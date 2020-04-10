@@ -42,23 +42,23 @@ export enum RENDERER_TYPE {
  * @memberof PIXI
  * @name BLEND_MODES
  * @enum {number}
- * @property {number} NORMAL
- * @property {number} ADD
- * @property {number} MULTIPLY
- * @property {number} SCREEN
- * @property {number} OVERLAY
- * @property {number} DARKEN
- * @property {number} LIGHTEN
- * @property {number} COLOR_DODGE
- * @property {number} COLOR_BURN
- * @property {number} HARD_LIGHT
- * @property {number} SOFT_LIGHT
- * @property {number} DIFFERENCE
- * @property {number} EXCLUSION
- * @property {number} HUE
- * @property {number} SATURATION
- * @property {number} COLOR
- * @property {number} LUMINOSITY
+ * @property {number} NORMAL 正常
+ * @property {number} ADD 线性减淡，添加
+ * @property {number} MULTIPLY 正片叠底
+ * @property {number} SCREEN 滤色
+ * @property {number} OVERLAY 叠加
+ * @property {number} DARKEN 变暗
+ * @property {number} LIGHTEN 变亮
+ * @property {number} COLOR_DODGE 颜色减淡
+ * @property {number} COLOR_BURN 颜色加深
+ * @property {number} HARD_LIGHT 强光
+ * @property {number} SOFT_LIGHT 柔光
+ * @property {number} DIFFERENCE 差值
+ * @property {number} EXCLUSION 排除
+ * @property {number} HUE 色相
+ * @property {number} SATURATION 饱和度
+ * @property {number} COLOR 颜色
+ * @property {number} LUMINOSITY 明度
  * @property {number} NORMAL_NPM
  * @property {number} ADD_NPM
  * @property {number} SCREEN_NPM

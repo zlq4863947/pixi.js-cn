@@ -13192,9 +13192,8 @@
         <h2><span class="ancestors"><a href="PIXI.html">PIXI</a>~</span>Spritesheet
         </h2>
         
-            <div class="class-description"><p>Utility class for maintaining reference to a collection
-of Textures on a single Spritesheet.</p>
-<p>To access a sprite sheet from your code pass its JSON data file to Pixi's loader:</p>
+            <div class="class-description"><p>用于维护对单个Spritesheet上纹理集合的工具类。</p>
+<p>要通过您的代码访问精灵表，请将其JSON数据文件传递给Pixi的加载器:</p>
 <pre class="prettyprint source lang-js"><code>PIXI.Loader.shared.add(&quot;images/spritesheet.json&quot;).load(setup);
 
 function setup() {
@@ -13202,11 +13201,10 @@ function setup() {
   ...
 }
 </code></pre>
-<p>With the <code>sheet.textures</code> you can create Sprite objects,<code>sheet.animations</code> can be used to create an AnimatedSprite.</p>
-<p>Sprite sheets can be packed using tools like <a target="_blank" href="https://codeandweb.com/texturepacker">TexturePacker</a>,
-<a target="_blank" href="https://renderhjs.net/shoebox/">Shoebox</a> or <a target="_blank" href="https://github.com/krzysztof-o/spritesheet.js">Spritesheet.js</a>.
-Default anchor points (see <a href="PIXI.Texture.html#defaultAnchor">PIXI.Texture#defaultAnchor</a>) and grouping of animation sprites are currently only
-supported by TexturePacker.</p></div>
+<p>使用 <code>sheet.textures</code> 可以创建Sprite对象，<code>sheet.animations</code> 可以用来创建AnimatedSprite。</p>
+<p>可以使用 <a target="_blank" href="https://codeandweb.com/texturepacker">TexturePacker</a>,
+<a target="_blank" href="https://renderhjs.net/shoebox/">Shoebox</a> 或 <a target="_blank" href="https://github.com/krzysztof-o/spritesheet.js">Spritesheet.js</a>。
+当前仅由TexturePacker支持默认锚点（请参阅 <a href="PIXI.Texture.html#defaultAnchor">PIXI.Texture#defaultAnchor</a>）和动画精灵的分组。</p></div>
         
     </div>
 </header>  
@@ -13234,7 +13232,7 @@ supported by TexturePacker.</p></div>
     
         
         <div class="tag-source">
-            <a href="packages_spritesheet_src_Spritesheet.js.html#line49">Spritesheet.js:49</a>
+            <a href="packages_spritesheet_src_Spritesheet.js.html#line45">Spritesheet.js:45</a>
         </div>
         
     </div>
@@ -13299,7 +13297,7 @@ supported by TexturePacker.</p></div>
                         
                     
                 
-                <p>Reference to the source BaseTexture object.</p></td>
+                <p>源BaseTexture对象的引用。</p></td>
         </tr>
 	
 	
@@ -13331,7 +13329,7 @@ supported by TexturePacker.</p></div>
                         
                     
                 
-                <p>Spritesheet image data.</p></td>
+                <p>Spritesheet图像数据。</p></td>
         </tr>
 	
 	
@@ -13367,9 +13365,7 @@ supported by TexturePacker.</p></div>
                         
                     
                 
-                <p>The filename to consider when determining
-the resolution of the spritesheet. If not provided, the imageUrl will
-be used on the BaseTexture.</p></td>
+                <p>在确定spritesheet的分辨率时要考虑的文件名。如果没有提供，imageUrl将用于BaseTexture。</p></td>
         </tr>
 	
 	
@@ -13453,7 +13449,7 @@ be used on the BaseTexture.</p></td>
 <dd>
     
     <div class="description">
-        <p>The maximum number of Textures to build per process.</p>
+        <p>每个进程要生成的最大纹理数。</p>
     </div>
     
     
@@ -13507,8 +13503,8 @@ be used on the BaseTexture.</p></td>
 <dd>
     
     <div class="description">
-        <p>A map containing the textures for each animation.
-Can be used to create an <a href="PIXI.AnimatedSprite.html">AnimatedSprite</a>:</p>
+        <p>包含每个动画的纹理的贴图。
+可以用来创建一个 <a href="PIXI.AnimatedSprite.html">AnimatedSprite</a>:</p>
 <pre class="prettyprint source lang-js"><code>new PIXI.AnimatedSprite(sheet.animations[&quot;anim_name&quot;])
 </code></pre>
     </div>
@@ -13561,7 +13557,7 @@ Can be used to create an <a href="PIXI.AnimatedSprite.html">AnimatedSprite</a>:<
 <dd>
     
     <div class="description">
-        <p>Reference to ths source texture</p>
+        <p>源纹理的引用</p>
     </div>
     
     
@@ -13612,7 +13608,7 @@ Can be used to create an <a href="PIXI.AnimatedSprite.html">AnimatedSprite</a>:<
 <dd>
     
     <div class="description">
-        <p>Reference to the original JSON data.</p>
+        <p>原始JSON数据的引用。</p>
     </div>
     
     
@@ -13663,7 +13659,7 @@ Can be used to create an <a href="PIXI.AnimatedSprite.html">AnimatedSprite</a>:<
 <dd>
     
     <div class="description">
-        <p>The resolution of the spritesheet.</p>
+        <p>精灵表的分辨率。</p>
     </div>
     
     
@@ -13714,8 +13710,8 @@ Can be used to create an <a href="PIXI.AnimatedSprite.html">AnimatedSprite</a>:<
 <dd>
     
     <div class="description">
-        <p>A map containing all textures of the sprite sheet.
-Can be used to create a <a href="PIXI.Sprite.html">Sprite</a>:</p>
+        <p>包含精灵表所有纹理的图集。
+可以用来创建一个<a href="PIXI.Sprite.html">Sprite</a>:</p>
 <pre class="prettyprint source lang-js"><code>new PIXI.Sprite(sheet.textures[&quot;image.png&quot;]);
 </code></pre>
     </div>
@@ -13772,7 +13768,7 @@ Can be used to create a <a href="PIXI.Sprite.html">Sprite</a>:</p>
     
         
         <div class="tag-source">
-            <a href="packages_spritesheet_src_Spritesheet.js.html#line266">Spritesheet.js:266</a>
+            <a href="packages_spritesheet_src_Spritesheet.js.html#line258">Spritesheet.js:258</a>
         </div>
         
     </div>
@@ -13783,7 +13779,7 @@ Can be used to create a <a href="PIXI.Sprite.html">Sprite</a>:</p>
     
     
     <div class="description">
-        <p>Destroy Spritesheet and don't use after this.</p>
+        <p>销毁精灵表后不再使用。</p>
     </div>
     
 
@@ -13845,7 +13841,7 @@ Can be used to create a <a href="PIXI.Sprite.html">Sprite</a>:</p>
                         
                     
                 
-                <p>Whether to destroy the base texture as well</p></td>
+                <p>是否也要销毁基础纹理</p></td>
         </tr>
 	
 	
@@ -13908,7 +13904,7 @@ Can be used to create a <a href="PIXI.Sprite.html">Sprite</a>:</p>
     
         
         <div class="tag-source">
-            <a href="packages_spritesheet_src_Spritesheet.js.html#line146">Spritesheet.js:146</a>
+            <a href="packages_spritesheet_src_Spritesheet.js.html#line138">Spritesheet.js:138</a>
         </div>
         
     </div>
@@ -13919,8 +13915,7 @@ Can be used to create a <a href="PIXI.Sprite.html">Sprite</a>:</p>
     
     
     <div class="description">
-        <p>Parser spritesheet from loaded data. This is done asynchronously
-to prevent creating too many Texture within a single process.</p>
+        <p>从加载的数据中解析精灵表。这是异步完成的，以防止在单个进程中创建过多的纹理。</p>
     </div>
     
 
@@ -13967,8 +13962,7 @@ to prevent creating too many Texture within a single process.</p>
             
             <td class="description last">
                 
-                <p>Callback when complete returns
-a map of the Textures for this spritesheet.</p></td>
+                <p>完成时回调返回此精灵表的纹理数组。</p></td>
         </tr>
 	
 	
@@ -14033,7 +14027,7 @@ a map of the Textures for this spritesheet.</p></td>
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Fri Apr 10 2020 01:56:30 GMT+0900 (GMT+09:00)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Apr 11 2020 01:25:03 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

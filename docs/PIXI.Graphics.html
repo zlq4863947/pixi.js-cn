@@ -14705,7 +14705,7 @@
 <dd>
     
     <div class="description">
-        <p>A collections of batches! These can be drawn by the renderer batch system.</p>
+        <p>批处理集合！这些可以由渲染器批处理系统绘制。</p>
     </div>
     
     
@@ -14756,7 +14756,7 @@
 <dd>
     
     <div class="description">
-        <p>Update dirty for limiting calculating tints for batches.</p>
+        <p>更新dirty以限制批处理的计算色度。</p>
     </div>
     
     
@@ -14810,8 +14810,7 @@
 <dd>
     
     <div class="description">
-        <p>The blend mode to be applied to the graphic shape. Apply a value of
-<code>PIXI.BLEND_MODES.NORMAL</code> to reset the blend mode.</p>
+        <p>要应用于图形形状的混合模式。使用<code>PIXI.BLEND_MODES.NORMAL</code>，可以重置混合模式。</p>
     </div>
     
     
@@ -14876,8 +14875,8 @@
 <dd>
     
     <div class="description">
-        <p>If enabled, the mouse cursor use the pointer behavior when hovered over the displayObject if it is interactive
-Setting this changes the 'cursor' property to <code>'pointer'</code>.</p>
+        <p>如果启用，则鼠标光标悬停在displayObject上时，如果它是交互式的，则使用指针行为
+设置此项会将'cursor'属性更改为''pointer'`。</p>
     </div>
     
     
@@ -14940,11 +14939,10 @@ sprite.buttonMode = true;</code></pre>
 <dd>
     
     <div class="description">
-        <p>When cacheAsBitmap is set to true the graphics object will be rendered as if it was a sprite.
-This is useful if your graphics element does not change often, as it will speed up the rendering
-of the object in exchange for taking up texture memory. It is also useful if you need the graphics
-object to be anti-aliased, because it will be rendered using canvas. This is not recommended if
-you are constantly redrawing the graphics element.</p>
+        <p>当cacheAsBitmap设置为true时，图形对象将被渲染为精灵。
+如果您的图形元素不经常更改，这将很有用，因为它将加快对象的渲染速度，以换取占用的纹理内存。
+如果您需要对图形对象进行抗锯齿处理，这也很有用，因为它将使用画布进行渲染。
+如果您不断重绘图形元素，则不建议这样做。</p>
     </div>
     
     
@@ -15053,7 +15051,7 @@ you are constantly redrawing the graphics element.</p>
 <dd>
     
     <div class="description">
-        <p>Current path</p>
+        <p>当前路径</p>
     </div>
     
     
@@ -15108,8 +15106,7 @@ you are constantly redrawing the graphics element.</p>
 <dd>
     
     <div class="description">
-        <p>This defines what cursor mode is used when the mouse cursor
-is hovered over the displayObject.</p>
+        <p>定义鼠标光标时使用的光标模式悬停在displayObject上。</p>
     </div>
     
     
@@ -15177,7 +15174,7 @@ sprite.cursor = 'wait';</code></pre>
 <dd>
     
     <div class="description">
-        <p>The current fill style.</p>
+        <p>当前的填充样式。</p>
     </div>
     
     
@@ -15514,8 +15511,9 @@ sprite.cursor = 'wait';</code></pre>
 <dd>
     
     <div class="description">
-        <p>Interaction shape. Children will be hit first, then this shape will be checked.
-Setting this will cause this shape to be checked in hit tests rather than the displayObject's bounds.</p>
+        <p>元素可点击范围
+互动形状。首先将命中子集，然后再检查此形状。
+设置此项将导致在命中测试中将使用此范围，而不是显示对象的边界范围。</p>
     </div>
     
     
@@ -15580,8 +15578,7 @@ sprite.hitArea = new PIXI.Rectangle(0, 0, 100, 100);</code></pre>
 <dd>
     
     <div class="description">
-        <p>Enable interaction events for the DisplayObject. Touch, pointer and mouse
-events will not be emitted unless <code>interactive</code> is set to <code>true</code>.</p>
+        <p>启用DisplayObject的交互事件。如果不将<code>interactive</code>设置为<code>true</code>，则不会触发触摸，指针和鼠标事件。</p>
     </div>
     
     
@@ -15617,7 +15614,7 @@ events will not be emitted unless <code>interactive</code> is set to <code>true<
     <pre class="prettyprint"><code>const sprite = new PIXI.Sprite(texture);
 sprite.interactive = true;
 sprite.on('tap', (event) => {
-   //handle event
+   //处理事件
 });</code></pre>
     
 
@@ -15648,8 +15645,8 @@ sprite.on('tap', (event) => {
 <dd>
     
     <div class="description">
-        <p>Determines if the children to the displayObject can be clicked/touched
-Setting this to false allows PixiJS to bypass a recursive <code>hitTest</code> function</p>
+        <p>确定是否可以触发displayObject的子节点的clicked/touched
+设置为false将允许PixiJS绕过递归的<code>hitTest</code>函数</p>
     </div>
     
     
@@ -15810,7 +15807,7 @@ Setting this to false allows PixiJS to bypass a recursive <code>hitTest</code> f
 <dd>
     
     <div class="description">
-        <p>The current line style.</p>
+        <p>当前的线样式。</p>
     </div>
     
     
@@ -16162,7 +16159,7 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>Renderer plugin for batching</p>
+        <p>批处理渲染器插件</p>
     </div>
     
     
@@ -16723,8 +16720,7 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>The tint applied to the graphic shape. This is a hex value. A value of
-0xFFFFFF will remove any tint effect.</p>
+        <p>色彩应用于图形形状。这是一个十六进制值。值为0xFFFFFF时，将消除任何色调效果。</p>
     </div>
     
     
@@ -16834,7 +16830,7 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>Copy of the object vertex data.</p>
+        <p>对象顶点数据的副本。</p>
     </div>
     
     
@@ -17336,7 +17332,7 @@ position.y的别名</p>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line952">Graphics.js:952</a>
+            <a href="packages_graphics_src_Graphics.js.html#line947">Graphics.js:947</a>
         </div>
         
     </div>
@@ -17412,7 +17408,7 @@ position.y的别名</p>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line394">Graphics.js:394</a>
+            <a href="packages_graphics_src_Graphics.js.html#line389">Graphics.js:389</a>
         </div>
         
     </div>
@@ -17584,7 +17580,7 @@ position.y的别名</p>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line801">Graphics.js:801</a>
+            <a href="packages_graphics_src_Graphics.js.html#line796">Graphics.js:796</a>
         </div>
         
     </div>
@@ -17742,7 +17738,7 @@ position.y的别名</p>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line773">Graphics.js:773</a>
+            <a href="packages_graphics_src_Graphics.js.html#line768">Graphics.js:768</a>
         </div>
         
     </div>
@@ -17863,7 +17859,7 @@ position.y的别名</p>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line839">Graphics.js:839</a>
+            <a href="packages_graphics_src_Graphics.js.html#line834">Graphics.js:834</a>
         </div>
         
     </div>
@@ -17984,7 +17980,7 @@ position.y的别名</p>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line862">Graphics.js:862</a>
+            <a href="packages_graphics_src_Graphics.js.html#line857">Graphics.js:857</a>
         </div>
         
     </div>
@@ -18105,7 +18101,7 @@ position.y的别名</p>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line898">Graphics.js:898</a>
+            <a href="packages_graphics_src_Graphics.js.html#line893">Graphics.js:893</a>
         </div>
         
     </div>
@@ -18249,7 +18245,7 @@ position.y的别名</p>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line915">Graphics.js:915</a>
+            <a href="packages_graphics_src_Graphics.js.html#line910">Graphics.js:910</a>
         </div>
         
     </div>
@@ -18709,7 +18705,7 @@ position.y的别名</p>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line490">Graphics.js:490</a>
+            <a href="packages_graphics_src_Graphics.js.html#line485">Graphics.js:485</a>
         </div>
         
     </div>
@@ -19037,7 +19033,7 @@ indicates counter-clockwise.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line461">Graphics.js:461</a>
+            <a href="packages_graphics_src_Graphics.js.html#line456">Graphics.js:456</a>
         </div>
         
     </div>
@@ -19280,7 +19276,7 @@ indicates counter-clockwise.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line550">Graphics.js:550</a>
+            <a href="packages_graphics_src_Graphics.js.html#line545">Graphics.js:545</a>
         </div>
         
     </div>
@@ -19482,7 +19478,7 @@ indicates counter-clockwise.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line1074">Graphics.js:1074</a>
+            <a href="packages_graphics_src_Graphics.js.html#line1069">Graphics.js:1069</a>
         </div>
         
     </div>
@@ -19591,7 +19587,7 @@ please use <code>moveTo</code> <code>lineTo</code>, <code>quadraticCurveTo</code
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line564">Graphics.js:564</a>
+            <a href="packages_graphics_src_Graphics.js.html#line559">Graphics.js:559</a>
         </div>
         
     </div>
@@ -19916,7 +19912,7 @@ please use <code>moveTo</code> <code>lineTo</code>, <code>quadraticCurveTo</code
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line442">Graphics.js:442</a>
+            <a href="packages_graphics_src_Graphics.js.html#line437">Graphics.js:437</a>
         </div>
         
     </div>
@@ -20261,7 +20257,7 @@ please use <code>moveTo</code> <code>lineTo</code>, <code>quadraticCurveTo</code
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line982">Graphics.js:982</a>
+            <a href="packages_graphics_src_Graphics.js.html#line977">Graphics.js:977</a>
         </div>
         
     </div>
@@ -20337,7 +20333,7 @@ please use <code>moveTo</code> <code>lineTo</code>, <code>quadraticCurveTo</code
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line1010">Graphics.js:1010</a>
+            <a href="packages_graphics_src_Graphics.js.html#line1005">Graphics.js:1005</a>
         </div>
         
     </div>
@@ -20414,7 +20410,7 @@ geometry, recaculate the vertices.</p>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line744">Graphics.js:744</a>
+            <a href="packages_graphics_src_Graphics.js.html#line739">Graphics.js:739</a>
         </div>
         
     </div>
@@ -20519,7 +20515,7 @@ geometry, recaculate the vertices.</p>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line144">Graphics.js:144</a>
+            <a href="packages_graphics_src_Graphics.js.html#line143">Graphics.js:143</a>
         </div>
         
     </div>
@@ -20530,8 +20526,8 @@ geometry, recaculate the vertices.</p>
     
     
     <div class="description">
-        <p>Creates a new Graphics object with the same values as this one.
-Note that the only the properties of the object are cloned, not its transform (position,scale,etc)</p>
+        <p>创建一个具有与此值相同值的新Graphics对象。
+请注意，仅克隆对象的属性，而不克隆其变换（位置，比例等）</p>
     </div>
     
 
@@ -20596,7 +20592,7 @@ Note that the only the properties of the object are cloned, not its transform (p
                         
                     
             </td>
-            <td class="description last">A clone of the graphics object</td>
+            <td class="description last">图形对象的克隆</td>
         </tr>
     
     </tbody>
@@ -20625,7 +20621,7 @@ Note that the only the properties of the object are cloned, not its transform (p
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line1042">Graphics.js:1042</a>
+            <a href="packages_graphics_src_Graphics.js.html#line1037">Graphics.js:1037</a>
         </div>
         
     </div>
@@ -20730,7 +20726,7 @@ Note that the only the properties of the object are cloned, not its transform (p
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line972">Graphics.js:972</a>
+            <a href="packages_graphics_src_Graphics.js.html#line967">Graphics.js:967</a>
         </div>
         
     </div>
@@ -20882,7 +20878,7 @@ Note that the only the properties of the object are cloned, not its transform (p
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line1104">Graphics.js:1104</a>
+            <a href="packages_graphics_src_Graphics.js.html#line1099">Graphics.js:1099</a>
         </div>
         
     </div>
@@ -21230,7 +21226,7 @@ Should it destroy the base texture of the child sprite</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line652">Graphics.js:652</a>
+            <a href="packages_graphics_src_Graphics.js.html#line647">Graphics.js:647</a>
         </div>
         
     </div>
@@ -21426,7 +21422,7 @@ Should it destroy the base texture of the child sprite</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line665">Graphics.js:665</a>
+            <a href="packages_graphics_src_Graphics.js.html#line660">Graphics.js:660</a>
         </div>
         
     </div>
@@ -21645,7 +21641,7 @@ Should it destroy the base texture of the child sprite</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line675">Graphics.js:675</a>
+            <a href="packages_graphics_src_Graphics.js.html#line670">Graphics.js:670</a>
         </div>
         
     </div>
@@ -21801,7 +21797,7 @@ Should it destroy the base texture of the child sprite</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line626">Graphics.js:626</a>
+            <a href="packages_graphics_src_Graphics.js.html#line621">Graphics.js:621</a>
         </div>
         
     </div>
@@ -22020,7 +22016,7 @@ Should it destroy the base texture of the child sprite</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line640">Graphics.js:640</a>
+            <a href="packages_graphics_src_Graphics.js.html#line635">Graphics.js:635</a>
         </div>
         
     </div>
@@ -22262,7 +22258,7 @@ Should it destroy the base texture of the child sprite</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line711">Graphics.js:711</a>
+            <a href="packages_graphics_src_Graphics.js.html#line706">Graphics.js:706</a>
         </div>
         
     </div>
@@ -22424,7 +22420,7 @@ Should it destroy the base texture of the child sprite</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line735">Graphics.js:735</a>
+            <a href="packages_graphics_src_Graphics.js.html#line730">Graphics.js:730</a>
         </div>
         
     </div>
@@ -22751,7 +22747,7 @@ Should it destroy the base texture of the child sprite</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line610">Graphics.js:610</a>
+            <a href="packages_graphics_src_Graphics.js.html#line605">Graphics.js:605</a>
         </div>
         
     </div>
@@ -22856,7 +22852,7 @@ Should it destroy the base texture of the child sprite</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line1085">Graphics.js:1085</a>
+            <a href="packages_graphics_src_Graphics.js.html#line1080">Graphics.js:1080</a>
         </div>
         
     </div>
@@ -22961,7 +22957,7 @@ Should it destroy the base texture of the child sprite</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line331">Graphics.js:331</a>
+            <a href="packages_graphics_src_Graphics.js.html#line326">Graphics.js:326</a>
         </div>
         
     </div>
@@ -24232,7 +24228,7 @@ nice performance boost.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line761">Graphics.js:761</a>
+            <a href="packages_graphics_src_Graphics.js.html#line756">Graphics.js:756</a>
         </div>
         
     </div>
@@ -24338,7 +24334,7 @@ masked with gl.scissor.</p>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line225">Graphics.js:225</a>
+            <a href="packages_graphics_src_Graphics.js.html#line220">Graphics.js:220</a>
         </div>
         
     </div>
@@ -24349,8 +24345,7 @@ masked with gl.scissor.</p>
     
     
     <div class="description">
-        <p>Specifies the line style used for subsequent calls to Graphics methods such as the lineTo()
-method or the drawCircle() method.</p>
+        <p>指定用于随后调用Graphics方法的线样式，例如：<code>lineTo()</code>方法 或 <code>drawCircle()</code>方法</p>
     </div>
     
 
@@ -24404,7 +24399,7 @@ method or the drawCircle() method.</p>
                         
                     
                 
-                <p>Line style options</p>
+                <p>线样式选项</p>
                 
 
 <table class="params">
@@ -24458,7 +24453,7 @@ method or the drawCircle() method.</p>
                         
                     
                 
-                <p>width of the line to draw, will update the objects stored style</p></td>
+                <p>画线的宽度，将更新对象存储的样式</p></td>
         </tr>
 	
 	
@@ -24494,7 +24489,7 @@ method or the drawCircle() method.</p>
                         
                     
                 
-                <p>color of the line to draw, will update the objects stored style</p></td>
+                <p>绘制线条的颜色，将更新对象存储的样式</p></td>
         </tr>
 	
 	
@@ -24530,7 +24525,7 @@ method or the drawCircle() method.</p>
                         
                     
                 
-                <p>alpha of the line to draw, will update the objects stored style</p></td>
+                <p>绘制线条的Alpha，将更新对象存储的样式</p></td>
         </tr>
 	
 	
@@ -24566,7 +24561,7 @@ method or the drawCircle() method.</p>
                         
                     
                 
-                <p>alignment of the line to draw, (0 = inner, 0.5 = middle, 1 = outter)</p></td>
+                <p>绘制线的对齐方式（0 = 内部，0.5 = 居中，1 = 外部）</p></td>
         </tr>
 	
 	
@@ -24602,7 +24597,7 @@ method or the drawCircle() method.</p>
                         
                     
                 
-                <p>If true the lines will be draw using LINES instead of TRIANGLE_STRIP</p></td>
+                <p>如果为true，则将使用LINES来代替TRIANGLE_STRIP绘制线条</p></td>
         </tr>
 	
 	
@@ -24671,7 +24666,7 @@ method or the drawCircle() method.</p>
                         
                     
             </td>
-            <td class="description last">This Graphics object. Good for chaining method calls</td>
+            <td class="description last">此Graphics对象。可以使用链式方法调用</td>
         </tr>
     
     </tbody>
@@ -24700,7 +24695,7 @@ method or the drawCircle() method.</p>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line201">Graphics.js:201</a>
+            <a href="packages_graphics_src_Graphics.js.html#line198">Graphics.js:198</a>
         </div>
         
     </div>
@@ -24711,8 +24706,7 @@ method or the drawCircle() method.</p>
     
     
     <div class="description">
-        <p>Specifies the line style used for subsequent calls to Graphics methods such as the lineTo()
-method or the drawCircle() method.</p>
+        <p>指定用于随后调用Graphics方法的线样式，例如：<code>lineTo()</code>方法 或 <code>drawCircle()</code>方法</p>
     </div>
     
 
@@ -24774,7 +24768,7 @@ method or the drawCircle() method.</p>
                         
                     
                 
-                <p>width of the line to draw, will update the objects stored style</p></td>
+                <p>画线的宽度，将更新对象存储的样式</p></td>
         </tr>
 	
 	
@@ -24810,7 +24804,7 @@ method or the drawCircle() method.</p>
                         
                     
                 
-                <p>color of the line to draw, will update the objects stored style</p></td>
+                <p>绘制线条的颜色，将更新对象存储的样式</p></td>
         </tr>
 	
 	
@@ -24846,7 +24840,7 @@ method or the drawCircle() method.</p>
                         
                     
                 
-                <p>alpha of the line to draw, will update the objects stored style</p></td>
+                <p>绘制线条的Alpha，将更新对象存储的样式</p></td>
         </tr>
 	
 	
@@ -24882,7 +24876,7 @@ method or the drawCircle() method.</p>
                         
                     
                 
-                <p>alignment of the line to draw, (0 = inner, 0.5 = middle, 1 = outter)</p></td>
+                <p>绘制线的对齐方式（0 = 内部，0.5 = 居中，1 = 外部）</p></td>
         </tr>
 	
 	
@@ -24918,7 +24912,7 @@ method or the drawCircle() method.</p>
                         
                     
                 
-                <p>If true the lines will be draw using LINES instead of TRIANGLE_STRIP</p></td>
+                <p>如果为true，则将使用LINES来代替TRIANGLE_STRIP绘制线条</p></td>
         </tr>
 	
 	
@@ -24981,7 +24975,7 @@ method or the drawCircle() method.</p>
                         
                     
             </td>
-            <td class="description last">This Graphics object. Good for chaining method calls</td>
+            <td class="description last">此Graphics对象。可以使用链式方法调用</td>
         </tr>
     
     </tbody>
@@ -25010,7 +25004,7 @@ method or the drawCircle() method.</p>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line257">Graphics.js:257</a>
+            <a href="packages_graphics_src_Graphics.js.html#line252">Graphics.js:252</a>
         </div>
         
     </div>
@@ -25444,7 +25438,7 @@ Default 0xFFFFFF if texture present.</p></td>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line369">Graphics.js:369</a>
+            <a href="packages_graphics_src_Graphics.js.html#line364">Graphics.js:364</a>
         </div>
         
     </div>
@@ -25618,7 +25612,7 @@ The current drawing position is then set to (x, y).</p>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line353">Graphics.js:353</a>
+            <a href="packages_graphics_src_Graphics.js.html#line348">Graphics.js:348</a>
         </div>
         
     </div>
@@ -25871,7 +25865,7 @@ The current drawing position is then set to (x, y).</p>
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line418">Graphics.js:418</a>
+            <a href="packages_graphics_src_Graphics.js.html#line413">Graphics.js:413</a>
         </div>
         
     </div>
@@ -27400,7 +27394,7 @@ Based on: https://stackoverflow.com/questions/785097/how-do-i-implement-a-bezier
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line1060">Graphics.js:1060</a>
+            <a href="packages_graphics_src_Graphics.js.html#line1055">Graphics.js:1055</a>
         </div>
         
     </div>
@@ -28241,7 +28235,7 @@ Based on: https://stackoverflow.com/questions/785097/how-do-i-implement-a-bezier
     
         
         <div class="tag-source">
-            <a href="packages_graphics_src_Graphics.js.html#line306">Graphics.js:306</a>
+            <a href="packages_graphics_src_Graphics.js.html#line301">Graphics.js:301</a>
         </div>
         
     </div>
@@ -32463,7 +32457,7 @@ DisplayObject's <code>interactive</code> property must be set to <code>true</cod
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Fri Apr 10 2020 01:56:26 GMT+0900 (GMT+09:00)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Apr 11 2020 01:24:59 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>
