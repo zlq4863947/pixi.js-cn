@@ -16,9 +16,9 @@ export class ArcUtils
      * @private
      * @param {number} x1 - The x-coordinate of the beginning of the arc
      * @param {number} y1 - The y-coordinate of the beginning of the arc
-     * @param {number} x2 - The x-coordinate of the end of the arc
-     * @param {number} y2 - The y-coordinate of the end of the arc
-     * @param {number} radius - The radius of the arc
+     * @param {number} x2 - 圆弧末端的x坐标
+     * @param {number} y2 - 圆弧末端的y坐标
+     * @param {number} radius - 圆弧半径
      * @return {object} If the arc length is valid, return center of circle, radius and other info otherwise `null`.
      */
     static curveTo(x1, y1, x2, y2, radius, points)
@@ -74,12 +74,12 @@ export class ArcUtils
      * @private
      * @param {number} startX - Start x location of arc
      * @param {number} startY - Start y location of arc
-     * @param {number} cx - The x-coordinate of the center of the circle
-     * @param {number} cy - The y-coordinate of the center of the circle
-     * @param {number} radius - The radius of the circle
+     * @param {number} cx - 圆心的x坐标
+     * @param {number} cy - 圆心的y坐标
+     * @param {number} radius - 圆的半径
      * @param {number} startAngle - The starting angle, in radians (0 is at the 3 o'clock position
      *  of the arc's circle)
-     * @param {number} endAngle - The ending angle, in radians
+     * @param {number} endAngle - 终止角度，以弧度为单位
      * @param {boolean} anticlockwise - Specifies whether the drawing should be
      *  counter-clockwise or clockwise. False is default, and indicates clockwise, while true
      *  indicates counter-clockwise.

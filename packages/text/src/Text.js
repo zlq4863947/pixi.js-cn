@@ -356,7 +356,7 @@ export class Text extends Sprite
     }
 
     /**
-     * Renders the object using the WebGL renderer
+     * 使用WebGL渲染器渲染对象
      *
      * @private
      * @param {PIXI.Renderer} renderer - The renderer

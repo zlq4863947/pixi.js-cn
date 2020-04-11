@@ -6,12 +6,12 @@
  * @ignore
  * @param {number} fromX - Starting point x
  * @param {number} fromY - Starting point y
- * @param {number} cpX - Control point x
- * @param {number} cpY - Control point y
- * @param {number} cpX2 - Second Control point x
- * @param {number} cpY2 - Second Control point y
- * @param {number} toX - Destination point x
- * @param {number} toY - Destination point y
+ * @param {number} cpX - 控制点x
+ * @param {number} cpY - 控制点y
+ * @param {number} cpX2 - 第二控制点x
+ * @param {number} cpY2 - 第二控制点y
+ * @param {number} toX - 目的点x
+ * @param {number} toY - 目的点y
  * @param {number} n - Number of segments approximating the bezier curve
  * @param {number[]} [path=[]] - Path array to push points into
  * @return {number[]} Array of points of the curve

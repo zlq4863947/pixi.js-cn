@@ -104,10 +104,10 @@ function getPt(n1, n2, perc)
  * @private
  * @param {number} fromX - Origin point x
  * @param {number} fromY - Origin point x
- * @param {number} cpX - Control point x
- * @param {number} cpY - Control point y
- * @param {number} toX - Destination point x
- * @param {number} toY - Destination point y
+ * @param {number} cpX - 控制点x
+ * @param {number} cpY - 控制点y
+ * @param {number} toX - 目的点x
+ * @param {number} toY - 目的点y
  * @param {number[]} [out=[]] - The output array to add points into. If not passed, a new array is created.
  * @return {number[]} an array of points
  */

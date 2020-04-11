@@ -52,10 +52,10 @@ export class QuadraticUtils
      * Based on: https://stackoverflow.com/questions/785097/how-do-i-implement-a-bezier-curve-in-c
      *
      * @private
-     * @param {number} cpX - Control point x
-     * @param {number} cpY - Control point y
-     * @param {number} toX - Destination point x
-     * @param {number} toY - Destination point y
+     * @param {number} cpX - 控制点x
+     * @param {number} cpY - 控制点y
+     * @param {number} toX - 目的点x
+     * @param {number} toY - 目的点y
      * @param {number[]} points - Points to add segments to.
      */
     static curveTo(cpX, cpY, toX, toY, points)

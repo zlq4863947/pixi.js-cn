@@ -141,7 +141,7 @@ export class TilingSprite extends Sprite
     }
 
     /**
-     * Renders the object using the WebGL renderer
+     * 使用WebGL渲染器渲染对象
      *
      * @protected
      * @param {PIXI.Renderer} renderer - The renderer
