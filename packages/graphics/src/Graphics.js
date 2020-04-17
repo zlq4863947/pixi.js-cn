@@ -608,7 +608,6 @@ export class Graphics extends Container
 
     /**
      * 指定一个简单的单色填充，随后调用其他Graphics方法
-     * (such as lineTo() or drawCircle()) use when drawing.
      * （例如：`lineTo()`或`drawCircle()`）在绘制时使用。
      *
      * @param {number} [color=0] - 填充的颜色

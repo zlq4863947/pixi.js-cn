@@ -13,6 +13,10 @@ PixiJS中文开发文档
 
 [http://b.aitrade.ga/pixi.js-cn](http://b.aitrade.ga/pixi.js-cn)
 
+### 中文示例地址
+
+[https://b.aitrade.ga/pixi.js-cn.examples](https://b.aitrade.ga/pixi.js-cn.examples)
+
 ### 开发交流QQ群
 
 <img src="images/qq_group.png" onerror="this.src = 'qq_group.png'" alt="PixiJS开发交流: 1014241826">

@@ -7,7 +7,7 @@ let canvasRenderer;
 const tempMatrix = new Matrix();
 
 /**
- * 生成画布纹理。 仅适用于**pixi.js-legacy**捆绑包或**@pixi/canvas-graphics**包。\
+ * 生成画布纹理。 仅适用于 **pixi.js-legacy** 包或 **@pixi/canvas-graphics** 包。
  * @method generateCanvasTexture
  * @memberof PIXI.Graphics#
  * @param {number} scaleMode - 纹理的缩放模式。

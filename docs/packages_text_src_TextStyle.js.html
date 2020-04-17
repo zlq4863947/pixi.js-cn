@@ -13236,63 +13236,56 @@ const genericFontFamilies = [
     'system-ui',
 ];
 /**
- * A TextStyle Object contains information to decorate a Text objects.
+ * TextStyle对象包含装饰Text对象的信息。
  *
- * An instance can be shared between multiple Text objects; then changing the style will update all text objects using it.
+ * 一个实例可以在多个Text对象之间共享；之后更改样式将使用该样式更新所有文本对象。
  *
- * A tool can be used to generate a text style [here](https://pixijs.io/pixi-text-style).
+ * 可以使用工具在[此处](https://pixijs.io/pixi-text-style)生成文本样式。
  *
  * @class
  * @memberof PIXI
  */
 export class TextStyle {
     /**
-     * @param {object} [style] - The style parameters
-     * @param {string} [style.align='left'] - Alignment for multiline text ('left', 'center' or 'right'),
-     *  does not affect single line text
-     * @param {boolean} [style.breakWords=false] - Indicates if lines can be wrapped within words, it
-     *  needs wordWrap to be set to true
-     * @param {boolean} [style.dropShadow=false] - Set a drop shadow for the text
-     * @param {number} [style.dropShadowAlpha=1] - Set alpha for the drop shadow
-     * @param {number} [style.dropShadowAngle=Math.PI/6] - Set a angle of the drop shadow
-     * @param {number} [style.dropShadowBlur=0] - Set a shadow blur radius
-     * @param {string|number} [style.dropShadowColor='black'] - A fill style to be used on the dropshadow e.g 'red', '#00FF00'
-     * @param {number} [style.dropShadowDistance=5] - Set a distance of the drop shadow
-     * @param {string|string[]|number|number[]|CanvasGradient|CanvasPattern} [style.fill='black'] - A canvas
-     *  fillstyle that will be used on the text e.g 'red', '#00FF00'. Can be an array to create a gradient
-     *  eg ['#000000','#FFFFFF']
-     * {@link https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle|MDN}
-     * @param {number} [style.fillGradientType=PIXI.TEXT_GRADIENT.LINEAR_VERTICAL] - If fill is an array of colours
-     *  to create a gradient, this can change the type/direction of the gradient. See {@link PIXI.TEXT_GRADIENT}
-     * @param {number[]} [style.fillGradientStops] - If fill is an array of colours to create a gradient, this array can set
-     * the stop points (numbers between 0 and 1) for the color, overriding the default behaviour of evenly spacing them.
-     * @param {string|string[]} [style.fontFamily='Arial'] - The font family
-     * @param {number|string} [style.fontSize=26] - The font size (as a number it converts to px, but as a string,
-     *  equivalents are '26px','20pt','160%' or '1.6em')
-     * @param {string} [style.fontStyle='normal'] - The font style ('normal', 'italic' or 'oblique')
-     * @param {string} [style.fontVariant='normal'] - The font variant ('normal' or 'small-caps')
-     * @param {string} [style.fontWeight='normal'] - The font weight ('normal', 'bold', 'bolder', 'lighter' and '100',
+     * @param {object} [style] - 样式参数
+     * @param {string} [style.align='left'] - 多行文字的对齐方式 ('left', 'center' or 'right'),
+     *  单行文字时不起作用
+     * @param {boolean} [style.breakWords=false] - 是否允许换行
+     * @param {boolean} [style.dropShadow=false] - 为文本设置阴影
+     * @param {number} [style.dropShadowAlpha=1] - 为投影设置Alpha
+     * @param {number} [style.dropShadowAngle=Math.PI/6] - 设置投影的角度
+     * @param {number} [style.dropShadowBlur=0] - 设置阴影模糊半径
+     * @param {string|number} [style.dropShadowColor='black'] - 在阴影中使用的填充样式，例如 'red', '#00FF00'
+     * @param {number} [style.dropShadowDistance=5] - 设置投影的距离
+     * @param {string|string[]|number|number[]|CanvasGradient|CanvasPattern} [style.fill='black'] -
+     *  将用于文本的画布填充样式，例如'red', '#00FF00'。也可以创建渐变的数组，例如['#000000','#FFFFFF']
+     * {@link https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/fillStyle|MDN}
+     * @param {number} [style.fillGradientType=PIXI.TEXT_GRADIENT.LINEAR_VERTICAL] - 如果fill是用于创建渐变的颜色数组，
+     *  则可以更改渐变的类型/方向。 详见 {@link PIXI.TEXT_GRADIENT}
+     * @param {number[]} [style.fillGradientStops] - 如果fill是用于创建渐变的颜色数组，则此数组可以设置颜色的停止点（0到1之间的数字），
+     * 从而覆盖均匀间隔它们的默认行为。
+     * @param {string|string[]} [style.fontFamily='Arial'] - 字体族
+     * @param {number|string} [style.fontSize=26] - 字体大小（以数字形式转换为px，但以字符串形式，等效为'26px'，'20pt'，'160％'或'1.6em'）
+     * @param {string} [style.fontStyle='normal'] - 字体样式('normal', 'italic' or 'oblique')
+     * @param {string} [style.fontVariant='normal'] - 字体变体 ('normal' or 'small-caps')
+     * @param {string} [style.fontWeight='normal'] - 字体宽度 ('normal', 'bold', 'bolder', 'lighter' and '100',
      *  '200', '300', '400', '500', '600', '700', 800' or '900')
-     * @param {number} [style.leading=0] - The space between lines
-     * @param {number} [style.letterSpacing=0] - The amount of spacing between letters, default is 0
-     * @param {number} [style.lineHeight] - The line height, a number that represents the vertical space that a letter uses
-     * @param {string} [style.lineJoin='miter'] - The lineJoin property sets the type of corner created, it can resolve
-     *      spiked text issues. Possible values "miter" (creates a sharp corner), "round" (creates a round corner) or "bevel"
-     *      (creates a squared corner).
-     * @param {number} [style.miterLimit=10] - The miter limit to use when using the 'miter' lineJoin mode. This can reduce
-     *      or increase the spikiness of rendered text.
-     * @param {number} [style.padding=0] - Occasionally some fonts are cropped. Adding some padding will prevent this from
-     *     happening by adding padding to all sides of the text.
-     * @param {string|number} [style.stroke='black'] - A canvas fillstyle that will be used on the text stroke
-     *  e.g 'blue', '#FCFF00'
-     * @param {number} [style.strokeThickness=0] - A number that represents the thickness of the stroke.
-     *  Default is 0 (no stroke)
-     * @param {boolean} [style.trim=false] - Trim transparent borders
-     * @param {string} [style.textBaseline='alphabetic'] - The baseline of the text that is rendered.
-     * @param {string} [style.whiteSpace='pre'] - Determines whether newlines &amp; spaces are collapsed or preserved "normal"
-     *      (collapse, collapse), "pre" (preserve, preserve) | "pre-line" (preserve, collapse). It needs wordWrap to be set to true
-     * @param {boolean} [style.wordWrap=false] - Indicates if word wrap should be used
-     * @param {number} [style.wordWrapWidth=100] - The width at which text will wrap, it needs wordWrap to be set to true
+     * @param {number} [style.leading=0] - 行间距
+     * @param {number} [style.letterSpacing=0] - 文字水平间距, 默认为0
+     * @param {number} [style.lineHeight] - 行高, 一个数字，代表字母使用的垂直空间
+     * @param {string} [style.lineJoin='miter'] - 设置或返回所创建边角的类型，当两条线交汇时。可以设置的值为"miter" (创建尖角)、"round" (创建圆角) 或 "bevel"
+     *      (创建方形角)。
+     * @param {number} [style.miterLimit=10] - 使用'miter'的lineJoin模式时，使用的斜接限制。可以减少或增加渲染文本的尖锐度。
+     * @param {number} [style.padding=0] - 通过增加padding可以防止文字被剪裁掉。
+     * @param {string|number} [style.stroke='black'] - 指定图形元素的外轮廓的颜色。
+     *  例如 'blue', '#FCFF00'
+     * @param {number} [style.strokeThickness=0] -代表stroke粗细的数字。默认为0 (没有stroke)
+     * @param {boolean} [style.trim=false] - 缩减透明边框
+     * @param {string} [style.textBaseline='alphabetic'] - 设置文本基线
+     * @param {string} [style.whiteSpace='pre'] - 设置如何处理元素内的空白。"normal"
+     *      (collapse, collapse), "pre" (preserve, preserve) | "pre-line" (preserve, collapse). 设置它会自动将 `wordWrap` 变为 `true`
+     * @param {boolean} [style.wordWrap=false] - 是否使用自动换行
+     * @param {number} [style.wordWrapWidth=100] - 文字将要换行的宽度, 设置它会自动将 `wordWrap` 变为 `true`
      */
     constructor(style) {
         this.styleID = 0;
@@ -13858,7 +13851,7 @@ function deepCopyProperties(target, source, propertyObj) {
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Apr 11 2020 02:57:14 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Fri Apr 17 2020 23:51:53 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

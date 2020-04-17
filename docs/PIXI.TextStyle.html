@@ -13192,9 +13192,9 @@
         <h2><span class="ancestors"><a href="PIXI.html">PIXI</a>~</span>TextStyle
         </h2>
         
-            <div class="class-description"><p>A TextStyle Object contains information to decorate a Text objects.</p>
-<p>An instance can be shared between multiple Text objects; then changing the style will update all text objects using it.</p>
-<p>A tool can be used to generate a text style <a target="_blank" href="https://pixijs.io/pixi-text-style">here</a>.</p></div>
+            <div class="class-description"><p>TextStyle对象包含装饰Text对象的信息。</p>
+<p>一个实例可以在多个Text对象之间共享；之后更改样式将使用该样式更新所有文本对象。</p>
+<p>可以使用工具在<a target="_blank" href="https://pixijs.io/pixi-text-style">此处</a>生成文本样式。</p></div>
         
     </div>
 </header>  
@@ -13222,7 +13222,7 @@
     
         
         <div class="tag-source">
-            <a href="packages_text_src_TextStyle.js.html#line105">TextStyle.js:105</a>
+            <a href="packages_text_src_TextStyle.js.html#line98">TextStyle.js:98</a>
         </div>
         
     </div>
@@ -13283,7 +13283,7 @@
                         
                     
                 
-                <p>The style parameters</p>
+                <p>样式参数</p>
                 
 
 <table class="params">
@@ -13337,8 +13337,8 @@
                         
                     
                 
-                <p>Alignment for multiline text ('left', 'center' or 'right'),
-does not affect single line text</p></td>
+                <p>多行文字的对齐方式 ('left', 'center' or 'right'),
+单行文字时不起作用</p></td>
         </tr>
 	
 	
@@ -13374,8 +13374,7 @@ does not affect single line text</p></td>
                         
                     
                 
-                <p>Indicates if lines can be wrapped within words, it
-needs wordWrap to be set to true</p></td>
+                <p>是否允许换行</p></td>
         </tr>
 	
 	
@@ -13411,7 +13410,7 @@ needs wordWrap to be set to true</p></td>
                         
                     
                 
-                <p>Set a drop shadow for the text</p></td>
+                <p>为文本设置阴影</p></td>
         </tr>
 	
 	
@@ -13447,7 +13446,7 @@ needs wordWrap to be set to true</p></td>
                         
                     
                 
-                <p>Set alpha for the drop shadow</p></td>
+                <p>为投影设置Alpha</p></td>
         </tr>
 	
 	
@@ -13483,7 +13482,7 @@ needs wordWrap to be set to true</p></td>
                         
                     
                 
-                <p>Set a angle of the drop shadow</p></td>
+                <p>设置投影的角度</p></td>
         </tr>
 	
 	
@@ -13519,7 +13518,7 @@ needs wordWrap to be set to true</p></td>
                         
                     
                 
-                <p>Set a shadow blur radius</p></td>
+                <p>设置阴影模糊半径</p></td>
         </tr>
 	
 	
@@ -13558,7 +13557,7 @@ needs wordWrap to be set to true</p></td>
                         
                     
                 
-                <p>A fill style to be used on the dropshadow e.g 'red', '#00FF00'</p></td>
+                <p>在阴影中使用的填充样式，例如 'red', '#00FF00'</p></td>
         </tr>
 	
 	
@@ -13594,7 +13593,7 @@ needs wordWrap to be set to true</p></td>
                         
                     
                 
-                <p>Set a distance of the drop shadow</p></td>
+                <p>设置投影的距离</p></td>
         </tr>
 	
 	
@@ -13645,10 +13644,8 @@ needs wordWrap to be set to true</p></td>
                         
                     
                 
-                <p>A canvas
-fillstyle that will be used on the text e.g 'red', '#00FF00'. Can be an array to create a gradient
-eg ['#000000','#FFFFFF']
-<a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle">MDN</a></p></td>
+                <p>将用于文本的画布填充样式，例如'red', '#00FF00'。也可以创建渐变的数组，例如['#000000','#FFFFFF']
+<a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/fillStyle">MDN</a></p></td>
         </tr>
 	
 	
@@ -13684,8 +13681,8 @@ eg ['#000000','#FFFFFF']
                         
                     
                 
-                <p>If fill is an array of colours
-to create a gradient, this can change the type/direction of the gradient. See <a href="PIXI.html#.TEXT_GRADIENT">PIXI.TEXT_GRADIENT</a></p></td>
+                <p>如果fill是用于创建渐变的颜色数组，
+则可以更改渐变的类型/方向。 详见 <a href="PIXI.html#.TEXT_GRADIENT">PIXI.TEXT_GRADIENT</a></p></td>
         </tr>
 	
 	
@@ -13719,8 +13716,8 @@ to create a gradient, this can change the type/direction of the gradient. See <a
                         
                     
                 
-                <p>If fill is an array of colours to create a gradient, this array can set
-the stop points (numbers between 0 and 1) for the color, overriding the default behaviour of evenly spacing them.</p></td>
+                <p>如果fill是用于创建渐变的颜色数组，则此数组可以设置颜色的停止点（0到1之间的数字），
+从而覆盖均匀间隔它们的默认行为。</p></td>
         </tr>
 	
 	
@@ -13759,7 +13756,7 @@ the stop points (numbers between 0 and 1) for the color, overriding the default 
                         
                     
                 
-                <p>The font family</p></td>
+                <p>字体族</p></td>
         </tr>
 	
 	
@@ -13798,8 +13795,7 @@ the stop points (numbers between 0 and 1) for the color, overriding the default 
                         
                     
                 
-                <p>The font size (as a number it converts to px, but as a string,
-equivalents are '26px','20pt','160%' or '1.6em')</p></td>
+                <p>字体大小（以数字形式转换为px，但以字符串形式，等效为'26px'，'20pt'，'160％'或'1.6em'）</p></td>
         </tr>
 	
 	
@@ -13835,7 +13831,7 @@ equivalents are '26px','20pt','160%' or '1.6em')</p></td>
                         
                     
                 
-                <p>The font style ('normal', 'italic' or 'oblique')</p></td>
+                <p>字体样式('normal', 'italic' or 'oblique')</p></td>
         </tr>
 	
 	
@@ -13871,7 +13867,7 @@ equivalents are '26px','20pt','160%' or '1.6em')</p></td>
                         
                     
                 
-                <p>The font variant ('normal' or 'small-caps')</p></td>
+                <p>字体变体 ('normal' or 'small-caps')</p></td>
         </tr>
 	
 	
@@ -13907,7 +13903,7 @@ equivalents are '26px','20pt','160%' or '1.6em')</p></td>
                         
                     
                 
-                <p>The font weight ('normal', 'bold', 'bolder', 'lighter' and '100',
+                <p>字体宽度 ('normal', 'bold', 'bolder', 'lighter' and '100',
 '200', '300', '400', '500', '600', '700', 800' or '900')</p></td>
         </tr>
 	
@@ -13944,7 +13940,7 @@ equivalents are '26px','20pt','160%' or '1.6em')</p></td>
                         
                     
                 
-                <p>The space between lines</p></td>
+                <p>行间距</p></td>
         </tr>
 	
 	
@@ -13980,7 +13976,7 @@ equivalents are '26px','20pt','160%' or '1.6em')</p></td>
                         
                     
                 
-                <p>The amount of spacing between letters, default is 0</p></td>
+                <p>文字水平间距, 默认为0</p></td>
         </tr>
 	
 	
@@ -14014,7 +14010,7 @@ equivalents are '26px','20pt','160%' or '1.6em')</p></td>
                         
                     
                 
-                <p>The line height, a number that represents the vertical space that a letter uses</p></td>
+                <p>行高, 一个数字，代表字母使用的垂直空间</p></td>
         </tr>
 	
 	
@@ -14050,9 +14046,8 @@ equivalents are '26px','20pt','160%' or '1.6em')</p></td>
                         
                     
                 
-                <p>The lineJoin property sets the type of corner created, it can resolve
-spiked text issues. Possible values &quot;miter&quot; (creates a sharp corner), &quot;round&quot; (creates a round corner) or &quot;bevel&quot;
-(creates a squared corner).</p></td>
+                <p>设置或返回所创建边角的类型，当两条线交汇时。可以设置的值为&quot;miter&quot; (创建尖角)、&quot;round&quot; (创建圆角) 或 &quot;bevel&quot;
+(创建方形角)。</p></td>
         </tr>
 	
 	
@@ -14088,8 +14083,7 @@ spiked text issues. Possible values &quot;miter&quot; (creates a sharp corner), 
                         
                     
                 
-                <p>The miter limit to use when using the 'miter' lineJoin mode. This can reduce
-or increase the spikiness of rendered text.</p></td>
+                <p>使用'miter'的lineJoin模式时，使用的斜接限制。可以减少或增加渲染文本的尖锐度。</p></td>
         </tr>
 	
 	
@@ -14125,8 +14119,7 @@ or increase the spikiness of rendered text.</p></td>
                         
                     
                 
-                <p>Occasionally some fonts are cropped. Adding some padding will prevent this from
-happening by adding padding to all sides of the text.</p></td>
+                <p>通过增加padding可以防止文字被剪裁掉。</p></td>
         </tr>
 	
 	
@@ -14165,8 +14158,8 @@ happening by adding padding to all sides of the text.</p></td>
                         
                     
                 
-                <p>A canvas fillstyle that will be used on the text stroke
-e.g 'blue', '#FCFF00'</p></td>
+                <p>指定图形元素的外轮廓的颜色。
+例如 'blue', '#FCFF00'</p></td>
         </tr>
 	
 	
@@ -14202,8 +14195,7 @@ e.g 'blue', '#FCFF00'</p></td>
                         
                     
                 
-                <p>A number that represents the thickness of the stroke.
-Default is 0 (no stroke)</p></td>
+                <p>代表stroke粗细的数字。默认为0 (没有stroke)</p></td>
         </tr>
 	
 	
@@ -14239,7 +14231,7 @@ Default is 0 (no stroke)</p></td>
                         
                     
                 
-                <p>Trim transparent borders</p></td>
+                <p>缩减透明边框</p></td>
         </tr>
 	
 	
@@ -14275,7 +14267,7 @@ Default is 0 (no stroke)</p></td>
                         
                     
                 
-                <p>The baseline of the text that is rendered.</p></td>
+                <p>设置文本基线</p></td>
         </tr>
 	
 	
@@ -14311,8 +14303,8 @@ Default is 0 (no stroke)</p></td>
                         
                     
                 
-                <p>Determines whether newlines &amp; spaces are collapsed or preserved &quot;normal&quot;
-(collapse, collapse), &quot;pre&quot; (preserve, preserve) | &quot;pre-line&quot; (preserve, collapse). It needs wordWrap to be set to true</p></td>
+                <p>设置如何处理元素内的空白。&quot;normal&quot;
+(collapse, collapse), &quot;pre&quot; (preserve, preserve) | &quot;pre-line&quot; (preserve, collapse). 设置它会自动将 <code>wordWrap</code> 变为 <code>true</code></p></td>
         </tr>
 	
 	
@@ -14348,7 +14340,7 @@ Default is 0 (no stroke)</p></td>
                         
                     
                 
-                <p>Indicates if word wrap should be used</p></td>
+                <p>是否使用自动换行</p></td>
         </tr>
 	
 	
@@ -14384,7 +14376,7 @@ Default is 0 (no stroke)</p></td>
                         
                     
                 
-                <p>The width at which text will wrap, it needs wordWrap to be set to true</p></td>
+                <p>文字将要换行的宽度, 设置它会自动将 <code>wordWrap</code> 变为 <code>true</code></p></td>
         </tr>
 	
 	
@@ -15997,7 +15989,7 @@ Default is 'pre' (preserve, preserve).</p>
     
         
         <div class="tag-source">
-            <a href="packages_text_src_TextStyle.js.html#line116">TextStyle.js:116</a>
+            <a href="packages_text_src_TextStyle.js.html#line109">TextStyle.js:109</a>
         </div>
         
     </div>
@@ -16103,7 +16095,7 @@ Note that the only the properties of the object are cloned.</p>
     
         
         <div class="tag-source">
-            <a href="packages_text_src_TextStyle.js.html#line124">TextStyle.js:124</a>
+            <a href="packages_text_src_TextStyle.js.html#line117">TextStyle.js:117</a>
         </div>
         
     </div>
@@ -16179,7 +16171,7 @@ Note that the only the properties of the object are cloned.</p>
     
         
         <div class="tag-source">
-            <a href="packages_text_src_TextStyle.js.html#line561">TextStyle.js:561</a>
+            <a href="packages_text_src_TextStyle.js.html#line554">TextStyle.js:554</a>
         </div>
         
     </div>
@@ -16286,7 +16278,7 @@ Note that the only the properties of the object are cloned.</p>
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Apr 11 2020 02:57:23 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Fri Apr 17 2020 23:52:02 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>
