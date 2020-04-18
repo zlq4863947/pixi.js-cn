@@ -14,30 +14,29 @@ const defaultBufferOptions = {
 };
 
 /**
- * A Texture stores the information that represents an image.
- * All textures have a base texture, which contains information about the source.
- * Therefore you can have many textures all using a single BaseTexture
+ * 纹理存储表示图像的信息。
+ * 所有纹理都有一个基础纹理，其中包含有关源的信息。
+ * 因此，您可以使用单个BaseTexture获得许多纹理。
  *
  * @class
  * @extends PIXI.utils.EventEmitter
  * @memberof PIXI
  * @param {PIXI.resources.Resource|string|HTMLImageElement|HTMLCanvasElement|HTMLVideoElement} [resource=null]
- *        The current resource to use, for things that aren't Resource objects, will be converted
- *        into a Resource.
- * @param {Object} [options] - Collection of options
- * @param {PIXI.MIPMAP_MODES} [options.mipmap=PIXI.settings.MIPMAP_TEXTURES] - If mipmapping is enabled for texture
- * @param {number} [options.anisotropicLevel=PIXI.settings.ANISOTROPIC_LEVEL] - Anisotropic filtering level of texture
- * @param {PIXI.WRAP_MODES} [options.wrapMode=PIXI.settings.WRAP_MODE] - Wrap mode for textures
- * @param {PIXI.SCALE_MODES} [options.scaleMode=PIXI.settings.SCALE_MODE] - Default scale mode, linear, nearest
- * @param {PIXI.FORMATS} [options.format=PIXI.FORMATS.RGBA] - GL format type
- * @param {PIXI.TYPES} [options.type=PIXI.TYPES.UNSIGNED_BYTE] - GL data type
- * @param {PIXI.TARGETS} [options.target=PIXI.TARGETS.TEXTURE_2D] - GL texture target
- * @param {PIXI.ALPHA_MODES} [options.alphaMode=PIXI.ALPHA_MODES.UNPACK] - Pre multiply the image alpha
- * @param {number} [options.width=0] - Width of the texture
- * @param {number} [options.height=0] - Height of the texture
- * @param {number} [options.resolution] - Resolution of the base texture
- * @param {object} [options.resourceOptions] - Optional resource options,
- *        see {@link PIXI.resources.autoDetectResource autoDetectResource}
+ *        对于不是Resource的对象，要使用的当前资源将其转换为资源。
+ * @param {Object} [options] - 选项集
+ * @param {PIXI.MIPMAP_MODES} [options.mipmap=PIXI.settings.MIPMAP_TEXTURES] - 为纹理启用mipmapping
+ * @param {number} [options.anisotropicLevel=PIXI.settings.ANISOTROPIC_LEVEL] - 各向异性过滤级别的纹理
+ * @param {PIXI.WRAP_MODES} [options.wrapMode=PIXI.settings.WRAP_MODE] - 纹理包裹模式
+ * @param {PIXI.SCALE_MODES} [options.scaleMode=PIXI.settings.SCALE_MODE] - 默认缩放模式, linear, nearest
+ * @param {PIXI.FORMATS} [options.format=PIXI.FORMATS.RGBA] - GL格式类型
+ * @param {PIXI.TYPES} [options.type=PIXI.TYPES.UNSIGNED_BYTE] - GL数据类型
+ * @param {PIXI.TARGETS} [options.target=PIXI.TARGETS.TEXTURE_2D] - GL纹理目标
+ * @param {PIXI.ALPHA_MODES} [options.alphaMode=PIXI.ALPHA_MODES.UNPACK] - 预乘图像alpha
+ * @param {number} [options.width=0] - 纹理的宽度
+ * @param {number} [options.height=0] - 纹理的高度
+ * @param {number} [options.resolution] - 基础纹理的分辨率
+ * @param {object} [options.resourceOptions] - 可选资源选项，
+ *        查看 {@link PIXI.resources.autoDetectResource autoDetectResource}
  */
 export class BaseTexture extends EventEmitter
 {
@@ -58,7 +57,7 @@ export class BaseTexture extends EventEmitter
         }
 
         /**
-         * The width of the base texture set when the image has loaded
+         * 加载图像后设置的基础纹理的宽度
          *
          * @readonly
          * @member {number}
@@ -66,7 +65,7 @@ export class BaseTexture extends EventEmitter
         this.width = width || 0;
 
         /**
-         * The height of the base texture set when the image has loaded
+         * 加载图像后设置的基础纹理的高度
          *
          * @readonly
          * @member {number}
@@ -74,7 +73,7 @@ export class BaseTexture extends EventEmitter
         this.height = height || 0;
 
         /**
-         * The resolution / device pixel ratio of the texture
+         * 分辨率/纹理的设备像素比率
          *
          * @member {number}
          * @default PIXI.settings.RESOLUTION
@@ -82,7 +81,7 @@ export class BaseTexture extends EventEmitter
         this.resolution = resolution || settings.RESOLUTION;
 
         /**
-         * Mipmap mode of the texture, affects downscaled images
+         * 纹理的Mipmap模式，影响缩小的图像
          *
          * @member {PIXI.MIPMAP_MODES}
          * @default PIXI.settings.MIPMAP_TEXTURES
@@ -90,7 +89,7 @@ export class BaseTexture extends EventEmitter
         this.mipmap = mipmap !== undefined ? mipmap : settings.MIPMAP_TEXTURES;
 
         /**
-         * Anisotropic filtering level of texture
+         * 各向异性过滤级别的纹理
          *
          * @member {number}
          * @default PIXI.settings.ANISOTROPIC_LEVEL
@@ -98,13 +97,13 @@ export class BaseTexture extends EventEmitter
         this.anisotropicLevel = anisotropicLevel !== undefined ? anisotropicLevel : settings.ANISOTROPIC_LEVEL;
 
         /**
-         * How the texture wraps
+         * 纹理如何包裹
          * @member {number}
          */
         this.wrapMode = wrapMode || settings.WRAP_MODE;
 
         /**
-         * The scale mode to apply when scaling this texture
+         * 缩放此纹理时应用的缩放模式
          *
          * @member {PIXI.SCALE_MODES}
          * @default PIXI.settings.SCALE_MODE
@@ -112,7 +111,7 @@ export class BaseTexture extends EventEmitter
         this.scaleMode = scaleMode !== undefined ? scaleMode : settings.SCALE_MODE;
 
         /**
-         * The pixel format of the texture
+         * 纹理的像素格式
          *
          * @member {PIXI.FORMATS}
          * @default PIXI.FORMATS.RGBA
@@ -120,7 +119,7 @@ export class BaseTexture extends EventEmitter
         this.format = format || FORMATS.RGBA;
 
         /**
-         * The type of resource data
+         * 资源数据的类型
          *
          * @member {PIXI.TYPES}
          * @default PIXI.TYPES.UNSIGNED_BYTE
@@ -128,7 +127,7 @@ export class BaseTexture extends EventEmitter
         this.type = type || TYPES.UNSIGNED_BYTE;
 
         /**
-         * The target type
+         * 目标类型
          *
          * @member {PIXI.TARGETS}
          * @default PIXI.TARGETS.TEXTURE_2D
@@ -136,7 +135,7 @@ export class BaseTexture extends EventEmitter
         this.target = target || TARGETS.TEXTURE_2D;
 
         /**
-         * How to treat premultiplied alpha, see {@link PIXI.ALPHA_MODES}.
+         * 如何处理预乘alpha, 查看 {@link PIXI.ALPHA_MODES}.
          *
          * @member {PIXI.ALPHA_MODES}
          * @default PIXI.ALPHA_MODES.UNPACK
@@ -150,7 +149,7 @@ export class BaseTexture extends EventEmitter
         }
 
         /**
-         * Global unique identifier for this BaseTexture
+         * 此BaseTexture的全局唯一标识符
          *
          * @member {string}
          * @protected
@@ -158,7 +157,7 @@ export class BaseTexture extends EventEmitter
         this.uid = uid();
 
         /**
-         * Used by automatic texture Garbage Collection, stores last GC tick when it was bound
+         *由自动纹理垃圾收集使用，存储绑定时的最后GC的tick
          *
          * @member {number}
          * @protected
@@ -166,8 +165,7 @@ export class BaseTexture extends EventEmitter
         this.touched = 0;
 
         /**
-         * Whether or not the texture is a power of two, try to use power of two textures as much
-         * as you can
+         * 不论纹理是否为2的幂，请尝试尽可能多地使用2的幂
          *
          * @readonly
          * @member {boolean}
@@ -177,7 +175,7 @@ export class BaseTexture extends EventEmitter
         this._refreshPOT();
 
         /**
-         * The map of render context textures where this is bound
+         * 绑定此渲染上下文纹理的映射
          *
          * @member {Object}
          * @private
@@ -185,8 +183,8 @@ export class BaseTexture extends EventEmitter
         this._glTextures = {};
 
         /**
-         * Used by TextureSystem to only update texture to the GPU when needed.
-         * Please call `update()` to increment it.
+         * TextureSystem用于仅在需要时将纹理更新到GPU。
+         * 请调用 `update()` 增加它。
          *
          * @readonly
          * @member {number}
@@ -194,7 +192,7 @@ export class BaseTexture extends EventEmitter
         this.dirtyId = 0;
 
         /**
-         * Used by TextureSystem to only update texture style when needed.
+         * 由TextureSystem使用，仅在需要时更新纹理样式。
          *
          * @protected
          * @member {number}
@@ -202,7 +200,7 @@ export class BaseTexture extends EventEmitter
         this.dirtyStyleId = 0;
 
         /**
-         * Currently default cache ID.
+         * 当前默认的缓存ID。
          *
          * @member {string}
          */
@@ -216,8 +214,7 @@ export class BaseTexture extends EventEmitter
         this.valid = width > 0 && height > 0;
 
         /**
-         * The collection of alternative cache ids, since some BaseTextures
-         * can have more than one ID, short name and longer full URL
+         * 备用缓存ID的集合，因为某些BaseTextures可以具有多个ID，短名称和更长的完整URL
          *
          * @member {Array<string>}
          * @readonly
@@ -225,7 +222,7 @@ export class BaseTexture extends EventEmitter
         this.textureCacheIds = [];
 
         /**
-         * Flag if BaseTexture has been destroyed.
+         * 标记BaseTexture是否已被销毁。
          *
          * @member {boolean}
          * @readonly
@@ -233,9 +230,7 @@ export class BaseTexture extends EventEmitter
         this.destroyed = false;
 
         /**
-         * The resource used by this BaseTexture, there can only
-         * be one resource per BaseTexture, but textures can share
-         * resources.
+         * 此BaseTexture使用的资源，每个BaseTexture只能有一个资源，但是纹理可以共享资源。
          *
          * @member {PIXI.resources.Resource}
          * @readonly
@@ -243,21 +238,21 @@ export class BaseTexture extends EventEmitter
         this.resource = null;
 
         /**
-         * Number of the texture batch, used by multi-texture renderers
+         * 多纹理渲染器使用的纹理批处理编号
          *
          * @member {number}
          */
         this._batchEnabled = 0;
 
         /**
-         * Location inside texture batch, used by multi-texture renderers
+         * 纹理批处理中的位置，由多纹理渲染器使用
          *
          * @member {number}
          */
         this._batchLocation = 0;
 
         /**
-         * Fired when a not-immediately-available source finishes loading.
+         * 当非立即可用的源完成加载时触发。
          *
          * @protected
          * @event PIXI.BaseTexture#loaded
@@ -265,32 +260,32 @@ export class BaseTexture extends EventEmitter
          */
 
         /**
-         * Fired when a not-immediately-available source fails to load.
+         * 当非立即可用的源未能加载时触发。
          *
          * @protected
          * @event PIXI.BaseTexture#error
-         * @param {PIXI.BaseTexture} baseTexture - Resource errored.
-         * @param {ErrorEvent} event - Load error event.
+         * @param {PIXI.BaseTexture} baseTexture - 资源错误。
+         * @param {ErrorEvent} event - 加载错误事件。
          */
 
         /**
-         * Fired when BaseTexture is updated.
+         * 在更新BaseTexture时触发。
          *
          * @protected
          * @event PIXI.BaseTexture#loaded
-         * @param {PIXI.BaseTexture} baseTexture - Resource loaded.
+         * @param {PIXI.BaseTexture} baseTexture - 资源已加载。
          */
 
         /**
-         * Fired when BaseTexture is updated.
+         * 在更新BaseTexture时触发。
          *
          * @protected
          * @event PIXI.BaseTexture#update
-         * @param {PIXI.BaseTexture} baseTexture - Instance of texture being updated.
+         * @param {PIXI.BaseTexture} baseTexture - 正在更新纹理的实例。
          */
 
         /**
-         * Fired when BaseTexture is destroyed.
+         * BaseTexture被销毁时触发。
          *
          * @protected
          * @event PIXI.BaseTexture#dispose
@@ -302,7 +297,7 @@ export class BaseTexture extends EventEmitter
     }
 
     /**
-     * Pixel width of the source of this texture
+     * 此纹理来源的像素宽度
      *
      * @readonly
      * @member {number}
@@ -313,7 +308,7 @@ export class BaseTexture extends EventEmitter
     }
 
     /**
-     * Pixel height of the source of this texture
+     * 此纹理来源的像素高度
      *
      * @readonly
      * @member {number}
@@ -324,10 +319,10 @@ export class BaseTexture extends EventEmitter
     }
 
     /**
-     * Changes style options of BaseTexture
+     * 更改BaseTexture的样式选项
      *
      * @param {PIXI.SCALE_MODES} [scaleMode] - Pixi scalemode
-     * @param {PIXI.MIPMAP_MODES} [mipmap] - enable mipmaps
+     * @param {PIXI.MIPMAP_MODES} [mipmap] - 开启mipmaps
      * @returns {PIXI.BaseTexture} this
      */
     setStyle(scaleMode, mipmap)
@@ -355,11 +350,11 @@ export class BaseTexture extends EventEmitter
     }
 
     /**
-     * Changes w/h/resolution. Texture becomes valid if width and height are greater than zero.
+     * 更改w/h/分辨率。 如果宽度和高度大于零，则纹理变为有效。
      *
-     * @param {number} width Visual width
-     * @param {number} height Visual height
-     * @param {number} [resolution] Optionally set resolution
+     * @param {number} width 视觉宽度
+     * @param {number} height 视觉高度
+     * @param {number} [resolution] （可选）设置分辨率
      * @returns {PIXI.BaseTexture} this
      */
     setSize(width, height, resolution)
@@ -374,11 +369,11 @@ export class BaseTexture extends EventEmitter
     }
 
     /**
-     * Sets real size of baseTexture, preserves current resolution.
+     * 设置baseTexture的实际大小，保留当前分辨率。
      *
-     * @param {number} realWidth Full rendered width
-     * @param {number} realHeight Full rendered height
-     * @param {number} [resolution] Optionally set resolution
+     * @param {number} realWidth 全渲染宽度
+     * @param {number} realHeight 全渲染高度
+     * @param {number} [resolution] （可选）设置分辨率
      * @returns {PIXI.BaseTexture} this
      */
     setRealSize(realWidth, realHeight, resolution)
@@ -393,7 +388,7 @@ export class BaseTexture extends EventEmitter
     }
 
     /**
-     * Refresh check for isPowerOfTwo texture based on size
+     * 根据大小刷新检查isPowerOfTwo纹理
      *
      * @private
      */
@@ -403,7 +398,7 @@ export class BaseTexture extends EventEmitter
     }
 
     /**
-     * Changes resolution
+     * 更改分辨率
      *
      * @param {number} [resolution] res
      * @returns {PIXI.BaseTexture} this
@@ -432,9 +427,9 @@ export class BaseTexture extends EventEmitter
     }
 
     /**
-     * Sets the resource if it wasn't set. Throws error if resource already present
+     * 设置资源（如果未设置）。 如果资源已经存在，则引发错误
      *
-     * @param {PIXI.resources.Resource} resource - that is managing this BaseTexture
+     * @param {PIXI.resources.Resource} resource - 管理的BaseTexture
      * @returns {PIXI.BaseTexture} this
      */
     setResource(resource)
@@ -457,7 +452,7 @@ export class BaseTexture extends EventEmitter
     }
 
     /**
-     * Invalidates the object. Texture becomes valid if width and height are greater than zero.
+     * 使对象无效。如果宽度和高度大于零，则纹理变为有效。
      */
     update()
     {
@@ -479,9 +474,9 @@ export class BaseTexture extends EventEmitter
     }
 
     /**
-     * Handle errors with resources.
+     * 处理资源错误。
      * @private
-     * @param {ErrorEvent} event - Error event emitted.
+     * @param {ErrorEvent} event - 发出错误事件。
      */
     onError(event)
     {
@@ -489,9 +484,9 @@ export class BaseTexture extends EventEmitter
     }
 
     /**
-     * Destroys this base texture.
-     * The method stops if resource doesn't want this texture to be destroyed.
-     * Removes texture from all caches.
+     * 销毁此基础纹理。
+     * 如果资源不希望销毁此纹理，则不应该使用此方法。
+     * 从所有缓存中删除纹理。
      */
     destroy()
     {
@@ -525,9 +520,8 @@ export class BaseTexture extends EventEmitter
     }
 
     /**
-     * Frees the texture from WebGL memory without destroying this texture object.
-     * This means you can still use the texture later which will upload it to GPU
-     * memory again.
+     * 从WebGL内存中释放纹理，而不会销毁该纹理对象。
+     * 这意味着您以后仍然可以使用纹理，它将再次将其上传到GPU内存。
      *
      * @fires PIXI.BaseTexture#dispose
      */
@@ -537,17 +531,15 @@ export class BaseTexture extends EventEmitter
     }
 
     /**
-     * Helper function that creates a base texture based on the source you provide.
-     * The source can be - image url, image element, canvas element. If the
-     * source is an image url or an image element and not in the base texture
-     * cache, it will be created and loaded.
+     * 辅助函数，可根据您提供的源创建基础纹理。
+     * 来源可以是-图片网址，图片元素，画布元素。 如果源是图像url或图像元素，
+     * 如果不在基础纹理缓存中，则将创建并加载它。
      *
      * @static
-     * @param {string|HTMLImageElement|HTMLCanvasElement|SVGElement|HTMLVideoElement} source - The
-     *        source to create base texture from.
+     * @param {string|HTMLImageElement|HTMLCanvasElement|SVGElement|HTMLVideoElement} source - 从中创建基础纹理的源。
      * @param {object} [options] 请参见 {@link PIXI.BaseTexture} 的构造函数。
-     * @param {boolean} [strict] Enforce strict-mode, see {@link PIXI.settings.STRICT_TEXTURE_CACHE}.
-     * @returns {PIXI.BaseTexture} The new base texture.
+     * @param {boolean} [strict] 强制执行严格模式，请参见 {@link PIXI.settings.STRICT_TEXTURE_CACHE}。
+     * @returns {PIXI.BaseTexture} 新的基础纹理。
      */
     static from(source, options, strict = settings.STRICT_TEXTURE_CACHE)
     {
@@ -587,15 +579,14 @@ export class BaseTexture extends EventEmitter
     }
 
     /**
-     * Create a new BaseTexture with a BufferResource from a Float32Array.
-     * RGBA values are floats from 0 to 1.
+     * 使用Float32Array的BufferResource创建一个新的BaseTexture。
+     * RGBA值是从0到1的浮点数。
      * @static
-     * @param {Float32Array|Uint8Array} buffer The optional array to use, if no data
-     *        is provided, a new Float32Array is created.
-     * @param {number} width - Width of the resource
-     * @param {number} height - Height of the resource
+     * @param {Float32Array|Uint8Array} buffer 要使用的可选数组，如果未提供数据，则创建一个新的Float32Array。
+     * @param {number} width - 资源宽度
+     * @param {number} height - 资源高度
      * @param {object} [options] 请参见 {@link PIXI.BaseTexture} 的构造函数。
-     * @return {PIXI.BaseTexture} The resulting new BaseTexture
+     * @return {PIXI.BaseTexture} 新的基础纹理
      */
     static fromBuffer(buffer, width, height, options)
     {
@@ -608,11 +599,11 @@ export class BaseTexture extends EventEmitter
     }
 
     /**
-     * Adds a BaseTexture to the global BaseTextureCache. This cache is shared across the whole PIXI object.
+     * 将BaseTexture添加到全局BaseTextureCache。 该缓存在整个PIXI对象之间共享。
      *
      * @static
-     * @param {PIXI.BaseTexture} baseTexture - The BaseTexture to add to the cache.
-     * @param {string} id - The id that the BaseTexture will be stored against.
+     * @param {PIXI.BaseTexture} baseTexture - 要添加到缓存的BaseTexture。
+     * @param {string} id - BaseTexture将针对其存储的ID。
      */
     static addToCache(baseTexture, id)
     {
@@ -634,11 +625,11 @@ export class BaseTexture extends EventEmitter
     }
 
     /**
-     * Remove a BaseTexture from the global BaseTextureCache.
+     * 从全局BaseTextureCache中删除BaseTexture。
      *
      * @static
-     * @param {string|PIXI.BaseTexture} baseTexture - id of a BaseTexture to be removed, or a BaseTexture instance itself.
-     * @return {PIXI.BaseTexture|null} The BaseTexture that was removed.
+     * @param {string|PIXI.BaseTexture} baseTexture - 要删除的BaseTexture的ID或BaseTexture实例本身。
+     * @return {PIXI.BaseTexture|null} 已删除的BaseTexture。
      */
     static removeFromCache(baseTexture)
     {
@@ -677,7 +668,7 @@ export class BaseTexture extends EventEmitter
 }
 
 /**
- * Global number of the texture batch, used by multi-texture renderers
+ * 多纹理渲染器使用的纹理批处理的全局编号
  *
  * @static
  * @member {number}

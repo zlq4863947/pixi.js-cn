@@ -13567,7 +13567,7 @@ renderer.render(sprite, renderTexture);  // 渲染到RenderTexture的中心
 <dd>
     
     <div class="description">
-        <p>Number of the texture batch, used by multi-texture renderers</p>
+        <p>多纹理渲染器使用的纹理批处理编号</p>
     </div>
     
     
@@ -13622,7 +13622,7 @@ renderer.render(sprite, renderTexture);  // 渲染到RenderTexture的中心
 <dd>
     
     <div class="description">
-        <p>Location inside texture batch, used by multi-texture renderers</p>
+        <p>纹理批处理中的位置，由多纹理渲染器使用</p>
     </div>
     
     
@@ -13795,7 +13795,7 @@ renderer.render(sprite, renderTexture);  // 渲染到RenderTexture的中心
 <dd>
     
     <div class="description">
-        <p>How to treat premultiplied alpha, see <a href="PIXI.html#.ALPHA_MODES">PIXI.ALPHA_MODES</a>.</p>
+        <p>如何处理预乘alpha, 查看 <a href="PIXI.html#.ALPHA_MODES">PIXI.ALPHA_MODES</a>.</p>
     </div>
     
     
@@ -13853,7 +13853,7 @@ renderer.render(sprite, renderTexture);  // 渲染到RenderTexture的中心
 <dd>
     
     <div class="description">
-        <p>Anisotropic filtering level of texture</p>
+        <p>各向异性过滤级别的纹理</p>
     </div>
     
     
@@ -13911,7 +13911,7 @@ renderer.render(sprite, renderTexture);  // 渲染到RenderTexture的中心
 <dd>
     
     <div class="description">
-        <p>Currently default cache ID.</p>
+        <p>当前默认的缓存ID。</p>
     </div>
     
     
@@ -13966,7 +13966,7 @@ renderer.render(sprite, renderTexture);  // 渲染到RenderTexture的中心
 <dd>
     
     <div class="description">
-        <p>Flag if BaseTexture has been destroyed.</p>
+        <p>标记BaseTexture是否已被销毁。</p>
     </div>
     
     
@@ -14021,8 +14021,8 @@ renderer.render(sprite, renderTexture);  // 渲染到RenderTexture的中心
 <dd>
     
     <div class="description">
-        <p>Used by TextureSystem to only update texture to the GPU when needed.
-Please call <code>update()</code> to increment it.</p>
+        <p>TextureSystem用于仅在需要时将纹理更新到GPU。
+请调用 <code>update()</code> 增加它。</p>
     </div>
     
     
@@ -14077,7 +14077,7 @@ Please call <code>update()</code> to increment it.</p>
 <dd>
     
     <div class="description">
-        <p>Used by TextureSystem to only update texture style when needed.</p>
+        <p>由TextureSystem使用，仅在需要时更新纹理样式。</p>
     </div>
     
     
@@ -14183,7 +14183,7 @@ Please call <code>update()</code> to increment it.</p>
 <dd>
     
     <div class="description">
-        <p>The pixel format of the texture</p>
+        <p>纹理的像素格式</p>
     </div>
     
     
@@ -14304,7 +14304,7 @@ Please call <code>update()</code> to increment it.</p>
 <dd>
     
     <div class="description">
-        <p>The height of the base texture set when the image has loaded</p>
+        <p>加载图像后设置的基础纹理的高度</p>
     </div>
     
     
@@ -14422,8 +14422,7 @@ Please call <code>update()</code> to increment it.</p>
 <dd>
     
     <div class="description">
-        <p>Whether or not the texture is a power of two, try to use power of two textures as much
-as you can</p>
+        <p>不论纹理是否为2的幂，请尝试尽可能多地使用2的幂</p>
     </div>
     
     
@@ -14532,7 +14531,7 @@ as you can</p>
 <dd>
     
     <div class="description">
-        <p>Mipmap mode of the texture, affects downscaled images</p>
+        <p>纹理的Mipmap模式，影响缩小的图像</p>
     </div>
     
     
@@ -14653,7 +14652,7 @@ as you can</p>
 <dd>
     
     <div class="description">
-        <p>Pixel height of the source of this texture</p>
+        <p>此纹理来源的像素高度</p>
     </div>
     
     
@@ -14708,7 +14707,7 @@ as you can</p>
 <dd>
     
     <div class="description">
-        <p>Pixel width of the source of this texture</p>
+        <p>此纹理来源的像素宽度</p>
     </div>
     
     
@@ -14763,7 +14762,7 @@ as you can</p>
 <dd>
     
     <div class="description">
-        <p>The resolution / device pixel ratio of the texture</p>
+        <p>分辨率/纹理的设备像素比率</p>
     </div>
     
     
@@ -14821,9 +14820,7 @@ as you can</p>
 <dd>
     
     <div class="description">
-        <p>The resource used by this BaseTexture, there can only
-be one resource per BaseTexture, but textures can share
-resources.</p>
+        <p>此BaseTexture使用的资源，每个BaseTexture只能有一个资源，但是纹理可以共享资源。</p>
     </div>
     
     
@@ -14878,7 +14875,7 @@ resources.</p>
 <dd>
     
     <div class="description">
-        <p>The scale mode to apply when scaling this texture</p>
+        <p>缩放此纹理时应用的缩放模式</p>
     </div>
     
     
@@ -14999,7 +14996,7 @@ resources.</p>
 <dd>
     
     <div class="description">
-        <p>The target type</p>
+        <p>目标类型</p>
     </div>
     
     
@@ -15057,8 +15054,7 @@ resources.</p>
 <dd>
     
     <div class="description">
-        <p>The collection of alternative cache ids, since some BaseTextures
-can have more than one ID, short name and longer full URL</p>
+        <p>备用缓存ID的集合，因为某些BaseTextures可以具有多个ID，短名称和更长的完整URL</p>
     </div>
     
     
@@ -15113,7 +15109,7 @@ can have more than one ID, short name and longer full URL</p>
 <dd>
     
     <div class="description">
-        <p>Used by automatic texture Garbage Collection, stores last GC tick when it was bound</p>
+        <p>由自动纹理垃圾收集使用，存储绑定时的最后GC的tick</p>
     </div>
     
     
@@ -15168,7 +15164,7 @@ can have more than one ID, short name and longer full URL</p>
 <dd>
     
     <div class="description">
-        <p>The type of resource data</p>
+        <p>资源数据的类型</p>
     </div>
     
     
@@ -15226,7 +15222,7 @@ can have more than one ID, short name and longer full URL</p>
 <dd>
     
     <div class="description">
-        <p>Global unique identifier for this BaseTexture</p>
+        <p>此BaseTexture的全局唯一标识符</p>
     </div>
     
     
@@ -15336,7 +15332,7 @@ can have more than one ID, short name and longer full URL</p>
 <dd>
     
     <div class="description">
-        <p>The width of the base texture set when the image has loaded</p>
+        <p>加载图像后设置的基础纹理的宽度</p>
     </div>
     
     
@@ -15391,7 +15387,7 @@ can have more than one ID, short name and longer full URL</p>
 <dd>
     
     <div class="description">
-        <p>How the texture wraps</p>
+        <p>纹理如何包裹</p>
     </div>
     
     
@@ -15948,7 +15944,7 @@ memory again.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_BaseTexture.js.html#line341">BaseTexture.js:341</a>
+            <a href="packages_core_src_textures_BaseTexture.js.html#line336">BaseTexture.js:336</a>
         </div>
         
     </div>
@@ -15959,7 +15955,7 @@ memory again.</p>
     
     
     <div class="description">
-        <p>Sets real size of baseTexture, preserves current resolution.</p>
+        <p>设置baseTexture的实际大小，保留当前分辨率。</p>
     </div>
     
 
@@ -16011,7 +16007,7 @@ memory again.</p>
                         
                     
                 
-                <p>Full rendered width</p></td>
+                <p>全渲染宽度</p></td>
         </tr>
 	
 	
@@ -16039,7 +16035,7 @@ memory again.</p>
                         
                     
                 
-                <p>Full rendered height</p></td>
+                <p>全渲染高度</p></td>
         </tr>
 	
 	
@@ -16069,7 +16065,7 @@ memory again.</p>
                         
                     
                 
-                <p>Optionally set resolution</p></td>
+                <p>（可选）设置分辨率</p></td>
         </tr>
 	
 	
@@ -16165,7 +16161,7 @@ memory again.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_BaseTexture.js.html#line366">BaseTexture.js:366</a>
+            <a href="packages_core_src_textures_BaseTexture.js.html#line361">BaseTexture.js:361</a>
         </div>
         
     </div>
@@ -16176,7 +16172,7 @@ memory again.</p>
     
     
     <div class="description">
-        <p>Changes resolution</p>
+        <p>更改分辨率</p>
     </div>
     
 
@@ -16326,7 +16322,7 @@ memory again.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_BaseTexture.js.html#line391">BaseTexture.js:391</a>
+            <a href="packages_core_src_textures_BaseTexture.js.html#line386">BaseTexture.js:386</a>
         </div>
         
     </div>
@@ -16337,7 +16333,7 @@ memory again.</p>
     
     
     <div class="description">
-        <p>Sets the resource if it wasn't set. Throws error if resource already present</p>
+        <p>设置资源（如果未设置）。 如果资源已经存在，则引发错误</p>
     </div>
     
 
@@ -16384,7 +16380,7 @@ memory again.</p>
             
             <td class="description last">
                 
-                <p>that is managing this BaseTexture</p></td>
+                <p>管理的BaseTexture</p></td>
         </tr>
 	
 	
@@ -16480,7 +16476,7 @@ memory again.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_BaseTexture.js.html#line323">BaseTexture.js:323</a>
+            <a href="packages_core_src_textures_BaseTexture.js.html#line318">BaseTexture.js:318</a>
         </div>
         
     </div>
@@ -16491,7 +16487,7 @@ memory again.</p>
     
     
     <div class="description">
-        <p>Changes w/h/resolution. Texture becomes valid if width and height are greater than zero.</p>
+        <p>更改w/h/分辨率。 如果宽度和高度大于零，则纹理变为有效。</p>
     </div>
     
 
@@ -16543,7 +16539,7 @@ memory again.</p>
                         
                     
                 
-                <p>Visual width</p></td>
+                <p>视觉宽度</p></td>
         </tr>
 	
 	
@@ -16571,7 +16567,7 @@ memory again.</p>
                         
                     
                 
-                <p>Visual height</p></td>
+                <p>视觉高度</p></td>
         </tr>
 	
 	
@@ -16601,7 +16597,7 @@ memory again.</p>
                         
                     
                 
-                <p>Optionally set resolution</p></td>
+                <p>（可选）设置分辨率</p></td>
         </tr>
 	
 	
@@ -16697,7 +16693,7 @@ memory again.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_BaseTexture.js.html#line294">BaseTexture.js:294</a>
+            <a href="packages_core_src_textures_BaseTexture.js.html#line289">BaseTexture.js:289</a>
         </div>
         
     </div>
@@ -16708,7 +16704,7 @@ memory again.</p>
     
     
     <div class="description">
-        <p>Changes style options of BaseTexture</p>
+        <p>更改BaseTexture的样式选项</p>
     </div>
     
 
@@ -16792,7 +16788,7 @@ memory again.</p>
                         
                     
                 
-                <p>enable mipmaps</p></td>
+                <p>开启mipmaps</p></td>
         </tr>
 	
 	
@@ -16888,7 +16884,7 @@ memory again.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_BaseTexture.js.html#line409">BaseTexture.js:409</a>
+            <a href="packages_core_src_textures_BaseTexture.js.html#line404">BaseTexture.js:404</a>
         </div>
         
     </div>
@@ -16899,7 +16895,7 @@ memory again.</p>
     
     
     <div class="description">
-        <p>Invalidates the object. Texture becomes valid if width and height are greater than zero.</p>
+        <p>使对象无效。如果宽度和高度大于零，则纹理变为有效。</p>
     </div>
     
 
@@ -16978,7 +16974,7 @@ memory again.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_BaseTexture.js.html#line257">BaseTexture.js:257</a>
+            <a href="packages_core_src_textures_BaseTexture.js.html#line252">BaseTexture.js:252</a>
         </div>
         
     </div>
@@ -16989,7 +16985,7 @@ memory again.</p>
     
     
     <div class="description">
-        <p>Fired when BaseTexture is destroyed.</p>
+        <p>BaseTexture被销毁时触发。</p>
     </div>
     
 
@@ -17103,7 +17099,7 @@ memory again.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_BaseTexture.js.html#line235">BaseTexture.js:235</a>
+            <a href="packages_core_src_textures_BaseTexture.js.html#line230">BaseTexture.js:230</a>
         </div>
         
     </div>
@@ -17114,7 +17110,7 @@ memory again.</p>
     
     
     <div class="description">
-        <p>Fired when a not-immediately-available source fails to load.</p>
+        <p>当非立即可用的源未能加载时触发。</p>
     </div>
     
 
@@ -17161,7 +17157,7 @@ memory again.</p>
             
             <td class="description last">
                 
-                <p>Resource errored.</p></td>
+                <p>资源错误。</p></td>
         </tr>
 	
 	
@@ -17184,7 +17180,7 @@ memory again.</p>
             
             <td class="description last">
                 
-                <p>Load error event.</p></td>
+                <p>加载错误事件。</p></td>
         </tr>
 	
 	
@@ -17251,7 +17247,7 @@ memory again.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_BaseTexture.js.html#line228">BaseTexture.js:228</a>
+            <a href="packages_core_src_textures_BaseTexture.js.html#line223">BaseTexture.js:223</a>
         </div>
         
     </div>
@@ -17262,7 +17258,7 @@ memory again.</p>
     
     
     <div class="description">
-        <p>Fired when a not-immediately-available source finishes loading.</p>
+        <p>当非立即可用的源完成加载时触发。</p>
     </div>
     
 
@@ -17376,7 +17372,7 @@ memory again.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_textures_BaseTexture.js.html#line250">BaseTexture.js:250</a>
+            <a href="packages_core_src_textures_BaseTexture.js.html#line245">BaseTexture.js:245</a>
         </div>
         
     </div>
@@ -17387,7 +17383,7 @@ memory again.</p>
     
     
     <div class="description">
-        <p>Fired when BaseTexture is updated.</p>
+        <p>在更新BaseTexture时触发。</p>
     </div>
     
 
@@ -17434,7 +17430,7 @@ memory again.</p>
             
             <td class="description last">
                 
-                <p>Instance of texture being updated.</p></td>
+                <p>正在更新纹理的实例。</p></td>
         </tr>
 	
 	
@@ -17493,7 +17489,7 @@ memory again.</p>
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Apr 18 2020 23:31:57 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sun Apr 19 2020 01:53:32 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>
