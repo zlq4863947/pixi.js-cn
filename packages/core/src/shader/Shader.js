@@ -2,7 +2,7 @@ import { Program } from './Program';
 import { UniformGroup } from './UniformGroup';
 
 /**
- * A helper class for shaders
+ * 着色器的辅助类
  *
  * @class
  * @memberof PIXI
@@ -10,13 +10,13 @@ import { UniformGroup } from './UniformGroup';
 export class Shader
 {
     /**
-     * @param {PIXI.Program} [program] - The program the shader will use.
-     * @param {object} [uniforms] - Custom uniforms to use to augment the built-in ones.
+     * @param {PIXI.Program} [program] - 着色器将使用的程序。
+     * @param {object} [uniforms] - 自定义uniforms，用于增强内置uniforms。
      */
     constructor(program, uniforms)
     {
         /**
-         * Program that the shader uses
+         * 着色器使用的程序
          *
          * @member {PIXI.Program}
          */
@@ -84,7 +84,7 @@ export class Shader
     }
 
     /**
-     * Shader uniform values, shortcut for `uniformGroup.uniforms`
+     * 着色器uniform统，`uniformGroup.uniforms` 的快捷方式
      * @readonly
      * @member {object}
      */
@@ -94,13 +94,13 @@ export class Shader
     }
 
     /**
-     * A short hand function to create a shader based of a vertex and fragment shader
+     * 创建基于顶点和片段着色器的着色器快捷功能
      *
-     * @param {string} [vertexSrc] - The source of the vertex shader.
-     * @param {string} [fragmentSrc] - The source of the fragment shader.
-     * @param {object} [uniforms] - Custom uniforms to use to augment the built-in ones.
+     * @param {string} [vertexSrc] - 顶点着色器的源。
+     * @param {string} [fragmentSrc] - 片段着色器的源。
+     * @param {object} [uniforms] - 自定义uniforms，用于增强内置uniforms。
      *
-     * @returns {PIXI.Shader} an shiny new Pixi shader!
+     * @returns {PIXI.Shader} 闪闪亮的新Pixi着色器！
      */
     static from(vertexSrc, fragmentSrc, uniforms)
     {

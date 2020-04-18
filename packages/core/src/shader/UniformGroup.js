@@ -9,7 +9,7 @@ let UID = 0;
 export class UniformGroup
 {
     /**
-     * @param {object} [uniforms] - Custom uniforms to use to augment the built-in ones.
+     * @param {object} [uniforms] - 自定义uniforms，用于增强内置uniforms。
      * @param {boolean} [_static] - Uniforms wont be changed after creation
      */
     constructor(uniforms, _static)

@@ -17,7 +17,7 @@ let UID = 0;
 const nameCache = {};
 
 /**
- * Helper class to create a shader program.
+ * 用于创建着色器程序的辅助类
  *
  * @class
  * @memberof PIXI
@@ -25,23 +25,23 @@ const nameCache = {};
 export class Program
 {
     /**
-     * @param {string} [vertexSrc] - The source of the vertex shader.
-     * @param {string} [fragmentSrc] - The source of the fragment shader.
-     * @param {string} [name] - Name for shader
+     * @param {string} [vertexSrc] - 顶点着色器的源。
+     * @param {string} [fragmentSrc] - 片段着色器的源。
+     * @param {string} [name] - 着色器的名称
      */
     constructor(vertexSrc, fragmentSrc, name = 'pixi-shader')
     {
         this.id = UID++;
 
         /**
-         * The vertex shader.
+         * 顶点着色器。
          *
          * @member {string}
          */
         this.vertexSrc = vertexSrc || Program.defaultVertexSrc;
 
         /**
-         * The fragment shader.
+         * 片段着色器。
          *
          * @member {string}
          */
@@ -81,12 +81,11 @@ export class Program
     }
 
     /**
-     * Extracts the data for a buy creating a small test program
-     * or reading the src directly.
+     * 提取数据，以创建一个小型测试程序或直接读取src。
      * @protected
      *
-     * @param {string} [vertexSrc] - The source of the vertex shader.
-     * @param {string} [fragmentSrc] - The source of the fragment shader.
+     * @param {string} [vertexSrc] - 顶点着色器的源。
+     * @param {string} [fragmentSrc] - 片段着色器的源。
      */
     extractData(vertexSrc, fragmentSrc)
     {
@@ -109,13 +108,13 @@ export class Program
     }
 
     /**
-     * returns the attribute data from the program
+     * 从程序返回属性数据
      * @private
      *
-     * @param {WebGLProgram} [program] - the WebGL program
-     * @param {WebGLRenderingContext} [gl] - the WebGL context
+     * @param {WebGLProgram} [program] - WebGL程序
+     * @param {WebGLRenderingContext} [gl] - WebGL上下文
      *
-     * @returns {object} the attribute data for this program
+     * @returns {object} 该程序的属性数据
      */
     getAttributeData(program, gl)
     {
@@ -153,13 +152,13 @@ export class Program
     }
 
     /**
-     * returns the uniform data from the program
+     * 从程序返回的 uniform 数据
      * @private
      *
-     * @param {webGL-program} [program] - the webgl program
-     * @param {context} [gl] - the WebGL context
+     * @param {webGL-program} [program] - webgl程序
+     * @param {context} [gl] - WebGL上下文
      *
-     * @returns {object} the uniform data for this program
+     * @returns {object} 该程序的 uniform 数据
      */
     getUniformData(program, gl)
     {
@@ -193,7 +192,7 @@ export class Program
     }
 
     /**
-     * The default vertex shader source
+     * 默认的顶点着色器源
      *
      * @static
      * @constant
@@ -205,7 +204,7 @@ export class Program
     }
 
     /**
-     * The default fragment shader source
+     * 默认片段着色器源
      *
      * @static
      * @constant
@@ -217,14 +216,13 @@ export class Program
     }
 
     /**
-     * A short hand function to create a program based of a vertex and fragment shader
-     * this method will also check to see if there is a cached program.
+     * 创建基于顶点和片段着色器的程序的快捷方法，此方法还将检查是否有缓存的程序。
      *
-     * @param {string} [vertexSrc] - The source of the vertex shader.
-     * @param {string} [fragmentSrc] - The source of the fragment shader.
-     * @param {string} [name=pixi-shader] - Name for shader
+     * @param {string} [vertexSrc] - 顶点着色器的源。
+     * @param {string} [fragmentSrc] - 片段着色器的源。
+     * @param {string} [name=pixi-shader] - 着色器的名称
      *
-     * @returns {PIXI.Program} an shiny new Pixi shader!
+     * @returns {PIXI.Program} 闪闪亮的新Pixi着色器！
      */
     static from(vertexSrc, fragmentSrc, name)
     {
