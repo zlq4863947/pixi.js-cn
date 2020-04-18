@@ -19,12 +19,12 @@ const map = {
 /* eslint-disable max-len */
 
 /**
- * The Geometry represents a model. It consists of two components:
- * - GeometryStyle - The structure of the model such as the attributes layout
- * - GeometryData - the data of the model - this consists of buffers.
- * This can include anything from positions, uvs, normals, colors etc.
+ * 几何表示模型。它由两个部分组成：
+ * - GeometryStyle - 模型的结构，例如属性布局
+ * - GeometryData - 模型数据 - 由缓冲区组成。
+ * 这可以包括位置，uv，法线，颜色等中的任何内容。
  *
- * Geometry can be defined without passing in a style or data if required (thats how I prefer!)
+ * 可以在不需要传递样式或数据的情况下定义几何（这就是我的偏爱！）
  *
  * ```js
  * let geometry = new PIXI.Geometry();
@@ -40,8 +40,8 @@ const map = {
 export class Geometry
 {
     /**
-     * @param {PIXI.Buffer[]} [buffers]  an array of buffers. optional.
-     * @param {object} [attributes] of the geometry, optional structure of the attributes layout
+     * @param {PIXI.Buffer[]} [buffers]  缓冲区数组。可选的。
+     * @param {object} [attributes] 几何形状，属性布局的可选结构
      */
     constructor(buffers = [], attributes = {})
     {
@@ -52,7 +52,7 @@ export class Geometry
         this.attributes = attributes;
 
         /**
-         * A map of renderer IDs to webgl VAOs
+         * 渲染器ID到webgl VAO的映射
          *
          * @protected
          * @type {object}
@@ -64,7 +64,7 @@ export class Geometry
         this.instanced = false;
 
         /**
-         * Number of instances in this geometry, pass it to `GeometrySystem.draw()`
+         * 此几何中的实例数，将其传递给 `GeometrySystem.draw()`
          * @member {number}
          * @default 1
          */
@@ -73,7 +73,7 @@ export class Geometry
         this.disposeRunner = new Runner('disposeGeometry', 2);
 
         /**
-         * Count of existing (not destroyed) meshes that reference this geometry
+         * 引用此几何体的现有（未破坏）网格的数量
          * @member {number}
          */
         this.refCount = 0;
@@ -81,17 +81,17 @@ export class Geometry
 
     /**
     *
-    * Adds an attribute to the geometry
+    * 向几何添加属性
     *
-    * @param {String} id - the name of the attribute (matching up to a shader)
-    * @param {PIXI.Buffer|number[]} [buffer] the buffer that holds the data of the attribute . You can also provide an Array and a buffer will be created from it.
-    * @param {Number} [size=0] the size of the attribute. If you have 2 floats per vertex (eg position x and y) this would be 2
-    * @param {Boolean} [normalized=false] should the data be normalized.
-    * @param {Number} [type=PIXI.TYPES.FLOAT] what type of number is the attribute. Check {PIXI.TYPES} to see the ones available
-    * @param {Number} [stride=0] How far apart (in floats) the start of each value is. (used for interleaving data)
-    * @param {Number} [start=0] How far into the array to start reading values (used for interleaving data)
+    * @param {String} id - 属性的名称（与着色器匹配）
+    * @param {PIXI.Buffer|number[]} [buffer] 存放属性数据的缓冲区。 您还可以提供一个Array，并从中创建一个缓冲区。
+    * @param {Number} [size=0] 属性的大小。 如果每个顶点有2个浮点数（例如位置x和y），则为2
+    * @param {Boolean} [normalized=false] 数据是否应该归一化。
+    * @param {Number} [type=PIXI.TYPES.FLOAT] 属性是什么类型的数字。检查{@link PIXI.TYPES}以查看可用值
+    * @param {Number} [stride=0] 每个值的起始位置相距多远（以浮点数表示）。 （用于交错数据）
+    * @param {Number} [start=0] 数组开始读取值的距离（用于交错数据）
     *
-    * @return {PIXI.Geometry} returns self, useful for chaining.
+    * @return {PIXI.Geometry} 返回自身，用于链式引用
     */
     addAttribute(id, buffer, size, normalized = false, type, stride, start, instance = false)
     {
@@ -141,10 +141,10 @@ export class Geometry
     }
 
     /**
-     * returns the requested attribute
+     * 返回请求的属性
      *
-     * @param {String} id  the name of the attribute required
-     * @return {PIXI.Attribute} the attribute requested.
+     * @param {String} id  属性的名称
+     * @return {PIXI.Attribute} 请求的属性。
      */
     getAttribute(id)
     {
@@ -152,10 +152,10 @@ export class Geometry
     }
 
     /**
-     * returns the requested buffer
+     * 返回请求的缓冲区
      *
-     * @param {String} id  the name of the buffer required
-     * @return {PIXI.Buffer} the buffer requested.
+     * @param {String} id  缓冲区的名称
+     * @return {PIXI.Buffer} 请求的缓冲区。
      */
     getBuffer(id)
     {
@@ -164,11 +164,11 @@ export class Geometry
 
     /**
     *
-    * Adds an index buffer to the geometry
-    * The index buffer contains integers, three for each triangle in the geometry, which reference the various attribute buffers (position, colour, UV coordinates, other UV coordinates, normal, …). There is only ONE index buffer.
+    * 向几何图形添加索引缓冲区
+     * 索引缓冲区包含整数，对于几何体中的每个三角形有三个整数，这些整数了引用各种属性缓冲区（位置、颜色、紫外线坐标、其他紫外线坐标、法线…）。只有一个索引缓冲区。
     *
-    * @param {PIXI.Buffer|number[]} [buffer] the buffer that holds the data of the index buffer. You can also provide an Array and a buffer will be created from it.
-    * @return {PIXI.Geometry} returns self, useful for chaining.
+    * @param {PIXI.Buffer|number[]} [buffer] 存放索引缓冲区数据的缓冲区。 您还可以提供一个Array，并从中创建一个缓冲区。
+    * @return {PIXI.Geometry} 返回自身，用于链式引用
     */
     addIndex(buffer)
     {
@@ -195,9 +195,9 @@ export class Geometry
     }
 
     /**
-     * returns the index buffer
+     * 返回索引缓冲区
      *
-     * @return {PIXI.Buffer} the index buffer.
+     * @return {PIXI.Buffer} 索引缓冲区。
      */
     getIndex()
     {
@@ -205,10 +205,10 @@ export class Geometry
     }
 
     /**
-     * this function modifies the structure so that all current attributes become interleaved into a single buffer
-     * This can be useful if your model remains static as it offers a little performance boost
+     * 此函数修改结构，以便所有当前属性都交错到单个缓冲区中
+     * 如果您的模型保持静态，这会很有用，因为它会带来一点性能提升
      *
-     * @return {PIXI.Geometry} returns self, useful for chaining.
+     * @return {PIXI.Geometry} 返回自身，用于链式引用
      */
     interleave()
     {
@@ -268,7 +268,7 @@ export class Geometry
     }
 
     /**
-     * disposes WebGL resources that are connected to this geometry
+     * 释放连接到此几何的WebGL资源
      */
     dispose()
     {
@@ -276,7 +276,7 @@ export class Geometry
     }
 
     /**
-     * Destroys the geometry.
+     * 销毁几何
      */
     destroy()
     {
@@ -288,9 +288,9 @@ export class Geometry
     }
 
     /**
-     * returns a clone of the geometry
+     * 返回几何体的副本
      *
-     * @returns {PIXI.Geometry} a new clone of this geometry
+     * @returns {PIXI.Geometry} 几何的新副本
      */
     clone()
     {
@@ -326,11 +326,10 @@ export class Geometry
     }
 
     /**
-     * merges an array of geometries into a new single one
-     * geometry attribute styles must match for this operation to work
+     * 将一组几何图形合并到一个新的单个几何图形中，该属性必须匹配才能使此操作起作用
      *
-     * @param {PIXI.Geometry[]} geometries array of geometries to merge
-     * @returns {PIXI.Geometry} shiny new geometry!
+     * @param {PIXI.Geometry[]} 要合并的几何数组
+     * @returns {PIXI.Geometry} 闪亮的新几何！
      */
     static merge(geometries)
     {

@@ -1,6 +1,6 @@
 import { MeshGeometry } from '@pixi/mesh';
 /**
- * RopeGeometry allows you to draw a geometry across several points and then manipulate these points.
+ * RopeGeometry允许您跨多个点绘制几何图形，然后操纵这些点。
  *
  * ```js
  * for (let i = 0; i < 20; i++) {
@@ -17,15 +17,14 @@ import { MeshGeometry } from '@pixi/mesh';
 export class RopeGeometry extends MeshGeometry
 {
     /**
-     * @param {number} [width=200] - The width (i.e., thickness) of the rope.
-     * @param {PIXI.Point[]} [points] - An array of {@link PIXI.Point} objects to construct this rope.
-     * @param {number} [textureScale=0] - By default the rope texture will be stretched to match
-     *     rope length. If textureScale is positive this value will be treated as a scaling
-     *     factor and the texture will preserve its aspect ratio instead. To create a tiling rope
-     *     set baseTexture.wrapMode to {@link PIXI.WRAP_MODES.REPEAT} and use a power of two texture,
-     *     then set textureScale=1 to keep the original texture pixel size.
-     *     In order to reduce alpha channel artifacts provide a larger texture and downsample -
-     *     i.e. set textureScale=0.5 to scale it down twice.
+     * @param {number} [width=200] - 绳索的宽度（即粗细）。
+     * @param {PIXI.Point[]} [points] - {@link PIXI.Point}对象的数组来构造此绳索。
+     * @param {number} [textureScale=0] - 默认情况下，绳索纹理将被拉伸以匹配绳索长度。
+     *     如果textureScale为正，则该值将被视为缩放因子，并且纹理将保留其长宽比。
+     *     要创建平铺绳索，请将baseTexture.wrapMode设置为{@link PIXI.WRAP_MODES.REPEAT}并使用纹理的两次幂，
+     *     然后将textureScale = 1设置为保留原始纹理像素大小。
+     *     为了减少alpha通道伪像，请提供更大的纹理和下采样-
+     *     也就是说，将textureScale = 0.5设置为缩小两次。
      */
     constructor(width = 200, points, textureScale = 0)
     {
@@ -56,7 +55,7 @@ export class RopeGeometry extends MeshGeometry
         this.build();
     }
     /**
-     * Refreshes Rope indices and uvs
+     * 刷新绳索指数和uvs
      * @private
      */
     build()
@@ -147,7 +146,7 @@ export class RopeGeometry extends MeshGeometry
     }
 
     /**
-     * refreshes vertices of Rope mesh
+     * 刷新绳索网格的顶点
      */
     updateVertices()
     {

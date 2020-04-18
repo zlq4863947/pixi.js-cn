@@ -13192,8 +13192,8 @@
         <h2><span class="ancestors"><a href="PIXI.html">PIXI</a>~</span>NineSlicePlane
         </h2>
         
-            <div class="class-description"><p>The NineSlicePlane allows you to stretch a texture using 9-slice scaling. The corners will remain unscaled (useful
-for buttons with rounded corners for example) and the other areas will be scaled horizontally and or vertically</p>
+            <div class="class-description"><p>NineSlicePlane允许您使用9切片缩放来拉伸纹理。
+角度将保持未缩放状态（例如，对于带有圆角的按钮很有用），其他区域将水平或垂直缩放。</p>
 <pre class="prettyprint source lang-js"><code>let Plane9 = new PIXI.NineSlicePlane(PIXI.Texture.from('BoxWithRoundedCorners.png'), 15, 15, 15, 15);
 </code></pre>
 <pre>
@@ -13207,11 +13207,11 @@ for buttons with rounded corners for example) and the other areas will be scaled
    +---+----------------------+---+
  D | 7 |          8           | 9 |
    +---+----------------------+---+
- When changing this objects width and/or height:
-    areas 1 3 7 and 9 will remain unscaled.
-    areas 2 and 8 will be stretched horizontally
-    areas 4 and 6 will be stretched vertically
-    area 5 will be stretched both horizontally and vertically
+ 更改此对象的宽度 和/或 高度时：
+    区域1 3 7和9将保持未缩放状态。
+    区域2和8将被水平拉伸
+    区域4和6将被垂直拉伸
+    区域5将水平和垂直拉伸
 </pre></div>
         
     </div>
@@ -13305,7 +13305,7 @@ for buttons with rounded corners for example) and the other areas will be scaled
                         
                     
                 
-                <p>The texture to use on the NineSlicePlane.</p></td>
+                <p>在NineSlicePlane上使用的纹理。</p></td>
         </tr>
 	
 	
@@ -13341,7 +13341,7 @@ for buttons with rounded corners for example) and the other areas will be scaled
                         
                     
                 
-                <p>size of the left vertical bar (A)</p></td>
+                <p>左侧竖条的大小（A）</p></td>
         </tr>
 	
 	
@@ -13377,7 +13377,7 @@ for buttons with rounded corners for example) and the other areas will be scaled
                         
                     
                 
-                <p>size of the top horizontal bar (C)</p></td>
+                <p>顶部横条的大小（C）</p></td>
         </tr>
 	
 	
@@ -13413,7 +13413,7 @@ for buttons with rounded corners for example) and the other areas will be scaled
                         
                     
                 
-                <p>size of the right vertical bar (B)</p></td>
+                <p>右侧竖条的大小（B）</p></td>
         </tr>
 	
 	
@@ -13449,7 +13449,7 @@ for buttons with rounded corners for example) and the other areas will be scaled
                         
                     
                 
-                <p>size of the bottom horizontal bar (D)</p></td>
+                <p>底部横条的大小（D）</p></td>
         </tr>
 	
 	
@@ -13981,7 +13981,7 @@ for buttons with rounded corners for example) and the other areas will be scaled
 <dd>
     
     <div class="description">
-        <p>The height of the NineSlicePlane, setting this will actually modify the vertices and UV's of this plane</p>
+        <p>NineSlicePlane的高度，设置此高度实际上将修改此平面的顶点和UV</p>
     </div>
     
     
@@ -14300,7 +14300,7 @@ for buttons with rounded corners for example) and the other areas will be scaled
 <dd>
     
     <div class="description">
-        <p>The width of the NineSlicePlane, setting this will actually modify the vertices and UV's of this plane</p>
+        <p>NineSlicePlane的宽度，设置此宽度实际上将修改此平面的顶点和UV</p>
     </div>
     
     
@@ -14863,8 +14863,7 @@ for buttons with rounded corners for example) and the other areas will be scaled
 <dd>
     
     <div class="description">
-        <p>The blend mode to be applied to the Mesh. Apply a value of
-<code>PIXI.BLEND_MODES.NORMAL</code> to reset the blend mode.</p>
+        <p>要应用于网格的混合模式。使用<code>PIXI.BLEND_MODES.NORMAL</code>重置混合模式。</p>
     </div>
     
     
@@ -14925,7 +14924,7 @@ for buttons with rounded corners for example) and the other areas will be scaled
 <dd>
     
     <div class="description">
-        <p>The height of the bottom row</p>
+        <p>底行高度</p>
     </div>
     
     
@@ -15232,7 +15231,7 @@ sprite.cursor = 'wait';</code></pre>
 <dd>
     
     <div class="description">
-        <p>The way the Mesh should be drawn, can be any of the <a href="PIXI.html#.DRAW_MODES">PIXI.DRAW_MODES</a> constants.</p>
+        <p>网格的绘制方式可以是任何<a href="PIXI.html#.DRAW_MODES">PIXI.DRAW_MODES</a>常量。</p>
     </div>
     
     
@@ -15409,9 +15408,9 @@ sprite.cursor = 'wait';</code></pre>
 <dd>
     
     <div class="description">
-        <p>Includes vertex positions, face indices, normals, colors, UVs, and
-custom attributes within buffers, reducing the cost of passing all
-this data to the GPU. Can be shared between multiple Mesh objects.</p>
+        <p>在缓冲区内包括顶点位置，晶面指数，法线，颜色，UV和自定义属性，
+从而降低了将所有这些数据传递给GPU的成本。
+可以在多个Mesh对象之间共享。</p>
     </div>
     
     
@@ -15464,7 +15463,7 @@ this data to the GPU. Can be shared between multiple Mesh objects.</p>
 <dd>
     
     <div class="description">
-        <p>The height of the NineSlicePlane, setting this will actually modify the vertices and UV's of this plane</p>
+        <p>NineSlicePlane的高度，设置此高度实际上将修改此平面的顶点和UV</p>
     </div>
     
     
@@ -15815,7 +15814,7 @@ sprite.on('tap', (event) => {
 <dd>
     
     <div class="description">
-        <p>The width of the left column</p>
+        <p>左栏宽度</p>
     </div>
     
     
@@ -16005,7 +16004,7 @@ sprite.mask = graphics;</code></pre>
 <dd>
     
     <div class="description">
-        <p>Alias for <a href="PIXI.Mesh.html#shader">PIXI.Mesh#shader</a>.</p>
+        <p><a href="PIXI.Mesh.html#shader">PIXI.Mesh#shader</a>的别名。</p>
     </div>
     
     
@@ -16334,7 +16333,7 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>The width of the right column</p>
+        <p>右栏宽度</p>
     </div>
     
     
@@ -16562,8 +16561,8 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>Represents the vertex and fragment shaders that processes the geometry and runs on the GPU.
-Can be shared between multiple Mesh objects.</p>
+        <p>表示处理几何图形并在GPU上运行的顶点和片段着色器。
+可以在多个Mesh对象之间共享。</p>
     </div>
     
     
@@ -16618,7 +16617,7 @@ Can be shared between multiple Mesh objects.</p>
 <dd>
     
     <div class="description">
-        <p>How much of the geometry to draw, by default <code>0</code> renders everything.</p>
+        <p>要绘制多少几何图形才渲染内容，默认情况下 <code>0</code> 将渲染所有内容。</p>
     </div>
     
     
@@ -16855,7 +16854,7 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>Typically the index of the IndexBuffer where to start drawing.</p>
+        <p>在哪里开始绘制的IndexBuffer的索引。</p>
     </div>
     
     
@@ -16913,8 +16912,8 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>Represents the WebGL state the Mesh required to render, excludes shader and geometry. E.g.,
-blend mode, culling, depth testing, direction of rendering triangles, backface, etc.</p>
+        <p>表示网格渲染所需的WebGL状态，不包括着色器和几何体。
+例如: 混合模式，剔除，深度测试，渲染三角形的方向，背面等。</p>
     </div>
     
     
@@ -16969,7 +16968,7 @@ blend mode, culling, depth testing, direction of rendering triangles, backface, 
 <dd>
     
     <div class="description">
-        <p>The texture that the Mesh uses.</p>
+        <p>网格使用的纹理。</p>
     </div>
     
     
@@ -17024,8 +17023,7 @@ blend mode, culling, depth testing, direction of rendering triangles, backface, 
 <dd>
     
     <div class="description">
-        <p>The multiply tint applied to the Mesh. This is a hex value. A value of
-<code>0xFFFFFF</code> will remove any tint effect.</p>
+        <p>应用于网格的倍增色调。这是十六进制值。值<code>0xFFFFFF</code>将删除任何色调效果。</p>
     </div>
     
     
@@ -17079,7 +17077,7 @@ blend mode, culling, depth testing, direction of rendering triangles, backface, 
 <dd>
     
     <div class="description">
-        <p>The height of the top row</p>
+        <p>第一行的高度</p>
     </div>
     
     
@@ -17190,7 +17188,7 @@ blend mode, culling, depth testing, direction of rendering triangles, backface, 
 <dd>
     
     <div class="description">
-        <p>To change mesh uv's, change its uvBuffer data and increment its _updateID.</p>
+        <p>要更改网格uv，请更改其uvBuffer数据并增加_updateID。</p>
     </div>
     
     
@@ -17245,8 +17243,8 @@ blend mode, culling, depth testing, direction of rendering triangles, backface, 
 <dd>
     
     <div class="description">
-        <p>To change mesh vertices, change its uvBuffer data and increment its _updateID.
-Incrementing _updateID is optional because most of Mesh objects do it anyway.</p>
+        <p>要更改网格顶点，请更改其uvBuffer数据并增加_updateID。
+递增_updateID是可选的，因为大多数网格对象都会这样做。</p>
     </div>
     
     
@@ -17355,7 +17353,7 @@ Incrementing _updateID is optional because most of Mesh objects do it anyway.</p
 <dd>
     
     <div class="description">
-        <p>The width of the NineSlicePlane, setting this will actually modify the vertices and UV's of this plane</p>
+        <p>NineSlicePlane的宽度，设置此宽度实际上将修改此平面的顶点和UV</p>
     </div>
     
     
@@ -17748,7 +17746,7 @@ position.y的别名</p>
     
         
         <div class="tag-source">
-            <a href="packages_mesh_src_Mesh.js.html#line365">Mesh.js:365</a>
+            <a href="packages_mesh_src_Mesh.js.html#line362">Mesh.js:362</a>
         </div>
         
     </div>
@@ -17759,8 +17757,8 @@ position.y的别名</p>
     
     
     <div class="description">
-        <p>Updates the bounds of the mesh as a rectangle. The bounds calculation takes the worldTransform into account.
-there must be a aVertexPosition attribute present in the geometry for bounds to be calculated correctly.</p>
+        <p>将网格的边界更新为矩形。 边界计算将worldTransform考虑在内。
+几何中必须存在aVertexPosition属性，才能正确计算边界。</p>
     </div>
     
 
@@ -17916,7 +17914,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
     
     <div class="description">
-        <p>Refreshes NineSlicePlane coords. All of them.</p>
+        <p>刷新NineSlicePlane坐标。</p>
     </div>
     
 
@@ -17985,7 +17983,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
         
         <div class="tag-source">
-            <a href="packages_mesh_src_Mesh.js.html#line225">Mesh.js:225</a>
+            <a href="packages_mesh_src_Mesh.js.html#line222">Mesh.js:222</a>
         </div>
         
     </div>
@@ -17996,7 +17994,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
     
     <div class="description">
-        <p>Standard renderer draw.</p>
+        <p>标准渲染器绘制。</p>
     </div>
     
 
@@ -18043,7 +18041,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
             
             <td class="description last">
                 
-                <p>Instance to renderer.</p></td>
+                <p>渲染器实例。</p></td>
         </tr>
 	
 	
@@ -18110,7 +18108,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
         
         <div class="tag-source">
-            <a href="packages_mesh_src_Mesh.js.html#line246">Mesh.js:246</a>
+            <a href="packages_mesh_src_Mesh.js.html#line243">Mesh.js:243</a>
         </div>
         
     </div>
@@ -18121,7 +18119,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
     
     <div class="description">
-        <p>Standard non-batching way of rendering.</p>
+        <p>标准的非批处理渲染方式。</p>
     </div>
     
 
@@ -18168,7 +18166,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
             
             <td class="description last">
                 
-                <p>Instance to renderer.</p></td>
+                <p>渲染器实例。</p></td>
         </tr>
 	
 	
@@ -18235,7 +18233,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
         
         <div class="tag-source">
-            <a href="packages_mesh_src_Mesh.js.html#line274">Mesh.js:274</a>
+            <a href="packages_mesh_src_Mesh.js.html#line271">Mesh.js:271</a>
         </div>
         
     </div>
@@ -18246,7 +18244,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
     
     <div class="description">
-        <p>Rendering by using the Batch system.</p>
+        <p>使用批处理系统进行渲染。</p>
     </div>
     
 
@@ -18293,7 +18291,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
             
             <td class="description last">
                 
-                <p>Instance to renderer.</p></td>
+                <p>渲染器实例。</p></td>
         </tr>
 	
 	
@@ -18779,7 +18777,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
         
         <div class="tag-source">
-            <a href="packages_mesh_src_Mesh.js.html#line341">Mesh.js:341</a>
+            <a href="packages_mesh_src_Mesh.js.html#line338">Mesh.js:338</a>
         </div>
         
     </div>
@@ -18790,7 +18788,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
     
     <div class="description">
-        <p>Updates uv field based on from geometry uv's or batchUvs</p>
+        <p>根据几何uv或batchUvs更新uv字段</p>
     </div>
     
 
@@ -18859,7 +18857,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
         
         <div class="tag-source">
-            <a href="packages_mesh_src_Mesh.js.html#line296">Mesh.js:296</a>
+            <a href="packages_mesh_src_Mesh.js.html#line293">Mesh.js:293</a>
         </div>
         
     </div>
@@ -18870,7 +18868,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
     
     <div class="description">
-        <p>Updates vertexData field based on transform and vertices</p>
+        <p>根据变换和顶点更新vertexData字段</p>
     </div>
     
 
@@ -18939,7 +18937,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
         
         <div class="tag-source">
-            <a href="packages_mesh_src_Mesh.js.html#line376">Mesh.js:376</a>
+            <a href="packages_mesh_src_Mesh.js.html#line373">Mesh.js:373</a>
         </div>
         
     </div>
@@ -18950,7 +18948,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
     
     <div class="description">
-        <p>Tests if a point is inside this mesh. Works only for PIXI.DRAW_MODES.TRIANGLES.</p>
+        <p>测试点是否在此网格内。 仅适用于PIXI.DRAW_MODES.TRIANGLES。</p>
     </div>
     
 
@@ -18997,7 +18995,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
             
             <td class="description last">
                 
-                <p>the point to test</p></td>
+                <p>测试点</p></td>
         </tr>
 	
 	
@@ -19060,7 +19058,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
                         
                     
             </td>
-            <td class="description last">the result of the test</td>
+            <td class="description last">测试结果</td>
         </tr>
     
     </tbody>
@@ -19093,7 +19091,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
         
         <div class="tag-source">
-            <a href="packages_mesh_src_Mesh.js.html#line417">Mesh.js:417</a>
+            <a href="packages_mesh_src_Mesh.js.html#line412">Mesh.js:412</a>
         </div>
         
     </div>
@@ -19104,7 +19102,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
     
     <div class="description">
-        <p>Destroys the Mesh object.</p>
+        <p>销毁网格物体。</p>
     </div>
     
 
@@ -19161,8 +19159,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
                         
                     
                 
-                <p>Options parameter. A boolean will act as if all
-options have been set to that value</p>
+                <p>选项参数。 布尔值将充当所有选项都已设置为该值的作用</p>
                 
 
 <table class="params">
@@ -19216,8 +19213,7 @@ options have been set to that value</p>
                         
                     
                 
-                <p>if set to true, all the children will have
-their destroy method called as well. 'options' will be passed on to those calls.</p></td>
+                <p>如果设置为true，则所有子项也将调用其destroy方法。 'options' 将传递给这些调用。</p></td>
         </tr>
 	
 	
@@ -22632,8 +22628,8 @@ nice performance boost.</p></td>
     
     
     <div class="description">
-        <p>Method used for overrides, to do something in case texture frame was changed.
-Meshes based on plane can override it and change more details based on texture.</p>
+        <p>用于覆盖的方法，以防万一纹理帧被更改。
+基于平面的网格可以覆盖它，并可以基于纹理更改更多细节。</p>
     </div>
     
 
@@ -23215,7 +23211,7 @@ Meshes based on plane can override it and change more details based on texture.<
     
     
     <div class="description">
-        <p>Updates the horizontal vertices.</p>
+        <p>更新水平顶点。</p>
     </div>
     
 
@@ -23371,7 +23367,7 @@ Meshes based on plane can override it and change more details based on texture.<
     
     
     <div class="description">
-        <p>Updates the vertical vertices.</p>
+        <p>更新垂直顶点。</p>
     </div>
     
 
@@ -26848,7 +26844,7 @@ DisplayObject's <code>interactive</code> property must be set to <code>true</cod
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Fri Apr 17 2020 23:51:58 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Apr 18 2020 18:41:05 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

@@ -13216,12 +13216,12 @@ import defaultFragment from './defaultFilter.frag';
  *
  * ### 过去版本的差异
  *
- * PixiJS **v3**, 滤镜始终应用于_整个屏幕_。
+ * PixiJS **v3**, 滤镜始终应用于 _整个屏幕_ 。
  *
- * PixiJS **v4**, 滤镜只能应用于_部分屏幕_。
+ * PixiJS **v4**, 滤镜只能应用于 _部分屏幕_ 。
  * 开发人员必须创建一套uniforms来处理坐标。
  *
- * PixiJS **v5** 结合了_两种方法_。
+ * PixiJS **v5** 结合了 _两种方法_ 。
  * 开发人员可以使用v3的法线坐标，然后允许滤镜使用部分Framebuffer，从而将这些额外的uniform考虑在内。
  *
  * 另请注意，我们已更改了默认的顶点着色器，请参见
@@ -13235,7 +13235,7 @@ import defaultFragment from './defaultFilter.frag';
  * **uSampler**
  *
  * 最重要的uniform是渲染到容器的输入纹理。
- * _重要说明：与PixiJS中的所有帧缓冲区一样，输入和输出都将预先乘以alpha。
+ * 重要说明：与PixiJS中的所有帧缓冲区一样，输入和输出都将预先乘以alpha。
  *
  * 默认情况下，输入的归一化坐标通过`vTextureCoord`传递给片段着色器。
  * 用它来采样输入。
@@ -13280,10 +13280,11 @@ import defaultFragment from './defaultFilter.frag';
  * `inputSize.zw` 是反转的，这是一个避免在着色器中划分的快捷方式。
  *
  * Set `inputSize.xy = outputFrame.zw` for a fullscreen filter.
+ * 为全屏滤镜设置 `inputSize.xy = outputFrame.zw` 。
  *
- * To calculate input normalized coordinate, you have to map it to filter normalized space.
- * Multiply by `outputFrame.zw` to get input coordinate.
- * Divide by `inputSize.xy` to get input normalized coordinate.
+ * 要计算输入归一化坐标，必须将其映射到滤镜归一化空间。
+ * 乘以 `outputFrame.zw` 以获取输入坐标。
+ * 除以 `inputSize.xy` 以获得输入归一化坐标。
  *
  * ```
  * vec2 filterTextureCoord( void )
@@ -13293,38 +13294,38 @@ import defaultFragment from './defaultFilter.frag';
  * ```
  * **resolution**
  *
- * The `resolution` is the ratio of screen (CSS) pixels to real pixels.
+ * `resolution` 是屏幕（CSS）像素与实际像素的比率。
  *
  * **inputPixel**
  *
  * `inputPixel.xy` is the size of framebuffer in real pixels, same as `inputSize.xy * resolution`
- * `inputPixel.zw` is inverted `inputPixel.xy`.
+ * `inputPixel.xy` 是帧缓冲区的实际像素大小，与`inputSize.xy * resolution`相同
+ * `inputPixel.zw` 与 `inputPixel.xy` 相反。
  *
- * It's handy for filters that use neighbour pixels, like {@link PIXI.filters.FXAAFilter FXAAFilter}.
+ * 对于使用相邻像素的滤镜，例如{@link PIXI.filters.FXAAFilter FXAAFilter}，它非常方便。
  *
  * **inputClamp**
  *
- * If you try to get info from outside of used part of Framebuffer - you'll get undefined behaviour.
- * For displacements, coordinates has to be clamped.
+ * 如果您尝试从Framebuffer的已使用部分之外获取信息 - 您将获得未定义行为。
+ * 对于位移，必须夹紧坐标。
  *
- * The `inputClamp.xy` is left-top pixel center, you may ignore it, because we use left-top part of Framebuffer
- * `inputClamp.zw` is bottom-right pixel center.
+ * `inputClamp.xy` 是左上像素中心，您可以忽略它，因为我们使用Framebuffer的左上部分
+ * `inputClamp.zw` 是右下像素中心。
  *
  * ```
  * vec4 color = texture2D(uSampler, clamp(modifigedTextureCoord, inputClamp.xy, inputClamp.zw))
  * ```
- * OR
+ * 或
  * ```
  * vec4 color = texture2D(uSampler, min(modifigedTextureCoord, inputClamp.zw))
  * ```
  *
- * ### Additional Information
+ * ### 附加信息
  *
- * Complete documentation on Filter usage is located in the
- * {@link https://github.com/pixijs/pixi.js/wiki/v5-Creating-filters Wiki}.
+ * 有关滤镜使用情况的完整文档位于
+ * {@link https://github.com/zlq4863947/pixi.js-cn/wiki/v5-Creating-filters Wiki}.
  *
- * Since PixiJS only had a handful of built-in filters, additional filters can be downloaded
- * {@link https://github.com/pixijs/pixi-filters here} from the PixiJS Filters repository.
+ * 由于PixiJS仅具有少数内置滤镜，因此可以从{@link https://github.com/pixijs/pixi-filters 这里}获取其他过滤器。
  *
  * @class
  * @memberof PIXI
@@ -13333,9 +13334,9 @@ import defaultFragment from './defaultFilter.frag';
 export class Filter extends Shader
 {
     /**
-     * @param {string} [vertexSrc] - The source of the vertex shader.
-     * @param {string} [fragmentSrc] - The source of the fragment shader.
-     * @param {object} [uniforms] - Custom uniforms to use to augment the built-in ones.
+     * @param {string} [vertexSrc] - 顶点着色器的源。
+     * @param {string} [fragmentSrc] - 片段着色器的源。
+     * @param {object} [uniforms] - 自定义uniforms，用于增强内置uniforms。
      */
     constructor(vertexSrc, fragmentSrc, uniforms)
     {
@@ -13343,54 +13344,52 @@ export class Filter extends Shader
 
         super(program, uniforms);
         /**
-         * The padding of the filter. Some filters require extra space to breath such as a blur.
-         * Increasing this will add extra width and height to the bounds of the object that the
-         * filter is applied to.
+         * 滤镜的填充。一些滤镜需要额外的空间呼吸运动，例如模糊。
+         * 增大此值将为应用滤镜的对象的边界增加额外的宽度和高度。
          *
          * @member {number}
          */
         this.padding = 0;
         /**
-         * The resolution of the filter. Setting this to be lower will lower the quality but
-         * increase the performance of the filter.
+         * 滤镜的分辨率。将此值设置得较低会降低质量，但会提高滤镜的性能。
          *
          * @member {number}
          */
         this.resolution = settings.FILTER_RESOLUTION;
         /**
-         * If enabled is true the filter is applied, if false it will not.
+         * 如果启用为true，则应用过滤器；如果为false，则不应用过滤器。
          *
          * @member {boolean}
          */
         this.enabled = true;
         /**
-         * If enabled, PixiJS will fit the filter area into boundaries for better performance.
-         * Switch it off if it does not work for specific shader.
+         * 如果启用，PixiJS将使滤镜区域适合边界以提高性能。
+         * 如果它不适用于指定的着色器，请将其关闭。
          *
          * @member {boolean}
          */
         this.autoFit = true;
         /**
-         * Legacy filters use position and uvs from attributes
+         * 传统过滤器使用属性中的位置和uvs
          * @member {boolean}
          * @readonly
          */
         this.legacy = !!this.program.attributeData.aTextureCoord;
         /**
-         * The WebGL state the filter requires to render
+         * 滤镜需要渲染的WebGL状态
          * @member {PIXI.State}
          */
         this.state = new State();
     }
     /**
-     * Applies the filter
+     * 应用滤镜
      *
-     * @param {PIXI.systems.FilterSystem} filterManager - The renderer to retrieve the filter from
-     * @param {PIXI.RenderTexture} input - The input render target.
-     * @param {PIXI.RenderTexture} output - The target to output to.
-     * @param {PIXI.CLEAR_MODES} clearMode - Should the output be cleared before rendering to it.
-     * @param {object} [currentState] - It's current state of filter.
-     *        There are some useful properties in the currentState :
+     * @param {PIXI.systems.FilterSystem} filterManager - 渲染器从中检索滤镜
+     * @param {PIXI.RenderTexture} input - 输入的渲染目标。
+     * @param {PIXI.RenderTexture} output - 要输出到的目标。
+     * @param {PIXI.CLEAR_MODES} clearMode - 在渲染到输出之前是否清除输出。
+     * @param {object} [currentState] - 它是滤镜的当前状态。
+     *        currentState中有一些有用的属性：
      *        target, filters, sourceFrame, destinationFrame, renderTarget, resolution
      */
     apply(filterManager, input, output, clearMode, currentState)
@@ -13400,7 +13399,7 @@ export class Filter extends Shader
         // or just do a regular render..
     }
     /**
-     * Sets the blendmode of the filter
+     * 设置滤镜的混合模式
      *
      * @member {number}
      * @default PIXI.BLEND_MODES.NORMAL
@@ -13414,7 +13413,7 @@ export class Filter extends Shader
         this.state.blendMode = value;
     }
     /**
-     * The default vertex shader source
+     * 默认的顶点着色器源
      *
      * @static
      * @type {string}
@@ -13425,7 +13424,7 @@ export class Filter extends Shader
         return defaultVertex;
     }
     /**
-     * The default fragment shader source
+     * 默认片段着色器源
      *
      * @static
      * @type {string}
@@ -13437,7 +13436,7 @@ export class Filter extends Shader
     }
 }
 /**
- * Used for caching shader IDs
+ * 用于缓存着色器ID
  *
  * @static
  * @type {object}
@@ -13457,7 +13456,7 @@ Filter.SOURCE_KEY_MAP = {};
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Fri Apr 17 2020 23:51:51 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Apr 18 2020 18:40:57 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

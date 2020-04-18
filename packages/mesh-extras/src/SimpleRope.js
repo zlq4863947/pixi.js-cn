@@ -3,7 +3,7 @@ import { WRAP_MODES } from '@pixi/constants';
 import { RopeGeometry } from './geometry/RopeGeometry';
 
 /**
- * The rope allows you to draw a texture across several points and then manipulate these points
+ * 绳索使您可以在多个点上绘制纹理，然后操纵这些点
  *
  *```js
  * for (let i = 0; i < 20; i++) {
@@ -20,11 +20,10 @@ import { RopeGeometry } from './geometry/RopeGeometry';
 export class SimpleRope extends Mesh
 {
     /**
-     * @param {PIXI.Texture} texture - The texture to use on the rope.
-     * @param {PIXI.Point[]} points - An array of {@link PIXI.Point} objects to construct this rope.
-     * @param {number} [textureScale=0] - Optional. Positive values scale rope texture
-     * keeping its aspect ratio. You can reduce alpha channel artifacts by providing a larger texture
-     * and downsampling here. If set to zero, texture will be streched instead.
+     * @param {PIXI.Texture} texture - 在绳索上使用的纹理。
+     * @param {PIXI.Point[]} points - {@link PIXI.Point}对象的数组来构造此绳索。
+     * @param {number} [textureScale=0] - 可选的。正值可缩放绳索纹理，并保持其长宽比。
+     * 您可以通过在此处提供较大的纹理和下采样来减少Alpha通道伪像。 如果设置为零，则将拉伸纹理。
      */
     constructor(texture, points, textureScale = 0)
     {
@@ -39,7 +38,7 @@ export class SimpleRope extends Mesh
         super(ropeGeometry, meshMaterial);
 
         /**
-         * re-calculate vertices by rope points each frame
+         * 通过每帧的绳索点重新计算顶点
          *
          * @member {boolean}
          */

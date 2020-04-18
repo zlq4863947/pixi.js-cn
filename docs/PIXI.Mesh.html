@@ -13192,17 +13192,17 @@
         <h2><span class="ancestors"><a href="PIXI.html">PIXI</a>~</span>Mesh
         </h2>
         
-            <div class="class-description"><p>Base mesh class.</p>
-<p>This class empowers you to have maximum flexibility to render any kind of WebGL visuals you can think of.
-This class assumes a certain level of WebGL knowledge.
-If you know a bit this should abstract enough away to make you life easier!</p>
-<p>Pretty much ALL WebGL can be broken down into the following:</p>
+            <div class="class-description"><p>基础网格类</p>
+<p>此类使您拥有最大的灵活性来呈现您可以想到的任何种类的WebGL视觉效果。
+该课假设使用者有一定程度的WebGL知识。
+如果您知道一点，这应该足够抽象，使您的生活更轻松！</p>
+<p>几乎所有的WebGL都可以分为以下几类：</p>
 <ul>
-<li>Geometry - The structure and data for the mesh. This can include anything from positions, uvs, normals, colors etc..</li>
-<li>Shader - This is the shader that PixiJS will render the geometry with (attributes in the shader must match the geometry)</li>
-<li>State - This is the state of WebGL required to render the mesh.</li>
+<li>几何(Geometry) - 网格的结构和数据。这可以包括任何位置、UV、法线、颜色等。。</li>
+<li>着色器(Shader) - 这是PixiJS用来渲染几何的着色器（着色器中的属性必须与几何匹配）</li>
+<li>状态(State) - 这是渲染网格所需的WebGL状态。</li>
 </ul>
-<p>Through a combination of the above elements you can render anything you want, 2D or 3D!</p></div>
+<p>通过结合以上元素，您可以渲染任何所需的2D或3D！</p></div>
         
     </div>
 </header>  
@@ -13295,7 +13295,7 @@ If you know a bit this should abstract enough away to make you life easier!</p>
                         
                     
                 
-                <p>the geometry the mesh will use</p></td>
+                <p>网格将使用的几何</p></td>
         </tr>
 	
 	
@@ -13330,7 +13330,7 @@ If you know a bit this should abstract enough away to make you life easier!</p>
                         
                     
                 
-                <p>the shader the mesh will use</p></td>
+                <p>网格将使用的着色器</p></td>
         </tr>
 	
 	
@@ -13364,8 +13364,8 @@ If you know a bit this should abstract enough away to make you life easier!</p>
                         
                     
                 
-                <p>the state that the WebGL context is required to be in to render the mesh
-if no state is provided, uses PIXI.State.for2d to create a 2D state for PixiJS.</p></td>
+                <p>需要WebGL上下文才能呈现网格的状态
+如果未提供状态，则使用PIXI.State.for2d为PixiJS创建2D状态。</p></td>
         </tr>
 	
 	
@@ -13401,7 +13401,7 @@ if no state is provided, uses PIXI.State.for2d to create a 2D state for PixiJS.<
                         
                     
                 
-                <p>the drawMode, can be any of the PIXI.DRAW_MODES consts</p></td>
+                <p>drawMode可以是任何PIXI.DRAW_MODES常量</p></td>
         </tr>
 	
 	
@@ -13491,8 +13491,7 @@ if no state is provided, uses PIXI.State.for2d to create a 2D state for PixiJS.<
 <dd>
     
     <div class="description">
-        <p>The maximum number of vertices to consider batchable. Generally, the complexity
-of the geometry.</p>
+        <p>要考虑可批处理的最大顶点数。一般用于，复杂几何。</p>
     </div>
     
     
@@ -14659,8 +14658,7 @@ of the geometry.</p>
 <dd>
     
     <div class="description">
-        <p>The blend mode to be applied to the Mesh. Apply a value of
-<code>PIXI.BLEND_MODES.NORMAL</code> to reset the blend mode.</p>
+        <p>要应用于网格的混合模式。使用<code>PIXI.BLEND_MODES.NORMAL</code>重置混合模式。</p>
     </div>
     
     
@@ -14973,7 +14971,7 @@ sprite.cursor = 'wait';</code></pre>
 <dd>
     
     <div class="description">
-        <p>The way the Mesh should be drawn, can be any of the <a href="PIXI.html#.DRAW_MODES">PIXI.DRAW_MODES</a> constants.</p>
+        <p>网格的绘制方式可以是任何<a href="PIXI.html#.DRAW_MODES">PIXI.DRAW_MODES</a>常量。</p>
     </div>
     
     
@@ -15146,9 +15144,9 @@ sprite.cursor = 'wait';</code></pre>
 <dd>
     
     <div class="description">
-        <p>Includes vertex positions, face indices, normals, colors, UVs, and
-custom attributes within buffers, reducing the cost of passing all
-this data to the GPU. Can be shared between multiple Mesh objects.</p>
+        <p>在缓冲区内包括顶点位置，晶面指数，法线，颜色，UV和自定义属性，
+从而降低了将所有这些数据传递给GPU的成本。
+可以在多个Mesh对象之间共享。</p>
     </div>
     
     
@@ -15689,7 +15687,7 @@ sprite.mask = graphics;</code></pre>
 <dd>
     
     <div class="description">
-        <p>Alias for <a href="PIXI.Mesh.html#shader">PIXI.Mesh#shader</a>.</p>
+        <p><a href="PIXI.Mesh.html#shader">PIXI.Mesh#shader</a>的别名。</p>
     </div>
     
     
@@ -16187,8 +16185,8 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>Represents the vertex and fragment shaders that processes the geometry and runs on the GPU.
-Can be shared between multiple Mesh objects.</p>
+        <p>表示处理几何图形并在GPU上运行的顶点和片段着色器。
+可以在多个Mesh对象之间共享。</p>
     </div>
     
     
@@ -16239,7 +16237,7 @@ Can be shared between multiple Mesh objects.</p>
 <dd>
     
     <div class="description">
-        <p>How much of the geometry to draw, by default <code>0</code> renders everything.</p>
+        <p>要绘制多少几何图形才渲染内容，默认情况下 <code>0</code> 将渲染所有内容。</p>
     </div>
     
     
@@ -16472,7 +16470,7 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>Typically the index of the IndexBuffer where to start drawing.</p>
+        <p>在哪里开始绘制的IndexBuffer的索引。</p>
     </div>
     
     
@@ -16526,8 +16524,8 @@ pixi-v4开始按值传递。</p>
 <dd>
     
     <div class="description">
-        <p>Represents the WebGL state the Mesh required to render, excludes shader and geometry. E.g.,
-blend mode, culling, depth testing, direction of rendering triangles, backface, etc.</p>
+        <p>表示网格渲染所需的WebGL状态，不包括着色器和几何体。
+例如: 混合模式，剔除，深度测试，渲染三角形的方向，背面等。</p>
     </div>
     
     
@@ -16578,7 +16576,7 @@ blend mode, culling, depth testing, direction of rendering triangles, backface, 
 <dd>
     
     <div class="description">
-        <p>The texture that the Mesh uses.</p>
+        <p>网格使用的纹理。</p>
     </div>
     
     
@@ -16629,8 +16627,7 @@ blend mode, culling, depth testing, direction of rendering triangles, backface, 
 <dd>
     
     <div class="description">
-        <p>The multiply tint applied to the Mesh. This is a hex value. A value of
-<code>0xFFFFFF</code> will remove any tint effect.</p>
+        <p>应用于网格的倍增色调。这是十六进制值。值<code>0xFFFFFF</code>将删除任何色调效果。</p>
     </div>
     
     
@@ -16740,7 +16737,7 @@ blend mode, culling, depth testing, direction of rendering triangles, backface, 
 <dd>
     
     <div class="description">
-        <p>To change mesh uv's, change its uvBuffer data and increment its _updateID.</p>
+        <p>要更改网格uv，请更改其uvBuffer数据并增加_updateID。</p>
     </div>
     
     
@@ -16791,8 +16788,8 @@ blend mode, culling, depth testing, direction of rendering triangles, backface, 
 <dd>
     
     <div class="description">
-        <p>To change mesh vertices, change its uvBuffer data and increment its _updateID.
-Incrementing _updateID is optional because most of Mesh objects do it anyway.</p>
+        <p>要更改网格顶点，请更改其uvBuffer数据并增加_updateID。
+递增_updateID是可选的，因为大多数网格对象都会这样做。</p>
     </div>
     
     
@@ -17294,7 +17291,7 @@ position.y的别名</p>
     
         
         <div class="tag-source">
-            <a href="packages_mesh_src_Mesh.js.html#line365">Mesh.js:365</a>
+            <a href="packages_mesh_src_Mesh.js.html#line362">Mesh.js:362</a>
         </div>
         
     </div>
@@ -17305,8 +17302,8 @@ position.y的别名</p>
     
     
     <div class="description">
-        <p>Updates the bounds of the mesh as a rectangle. The bounds calculation takes the worldTransform into account.
-there must be a aVertexPosition attribute present in the geometry for bounds to be calculated correctly.</p>
+        <p>将网格的边界更新为矩形。 边界计算将worldTransform考虑在内。
+几何中必须存在aVertexPosition属性，才能正确计算边界。</p>
     </div>
     
 
@@ -17453,7 +17450,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
         
         <div class="tag-source">
-            <a href="packages_mesh_src_Mesh.js.html#line225">Mesh.js:225</a>
+            <a href="packages_mesh_src_Mesh.js.html#line222">Mesh.js:222</a>
         </div>
         
     </div>
@@ -17464,7 +17461,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
     
     <div class="description">
-        <p>Standard renderer draw.</p>
+        <p>标准渲染器绘制。</p>
     </div>
     
 
@@ -17511,7 +17508,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
             
             <td class="description last">
                 
-                <p>Instance to renderer.</p></td>
+                <p>渲染器实例。</p></td>
         </tr>
 	
 	
@@ -17697,7 +17694,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
         
         <div class="tag-source">
-            <a href="packages_mesh_src_Mesh.js.html#line246">Mesh.js:246</a>
+            <a href="packages_mesh_src_Mesh.js.html#line243">Mesh.js:243</a>
         </div>
         
     </div>
@@ -17708,7 +17705,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
     
     <div class="description">
-        <p>Standard non-batching way of rendering.</p>
+        <p>标准的非批处理渲染方式。</p>
     </div>
     
 
@@ -17755,7 +17752,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
             
             <td class="description last">
                 
-                <p>Instance to renderer.</p></td>
+                <p>渲染器实例。</p></td>
         </tr>
 	
 	
@@ -17818,7 +17815,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
         
         <div class="tag-source">
-            <a href="packages_mesh_src_Mesh.js.html#line274">Mesh.js:274</a>
+            <a href="packages_mesh_src_Mesh.js.html#line271">Mesh.js:271</a>
         </div>
         
     </div>
@@ -17829,7 +17826,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
     
     <div class="description">
-        <p>Rendering by using the Batch system.</p>
+        <p>使用批处理系统进行渲染。</p>
     </div>
     
 
@@ -17876,7 +17873,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
             
             <td class="description last">
                 
-                <p>Instance to renderer.</p></td>
+                <p>渲染器实例。</p></td>
         </tr>
 	
 	
@@ -18358,7 +18355,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
         
         <div class="tag-source">
-            <a href="packages_mesh_src_Mesh.js.html#line341">Mesh.js:341</a>
+            <a href="packages_mesh_src_Mesh.js.html#line338">Mesh.js:338</a>
         </div>
         
     </div>
@@ -18369,7 +18366,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
     
     <div class="description">
-        <p>Updates uv field based on from geometry uv's or batchUvs</p>
+        <p>根据几何uv或batchUvs更新uv字段</p>
     </div>
     
 
@@ -18434,7 +18431,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
         
         <div class="tag-source">
-            <a href="packages_mesh_src_Mesh.js.html#line296">Mesh.js:296</a>
+            <a href="packages_mesh_src_Mesh.js.html#line293">Mesh.js:293</a>
         </div>
         
     </div>
@@ -18445,7 +18442,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
     
     <div class="description">
-        <p>Updates vertexData field based on transform and vertices</p>
+        <p>根据变换和顶点更新vertexData字段</p>
     </div>
     
 
@@ -18510,7 +18507,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
         
         <div class="tag-source">
-            <a href="packages_mesh_src_Mesh.js.html#line376">Mesh.js:376</a>
+            <a href="packages_mesh_src_Mesh.js.html#line373">Mesh.js:373</a>
         </div>
         
     </div>
@@ -18521,7 +18518,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
     
     <div class="description">
-        <p>Tests if a point is inside this mesh. Works only for PIXI.DRAW_MODES.TRIANGLES.</p>
+        <p>测试点是否在此网格内。 仅适用于PIXI.DRAW_MODES.TRIANGLES。</p>
     </div>
     
 
@@ -18568,7 +18565,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
             
             <td class="description last">
                 
-                <p>the point to test</p></td>
+                <p>测试点</p></td>
         </tr>
 	
 	
@@ -18631,7 +18628,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
                         
                     
             </td>
-            <td class="description last">the result of the test</td>
+            <td class="description last">测试结果</td>
         </tr>
     
     </tbody>
@@ -18662,7 +18659,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
         
         <div class="tag-source">
-            <a href="packages_mesh_src_Mesh.js.html#line417">Mesh.js:417</a>
+            <a href="packages_mesh_src_Mesh.js.html#line412">Mesh.js:412</a>
         </div>
         
     </div>
@@ -18673,7 +18670,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
     
     
     <div class="description">
-        <p>Destroys the Mesh object.</p>
+        <p>销毁网格物体。</p>
     </div>
     
 
@@ -18730,8 +18727,7 @@ there must be a aVertexPosition attribute present in the geometry for bounds to 
                         
                     
                 
-                <p>Options parameter. A boolean will act as if all
-options have been set to that value</p>
+                <p>选项参数。 布尔值将充当所有选项都已设置为该值的作用</p>
                 
 
 <table class="params">
@@ -18785,8 +18781,7 @@ options have been set to that value</p>
                         
                     
                 
-                <p>if set to true, all the children will have
-their destroy method called as well. 'options' will be passed on to those calls.</p></td>
+                <p>如果设置为true，则所有子项也将调用其destroy方法。 'options' 将传递给这些调用。</p></td>
         </tr>
 	
 	
@@ -26184,7 +26179,7 @@ DisplayObject's <code>interactive</code> property must be set to <code>true</cod
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Fri Apr 17 2020 23:51:58 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Apr 18 2020 18:41:04 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

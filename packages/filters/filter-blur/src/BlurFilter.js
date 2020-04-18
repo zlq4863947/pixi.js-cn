@@ -4,9 +4,9 @@ import { BlurFilterPass } from './BlurFilterPass';
 import { CLEAR_MODES } from '@pixi/constants';
 
 /**
- * The BlurFilter applies a Gaussian blur to an object.
+ * BlurFilter将高斯模糊应用于对象。
  *
- * The strength of the blur can be set for the x-axis and y-axis separately.
+ * 可以分别为x轴和y轴设置模糊强度。
  *
  * @class
  * @extends PIXI.Filter
@@ -15,10 +15,10 @@ import { CLEAR_MODES } from '@pixi/constants';
 export class BlurFilter extends Filter
 {
     /**
-     * @param {number} [strength=8] - The strength of the blur filter.
-     * @param {number} [quality=4] - The quality of the blur filter.
-     * @param {number} [resolution] - The resolution of the blur filter.
-     * @param {number} [kernelSize=5] - The kernelSize of the blur filter.Options: 5, 7, 9, 11, 13, 15.
+     * @param {number} [strength=8] - 模糊滤镜的强度。
+     * @param {number} [quality=4] - 模糊滤镜的质量。
+     * @param {number} [resolution] - 模糊滤镜的分辨率。
+     * @param {number} [kernelSize=5] - 模糊滤镜的kernelSize选项：5、7、9、11、13、15
      */
     constructor(strength, quality, resolution, kernelSize)
     {
@@ -35,12 +35,12 @@ export class BlurFilter extends Filter
     }
 
     /**
-     * Applies the filter.
+     * 应用滤镜。
      *
-     * @param {PIXI.systems.FilterSystem} filterManager - The manager.
-     * @param {PIXI.RenderTexture} input - The input target.
-     * @param {PIXI.RenderTexture} output - The output target.
-     * @param {PIXI.CLEAR_MODES} clearMode - How to clear
+     * @param {PIXI.systems.FilterSystem} filterManager - 管理器。
+     * @param {PIXI.RenderTexture} input - 输入目标。
+     * @param {PIXI.RenderTexture} output - 输出目标。
+     * @param {PIXI.CLEAR_MODES} clearMode - 如何清除
      */
     apply(filterManager, input, output, clearMode)
     {
@@ -79,7 +79,7 @@ export class BlurFilter extends Filter
     }
 
     /**
-     * Sets the strength of both the blurX and blurY properties simultaneously
+     * 同时设置蓝色和模糊属性的强度
      *
      * @member {number}
      * @default 2
@@ -96,7 +96,7 @@ export class BlurFilter extends Filter
     }
 
     /**
-     * Sets the number of passes for blur. More passes means higher quaility bluring.
+     * 设置模糊的通过次数。 通过次数越多意味着质量越高。
      *
      * @member {number}
      * @default 1
@@ -112,7 +112,7 @@ export class BlurFilter extends Filter
     }
 
     /**
-     * Sets the strength of the blurX property
+     * 设置blurX属性的强度
      *
      * @member {number}
      * @default 2
@@ -129,7 +129,7 @@ export class BlurFilter extends Filter
     }
 
     /**
-     * Sets the strength of the blurY property
+     * 设置blurY属性的强度
      *
      * @member {number}
      * @default 2
@@ -146,7 +146,7 @@ export class BlurFilter extends Filter
     }
 
     /**
-     * Sets the blendmode of the filter
+     * 设置滤镜的混合模式
      *
      * @member {number}
      * @default PIXI.BLEND_MODES.NORMAL
@@ -162,7 +162,7 @@ export class BlurFilter extends Filter
     }
 
     /**
-     * If set to true the edge of the target will be clamped
+     * 如果设置为true，则目标的边缘将被夹紧
      *
      * @member {bool}
      * @default false

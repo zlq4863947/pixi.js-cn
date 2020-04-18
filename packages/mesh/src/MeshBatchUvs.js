@@ -1,5 +1,5 @@
 /**
- * Class controls cache for UV mapping from Texture normal space to BaseTexture normal space.
+ * 类控制用于从Texture正规空间到BaseTexture正规空间的UV映射的缓存。
  *
  * @class
  * @memberof PIXI
@@ -7,25 +7,25 @@
 export class MeshBatchUvs
 {
     /**
-     * @param {PIXI.Buffer} uvBuffer - Buffer with normalized uv's
-     * @param {PIXI.TextureMatrix} uvMatrix - Material UV matrix
+     * @param {PIXI.Buffer} uvBuffer - 归一化uv的缓冲区
+     * @param {PIXI.TextureMatrix} uvMatrix - 材质UV矩阵
      */
     constructor(uvBuffer, uvMatrix)
     {
         /**
-         * Buffer with normalized UV's
+         * 具有归一化UV的缓冲区
          * @member {PIXI.Buffer}
          */
         this.uvBuffer = uvBuffer;
 
         /**
-         * Material UV matrix
+         * 材质UV矩阵
          * @member {PIXI.TextureMatrix}
          */
         this.uvMatrix = uvMatrix;
 
         /**
-         * UV Buffer data
+         * UV缓冲数据
          * @member {Float32Array}
          * @readonly
          */
@@ -41,7 +41,7 @@ export class MeshBatchUvs
     /**
      * updates
      *
-     * @param {boolean} forceUpdate - force the update
+     * @param {boolean} forceUpdate - 强制更新
      */
     update(forceUpdate)
     {

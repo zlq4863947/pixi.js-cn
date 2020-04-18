@@ -4,8 +4,8 @@ import { SimplePlane } from './SimplePlane';
 const DEFAULT_BORDER_SIZE = 10;
 
 /**
- * The NineSlicePlane allows you to stretch a texture using 9-slice scaling. The corners will remain unscaled (useful
- * for buttons with rounded corners for example) and the other areas will be scaled horizontally and or vertically
+ * NineSlicePlane允许您使用9切片缩放来拉伸纹理。
+ * 角度将保持未缩放状态（例如，对于带有圆角的按钮很有用），其他区域将水平或垂直缩放。
  *
  *```js
  * let Plane9 = new PIXI.NineSlicePlane(PIXI.Texture.from('BoxWithRoundedCorners.png'), 15, 15, 15, 15);
@@ -22,11 +22,11 @@ const DEFAULT_BORDER_SIZE = 10;
  *  D | 7 |          8           | 9 |
  *    +---+----------------------+---+
 
- *  When changing this objects width and/or height:
- *     areas 1 3 7 and 9 will remain unscaled.
- *     areas 2 and 8 will be stretched horizontally
- *     areas 4 and 6 will be stretched vertically
- *     area 5 will be stretched both horizontally and vertically
+ *  更改此对象的宽度 和/或 高度时：
+ *     区域1 3 7和9将保持未缩放状态。
+ *     区域2和8将被水平拉伸
+ *     区域4和6将被垂直拉伸
+ *     区域5将水平和垂直拉伸
  * </pre>
  *
  * @class
@@ -37,11 +37,11 @@ const DEFAULT_BORDER_SIZE = 10;
 export class NineSlicePlane extends SimplePlane
 {
     /**
-     * @param {PIXI.Texture} texture - The texture to use on the NineSlicePlane.
-     * @param {number} [leftWidth=10] size of the left vertical bar (A)
-     * @param {number} [topHeight=10] size of the top horizontal bar (C)
-     * @param {number} [rightWidth=10] size of the right vertical bar (B)
-     * @param {number} [bottomHeight=10] size of the bottom horizontal bar (D)
+     * @param {PIXI.Texture} texture - 在NineSlicePlane上使用的纹理。
+     * @param {number} [leftWidth=10] 左侧竖条的大小（A）
+     * @param {number} [topHeight=10] 顶部横条的大小（C）
+     * @param {number} [rightWidth=10] 右侧竖条的大小（B）
+     * @param {number} [bottomHeight=10] 底部横条的大小（D）
      */
     constructor(texture, leftWidth, topHeight, rightWidth, bottomHeight)
     {
@@ -51,7 +51,7 @@ export class NineSlicePlane extends SimplePlane
         this._origHeight = texture.orig.height;
 
         /**
-         * The width of the NineSlicePlane, setting this will actually modify the vertices and UV's of this plane
+         * NineSlicePlane的宽度，设置此宽度实际上将修改此平面的顶点和UV
          *
          * @member {number}
          * @override
@@ -59,7 +59,7 @@ export class NineSlicePlane extends SimplePlane
         this._width = this._origWidth;
 
         /**
-         * The height of the NineSlicePlane, setting this will actually modify the vertices and UV's of this plane
+         * NineSlicePlane的高度，设置此高度实际上将修改此平面的顶点和UV
          *
          * @member {number}
          * @override
@@ -67,7 +67,7 @@ export class NineSlicePlane extends SimplePlane
         this._height = this._origHeight;
 
         /**
-         * The width of the left column (a)
+         * 左列的宽度（a）
          *
          * @member {number}
          * @private
@@ -75,7 +75,7 @@ export class NineSlicePlane extends SimplePlane
         this._leftWidth = typeof leftWidth !== 'undefined' ? leftWidth : DEFAULT_BORDER_SIZE;
 
         /**
-         * The width of the right column (b)
+         * 右列的宽度（b）
          *
          * @member {number}
          * @private
@@ -83,7 +83,7 @@ export class NineSlicePlane extends SimplePlane
         this._rightWidth = typeof rightWidth !== 'undefined' ? rightWidth : DEFAULT_BORDER_SIZE;
 
         /**
-         * The height of the top row (c)
+         * 第一行的高度（c）
          *
          * @member {number}
          * @private
@@ -119,7 +119,7 @@ export class NineSlicePlane extends SimplePlane
     }
 
     /**
-     * Updates the horizontal vertices.
+     * 更新水平顶点。
      *
      */
     updateHorizontalVertices()
@@ -134,7 +134,7 @@ export class NineSlicePlane extends SimplePlane
     }
 
     /**
-     * Updates the vertical vertices.
+     * 更新垂直顶点。
      *
      */
     updateVerticalVertices()
@@ -149,9 +149,9 @@ export class NineSlicePlane extends SimplePlane
     }
 
     /**
-     * Returns the smaller of a set of vertical and horizontal scale of nine slice corners.
+     * 返回一组九个切片角的垂直和水平比例尺中的较小者。
      *
-     * @return {number} Smaller number of vertical and horizontal scale.
+     * @return {number} 较少的垂直和水平比例尺。
      * @private
      */
     _getMinScale()
@@ -168,7 +168,7 @@ export class NineSlicePlane extends SimplePlane
     }
 
     /**
-     * The width of the NineSlicePlane, setting this will actually modify the vertices and UV's of this plane
+     * NineSlicePlane的宽度，设置此宽度实际上将修改此平面的顶点和UV
      *
      * @member {number}
      */
@@ -184,7 +184,7 @@ export class NineSlicePlane extends SimplePlane
     }
 
     /**
-     * The height of the NineSlicePlane, setting this will actually modify the vertices and UV's of this plane
+     * NineSlicePlane的高度，设置此高度实际上将修改此平面的顶点和UV
      *
      * @member {number}
      */
@@ -200,7 +200,7 @@ export class NineSlicePlane extends SimplePlane
     }
 
     /**
-     * The width of the left column
+     * 左栏宽度
      *
      * @member {number}
      */
@@ -216,7 +216,7 @@ export class NineSlicePlane extends SimplePlane
     }
 
     /**
-     * The width of the right column
+     * 右栏宽度
      *
      * @member {number}
      */
@@ -232,7 +232,7 @@ export class NineSlicePlane extends SimplePlane
     }
 
     /**
-     * The height of the top row
+     * 第一行的高度
      *
      * @member {number}
      */
@@ -248,7 +248,7 @@ export class NineSlicePlane extends SimplePlane
     }
 
     /**
-     * The height of the bottom row
+     * 底行高度
      *
      * @member {number}
      */
@@ -264,7 +264,7 @@ export class NineSlicePlane extends SimplePlane
     }
 
     /**
-     * Refreshes NineSlicePlane coords. All of them.
+     * 刷新NineSlicePlane坐标。
      */
     _refresh()
     {

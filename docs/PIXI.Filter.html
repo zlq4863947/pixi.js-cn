@@ -13203,10 +13203,10 @@ const container = new PIXI.Container();
 container.filters = [filter];
 </code></pre>
 <h3>过去版本的差异</h3>
-<p>PixiJS <strong>v3</strong>, 滤镜始终应用于_整个屏幕_。</p>
-<p>PixiJS <strong>v4</strong>, 滤镜只能应用于_部分屏幕_。
+<p>PixiJS <strong>v3</strong>, 滤镜始终应用于 <em>整个屏幕</em> 。</p>
+<p>PixiJS <strong>v4</strong>, 滤镜只能应用于 <em>部分屏幕</em> 。
 开发人员必须创建一套uniforms来处理坐标。</p>
-<p>PixiJS <strong>v5</strong> 结合了_两种方法_。
+<p>PixiJS <strong>v5</strong> 结合了 <em>两种方法</em> 。
 开发人员可以使用v3的法线坐标，然后允许滤镜使用部分Framebuffer，从而将这些额外的uniform考虑在内。</p>
 <p>另请注意，我们已更改了默认的顶点着色器，请参见
 <a target="_blank" href="https://github.com/zlq4863947/pixi.js-cn/wiki/v5-Creating-filters">Wiki</a>.</p>
@@ -13215,7 +13215,7 @@ container.filters = [filter];
 和 <code>projectionMatrix</code> uniform 将其映射到gl视口。</p>
 <p><strong>uSampler</strong></p>
 <p>最重要的uniform是渲染到容器的输入纹理。
-_重要说明：与PixiJS中的所有帧缓冲区一样，输入和输出都将预先乘以alpha。</p>
+重要说明：与PixiJS中的所有帧缓冲区一样，输入和输出都将预先乘以alpha。</p>
 <p>默认情况下，输入的归一化坐标通过<code>vTextureCoord</code>传递给片段着色器。
 用它来采样输入。</p>
 <pre class="prettyprint source"><code>const fragment = `
@@ -13247,36 +13247,37 @@ const myFilter = new PIXI.Filter(null, fragment);
 <p>临时帧缓冲区不同，它可以是屏幕的大小，也可以是2的幂。
 <code>inputSize.xy</code> 是保存输入的临时帧缓冲区的大小。
 <code>inputSize.zw</code> 是反转的，这是一个避免在着色器中划分的快捷方式。</p>
-<p>Set <code>inputSize.xy = outputFrame.zw</code> for a fullscreen filter.</p>
-<p>To calculate input normalized coordinate, you have to map it to filter normalized space.
-Multiply by <code>outputFrame.zw</code> to get input coordinate.
-Divide by <code>inputSize.xy</code> to get input normalized coordinate.</p>
+<p>Set <code>inputSize.xy = outputFrame.zw</code> for a fullscreen filter.
+为全屏滤镜设置 <code>inputSize.xy = outputFrame.zw</code> 。</p>
+<p>要计算输入归一化坐标，必须将其映射到滤镜归一化空间。
+乘以 <code>outputFrame.zw</code> 以获取输入坐标。
+除以 <code>inputSize.xy</code> 以获得输入归一化坐标。</p>
 <pre class="prettyprint source"><code>vec2 filterTextureCoord( void )
 {
     return aVertexPosition * (outputFrame.zw * inputSize.zw); // same as /inputSize.xy
 }
 </code></pre>
 <p><strong>resolution</strong></p>
-<p>The <code>resolution</code> is the ratio of screen (CSS) pixels to real pixels.</p>
+<p><code>resolution</code> 是屏幕（CSS）像素与实际像素的比率。</p>
 <p><strong>inputPixel</strong></p>
 <p><code>inputPixel.xy</code> is the size of framebuffer in real pixels, same as <code>inputSize.xy * resolution</code>
-<code>inputPixel.zw</code> is inverted <code>inputPixel.xy</code>.</p>
-<p>It's handy for filters that use neighbour pixels, like <a href="PIXI.filters.FXAAFilter.html">FXAAFilter</a>.</p>
+<code>inputPixel.xy</code> 是帧缓冲区的实际像素大小，与<code>inputSize.xy * resolution</code>相同
+<code>inputPixel.zw</code> 与 <code>inputPixel.xy</code> 相反。</p>
+<p>对于使用相邻像素的滤镜，例如<a href="PIXI.filters.FXAAFilter.html">FXAAFilter</a>，它非常方便。</p>
 <p><strong>inputClamp</strong></p>
-<p>If you try to get info from outside of used part of Framebuffer - you'll get undefined behaviour.
-For displacements, coordinates has to be clamped.</p>
-<p>The <code>inputClamp.xy</code> is left-top pixel center, you may ignore it, because we use left-top part of Framebuffer
-<code>inputClamp.zw</code> is bottom-right pixel center.</p>
+<p>如果您尝试从Framebuffer的已使用部分之外获取信息 - 您将获得未定义行为。
+对于位移，必须夹紧坐标。</p>
+<p><code>inputClamp.xy</code> 是左上像素中心，您可以忽略它，因为我们使用Framebuffer的左上部分
+<code>inputClamp.zw</code> 是右下像素中心。</p>
 <pre class="prettyprint source"><code>vec4 color = texture2D(uSampler, clamp(modifigedTextureCoord, inputClamp.xy, inputClamp.zw))
 </code></pre>
-<p>OR</p>
+<p>或</p>
 <pre class="prettyprint source"><code>vec4 color = texture2D(uSampler, min(modifigedTextureCoord, inputClamp.zw))
 </code></pre>
-<h3>Additional Information</h3>
-<p>Complete documentation on Filter usage is located in the
-<a target="_blank" href="https://github.com/pixijs/pixi.js/wiki/v5-Creating-filters">Wiki</a>.</p>
-<p>Since PixiJS only had a handful of built-in filters, additional filters can be downloaded
-<a target="_blank" href="https://github.com/pixijs/pixi-filters">here</a> from the PixiJS Filters repository.</p></div>
+<h3>附加信息</h3>
+<p>有关滤镜使用情况的完整文档位于
+<a target="_blank" href="https://github.com/zlq4863947/pixi.js-cn/wiki/v5-Creating-filters">Wiki</a>.</p>
+<p>由于PixiJS仅具有少数内置滤镜，因此可以从<a target="_blank" href="https://github.com/pixijs/pixi-filters">这里</a>获取其他过滤器。</p></div>
         
     </div>
 </header>  
@@ -13304,7 +13305,7 @@ For displacements, coordinates has to be clamped.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_filters_Filter.js.html#line148">Filter.js:148</a>
+            <a href="packages_core_src_filters_Filter.js.html#line149">Filter.js:149</a>
         </div>
         
     </div>
@@ -13365,7 +13366,7 @@ For displacements, coordinates has to be clamped.</p>
                         
                     
                 
-                <p>The source of the vertex shader.</p></td>
+                <p>顶点着色器的源。</p></td>
         </tr>
 	
 	
@@ -13395,7 +13396,7 @@ For displacements, coordinates has to be clamped.</p>
                         
                     
                 
-                <p>The source of the fragment shader.</p></td>
+                <p>片段着色器的源。</p></td>
         </tr>
 	
 	
@@ -13425,7 +13426,7 @@ For displacements, coordinates has to be clamped.</p>
                         
                     
                 
-                <p>Custom uniforms to use to augment the built-in ones.</p></td>
+                <p>自定义uniforms，用于增强内置uniforms。</p></td>
         </tr>
 	
 	
@@ -13515,7 +13516,7 @@ For displacements, coordinates has to be clamped.</p>
 <dd>
     
     <div class="description">
-        <p>The default fragment shader source</p>
+        <p>默认片段着色器源</p>
     </div>
     
     
@@ -13566,7 +13567,7 @@ For displacements, coordinates has to be clamped.</p>
 <dd>
     
     <div class="description">
-        <p>The default vertex shader source</p>
+        <p>默认的顶点着色器源</p>
     </div>
     
     
@@ -13617,7 +13618,7 @@ For displacements, coordinates has to be clamped.</p>
 <dd>
     
     <div class="description">
-        <p>Used for caching shader IDs</p>
+        <p>用于缓存着色器ID</p>
     </div>
     
     
@@ -13668,8 +13669,8 @@ For displacements, coordinates has to be clamped.</p>
 <dd>
     
     <div class="description">
-        <p>If enabled, PixiJS will fit the filter area into boundaries for better performance.
-Switch it off if it does not work for specific shader.</p>
+        <p>如果启用，PixiJS将使滤镜区域适合边界以提高性能。
+如果它不适用于指定的着色器，请将其关闭。</p>
     </div>
     
     
@@ -13720,7 +13721,7 @@ Switch it off if it does not work for specific shader.</p>
 <dd>
     
     <div class="description">
-        <p>Sets the blendmode of the filter</p>
+        <p>设置滤镜的混合模式</p>
     </div>
     
     
@@ -13774,7 +13775,7 @@ Switch it off if it does not work for specific shader.</p>
 <dd>
     
     <div class="description">
-        <p>If enabled is true the filter is applied, if false it will not.</p>
+        <p>如果启用为true，则应用过滤器；如果为false，则不应用过滤器。</p>
     </div>
     
     
@@ -13825,7 +13826,7 @@ Switch it off if it does not work for specific shader.</p>
 <dd>
     
     <div class="description">
-        <p>Legacy filters use position and uvs from attributes</p>
+        <p>传统过滤器使用属性中的位置和uvs</p>
     </div>
     
     
@@ -13876,9 +13877,8 @@ Switch it off if it does not work for specific shader.</p>
 <dd>
     
     <div class="description">
-        <p>The padding of the filter. Some filters require extra space to breath such as a blur.
-Increasing this will add extra width and height to the bounds of the object that the
-filter is applied to.</p>
+        <p>滤镜的填充。一些滤镜需要额外的空间呼吸运动，例如模糊。
+增大此值将为应用滤镜的对象的边界增加额外的宽度和高度。</p>
     </div>
     
     
@@ -13984,8 +13984,7 @@ filter is applied to.</p>
 <dd>
     
     <div class="description">
-        <p>The resolution of the filter. Setting this to be lower will lower the quality but
-increase the performance of the filter.</p>
+        <p>滤镜的分辨率。将此值设置得较低会降低质量，但会提高滤镜的性能。</p>
     </div>
     
     
@@ -14036,7 +14035,7 @@ increase the performance of the filter.</p>
 <dd>
     
     <div class="description">
-        <p>The WebGL state the filter requires to render</p>
+        <p>滤镜需要渲染的WebGL状态</p>
     </div>
     
     
@@ -14146,7 +14145,7 @@ increase the performance of the filter.</p>
     
         
         <div class="tag-source">
-            <a href="packages_core_src_filters_Filter.js.html#line204">Filter.js:204</a>
+            <a href="packages_core_src_filters_Filter.js.html#line203">Filter.js:203</a>
         </div>
         
     </div>
@@ -14157,7 +14156,7 @@ increase the performance of the filter.</p>
     
     
     <div class="description">
-        <p>Applies the filter</p>
+        <p>应用滤镜</p>
     </div>
     
 
@@ -14209,7 +14208,7 @@ increase the performance of the filter.</p>
                         
                     
                 
-                <p>The renderer to retrieve the filter from</p></td>
+                <p>渲染器从中检索滤镜</p></td>
         </tr>
 	
 	
@@ -14237,7 +14236,7 @@ increase the performance of the filter.</p>
                         
                     
                 
-                <p>The input render target.</p></td>
+                <p>输入的渲染目标。</p></td>
         </tr>
 	
 	
@@ -14265,7 +14264,7 @@ increase the performance of the filter.</p>
                         
                     
                 
-                <p>The target to output to.</p></td>
+                <p>要输出到的目标。</p></td>
         </tr>
 	
 	
@@ -14293,7 +14292,7 @@ increase the performance of the filter.</p>
                         
                     
                 
-                <p>Should the output be cleared before rendering to it.</p></td>
+                <p>在渲染到输出之前是否清除输出。</p></td>
         </tr>
 	
 	
@@ -14323,8 +14322,8 @@ increase the performance of the filter.</p>
                         
                     
                 
-                <p>It's current state of filter.
-There are some useful properties in the currentState :
+                <p>它是滤镜的当前状态。
+currentState中有一些有用的属性：
 target, filters, sourceFrame, destinationFrame, renderTarget, resolution</p></td>
         </tr>
 	
@@ -14390,7 +14389,7 @@ target, filters, sourceFrame, destinationFrame, renderTarget, resolution</p></td
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Fri Apr 17 2020 23:51:56 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Apr 18 2020 18:41:03 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>

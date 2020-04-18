@@ -3,7 +3,7 @@ import { Mesh, MeshMaterial } from '@pixi/mesh';
 import { PlaneGeometry } from './geometry/PlaneGeometry';
 
 /**
- * The SimplePlane allows you to draw a texture across several points and then manipulate these points
+ * SimplePlane允许您在多个点上绘制纹理，然后操纵这些点
  *
  *```js
  * for (let i = 0; i < 20; i++) {
@@ -20,9 +20,9 @@ import { PlaneGeometry } from './geometry/PlaneGeometry';
 export class SimplePlane extends Mesh
 {
     /**
-     * @param {PIXI.Texture} texture - The texture to use on the SimplePlane.
-     * @param {number} verticesX - The number of vertices in the x-axis
-     * @param {number} verticesY - The number of vertices in the y-axis
+     * @param {PIXI.Texture} texture - 在SimplePlane上使用的纹理。
+     * @param {number} verticesX - x轴上的顶点数
+     * @param {number} verticesY - y轴上的顶点数
      */
     constructor(texture, verticesX, verticesY)
     {
@@ -36,8 +36,8 @@ export class SimplePlane extends Mesh
     }
 
     /**
-     * Method used for overrides, to do something in case texture frame was changed.
-     * Meshes based on plane can override it and change more details based on texture.
+     * 用于覆盖的方法，以防万一纹理帧被更改。
+     * 基于平面的网格可以覆盖它，并可以基于纹理更改更多细节。
      */
     textureUpdated()
     {

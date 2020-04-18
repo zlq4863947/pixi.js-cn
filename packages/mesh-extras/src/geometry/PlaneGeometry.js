@@ -16,7 +16,7 @@ export class PlaneGeometry extends MeshGeometry
     }
 
     /**
-     * Refreshes plane coordinates
+     * 刷新平面坐标
      * @private
      */
     build()

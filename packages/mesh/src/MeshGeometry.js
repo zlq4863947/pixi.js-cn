@@ -2,9 +2,9 @@ import { TYPES } from '@pixi/constants';
 import { Buffer, Geometry } from '@pixi/core';
 
 /**
- * Standard 2D geometry used in PixiJS.
+ * PixiJS中使用的标准2D几何。
  *
- * Geometry can be defined without passing in a style or data if required.
+ * 如果需要，可以在不传递样式或数据的情况下定义几何。
  *
  * ```js
  * const geometry = new PIXI.Geometry();
@@ -21,8 +21,8 @@ import { Buffer, Geometry } from '@pixi/core';
 export class MeshGeometry extends Geometry
 {
     /**
-     * @param {Float32Array|number[]} vertices - Positional data on geometry.
-     * @param {Float32Array|number[]} uvs - Texture UVs.
+     * @param {Float32Array|number[]} vertices - 几何位置数据。
+     * @param {Float32Array|number[]} uvs - 纹理UV。
      * @param {Uint16Array|number[]} index - IndexBuffer
      */
     constructor(vertices, uvs, index)
@@ -38,9 +38,8 @@ export class MeshGeometry extends Geometry
             .addIndex(indexBuffer);
 
         /**
-         * Dirty flag to limit update calls on Mesh. For example,
-         * limiting updates on a single Mesh instance with a shared Geometry
-         * within the render loop.
+         * 脏标志以限制对网格的更新调用。 例如，
+         * 在渲染循环内使用共享的Geometry限制单个Mesh实例的更新。
          * @private
          * @member {number}
          * @default -1

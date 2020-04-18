@@ -9,18 +9,18 @@ const tempPoint = new Point();
 const tempPolygon = new Polygon();
 
 /**
- * Base mesh class.
+ * 基础网格类
  *
- * This class empowers you to have maximum flexibility to render any kind of WebGL visuals you can think of.
- * This class assumes a certain level of WebGL knowledge.
- * If you know a bit this should abstract enough away to make you life easier!
+ * 此类使您拥有最大的灵活性来呈现您可以想到的任何种类的WebGL视觉效果。
+ * 该课假设使用者有一定程度的WebGL知识。
+ * 如果您知道一点，这应该足够抽象，使您的生活更轻松！
  *
- * Pretty much ALL WebGL can be broken down into the following:
- * - Geometry - The structure and data for the mesh. This can include anything from positions, uvs, normals, colors etc..
- * - Shader - This is the shader that PixiJS will render the geometry with (attributes in the shader must match the geometry)
- * - State - This is the state of WebGL required to render the mesh.
+ * 几乎所有的WebGL都可以分为以下几类：
+ * - 几何(Geometry) - 网格的结构和数据。这可以包括任何位置、UV、法线、颜色等。。
+ * - 着色器(Shader) - 这是PixiJS用来渲染几何的着色器（着色器中的属性必须与几何匹配）
+ * - 状态(State) - 这是渲染网格所需的WebGL状态。
  *
- * Through a combination of the above elements you can render anything you want, 2D or 3D!
+ * 通过结合以上元素，您可以渲染任何所需的2D或3D！
  *
  * @class
  * @extends PIXI.Container
@@ -29,20 +29,20 @@ const tempPolygon = new Polygon();
 export class Mesh extends Container
 {
     /**
-     * @param {PIXI.Geometry} geometry  the geometry the mesh will use
-     * @param {PIXI.Shader|PIXI.MeshMaterial} shader  the shader the mesh will use
-     * @param {PIXI.State} [state] the state that the WebGL context is required to be in to render the mesh
-     *        if no state is provided, uses {@link PIXI.State.for2d} to create a 2D state for PixiJS.
-     * @param {number} [drawMode=PIXI.DRAW_MODES.TRIANGLES] the drawMode, can be any of the PIXI.DRAW_MODES consts
+     * @param {PIXI.Geometry} geometry  网格将使用的几何
+     * @param {PIXI.Shader|PIXI.MeshMaterial} shader  网格将使用的着色器
+     * @param {PIXI.State} [state] 需要WebGL上下文才能呈现网格的状态
+     *        如果未提供状态，则使用{@link PIXI.State.for2d}为PixiJS创建2D状态。
+     * @param {number} [drawMode=PIXI.DRAW_MODES.TRIANGLES] drawMode可以是任何PIXI.DRAW_MODES常量
      */
     constructor(geometry, shader, state, drawMode = DRAW_MODES.TRIANGLES)// vertices, uvs, indices, drawMode)
     {
         super();
 
         /**
-         * Includes vertex positions, face indices, normals, colors, UVs, and
-         * custom attributes within buffers, reducing the cost of passing all
-         * this data to the GPU. Can be shared between multiple Mesh objects.
+         * 在缓冲区内包括顶点位置，晶面指数，法线，颜色，UV和自定义属性，
+         * 从而降低了将所有这些数据传递给GPU的成本。
+         * 可以在多个Mesh对象之间共享。
          * @member {PIXI.Geometry}
          * @readonly
          */
@@ -51,21 +51,21 @@ export class Mesh extends Container
         geometry.refCount++;
 
         /**
-         * Represents the vertex and fragment shaders that processes the geometry and runs on the GPU.
-         * Can be shared between multiple Mesh objects.
+         * 表示处理几何图形并在GPU上运行的顶点和片段着色器。
+         * 可以在多个Mesh对象之间共享。
          * @member {PIXI.Shader|PIXI.MeshMaterial}
          */
         this.shader = shader;
 
         /**
-         * Represents the WebGL state the Mesh required to render, excludes shader and geometry. E.g.,
-         * blend mode, culling, depth testing, direction of rendering triangles, backface, etc.
+         * 表示网格渲染所需的WebGL状态，不包括着色器和几何体。
+         * 例如: 混合模式，剔除，深度测试，渲染三角形的方向，背面等。
          * @member {PIXI.State}
          */
         this.state = state || State.for2d();
 
         /**
-         * The way the Mesh should be drawn, can be any of the {@link PIXI.DRAW_MODES} constants.
+         * 网格的绘制方式可以是任何{@link PIXI.DRAW_MODES}常量。
          *
          * @member {number}
          * @see PIXI.DRAW_MODES
@@ -73,43 +73,42 @@ export class Mesh extends Container
         this.drawMode = drawMode;
 
         /**
-         * Typically the index of the IndexBuffer where to start drawing.
+         * 在哪里开始绘制的IndexBuffer的索引。
          * @member {number}
          * @default 0
          */
         this.start = 0;
 
         /**
-         * How much of the geometry to draw, by default `0` renders everything.
+         * 要绘制多少几何图形才渲染内容，默认情况下 `0` 将渲染所有内容。
          * @member {number}
          * @default 0
          */
         this.size = 0;
 
         /**
-         * thease are used as easy access for batching
+         * 它们被用作批处理的快捷方式
          * @member {Float32Array}
          * @private
          */
         this.uvs = null;
 
         /**
-         * thease are used as easy access for batching
+         * 它们被用作批处理的快捷方式
          * @member {Uint16Array}
          * @private
          */
         this.indices = null;
 
         /**
-         * this is the caching layer used by the batcher
+         * 这是批处理程序使用的缓存层
          * @member {Float32Array}
          * @private
          */
         this.vertexData = new Float32Array(1);
 
         /**
-         * If geometry is changed used to decide to re-transform
-         * the vertexData.
+         * 如果几何形状已更改，则用于决定重新转换vertexData。
          * @member {number}
          * @private
          */
@@ -122,7 +121,7 @@ export class Mesh extends Container
         this.blendMode = BLEND_MODES.NORMAL;
 
         /**
-         * Internal roundPixels field
+         * 内部roundPixels字段
          *
          * @member {boolean}
          * @private
@@ -130,7 +129,7 @@ export class Mesh extends Container
         this._roundPixels = settings.ROUND_PIXELS;
 
         /**
-         * Batched UV's are cached for atlas textures
+         * 为atlas纹理缓存批处理的UV
          * @member {PIXI.MeshBatchUvs}
          * @private
          */
@@ -138,7 +137,7 @@ export class Mesh extends Container
     }
 
     /**
-     * To change mesh uv's, change its uvBuffer data and increment its _updateID.
+     * 要更改网格uv，请更改其uvBuffer数据并增加_updateID。
      * @member {PIXI.Buffer}
      * @readonly
      */
@@ -148,8 +147,8 @@ export class Mesh extends Container
     }
 
     /**
-     * To change mesh vertices, change its uvBuffer data and increment its _updateID.
-     * Incrementing _updateID is optional because most of Mesh objects do it anyway.
+     * 要更改网格顶点，请更改其uvBuffer数据并增加_updateID。
+     * 递增_updateID是可选的，因为大多数网格对象都会这样做。
      * @member {PIXI.Buffer}
      * @readonly
      */
@@ -159,7 +158,7 @@ export class Mesh extends Container
     }
 
     /**
-     * Alias for {@link PIXI.Mesh#shader}.
+     * {@link PIXI.Mesh#shader}的别名。
      * @member {PIXI.Shader|PIXI.MeshMaterial}
      */
     set material(value)
@@ -173,8 +172,7 @@ export class Mesh extends Container
     }
 
     /**
-     * The blend mode to be applied to the Mesh. Apply a value of
-     * `PIXI.BLEND_MODES.NORMAL` to reset the blend mode.
+     * 要应用于网格的混合模式。使用`PIXI.BLEND_MODES.NORMAL`重置混合模式。
      *
      * @member {number}
      * @default PIXI.BLEND_MODES.NORMAL;
@@ -214,8 +212,7 @@ export class Mesh extends Container
     }
 
     /**
-     * The multiply tint applied to the Mesh. This is a hex value. A value of
-     * `0xFFFFFF` will remove any tint effect.
+     * 应用于网格的倍增色调。这是十六进制值。值`0xFFFFFF`将删除任何色调效果。
      *
      * @member {number}
      * @default 0xFFFFFF
@@ -231,7 +228,7 @@ export class Mesh extends Container
     }
 
     /**
-     * The texture that the Mesh uses.
+     * 网格使用的纹理。
      *
      * @member {PIXI.Texture}
      */
@@ -246,9 +243,9 @@ export class Mesh extends Container
     }
 
     /**
-     * Standard renderer draw.
+     * 标准渲染器绘制。
      * @protected
-     * @param {PIXI.Renderer} renderer - Instance to renderer.
+     * @param {PIXI.Renderer} renderer - 渲染器实例。
      */
     _render(renderer)
     {
@@ -268,9 +265,9 @@ export class Mesh extends Container
     }
 
     /**
-     * Standard non-batching way of rendering.
+     * 标准的非批处理渲染方式。
      * @protected
-     * @param {PIXI.Renderer} renderer - Instance to renderer.
+     * @param {PIXI.Renderer} renderer - 渲染器实例。
      */
     _renderDefault(renderer)
     {
@@ -303,9 +300,9 @@ export class Mesh extends Container
     }
 
     /**
-     * Rendering by using the Batch system.
+     * 使用批处理系统进行渲染。
      * @protected
-     * @param {PIXI.Renderer} renderer - Instance to renderer.
+     * @param {PIXI.Renderer} renderer - 渲染器实例。
      */
     _renderToBatch(renderer)
     {
@@ -330,7 +327,7 @@ export class Mesh extends Container
     }
 
     /**
-     * Updates vertexData field based on transform and vertices
+     * 根据变换和顶点更新vertexData字段
      */
     calculateVertices()
     {
@@ -382,7 +379,7 @@ export class Mesh extends Container
     }
 
     /**
-     * Updates uv field based on from geometry uv's or batchUvs
+     * 根据几何uv或batchUvs更新uv字段
      */
     calculateUvs()
     {
@@ -404,8 +401,8 @@ export class Mesh extends Container
     }
 
     /**
-     * Updates the bounds of the mesh as a rectangle. The bounds calculation takes the worldTransform into account.
-     * there must be a aVertexPosition attribute present in the geometry for bounds to be calculated correctly.
+     * 将网格的边界更新为矩形。 边界计算将worldTransform考虑在内。
+     * 几何中必须存在aVertexPosition属性，才能正确计算边界。
      *
      * @protected
      */
@@ -417,10 +414,10 @@ export class Mesh extends Container
     }
 
     /**
-     * Tests if a point is inside this mesh. Works only for PIXI.DRAW_MODES.TRIANGLES.
+     * 测试点是否在此网格内。 仅适用于PIXI.DRAW_MODES.TRIANGLES。
      *
-     * @param {PIXI.Point} point the point to test
-     * @return {boolean} the result of the test
+     * @param {PIXI.Point} point 测试点
+     * @return {boolean} 测试结果
      */
     containsPoint(point)
     {
@@ -460,12 +457,10 @@ export class Mesh extends Container
         return false;
     }
     /**
-     * Destroys the Mesh object.
+     * 销毁网格物体。
      *
-     * @param {object|boolean} [options] - Options parameter. A boolean will act as if all
-     *  options have been set to that value
-     * @param {boolean} [options.children=false] - if set to true, all the children will have
-     *  their destroy method called as well. 'options' will be passed on to those calls.
+     * @param {object|boolean} [options] - 选项参数。 布尔值将充当所有选项都已设置为该值的作用
+     * @param {boolean} [options.children=false] - 如果设置为true，则所有子项也将调用其destroy方法。 'options' 将传递给这些调用。
      */
     destroy(options)
     {
@@ -487,8 +482,7 @@ export class Mesh extends Container
 }
 
 /**
- * The maximum number of vertices to consider batchable. Generally, the complexity
- * of the geometry.
+ * 要考虑可批处理的最大顶点数。一般用于，复杂几何。
  * @memberof PIXI.Mesh
  * @static
  * @member {number} BATCHABLE_SIZE

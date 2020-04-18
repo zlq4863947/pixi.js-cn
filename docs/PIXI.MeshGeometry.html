@@ -13192,8 +13192,8 @@
         <h2><span class="ancestors"><a href="PIXI.html">PIXI</a>~</span>MeshGeometry
         </h2>
         
-            <div class="class-description"><p>Standard 2D geometry used in PixiJS.</p>
-<p>Geometry can be defined without passing in a style or data if required.</p>
+            <div class="class-description"><p>PixiJS中使用的标准2D几何。</p>
+<p>如果需要，可以在不传递样式或数据的情况下定义几何。</p>
 <pre class="prettyprint source lang-js"><code>const geometry = new PIXI.Geometry();
 
 geometry.addAttribute('positions', [0, 0, 100, 0, 100, 100, 0, 100], 2);
@@ -13285,7 +13285,7 @@ geometry.addIndex([0,1,2,1,3,2]);
             
             <td class="description last">
                 
-                <p>Positional data on geometry.</p></td>
+                <p>几何位置数据。</p></td>
         </tr>
 	
 	
@@ -13311,7 +13311,7 @@ geometry.addIndex([0,1,2,1,3,2]);
             
             <td class="description last">
                 
-                <p>Texture UVs.</p></td>
+                <p>纹理UV。</p></td>
         </tr>
 	
 	
@@ -13431,7 +13431,7 @@ geometry.addIndex([0,1,2,1,3,2]);
 <dd>
     
     <div class="description">
-        <p>A map of renderer IDs to webgl VAOs</p>
+        <p>渲染器ID到webgl VAO的映射</p>
     </div>
     
     
@@ -13486,7 +13486,7 @@ geometry.addIndex([0,1,2,1,3,2]);
 <dd>
     
     <div class="description">
-        <p>Number of instances in this geometry, pass it to <code>GeometrySystem.draw()</code></p>
+        <p>此几何中的实例数，将其传递给 <code>GeometrySystem.draw()</code></p>
     </div>
     
     
@@ -13544,7 +13544,7 @@ geometry.addIndex([0,1,2,1,3,2]);
 <dd>
     
     <div class="description">
-        <p>Count of existing (not destroyed) meshes that reference this geometry</p>
+        <p>引用此几何体的现有（未破坏）网格的数量</p>
     </div>
     
     
@@ -13614,7 +13614,7 @@ geometry.addIndex([0,1,2,1,3,2]);
     
     
     <div class="description">
-        <p>Adds an attribute to the geometry</p>
+        <p>向几何添加属性</p>
     </div>
     
 
@@ -13672,7 +13672,7 @@ geometry.addIndex([0,1,2,1,3,2]);
                         
                     
                 
-                <p>the name of the attribute (matching up to a shader)</p></td>
+                <p>属性的名称（与着色器匹配）</p></td>
         </tr>
 	
 	
@@ -13709,7 +13709,7 @@ geometry.addIndex([0,1,2,1,3,2]);
                         
                     
                 
-                <p>the buffer that holds the data of the attribute . You can also provide an Array and a buffer will be created from it.</p></td>
+                <p>存放属性数据的缓冲区。 您还可以提供一个Array，并从中创建一个缓冲区。</p></td>
         </tr>
 	
 	
@@ -13745,7 +13745,7 @@ geometry.addIndex([0,1,2,1,3,2]);
                         
                     
                 
-                <p>the size of the attribute. If you have 2 floats per vertex (eg position x and y) this would be 2</p></td>
+                <p>属性的大小。 如果每个顶点有2个浮点数（例如位置x和y），则为2</p></td>
         </tr>
 	
 	
@@ -13781,7 +13781,7 @@ geometry.addIndex([0,1,2,1,3,2]);
                         
                     
                 
-                <p>should the data be normalized.</p></td>
+                <p>数据是否应该归一化。</p></td>
         </tr>
 	
 	
@@ -13817,7 +13817,7 @@ geometry.addIndex([0,1,2,1,3,2]);
                         
                     
                 
-                <p>what type of number is the attribute. Check {PIXI.TYPES} to see the ones available</p></td>
+                <p>属性是什么类型的数字。检查<a href="PIXI.html#.TYPES">PIXI.TYPES</a>以查看可用值</p></td>
         </tr>
 	
 	
@@ -13853,7 +13853,7 @@ geometry.addIndex([0,1,2,1,3,2]);
                         
                     
                 
-                <p>How far apart (in floats) the start of each value is. (used for interleaving data)</p></td>
+                <p>每个值的起始位置相距多远（以浮点数表示）。 （用于交错数据）</p></td>
         </tr>
 	
 	
@@ -13889,7 +13889,7 @@ geometry.addIndex([0,1,2,1,3,2]);
                         
                     
                 
-                <p>How far into the array to start reading values (used for interleaving data)</p></td>
+                <p>数组开始读取值的距离（用于交错数据）</p></td>
         </tr>
 	
 	
@@ -13952,7 +13952,7 @@ geometry.addIndex([0,1,2,1,3,2]);
                         
                     
             </td>
-            <td class="description last">returns self, useful for chaining.</td>
+            <td class="description last">返回自身，用于链式引用</td>
         </tr>
     
     </tbody>
@@ -13996,8 +13996,8 @@ geometry.addIndex([0,1,2,1,3,2]);
     
     
     <div class="description">
-        <p>Adds an index buffer to the geometry
-The index buffer contains integers, three for each triangle in the geometry, which reference the various attribute buffers (position, colour, UV coordinates, other UV coordinates, normal, …). There is only ONE index buffer.</p>
+        <p>向几何图形添加索引缓冲区
+索引缓冲区包含整数，对于几何体中的每个三角形有三个整数，这些整数了引用各种属性缓冲区（位置、颜色、紫外线坐标、其他紫外线坐标、法线…）。只有一个索引缓冲区。</p>
     </div>
     
 
@@ -14054,7 +14054,7 @@ The index buffer contains integers, three for each triangle in the geometry, whi
                         
                     
                 
-                <p>the buffer that holds the data of the index buffer. You can also provide an Array and a buffer will be created from it.</p></td>
+                <p>存放索引缓冲区数据的缓冲区。 您还可以提供一个Array，并从中创建一个缓冲区。</p></td>
         </tr>
 	
 	
@@ -14117,7 +14117,7 @@ The index buffer contains integers, three for each triangle in the geometry, whi
                         
                     
             </td>
-            <td class="description last">returns self, useful for chaining.</td>
+            <td class="description last">返回自身，用于链式引用</td>
         </tr>
     
     </tbody>
@@ -14161,7 +14161,7 @@ The index buffer contains integers, three for each triangle in the geometry, whi
     
     
     <div class="description">
-        <p>returns a clone of the geometry</p>
+        <p>返回几何体的副本</p>
     </div>
     
 
@@ -14226,7 +14226,7 @@ The index buffer contains integers, three for each triangle in the geometry, whi
                         
                     
             </td>
-            <td class="description last">a new clone of this geometry</td>
+            <td class="description last">几何的新副本</td>
         </tr>
     
     </tbody>
@@ -14270,7 +14270,7 @@ The index buffer contains integers, three for each triangle in the geometry, whi
     
     
     <div class="description">
-        <p>Destroys the geometry.</p>
+        <p>销毁几何</p>
     </div>
     
 
@@ -14350,7 +14350,7 @@ The index buffer contains integers, three for each triangle in the geometry, whi
     
     
     <div class="description">
-        <p>disposes WebGL resources that are connected to this geometry</p>
+        <p>释放连接到此几何的WebGL资源</p>
     </div>
     
 
@@ -14430,7 +14430,7 @@ The index buffer contains integers, three for each triangle in the geometry, whi
     
     
     <div class="description">
-        <p>returns the requested attribute</p>
+        <p>返回请求的属性</p>
     </div>
     
 
@@ -14477,7 +14477,7 @@ The index buffer contains integers, three for each triangle in the geometry, whi
             
             <td class="description last">
                 
-                <p>the name of the attribute required</p></td>
+                <p>属性的名称</p></td>
         </tr>
 	
 	
@@ -14540,7 +14540,7 @@ The index buffer contains integers, three for each triangle in the geometry, whi
                         
                     
             </td>
-            <td class="description last">the attribute requested.</td>
+            <td class="description last">请求的属性。</td>
         </tr>
     
     </tbody>
@@ -14584,7 +14584,7 @@ The index buffer contains integers, three for each triangle in the geometry, whi
     
     
     <div class="description">
-        <p>returns the requested buffer</p>
+        <p>返回请求的缓冲区</p>
     </div>
     
 
@@ -14631,7 +14631,7 @@ The index buffer contains integers, three for each triangle in the geometry, whi
             
             <td class="description last">
                 
-                <p>the name of the buffer required</p></td>
+                <p>缓冲区的名称</p></td>
         </tr>
 	
 	
@@ -14694,7 +14694,7 @@ The index buffer contains integers, three for each triangle in the geometry, whi
                         
                     
             </td>
-            <td class="description last">the buffer requested.</td>
+            <td class="description last">请求的缓冲区。</td>
         </tr>
     
     </tbody>
@@ -14738,7 +14738,7 @@ The index buffer contains integers, three for each triangle in the geometry, whi
     
     
     <div class="description">
-        <p>returns the index buffer</p>
+        <p>返回索引缓冲区</p>
     </div>
     
 
@@ -14803,7 +14803,7 @@ The index buffer contains integers, three for each triangle in the geometry, whi
                         
                     
             </td>
-            <td class="description last">the index buffer.</td>
+            <td class="description last">索引缓冲区。</td>
         </tr>
     
     </tbody>
@@ -14847,8 +14847,8 @@ The index buffer contains integers, three for each triangle in the geometry, whi
     
     
     <div class="description">
-        <p>this function modifies the structure so that all current attributes become interleaved into a single buffer
-This can be useful if your model remains static as it offers a little performance boost</p>
+        <p>此函数修改结构，以便所有当前属性都交错到单个缓冲区中
+如果您的模型保持静态，这会很有用，因为它会带来一点性能提升</p>
     </div>
     
 
@@ -14913,7 +14913,7 @@ This can be useful if your model remains static as it offers a little performanc
                         
                     
             </td>
-            <td class="description last">returns self, useful for chaining.</td>
+            <td class="description last">返回自身，用于链式引用</td>
         </tr>
     
     </tbody>
@@ -14944,7 +14944,7 @@ This can be useful if your model remains static as it offers a little performanc
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Fri Apr 17 2020 23:51:58 GMT+0900 (Japan Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Apr 18 2020 18:41:05 GMT+0900 (Japan Standard Time)
             </div>
         </footer>
     </div>
