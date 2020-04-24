@@ -29,7 +29,7 @@ PixiJS项目的目标为提供一个可以在所有设备上运行的快速轻�
 
 PixiJS渲染引擎让每个人都能享受无需事先熟悉WebGL即可进行硬件加速。而且，它很快。真快。
 
-如果您想了解PixiJS的最新消息，可以访问[PixiJS的官网](https://www.pixijs.com/), [PixiJs的Github](https://github.com/pixijs/)等。
+如果您想了解PixiJS的最新消息，可以访问[PixiJS的官网](https://www.pixijs.com/), [PixiJS的Github](https://github.com/pixijs/)等。
 
 
 ### 为什么使用PixiJS以及何时使用
@@ -38,8 +38,6 @@ PixiJS是一个渲染库，可让您创建丰富的交互式图形，跨平台�
 
 PixiJS具有完整的[WebGL](https://en.wikipedia.org/wiki/WebGL)支持，并在需要时无缝地退回到HTML5的[canvas](https://en.wikipedia.org/wiki/Canvas_element)。作为一个框架，PixiJS是创作交互内容的绝佳工具, *尤其是近年来随着Adobe Flash的退出*。将其用于图形丰富的交互式网站，应用程序和HTML5游戏。开箱即用的跨平台兼容性和优雅降级意味着您要做的工作更少，并且做起来会更有趣！如果您想相对快速地创建优美而精致的体验，而又不必钻研密集的低级代码，同时又避免了浏览器不一致的麻烦，那么请在下一个项目中使用PixiJS吧！
 
-**帮助您的开发，尽情发挥您的想象力！**
-入门：查看@kittykattack的详细教程。
 ### 相关学习资料 ###
 - 网站: 在[官方网站](http://www.pixijs.com/)上了解更多关于PixiJS的信息。
 - 入门: 查看官方推荐的@kittykatattack的[详细教程](https://github.com/kittykatattack/learningPixi)。
@@ -52,8 +50,6 @@ PixiJS具有完整的[WebGL](https://en.wikipedia.org/wiki/WebGL)支持，并在
 - 把PixiJS使用在微信小游戏上: 您可以参看[使用PixiJS V4版本成功适配在微信小游戏上的demo](https://github.com/LeedaCode/pixijs-adaptation-wechat)
 
 ### 安装 ###
-
-获取PixiJS
 
 #### NPM安装
 
