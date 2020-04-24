@@ -41,8 +41,8 @@ PixiJS具有完整的[WebGL](https://en.wikipedia.org/wiki/WebGL)支持，并在
 ### 相关学习资料 ###
 - 网站: 在[官方网站](http://www.pixijs.com/)上了解更多关于PixiJS的信息。
 - 入门: 查看官方推荐的@kittykatattack的[详细教程](https://github.com/kittykatattack/learningPixi)。
-- 例子: 深入并玩转PixiJS代码及功能特性的[官方英文示例](http://pixijs.github.io/examples/) 或 [我们的中文示例]([https://b.aitrade.ga/pixi.js-cn.examples])!
-- 文档: 通过查看[官方英语文档](https://pixijs.github.io/docs/) 或 [我们的中文文档]((http://b.aitrade.ga/pixi.js-cn) 了解PixiJS API。
+- 例子: 深入并玩转PixiJS代码及功能特性的[官方英文示例](http://pixijs.github.io/examples/) 或[我们的中文示例](https://b.aitrade.ga/pixi.js-cn.examples)
+- 文档: 通过查看[官方英语文档](https://pixijs.github.io/docs/) 或 [我们的中文文档](http://b.aitrade.ga/pixi.js-cn) 了解PixiJS API。
 - Wiki: [Wiki](https://github.com/pixijs/pixi.js/wiki)上还有其他教程和资源。
 - 论坛: 查看[论坛](http://www.html5gamedevs.com/forum/15-pixijs/) 和 [Stackoverflow](http://stackoverflow.com/search?q=pixi.js), 这两个地方都可以请教国内外的PixiJS开发者讨论您问题。
 - 灵感: 参观[官网的画廊](http://www.pixijs.com/gallery) 看看其他人创造的令人惊讶的东西！
